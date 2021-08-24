@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="x" value="">
+    <select name="op" id="op">
+        <option id="add" value="">+</option>
+        <option id="coun" value="">-</option>
+        <option id="mult" value="">x</option>
+        <option id="divi" value="">/</option>
+    </select>
+    <input type="number" name="" id="y" value="">
+    <button onclick="add()"></button>
+    <!-- <p>請選擇要進行的運算:</p>
+    <button onclick="add()">+</button>
+    <button onclick="coun()">-</button>
+    <button onclick="mult()">*</button>
+    <button onclick="divi()">/</button> <br> -->
+
+
+
+    <script>
+        function add(){
+            x= parseInt(document.getElementById("x").value);
+            y= parseInt(document.getElementById("y").value);
+            var result=x+y;
+            document.getElementById("result").innerHTML=result;
+
+
+        }
+
+    </script>
+    
+</body>
+</html>
