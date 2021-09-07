@@ -1,0 +1,43 @@
+create database if not EXISTS marian default character set utf8;
+
+use marian;
+
+CREATE TABLE IF NOT EXISTS
+ products (
+    productId int auto_increment primary key, 
+    productName varchar(40), 
+    productDescription text, 
+    productImg blob, 
+    productSize varchar(10) null, 
+    productPrice smallint,
+    productInStock smallint
+);
+CREATE TABLE IF NOT EXISTS
+ customers (
+    customerId int auto_increment primary key, 
+    customerName varchar(40), 
+    customerGender tinyint(1), 
+    customerPhone varchar(24), 
+    customerEmail varchar(100), 
+    customerAddress varchar(255)
+);
+CREATE TABLE IF NOT EXISTS
+ orders (
+    orderId int auto_increment primary key, 
+    customerId int, 
+    orderDate datetime
+);
+CREATE TABLE IF NOT EXISTS
+ orderdetails (
+    orderId int primary key, 
+    productId int, 
+    productPrice smallint, 
+    quantity smallint
+);
+CREATE TABLE IF NOT EXISTS
+ news (
+    newsId int auto_increment primary key, 
+    newsTitle varchar(50), 
+    newsArticle text, 
+    newsDate datetime
+);
