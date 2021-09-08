@@ -1,0 +1,124 @@
+/* header */
+header{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: aqua;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+/* main */
+main{
+    width: 100%;
+}
+section{
+    /* max-width: 1200px; */
+    width: 600px;
+    margin: 30px auto;
+    border: 1px solid #ccc;
+}
+.membersCondition{
+    display: flex;
+}
+.memberConditionRegister,
+.memberConditionLogin{
+    width: 50%;
+    padding: 20px 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+}
+.memberConditionRegister{
+    color: #f77b1c;
+}
+.memberConditionLogin{
+    border-bottom: 1px solid #ccc;
+}
+.memberConditionLogin{
+    border-left: 1px solid #ccc;
+}
+.membersRegister{
+    width: 100%;
+    padding: 10px 50px;
+    /* display: none; */
+}
+.membersRegisterInfo{
+    width: 100%;
+    position: relative;
+}
+.membersRegisterInfo::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    display: block;
+    background-color: #ccc;
+    position: absolute;
+    bottom: -20px;
+}
+.membersRegisterInfo p{
+    line-height: 1.2rem;
+}
+.membersRegisterAgreement{
+    padding: 40px 0 0 0;
+}
+.membersLogin{
+    width: 100%;
+    padding: 10px 50px;
+    display: none;
+}
+.membersLogin > p:last-child{
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+.membersLogin a{
+    text-decoration: none;
+    color: #777;
+}
+.membersRegisterTitle,
+.membersLoginTitle{
+    padding: 0 0 10px 0;
+    text-align: center;
+    color: #F77B1C;
+}
+.membersRegisterInfo input,
+.membersLogin input{
+    width: 100%;
+    padding: 10px 0 10px 10px;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button{
+    width: 100%;
+    padding: 15px 0;
+    margin: 20px 0 20px 0;
+    font-size: 1.2rem;
+    background-color: #F77B1C;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:disabled{
+    background-color: #f77b1c;
+    opacity: .6;
+}
+
+/* footer */
+footer{
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: cadetblue;
+    font-size: 36px;
+    font-weight: 900;
+}

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./cart.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        Cora design
+    </header>
+    <main>
+        <section class="cart">
+            <div class="cartProcess">
+                <div class="cartProcessItem">
+                    <p>1</p>
+                    <p>Cart</p>
+                </div>
+                <div class="cartProcessItem cartProcessItemMiddle">
+                    <p>2</p>
+                    <p>Infos</p>
+                </div>
+                <div class="cartProcessItem">
+                    <p>3</p>
+                    <p>Confirm</p>
+                </div>
+            </div>
+            <div class="cartItem">
+                <h3>Cart (1 piece)</h3>
+                <div class="cartItemInfo">
+                    <div class="cartItemInfoTitle">
+                        <div>Product</div>
+                        <div>Price</div>
+                        <div>Quantity</div>
+                        <div>Total</div>
+                    </div>
+                    <div class="cartItemInfoItems">
+                        <div>
+                            <img src="https://picsum.photos/50/50/?random=1">
+                        </div>
+                        <div>
+                            <p>MELSIGN - Strap Washed Cargo Shorts - Black</p>
+                            <p>S</p>
+                        </div>
+                        <div>NT$2,380</div>
+                        <div>
+                            <span>-</span> 
+                            <p>2</p> 
+                            <span>+</span>
+                        </div>
+                        <div>NT$4,760</div>
+                        <div>x</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cartPay">
+                <h3>Payment & Delivery</h3>
+                <div class="cartPayInfo">
+                    <p>Delivery location</p>
+                    <select>
+                        <option value="">Taiwan</option>
+                        <option value="">North America</option>
+                        <option value="">South America</option>
+                        <option value="">Africa</option>
+                        <option value="">Europe</option>
+                        <option value="">Asia</option>
+                        <option value="">Oceania</option>
+                    </select>
+                    <p>Delivery Methods</p>
+                    <select>
+                        <option value="">711</option>
+                        <option value="">Family Mart</option>
+                        <option value="">OK</option>
+                    </select>
+                    <p>Payments</p>
+                    <select>
+                        <option value="">Credit Card</option>
+                        <option value="">ATM</option>
+                        <option value="">Paypal</option>
+                    </select>
+                </div>
+            </div>
+            <div class="cartInfo">
+                <h3>Order Information</h3>
+                <div class="cartInfoItem">
+                    <p>Price &nbsp;&nbsp;&nbsp;&nbsp; :</p>
+                    <p>NT$4,760</p>
+                </div>
+                <div class="cartInfoItem">
+                    <p>Shipping :</p>
+                    <p>NT$60</p>
+                </div>
+                <div class="cartInfoItem">
+                    <p>Total &nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                    <p>NT$4,820</p>
+                </div>
+                <button class="cartInfoCheckout">Checkout</button>
+            </div>
+        </section>
+        <section class="info">
+            <div class="cartProcess">
+                <div class="cartProcessItem">
+                    <p>1</p>
+                    <p>Cart</p>
+                </div>
+                <div class="cartProcessItem cartProcessItemMiddle">
+                    <p class="cartProcessItemInfo">2</p>
+                    <p>Infos</p>
+                </div>
+                <div class="cartProcessItem">
+                    <p>3</p>
+                    <p>Confirm</p>
+                </div>
+            </div>
+            <div class="infoCart">
+                <div class="infoCartTitle">
+                    <p>Total : NT$4,820</p>
+                    <div>Cart (1 piece) &nbsp; <p class="cartTitleArrow">v</p>
+                    </div>
+                </div>
+                <div class="infoCartDetails cartItemInfo">
+                    <div class="cartItemInfoTitle">
+                        <div>Product</div>
+                        <div>Price</div>
+                        <div>Quantity</div>
+                        <div>Total</div>
+                    </div>
+                    <div class="cartItemInfoItems">
+                        <div>
+                            <img src="https://picsum.photos/50/50/?random=1">
+                        </div>
+                        <div>
+                            <p>MELSIGN - Strap Washed Cargo Shorts - Black</p>
+                            <p>S</p>
+                        </div>
+                        <div>NT$2,380</div>
+                        <div>
+                            <p>2</p> 
+                        </div>
+                        <div>NT$4,760</div>
+                    </div>
+                </div>
+                <div class="infoCartOrder">
+                    <div class="cartInfo">
+                        <div class="cartInfoItem">
+                            <p>Price &nbsp;&nbsp;&nbsp;&nbsp; :</p>
+                            <p>NT$4,760</p>
+                        </div>
+                        <div class="cartInfoItem">
+                            <p>Shipping :</p>
+                            <p>NT$60</p>
+                        </div>
+                        <div class="cartInfoItem">
+                            <p>Total &nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                            <p>NT$4,820</p>
+                        </div>
+                    </div>
+                    <div class="cartExpends"><p>V</p></div>
+                </div>
+            </div>
+            <div class="infoShipping">
+                <h3>Sipping Details</h3>
+                <div class="infoShippingItem">
+                    <p>Shipping Methods : </p>
+                    <p>Name</p> <input type="text">
+                    <p>Phone</p> <input type="text">
+                    <p>Address</p> <input type="text">
+                </div>
+            </div>
+            <div class="infoPay">
+                <h3>Payment Details</h3>
+                <div class="infoPayContainer">
+                    <p>Payment Methods : </p>
+                    <div class="infoPayItem">
+                        <p>Credit Card</p>
+                        <input type="text" placeholder="  Card Number">
+                    </div>
+                    <div class="infoPayItem">
+                        <p>Card Holder Name</p>
+                        <input type="text" placeholder="  Holder Name">
+                    </div>
+                    <div class="infoPayItem">
+                        <p>Card Valid Date</p>
+                        <input type="text" placeholder="  MM/YY">
+                    </div>
+                    <div class="infoPayItem">
+                        <p>CVC</p>
+                        <input type="text" placeholder="  CVC">
+                    </div>
+                </div>
+            </div>
+            <div class="infoFooter">
+                <a href="#" class="backToCart">< Back to Cart</a>
+                <button class="infoSend">Order send</button>
+                <a href="#">< Back to Cart</a>
+            </div>
+        </section>
+        <section class="order">
+            <div class="cartProcess">
+                <div class="cartProcessItem">
+                    <p>1</p>
+                    <p>Cart</p>
+                </div>
+                <div class="cartProcessItem cartProcessItemMiddle">
+                    <p class="cartProcessItemInfo">2</p>
+                    <p>Infos</p>
+                </div>
+                <div class="cartProcessItem">
+                    <p class="cartProcessItemConfirm">3</p>
+                    <p>Confirm</p>
+                </div>
+            </div>
+            <div class="infoCart">
+                <div class="infoCartTitle">
+                    <p>Total : NT$4,820</p>
+                    <div>Cart (1 piece) &nbsp; <p class="cartTitleArrow">v</p>
+                    </div>
+                </div>
+                <div class="infoCartDetails cartItemInfo">
+                    <div class="cartItemInfoTitle">
+                        <div>Product</div>
+                        <div>Price</div>
+                        <div>Quantity</div>
+                        <div>Total</div>
+                    </div>
+                    <div class="cartItemInfoItems">
+                        <div>
+                            <img src="https://picsum.photos/50/50/?random=1">
+                        </div>
+                        <div>
+                            <p>MELSIGN - Strap Washed Cargo Shorts - Black</p>
+                            <p>S</p>
+                        </div>
+                        <div>NT$2,380</div>
+                        <div>
+                            <p>2</p> 
+                        </div>
+                        <div>NT$4,760</div>
+                    </div>
+                </div>
+                <div class="infoCartOrder">
+                    <div class="cartInfo">
+                        <div class="cartInfoItem">
+                            <p>Price &nbsp;&nbsp;&nbsp;&nbsp; :</p>
+                            <p>NT$4,760</p>
+                        </div>
+                        <div class="cartInfoItem">
+                            <p>Shipping :</p>
+                            <p>NT$60</p>
+                        </div>
+                        <div class="cartInfoItem">
+                            <p>Total &nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                            <p>NT$4,820</p>
+                        </div>
+                    </div>
+                    <div class="cartExpends"><p>V</p></div>
+                </div>
+            </div>
+            <div class="orderInfo">
+                <div class="orderInfoItem">
+                    <h4>Order Details</h4>
+                    <p>Order Number :</p>
+                    <p>20201228041037260</p>
+                    <p>Order Email :</p>
+                    <p>*********@gmail.com</p>
+                    <p>Order date :</p>
+                    <p>2020-12-28 12:10PM</p>
+                    <p>Order status :</p>
+                    <p>Confirm</p>
+                </div>
+                <div class="orderInfoItem">
+                    <h4>Customer Details</h4>
+                    <p>Name :</p>
+                    <p>xxx</p>
+                    <p>Phone :</p>
+                    <p>09xxxxxxxx</p>
+                </div>
+                <div class="orderInfoItem">
+                    <h4>Shipping Details</h4>
+                    <p>Shipping Methods :</p>
+                    <p>7-11</p>
+                    <p>Name :</p>
+                    <p>xxx</p>
+                    <p>Phone :</p>
+                    <p>09xxxxxxxx</p>
+                </div>
+                <div class="orderInfoItem">
+                    <h4>Payment Details</h4>
+                    <p>Payment Methods :</p>
+                    <p>Credit Card</p>
+                    <p>Status :</p>
+                    <p>paid</p>
+                    <p>Order Number :</p>
+                    <p>20201228041037260</p>
+                </div>
+                <div class="orderInfoItem">
+                    <h4>Contact Us</h4>
+                    <textarea name="" id="" cols="10" rows="5" placeholder="Leave a message !"></textarea>
+                </div>
+                <div class="orderFooter">
+                    <a href="#" class="backToInfo">< Back to Info</a>
+                    <button class="orderConfirm">Confirm</button>
+                    <a href="#">< Back to Info</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        Cora design
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            $('.infoCartDetails').slideToggle();
+            $('.infoCartOrder').slideToggle();
+
+            //cart
+            $('.cartInfoCheckout').on('click',function(){
+                $('.cart').css("display","none");
+                $('.info').css("display","flex");
+                //change color for process 'Infos'
+                $('.cartProcessItemInfo').addClass('changeColorInfo').css("background-color","#f77b1c");
+            })
+
+            //info 
+            $('.infoCartTitle').on('click',function(){
+                $('.infoCartDetails').slideToggle();
+                $('.infoCartOrder').slideToggle();
+                $('.cartTitleArrow').toggleClass('cartTitleArrowRotate');
+            })
+            $('.cartExpends').on('click',function(){
+                $('.infoCartDetails').slideToggle();
+                $('.infoCartOrder').slideToggle();
+                $('.cartTitleArrow').toggleClass('cartTitleArrowRotate');
+            })
+            $('.backToCart').on('click',function(){
+                $('.cart').css("display","flex");
+                $('.info').css("display","none");
+            })
+            $('.infoSend').on('click',function(){
+                $('.info').css("display","none");
+                $('.order').css("display","flex");
+                $('.cartProcessItemConfirm').addClass('changeColorConfirm').css("background-color","#f77b1c");
+            })
+
+            //order
+            $('.backToInfo').on('click',function(){
+                $('.info').css("display","flex");
+                $('.order').css("display","none");
+            })
+        })
+    </script>
+</body>
+</html>
