@@ -2,7 +2,7 @@ create database if not EXISTS marian default character set utf8;
 
 use marian;
 
-CREATE TABLE IF NOT EXISTS
+create table if not exists
  products (
     productId int auto_increment primary key, 
     productName varchar(40), 
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS
     productPrice smallint,
     productInStock smallint
 );
-CREATE TABLE IF NOT EXISTS
+create table if not exists
  customers (
     customerId int auto_increment primary key, 
     customerName varchar(40), 
@@ -21,20 +21,20 @@ CREATE TABLE IF NOT EXISTS
     customerEmail varchar(100), 
     customerAddress varchar(255)
 );
-CREATE TABLE IF NOT EXISTS
+create table if not exists
  orders (
     orderId int auto_increment primary key, 
     customerId int, 
     orderDate datetime
 );
-CREATE TABLE IF NOT EXISTS
+create table if not exists
  orderdetails (
     orderId int primary key, 
     productId int, 
     productPrice smallint, 
     quantity smallint
 );
-CREATE TABLE IF NOT EXISTS
+create table if not exists
  news (
     newsId int auto_increment primary key, 
     newsTitle varchar(50), 
