@@ -363,6 +363,11 @@
                 $('.productsCart').css("display","none");
                 $('.productsBuy').css("display","none");
             })
+            $('.cartCheckout').on('click',function(){
+                setTimeout(function(){
+	                window.location.replace('../members/members.html'); 
+                }, 1000);
+            })
             $(window).scroll(function(){
                 let cartStickTop = 50 - $(window).scrollTop();
                 if($(window).scrollTop() <= 50){

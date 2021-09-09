@@ -115,14 +115,17 @@ section{
     border-bottom: 1px solid #bbb;
 }
 .shipping{
+    width: 100%;
     cursor: pointer;
     margin-right: auto;
 }
 .shippingMinus{
     display: none;
+    cursor: pointer;
 }
 .shippingPlus{
     display: block;
+    cursor: pointer;
 }
 .shippingDetails{
     display: none;

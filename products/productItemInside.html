@@ -247,6 +247,18 @@
                 flag == 0 ? minus.css("display", "block") : minus.css("display", "none");
                 flag == 0 ? flag = 1 : flag = 0; 
             });
+            $('.shippingPlus').click(function(){
+                $('.shippingDetails').slideToggle();
+                flag == 0 ? plus.css("display", "none") : plus.css("display", "block");
+                flag == 0 ? minus.css("display", "block") : minus.css("display", "none");
+                flag == 0 ? flag = 1 : flag = 0; 
+            });
+            $('.shippingMinus').click(function(){
+                $('.shippingDetails').slideToggle();
+                flag == 0 ? plus.css("display", "none") : plus.css("display", "block");
+                flag == 0 ? minus.css("display", "block") : minus.css("display", "none");
+                flag == 0 ? flag = 1 : flag = 0; 
+            });
         });
 
         let products = $(".productsBuyContainer")[0];
