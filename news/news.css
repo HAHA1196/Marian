@@ -1,0 +1,152 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* header */
+header{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: aqua;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+/* main */
+main{
+    padding: 15px 0;
+    background-color: #E8E8E8;
+}
+.news{
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.newsTitle{
+    width: 100%;
+    padding: 20px;
+    font-size: 3rem;
+    font-weight: 400;
+}
+.newsTagSearch{
+    width: 100%;
+    height: 50px;
+    margin: 20px;
+    border-top: 1px solid #bbb;
+}
+
+/* section */
+section{
+    width: 50%;
+    padding: 20px;
+    transition: 1s ;
+}
+.newsPic{
+    width: 100%;
+}
+.newsPic img{
+    width: 100%;
+    filter:grayscale(100%);
+    transition: 1s;
+}
+.newsPic a:hover img{
+    filter:none;
+}
+.newsContent{
+    width: 100%;
+    height: 250px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.newsContent a:hover{
+    color: #888;
+}
+.newsContent h2{
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+.newsContent p{
+    padding-bottom: 10px;
+    font-size: 1rem;
+}
+.newsContent p:hover{
+    color: #888;
+}
+.newsExtend::before{
+    content: '';
+    width: 100%;
+    height: 1px;
+    display: block;
+    position: absolute;
+    top: -15px;
+    background-color: #ccc;
+}
+.newsExtend{
+    padding: 5px 0;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.newsExtend p:nth-child(1){
+    padding: 0;
+    margin-right: auto;
+}
+.newsExtend p:nth-child(1)::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    display: block;
+    background-color: black;
+}
+.newsExtend p:nth-child(2) + p{
+    border-left: 1px solid gray;
+}
+.newsExtend p:nth-child(2){
+    padding: 0 20px 0 0;
+    color: #888;
+}
+.newsExtend p:nth-child(3){
+    padding: 0 0 0 20px;
+    color: #888;
+}
+
+/* loadmore */
+.loadMore{
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    border: 2px solid black;
+}
+.loadMore:hover{
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+
+
+/* footer */
+footer{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: cadetblue;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+@media screen and (max-width:768px) {
+    section{
+        width: 100%;
+    }
+}
