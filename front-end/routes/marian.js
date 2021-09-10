@@ -10,4 +10,8 @@ router.get('/news', function(req, res, next) {
   res.render('marian/news.ejs', {});
 });
 
+router.get('/products', function(req, res, next) {
+  res.render('marian/products.ejs', {});
+});
+
 module.exports = router;
