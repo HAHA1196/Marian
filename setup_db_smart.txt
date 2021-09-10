@@ -1,10 +1,12 @@
-create database if not EXISTS marian default character set utf8;
+create database if not exists marian default character set utf8;
 
 use marian;
 
 create table if not exists
  products (
     productId int auto_increment primary key, 
+    productStyleNumber varchar(10), 
+    productClass varchar(10), 
     productName varchar(40), 
     productDescription text, 
     productImg blob, 
@@ -37,7 +39,15 @@ create table if not exists
 create table if not exists
  news (
     newsId int auto_increment primary key, 
-    newsTitle varchar(50), 
-    newsArticle text, 
-    newsDate datetime
+    newsTitle varchar(50),  
+    newsDate datetime, 
+    newsCoverImg blob 
 );
+create table if not exists
+ newsContent (
+    newsId int, 
+    newsSubtitle varchar(50), 
+    newsArticle text, 
+    newsImg blob, 
+    newsFigcaption text 
+)
