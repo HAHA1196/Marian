@@ -14,4 +14,8 @@ router.get('/products', function(req, res, next) {
   res.render('marian/products.ejs', {});
 });
 
+router.get('/members', function(req, res, next) {
+  res.render('marian/members.ejs', {});
+});
+
 module.exports = router;
