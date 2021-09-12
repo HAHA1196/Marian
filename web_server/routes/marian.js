@@ -61,9 +61,9 @@ router.get('/orders/:customerId/:orderId', function(req, res, next) {
 });
 // 新增訂單
 router.post('/orders', function(req, res, next) {
-  res.send('insert into orders (customerId, orderDate) values (?, ?)'
-  + 'insert into orderdetails (AAA, BBB, CCC) values (?, ?, ?)'
-  + 'insert into orderdetails (AAA, BBB, CCC) values (?, ?, ?)');
+  res.send('insert into orders (customerId, orderDate) values (?, ?);'
+  + 'insert into orderdetails (AAA, BBB, CCC) values (?, ?, ?);'
+  + 'insert into orderdetails (AAA, BBB, CCC) values (?, ?, ?);');
 });
 router.delete('/orders', function(req, res, next) {
   res.send('delete from orders where orderId = ?');
