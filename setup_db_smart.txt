@@ -51,3 +51,5 @@ create table if not exists
     newsImg blob, 
     newsFigcaption text 
 )
+
+insert into news ()
