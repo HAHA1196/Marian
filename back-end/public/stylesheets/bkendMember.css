@@ -33,7 +33,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: slategrey;
+    /* background-color: slategrey; */
     position: relative;
 }
 #logo {
