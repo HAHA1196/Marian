@@ -23,13 +23,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function (req, res, next) {
   var mysql = require("mysql");
   var connection = mysql.createConnection({
+    // socketPath : '/Applications/MAMP/tmp/mysql/mysql.sock',
     host: '127.0.0.1', 
     user: 'root', 
-    password: '', 
+    password: 'root', 
     database: 'marian'
   });
 
   connection.connect(function (err) {
+    if (err) {
+      console.log("!!! Cannot connect !!!");
+      throw err;
+    } else {
+      console.log('connected.');
+    }
   });
 
   req.mysql = connection;
