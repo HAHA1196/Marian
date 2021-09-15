@@ -12,6 +12,9 @@ router.get("/main", function (req, res, next) {
 router.get("/product", function (req, res, next) {
     res.render("backend/bkendProduct.ejs", {});
 });
+router.get("/member", function (req, res, next) {
+    res.render("backend/bkendMember.ejs", {});
+});
 
 
 
