@@ -11,20 +11,22 @@ body {
 }
 
 #contentData {
-    width: 90%;
+    width: 100%;
     border: none;
     font-family: arial, sans-serif;
     border-collapse: collapse;
     text-align: center;
 }
-
 td,
 th {
     min-height: 40px;
-    line-height: 40px;
-    border-top: none;
+    vertical-align: middle;
     padding: 8px;
     position: relative;
+}
+th {
+    line-height: 20px;
+    margin-top: 10px;
 }
 
 td:not(:last-child) {
