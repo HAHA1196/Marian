@@ -22,7 +22,6 @@ body {
 .dividingLine {
     width: 100%;
     border-bottom: 1px solid var(--white);
-    margin: 20px auto;
 }
 /* ------------------------- main section ------------------------- */
 #main {

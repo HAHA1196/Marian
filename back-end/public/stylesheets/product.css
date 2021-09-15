@@ -43,25 +43,29 @@ marquee {
     outline: none;
     color: var(--darkBlue);
 }
-.searchBtn {
+#searchBtn,
+#clearBtn,
+#updateBtn {
     padding: 8px 20px;
     border: 1px solid rgba(255, 255, 255, 0);
     border-radius: 0px 20px 0px 20px;
     color: var(--darkBlue);
-    margin: 0 8px;
+    margin: 0 8px 20px;
     position: relative;
 }
-.searchBtn:hover {
+#searchBtn:hover,
+#clearBtn:hover,
+#updateBtn:hover {
     filter: drop-shadow(1px 1px 3px var(--darkBlue));
 }
-.searchBtn:nth-of-type(1) {
+#searchBtn {
     background-color: var(--white);
 }
-.searchBtn:nth-of-type(2) {
+#clearBtn {
     background-color: var(--darkBlue);
     color: var(--white);
 }
-.searchBtn:nth-of-type(3) {
+#updateBtn {
     background-color: var(--lightYellow);
 }
 
@@ -153,7 +157,80 @@ tr:not(:first-child):hover {
 .editDeleteBtn:hover {
     color: var(--lightBlue);
 }
-/* ------------------------------------------ */
+/* --------------------手風琴展開---------------------- */
+.onOff {
+    color: var(--lightYellow);
+    font-size: 1.5rem;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+.Info {
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 3%;
+    margin: 0 auto;
+}
+.infoImg {
+    /* width: 70%; */
+    min-width: 200px;
+    margin: auto 3% auto 0;
+}
+.infoImg img {
+    width: 100%;
+    object-fit: contain;
+}
+/* .infoTxt {
+    width: 60%;
+} */
+.infoTxt ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.infoTxt li {
+    width: 30%;
+    list-style-type: none;
+    border-left: 1px solid var(--lightYellow);
+    border-bottom: 1px solid var(--lightYellow);
+    border-radius: 0 0 0 15px;
+    color: var(--darkBlue);
+    margin: 0 5% 30px 0;
+    padding: 0 10px 5px;
+}
+.infoTxt span {
+    color: var(--white);
+}
+/* .infoTxt .productStyleNumber {
+} */
+.infoTxt .productName {
+    width: 60%;
+}
+/* .infoTxt .productClass {
+}
+.infoTxt .productPrice {
+}
+.infoTxt .productSize {
+}
+.infoTxt .productInStock {
+} */
+.infoTxt .productDescription {
+    width: 80%;
+}
+
+#confirmBtn {
+    position: absolute;
+    bottom: 0;
+    right: 3%;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 0px 20px 0px 20px;
+    background-color: var(--lightYellow);
+    color: var(--darkBlue);
+    margin: 0 8px 30px;
+    padding: 8px 20px;
+    width: 120px;
+}
+/* ------------------------------------------------ */
 @media only screen and (min-width: 1300px) {
     .searchBtn:nth-of-type(3) {
         position: fixed;
