@@ -20,6 +20,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function (req, res, next) {
+  var mysql = require("mysql");
+  var connection = mysql.createConnection({
+    host: '127.0.0.1', 
+    user: 'root', 
+    password: '', 
+    database: 'marian'
+  });
+
+  connection.connect(function (err) {
+  });
+
+  req.mysql = connection;
+  next();
+})
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
