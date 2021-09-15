@@ -27,12 +27,14 @@ body {
 /* ------------------------- heading section ------------------------- */
 #headingSection {
     width: 90%;
-    height: 120px;
+    height: auto;
     margin: 2%;
     display: inline-flex;
     position: fixed;
     top: 0;
     left: 0;
+    background-color: slategrey;
+    position: relative;
 }
 #logo {
     width: 120px;
@@ -132,3 +134,12 @@ marquee {
     border-left: 6px solid var(--lightYellow);
 }
 /* ------------------------- content section ------------------------- */
+#contentSection {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: rosybrown;
+    height: 70%;
+    width: calc(100vw - 200px);
+    margin-top: 20px;
+}
