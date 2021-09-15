@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function (req, res, next) {
   var mysql = require("mysql");
   var connection = mysql.createConnection({
+    // socketPath : '/Applications/MAMP/tmp/mysql/mysql.sock',
     host: '127.0.0.1', 
     user: 'root', 
     password: 'root', 
@@ -31,10 +32,17 @@ app.use(function (req, res, next) {
 
   connection.connect(function (err) {
     if (err) {
+<<<<<<< HEAD
       console.log("!!! No !!!");
       throw err;
     } else {
       console.log('connected.')
+=======
+      console.log("!!! Cannot connect !!!");
+      throw err;
+    } else {
+      console.log('connected.');
+>>>>>>> 9723e4e6b1511337a54f4253726ced1fe538f5ea
     }
   });
 
