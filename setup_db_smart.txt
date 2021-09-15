@@ -9,7 +9,7 @@ create table if not exists
     productClass varchar(10), 
     productName varchar(40), 
     productDescription text, 
-    productImg blob, 
+    productImg longblob, 
     productSize varchar(10) null, 
     productPrice smallint,
     productInStock smallint
@@ -48,7 +48,7 @@ create table if not exists
     newsId int, 
     newsSubtitle varchar(50), 
     newsArticle text, 
-    newsImg blob, 
+    newsImg longblob, 
     newsFigcaption text 
 );
 
