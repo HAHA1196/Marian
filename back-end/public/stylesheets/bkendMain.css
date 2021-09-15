@@ -138,5 +138,10 @@ marquee {
     bottom: 0;
     height: 85%;
     width: calc(100vw - 200px);
-    padding: 0 8%;
+    padding: 0 5%;
+}
+@media only screen and (max-width: 1230px) {
+    #contentSection {
+        height: 80%;
+    }
 }
