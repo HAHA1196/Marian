@@ -32,17 +32,10 @@ app.use(function (req, res, next) {
 
   connection.connect(function (err) {
     if (err) {
-<<<<<<< HEAD
       console.log("!!! No !!!");
       throw err;
     } else {
       console.log('connected.')
-=======
-      console.log("!!! Cannot connect !!!");
-      throw err;
-    } else {
-      console.log('connected.');
->>>>>>> 9723e4e6b1511337a54f4253726ced1fe538f5ea
     }
   });
 
