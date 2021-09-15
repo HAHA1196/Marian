@@ -25,11 +25,17 @@ app.use(function (req, res, next) {
   var connection = mysql.createConnection({
     host: '127.0.0.1', 
     user: 'root', 
-    password: '', 
+    password: 'root', 
     database: 'marian'
   });
 
   connection.connect(function (err) {
+    if (err) {
+      console.log("!!! No !!!");
+      throw err;
+    } else {
+      console.log('connected.')
+    }
   });
 
   req.mysql = connection;
