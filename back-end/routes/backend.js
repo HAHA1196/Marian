@@ -13,4 +13,6 @@ router.get("/product", function (req, res, next) {
     res.render("backend/bkendProduct.ejs", {});
 });
 
+
+
 module.exports = router;
