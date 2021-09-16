@@ -9,21 +9,18 @@
     --lightYellow: #ffe6b7;
     --lightBlue: #b4cfeb;
     --darkBlue: #697a95;
+    --fontBlue: #546279;
 }
 
 body {
     background-color: var(--lightBlue);
-    color: var(--darkBlue);
+    color: var(--fontBlue);
     line-height: 2.5rem;
-    font-size: 15px;
+    font-size: 16px;
     position: relative;
 }
 
-.dividingLine {
-    width: 100%;
-    border-bottom: 1px solid var(--white);
-}
-/* ------------------------- main section ------------------------- */
+/* ------------------------- left section ------------------------- */
 #main {
     width: 18vw;
     max-width: 250px;
@@ -62,13 +59,64 @@ body {
     width: 70%;
     background-color: var(--darkBlue);
     border: none;
-    border-left: 8px solid var(--darkBlue);
+    border-left: 6px solid var(--darkBlue);
     color: var(--lightBlue);
-    font-size: 18px;
+    font-size: 20px;
     padding: 15px 0;
     vertical-align: middle;
 }
 #sidebar button:hover {
     color: var(--lightYellow);
     border-left: 6px solid var(--lightYellow);
+}
+
+/* ------------------------- right section ------------------------- */
+
+/*  heading section  */
+#container {
+    width: calc(100vw - 250px);
+    min-width: 82vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 auto;
+}
+#headingSec {
+    width: calc(100vw - 250px);
+    min-width: 82vw;
+    position: fixed;
+    top: 0;
+    background-color: var(--lightBlue);
+    padding: 0 5%;
+    z-index: 1;
+}
+#notification {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    margin: 3% 0;
+}
+#notification i {
+    width: 130px;
+}
+marquee {
+    direction: left;
+}
+
+.dividingLine {
+    width: 100%;
+    border-bottom: 1px solid var(--white);
+}
+/*  content section  */
+#contentSec {
+    position: relative;
+    top: 200px; /*組長 這邊要依據heading高度調整*/
+}
+#contentData {
+    width: 90%;
+    margin: 0 auto;
+    border: none;
+    border-collapse: collapse;
+    text-align: center;
 }

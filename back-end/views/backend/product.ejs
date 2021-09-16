@@ -5,28 +5,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Marian後台</title>
+        <link
+            rel="stylesheet"
+            href="/font-awesome-4.7.0/css/font-awesome.css"
+        />
+        <link rel="stylesheet" href="/stylesheets/main.css" />
         <link rel="stylesheet" href="/stylesheets/product.css" />
     </head>
     <body>
-        <!-- ------------------------- main section start ------------------------- -->
+        <!-- ------------------------- left section ------------------------- -->
         <div><%- include('./main.ejs'); %></div>
-        <!-- ------------------------- main section end ------------------------- -->
 
-        <!-- ------------------------- function section ------------------------- -->
-
-        <div id="functionSec">
+        <!-- ------------------------- right section ------------------------- -->
+        <div id="container">
             <!-- heading section -->
             <div id="headingSec">
-                <div id="notification">
-                    <i class="fa fa-bell-o" aria-hidden="true">系統公告：</i>
-                    <marquee>
-                        📣 🎉 🍾️
-                        熱烈歡迎以下六位同仁加入Marian團隊：黃李豪、黃靖雯、凃家愷、張簡玉湞、廖昱榕、洪宇涓
-                        ～～我們將舉辦員工訓練 &
-                        迎新茶會，請各位於下述時間攜帶簡章至五樓會議室集合唷！～～2021年9月13日～～下午1:30～～🥳
-                        👏 🥂
-                    </marquee>
-                </div>
+                <div id="notification"><%- include('./marquee.ejs'); %></div>
                 <form action="">
                     <div class="searchInput">
                         <span>分類 |</span>
@@ -79,7 +73,7 @@
             <div id="contentSec">
                 <table id="contentData">
                     <tr>
-                        <th>編輯/刪除</th>
+                        <th>編輯</th>
                         <th>＃Id</th>
                         <th>產品照</th>
                         <th>種類</th>
@@ -92,11 +86,8 @@
                     </tr>
                     <tr onClick="toggleRow(this)">
                         <td>
-                            <button class="editDeleteBtn">
+                            <button class="editBtn">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </button>
-                            <button class="editDeleteBtn">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
                             </button>
                         </td>
                         <td>3244</td>
@@ -143,11 +134,8 @@
                     </tr>
                     <tr onClick="toggleRow(this)">
                         <td>
-                            <button class="editDeleteBtn">
+                            <button class="editBtn">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </button>
-                            <button class="editDeleteBtn">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
                             </button>
                         </td>
                         <td>3245</td>
@@ -191,11 +179,8 @@
                     </tr>
                     <tr onClick="toggleRow(this)">
                         <td>
-                            <button class="editDeleteBtn">
+                            <button class="editBtn">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </button>
-                            <button class="editDeleteBtn">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
                             </button>
                         </td>
                         <td>3246</td>
@@ -239,11 +224,8 @@
                     </tr>
                     <tr onClick="toggleRow(this)">
                         <td>
-                            <button class="editDeleteBtn">
+                            <button class="editBtn">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </button>
-                            <button class="editDeleteBtn">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
                             </button>
                         </td>
                         <td>26</td>

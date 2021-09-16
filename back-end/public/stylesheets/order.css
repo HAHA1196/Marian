@@ -1,50 +1,5 @@
 /* ------------------------- right section ------------------------- */
 
-/*  heading section  */
-.searchInput {
-    display: inline;
-    border: 1px solid var(--white);
-    border-radius: 50px;
-    color: var(--white);
-    padding: 8px 20px;
-    margin: 0 8px;
-}
-.searchInput:hover {
-    box-shadow: 1px 1px 10px 1px rgba(255, 255, 255, 0.2);
-}
-.searchInput select,
-.searchInput input {
-    background-color: var(--lightBlue);
-    border: none;
-    outline: none;
-    color: var(--fontBlue);
-}
-#searchBtn,
-#clearBtn,
-#updateBtn {
-    padding: 8px 20px;
-    border: 1px solid rgba(255, 255, 255, 0);
-    border-radius: 0px 20px 0px 20px;
-    color: var(--fontBlue);
-    margin: 0 8px 20px;
-    /* position: relative; */
-}
-#searchBtn:hover,
-#clearBtn:hover,
-#updateBtn:hover {
-    filter: drop-shadow(1px 1px 3px var(--darkBlue));
-}
-#searchBtn {
-    background-color: var(--white);
-}
-#clearBtn {
-    background-color: var(--darkBlue);
-    color: var(--white);
-}
-#updateBtn {
-    background-color: var(--lightYellow);
-}
-
 /*  content section  */
 #contentSec {
     /* main.css檔案裡面 這裡有設定 position: relative; */
@@ -78,7 +33,7 @@ tr {
     border-radius: 0 30px 0 0;
     /* cursor: pointer; */
     display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr 2fr 2fr 4fr 1.5fr 1fr 1.5fr 5fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr;
     justify-content: flex-start;
 }
 

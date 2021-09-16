@@ -18,13 +18,13 @@ router.get("/product", function (req, res, next) {
     res.render("backend/product.ejs", {});
 });
 
-/* product page */
+/* member page */
 // http://localhost:8000/backend/member
 router.get("/member", function (req, res, next) {
-    res.render("backend/bkendMember.ejs", {});
+    res.render("backend/bkendMember.ejs", {}); //這裡還沒改黨名
 });
 
-/* product page */
+/* order page */
 // http://localhost:8000/backend/order
 router.get("/order", function (req, res, next) {
     res.render("backend/order.ejs", {});

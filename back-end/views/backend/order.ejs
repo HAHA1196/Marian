@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Marian後台</title>
+        <link
+            rel="stylesheet"
+            href="/font-awesome-4.7.0/css/font-awesome.css"
+        />
+        <link rel="stylesheet" href="/stylesheets/main.css" />
+        <link rel="stylesheet" href="/stylesheets/product.css" />
+        <!-- <link rel="stylesheet" href="/stylesheets/order.css" /> -->
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/bkendMain.css" />
-    <link rel="stylesheet" href="/stylesheets/product.css" />
-    <script src="https://kit.fontawesome.com/5b6a99e511.js" crossorigin="anonymous"></script>
-</head>
+    <body>
+        <!-- ------------------------- left section ------------------------- -->
+        <div><%- include('./main.ejs'); %></div>
 
-<body>
-    <div class="left">
-        <%- include('./sidebar') %>
-    </div>
-    <div class="right">
-        <%- include('./marquee') %>
-        <div class="container">
-            <!-- 在此開始創作 -->
-            <div class="search"></div>
-            <hr>
+        <!-- ------------------------- right section ------------------------- -->
+        <div id="container">
+            <!-- heading section -->
+            <div id="headingSec">
+                <div id="notification"><%- include('./marquee.ejs'); %></div>
+                <!-- 組長這裏面的 input & button 給你寫
+                    開始創作..... -->
+                <div class="dividingLine"></div>
+            </div>
+
+            <!-- content section -->
+            <div class="contentSec">
+                <!-- 開始創作..... 記得調整top-->
+                <!-- //<%- include('./contentData.ejs'); %> -->
+            </div>
         </div>
-    </div>
-</body>
-
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/main.js"></script>
+    </body>
 </html>
