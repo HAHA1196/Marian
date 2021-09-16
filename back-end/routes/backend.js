@@ -24,4 +24,10 @@ router.get("/member", function (req, res, next) {
     res.render("backend/bkendMember.ejs", {});
 });
 
+/* product page */
+// http://localhost:8000/backend/order
+router.get("/order", function (req, res, next) {
+    res.render("backend/order.ejs", {});
+});
+
 module.exports = router;
