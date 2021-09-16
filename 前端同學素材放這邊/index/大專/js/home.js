@@ -42,28 +42,6 @@ $( ".navbarMenu" ).find( ".hover" ).css( "transition", "transform .5s ease-in-ou
 //  
 // news
 // news
-// $(document).ready(function() {
-//     new Swiper('.swiperSlide', {
-//         loop: true,
-//         slidesPerView: 3,
-//         paginationClickable: true,
-//         spaceBetween: 20,
-//         breakpoints: {
-//             1920: {
-//                 slidesPerView: 3,
-//                 spaceBetween: 30
-//             },
-//             1028: {
-//                 slidesPerView: 2,
-//                 spaceBetween: 30
-//             },
-//             480: {
-//                 slidesPerView: 1,
-//                 spaceBetween: 10
-//             }
-//         }
-//     });
-// });
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 3,
       spaceBetween: 50,
