@@ -65,18 +65,21 @@
         $(document).ready(function(){
             // member register display
             $('.memberConditionRegister').on('click',function(){
-                $('.memberConditionRegister').css("border-bottom","none").css("color","#f77b1c");
-                $('.memberConditionLogin').css("border-bottom","1px solid #ccc").css("color","black");
+                $('.membersCondition').css("background-color","rgb(149, 169, 201)");
+                $('.memberConditionRegister').css("color","rgb(105, 122, 149)").css("background-color","rgb(255, 230, 183)");
+                $('.memberConditionLogin').css("color","rgb(255, 230, 183)").css("background-color","rgb(149, 169, 201)");
                 $('.membersRegister').css("display","block");
                 $('.membersLogin').css("display","none");
             })
 
             // member login display
             $('.memberConditionLogin').on('click',function(){
-                $('.memberConditionRegister').css("border-bottom","1px solid #ccc").css("color","black");
-                $('.memberConditionLogin').css("border-bottom","none").css("color","#f77b1c");
+                $('.membersCondition').css("background-color","rgb(255, 230, 183)");
+                $('.memberConditionRegister').css("color","rgb(255, 230, 183)").css("background-color","rgb(149, 169, 201)");
+                $('.memberConditionLogin').css("color","rgb(105, 122, 149)").css("background-color","rgb(255, 230, 183)");
                 $('.membersRegister').css("display","none");
                 $('.membersLogin').css("display","block");
+                console.log('fuck')
             })
 
             // I agree checkbox + join button

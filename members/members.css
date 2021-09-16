@@ -1,51 +1,69 @@
 /* header */
-header{
+/* header{
     width: 100%;
     height: 50px;
     text-align: center;
     line-height: 50px;
-    background-color: aqua;
+    background-color: rgb(105, 122, 149);
     font-size: 36px;
     font-weight: 900;
-}
+    color: rgb(255, 230, 183);
+} */
 
 /* main */
 main{
     width: 100%;
+    /* background-color: rgb(180,207,235); */
 }
 section{
-    /* max-width: 1200px; */
-    width: 600px;
+    max-width: 600px;
+    /* padding: 30px 0; */
     margin: 30px auto;
     border: 1px solid #ccc;
+    border-radius: 0 40px 0 0;
+    position: relative;
 }
 .membersCondition{
     display: flex;
+    background-color: rgb(149, 169, 201);
+    border-radius: 0 40px 0 0;
 }
 .memberConditionRegister,
 .memberConditionLogin{
     width: 50%;
     padding: 20px 0;
-    margin: 0 0 20px 0;
+    /* margin: 0 0 20px 0; */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     text-align: center;
+    background-color: rgb(149, 169, 201);
 }
 .memberConditionRegister{
-    color: #f77b1c;
+    background-color: rgb(255, 230, 183);
+    color:rgb(105, 122, 149) ;
+    border-radius: 0 40px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .memberConditionLogin{
-    border-bottom: 1px solid #ccc;
-}
-.memberConditionLogin{
-    border-left: 1px solid #ccc;
+    /* width: 100%; */
+    /* border-bottom: 1px solid #ccc; */
+    border-radius: 0 40px 0 0;
+    /* opacity: .5; */
+    margin-left: auto;
+    color: rgb(255, 230, 183);
 }
 .membersRegister{
     width: 100%;
-    padding: 10px 50px;
+    padding: 20px 50px 10px 50px;
     /* display: none; */
+    background-color: rgb(180,207,235);
+    /* border-left: 3px solid rgb(255, 230, 183);
+    border-right: 3px solid rgb(255, 230, 183);
+    border-bottom: 3px solid rgb(255, 230, 183); */
 }
 .membersRegisterInfo{
     width: 100%;
@@ -54,22 +72,30 @@ section{
 .membersRegisterInfo::after{
     content: '';
     width: 100%;
-    height: 2px;
+    height: 4px;
     display: block;
-    background-color: #ccc;
+    background-color: rgb(255, 230, 183);
     position: absolute;
     bottom: -20px;
+    opacity: 0.7;
 }
 .membersRegisterInfo p{
     line-height: 1.2rem;
+    color: rgb(105, 122, 149);
+
 }
 .membersRegisterAgreement{
     padding: 40px 0 0 0;
+    color: rgb(105, 122, 149);
 }
 .membersLogin{
     width: 100%;
-    padding: 10px 50px;
+    padding: 20px 50px 10px 50px;
     display: none;
+    background-color: rgb(180,207,235);
+    /* border-left: 3px solid rgb(255, 230, 183);
+    border-right: 3px solid rgb(255, 230, 183);
+    border-bottom: 3px solid rgb(255, 230, 183); */
 }
 .membersLogin > p:last-child{
     width: 100%;
@@ -78,13 +104,13 @@ section{
 }
 .membersLogin a{
     text-decoration: none;
-    color: #777;
+    color: rgb(105, 122, 149);
 }
 .membersRegisterTitle,
 .membersLoginTitle{
     padding: 0 0 10px 0;
     text-align: center;
-    color: #F77B1C;
+    color: rgb(105, 122, 149);
 }
 .membersRegisterInfo input,
 .membersLogin input{
@@ -101,24 +127,31 @@ button{
     padding: 15px 0;
     margin: 20px 0 20px 0;
     font-size: 1.2rem;
-    background-color: #F77B1C;
-    color: white;
+    border-radius: 0 40px 0 40px;
+    background-color:rgb(149, 169, 201);
+    color:rgb(255, 230, 183);
     border: none;
     cursor: pointer;
 }
 button:disabled{
-    background-color: #f77b1c;
+    background-color:rgb(149, 169, 201);
     opacity: .6;
 }
 
 /* footer */
-footer{
+/* footer{
     width: 100%;
     height: 50px;
-    margin-top: 50px;
     text-align: center;
     line-height: 50px;
-    background-color: cadetblue;
+    background-color: rgb(105, 122, 149);
     font-size: 36px;
     font-weight: 900;
+    color: rgb(255, 230, 183);
+} */
+
+@media screen and (max-width:660px) {
+    section{
+        margin: 30px;
+    }
 }
