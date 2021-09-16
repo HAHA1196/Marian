@@ -79,7 +79,7 @@ ul{
     top:0;
     left: 0;
     width: 100%;
-    padding: 20px 8px 0px 2%;
+    padding: 10px 10px 0px  10px;
     display: flex;
     justify-content: space-between;
     transition: .6s;
@@ -109,12 +109,9 @@ header.sticky >.navbar >ul>li>a{
 }
 /*  */
 .headerLogo{
-    position: relative;
     margin: 0;  
-    padding: 0;
+    padding-left: 0;
     z-index: 101;
-    display: inline-flex;
-    align-items:flex-end;
     padding-bottom: 1.2rem;
 
 }
@@ -124,9 +121,10 @@ header.sticky >.navbar >ul>li>a{
     color: #212529;
 }
 /* logo */
+
 .logo {
-    width:4rem;
-    background-color: tomato;
+    width:5rem;
+
     /* object-fit: contain; */
     /* height: auto; */
     
@@ -732,15 +730,11 @@ header.sticky >.navbar >ul>li>a{
     color: #b9b9b9;
     font-size:.9rem;
 }
-.detail{
-    /* letter-spacing: 2px; */
-}
-.detail>p:nth-child(1){
-    line-height: 10px;
+.detail>span{
+    line-height: 50px;
 }
 .detail>p:not(:first-child){
-    padding-top: 2rem;
-    /* line-height: 4rem;s */
+    padding-top:1.5rem;
 }
 
 

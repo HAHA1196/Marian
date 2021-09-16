@@ -91,13 +91,13 @@ $( ".navbarMenu" ).find( ".hover" ).css( "transition", "transform .5s ease-in-ou
 //  sns
 
 
-concept
-$('.conceptF').mousemove(function(){
-    var moveX=(e.clientX* -1/15);
-    var moveY=(e.clientY* -1/15);
-    $(this).css('background-position',moveX+'px '+moveY+'px ')
+// concept
+// $('.conceptF').mousemove(function(){
+//     var moveX=(e.clientX* -1/15);
+//     var moveY=(e.clientY* -1/15);
+//     $(this).css('background-position',moveX+'px '+moveY+'px ')
 
-})
+// })
 // Swiper Configuration
 // material
 $(function(){

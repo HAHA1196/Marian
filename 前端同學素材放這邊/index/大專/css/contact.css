@@ -37,7 +37,6 @@ a {
 
 }
 #welcomecInner {
-    /* position: relative; */
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -109,7 +108,7 @@ a {
     z-index: 1;
 
 }
-#contactus-inner {
+#contactusInner {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -129,7 +128,7 @@ a {
     z-index: 2;
 
 }
-.contactus-tit{
+.contactusTit{
     font-size: 2rem;
     position: absolute;
     top:5rem;
@@ -137,18 +136,22 @@ a {
 
 
 }
-.map-inner {
+.contusContain{
+    display: flex;
+    flex-direction: row;
+}
+.mapInner {
     margin-top: 2rem;
     filter: grayscale(1);
 
 }
-.map-inner>iframe{
+.mapInner>iframe{
     width: 400px;
     height: 300px;
 
 }
 /* form */
-.contus-form{
+.contusForm{
     width: 60%;
     text-align: left;
    margin-left: 7rem;
@@ -164,7 +167,7 @@ a {
 
 
 }
-.contus-form>h3{
+.contusForm>h3{
     font-size:1.8rem;
     font-weight: 500;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -185,31 +188,15 @@ form {
    border-radius: 50%;
    background-color: #ffe6b7;
 } */
-.form-group{
+.formGroup{
     padding-top:.8rem;
     position: relative;
     padding: 1rem;
 
 
 }
-.form-group-s{
-    position: relative;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    padding: 0 1rem 1rem 1rem;
-    font-size: 1.2rem;
-    
 
-
-
-}
-.form-group-s>h1{
-    padding: 1rem 0;
-    font-size: 1.1rem;
-
-}
-
-.form-group>label{
+.formGroup>label{
     text-align: left;
     display: inline-block;
     max-width: 100%;
@@ -217,7 +204,7 @@ form {
     font-weight: 300;
 
 }
-.form-control{
+.formControl{
     padding: .3rem;
     height: 2.5rem;
     width: 100%;
@@ -233,7 +220,7 @@ form {
 
 
 }
-.form-group>i{
+.formGroup>i{
     position: absolute;
     top: 35px;
     right: 0;
@@ -245,7 +232,7 @@ form {
     z-index: 4;
 
 }
-.form-group>textarea{
+.formGroup>textarea{
     height: 80px;
 }
 input:focus {
@@ -257,17 +244,14 @@ textarea:focus{
 textarea{
     border: 1px;
 }
-.contus-contain{
-    display: flex;
-    flex-direction: row;
-}
+
 @media only screen and  (max-width: 1024px){
-    .contactus-tit{
+    .contactusTit{
         right:5rem;
     }
 }
 @media only screen  and (max-width: 812px){
-    .contus-contain{
+    .contactusTit{
         display: block;
         position: relative;
         width: 100%;
@@ -278,30 +262,30 @@ textarea{
         display: none;
 
     }
-    .contus-form{
+    .contusForm{
         width:100%;
         margin-left: unset;
         margin-top: 10rem;
     }
-    .map-inner{
+    .mapInner{
         position: absolute;
         top: 4rem;
         right:0;
     }
-    .contus-txt{
+    .contusTxt{
         width: 50%;
     }
-    .map-inner>iframe{
+    .mapInner>iframe{
         width: 320px;
         height: 280px;
     
     }
-    .contus-txt>p{
+    .contusTxt>p{
         line-height: 2rem;
     }
 }
 @media only screen  and (max-width: 450px){
-    .contus-contain{
+    .contusContain{
         display: block;
         position: relative;
         width: 100%;
@@ -312,93 +296,49 @@ textarea{
         display: none;
 
     }
-    .contus-form{
+    .contusForm{
         width:100%;
         margin-left: unset;
         margin-top: 2rem;
     }
-    .map-inner{
+    .mapInner{
         position: unset;
     }
-    .contus-contain .contus-txt{
+    .contusContain .contusTxt{
         width: 100%;
         padding-top:0;
     }
-    .map-inner>iframe{
+    .mapInner>iframe{
         width: 320px;
         height: 280px;
     
     }
-    .contus-txt>p{
+    .contusTxt>p{
         line-height: 2rem;
     }
-    .quote-cont>h2{
+    .quoteCont>h2{
         line-height: 2rem;
     }
-    .form-group-s>label{
-        padding:6px;
-    }
-    .contactus-tit{
+    .contactusTit{
         text-align: center;
         font-size: 1.3rem;
         font-weight: 600;
     }
-    .us-loc_link .us-loc__icon{
+    .uslocLink .uslocIcon{
         font-size: 1.3rem;
     }
-    .us-loc_link .us-loc-ins__name{
+    .uslocLink .uslocName{
         font-size:1rem;
     }
 }
 /* form  end*/
-.contus-contain>h1{
+.contusContain>h1{
     text-align: center;
     font-size: 2rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
-.contus-lin{
-    position: relative;
-    display: inline-block;
-    width: 310px;
-    padding: 15px 0 15px 40px;
-    color: #000;
-    border: 3px solid #ccc;
-    line-height: 1;
-    transition: background-color 0.2s;
-    text-align: left;
-    margin-right: 3rem;
-    margin-top: 50px;
-    margin-bottom: 1rem;
-   
-}
-.contus-lin::before{
-    content: '';
-    background: linear-gradient(to right, #4C5664 0%, #466460 50%, #A27750 100%);
-    background-image: url(//cdn.shopify.com/s/files/1/0284/7109/9437/files/icon_arrow1_black_2x_4fb76695-d37f-491b-b2f0-05f6c176b6ce.png?v=1580873581);
-    background-size: 6px 10px;
-    width: 6px;
-    height: 10px;
-    position: absolute;
-    top: 50%;
-    right: 24px;
-}
-
-.contus-lin >small{
-    display: inline-block;
-    font-family: copperplate, serif;
-    font-size: 10px;
-    line-height: 1.8;
-
-}
-.contus-lin > h1{
-    font-family: linotype-sabon, 'Noto Serif JP', serif;
-    font-size: 20px;
-    line-height: 1.4;
-    vertical-align: center;
-   
-}
-.contus-txt{
+.contusTxt{
     padding-top:5rem;
     text-align: center;
     z-index: 3;
@@ -406,14 +346,13 @@ textarea{
   
 
 }
-.contus-txt>p{
+.contusTxt>p{
     font-size: 1.5rem;
-    /* line-height: 0.5; */
     color: #555;
     margin-bottom: 31px;
     text-align: center;
 }
-.us-loc_link{
+.uslocLink{
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -421,7 +360,7 @@ textarea{
     text-decoration: none;
     padding-left: 4rem;
 }
-.us-loc__icon{
+.uslocIcon{
     display: inline-block;
     width: 20px;
     margin-right: 15px;
@@ -429,59 +368,47 @@ textarea{
     text-align: center;
 }
 
-.us-loc-map__name {
-    font-size: 1.3rem;
-    filter: blur(0);
-    text-decoration: underline;
-    letter-spacing: .2px;
-}
-.us-loc-ins__name{
+.uslocName{
     font-weight: 500;
     font-size: 1.1rem;
-    letter-spacing: .2px;
+    letter-spacing: 1px;
+    padding-left: 10px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 /* contact rwd */
-@media only screen and (max-width: 768px){
-}
-@media only screen and (max-width: 450px){
-    .contus--contain::after{
-        content: "";
-        opacity: 0.3;
-    }
-    
-}
 
 /* contactus rwd:end */
 /* quote */
 #quote{
     padding: 100px 6.5% 0px 6.5% ;
    background-color: #b4cfeb59;
-   /* background-image: url(../img/aw12.jpeg); */
    background-blend-mode: multiply;
     background-size: contain;
 
 
 }
-#quote-inner {
+#quoteInner {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 5rem;
 
 }
-.quote-cont{
-    color: #343333;
+.quoteCont{
+    color: #697a95;
     
 
 }
-.quote-cont>h2{
+.quoteCont>h2{
    text-align: center;
    font-size: 1.5rem;
    padding-bottom: 1rem;
    text-shadow: 1px 1px #495057;
 
 }
-.quote-cont>p{
+.quoteCont>p{
     text-align: center;
     font-size: .8rem;
  
