@@ -1,0 +1,165 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.decorateContainer{
+    width: 100%;
+    position: relative;
+    height: 163px;
+}
+
+.decorateBoxOne{
+    width: 100%;
+    height: 82px;
+    background-color: rgb(149,169,201);
+}
+
+.decorateBoxTwo{
+    width: 50%;
+    height: 163px;
+    background-color: rgb(105,122,149);
+    position: absolute;
+    top: 0;
+    left:0;
+}
+
+.contentBox{
+    width: 100%;
+    display: flex;
+    height: auto;
+}
+
+.contentBoxLeft{
+    width: 40%;
+}
+
+.contentBoxRight{
+   width: 60%;
+   padding-top: 99px;
+}
+
+.contentBoxTitle{ 
+    word-spacing: 3px;
+    font-size: 86px;
+    padding-top: 99px;
+    padding-left: 90px;
+    position: relative;
+    color: rgb(180,207,235);
+}
+.faqRoundedRectangle{
+    position: relative;
+}
+
+.faqRoundedRectangle::before{
+    content: "";
+    width: 28px;
+    height: 200px;
+    background-color: rgb(255,230,183);
+    border-radius: 2em;
+    position: absolute;
+    top: 17px;
+    left: -50px;
+}
+
+.contentBoxImg{
+    padding-left: 40px;
+    padding-bottom: 20px;
+    width: 60%;
+   margin-top: 30%;
+}
+.contentBoxImg img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+
+/* 還須改 */
+.faq{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+
+.collapsible {
+    background: rgb(105,122,149);
+    background: linear-gradient(90deg, rgba(105,122,149,1) 0%, rgba(176,202,230,1) 100%);
+    color: white;
+    border-radius: 2em;;
+    cursor: pointer;
+    padding: 18px;
+    width: 75%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-top: 2px;
+    position: relative;
+  }
+  
+.fa-angle-right{
+    font-size: 25px;
+    transform: rotate(90deg);
+    position: absolute;
+    right: 25px;
+    /* color: rgb(255,230,183); */
+}
+  
+  .content {
+    padding: 9px 18px;
+    display: none;
+    overflow: hidden;
+   color: rgb(105,122,149);
+    width: 75%;
+    line-height: 35px;
+  }
+
+  .content a{
+      text-decoration: none;
+      color: rgb(105,122,149);
+  }
+
+  .content a:hover{
+    color:rgb(180,207,235);
+}
+
+.faqOne ,.faqTwo, .faqThree, .faqFour, .faqFive{
+    margin: 10px 0;
+}
+
+.faqOne ,.faqTwo, .faqThree, .faqFour, .faqFive p{
+    color: rgb(105,122,149);
+}
+
+.contactUs{
+    margin-top: 5%;
+}
+
+.contactUs p{
+    color: rgb(105,122,149);
+}
+
+.contactUsBtn{
+    background: rgb(105,122,149);
+    background: linear-gradient(90deg, rgba(105,122,149,1) 0%, rgba(176,202,230,1) 100%);
+    border-radius: 2em;;
+    cursor: pointer;
+    padding: 10px;
+    width: 10%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+}
+
+.contactUsBtn a{
+    text-decoration: none;
+    color: white;
+}
+
+.contactUsBtn a:hover{
+    color: rgb(255,230,183);
+}
