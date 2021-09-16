@@ -121,7 +121,7 @@ header.sticky >.navbar >ul>li>a{
 .headerLogo> span{
     font-size: 1rem;
     font-weight: 600;
-    color: #212529;
+    /* color: #212529; */
 }
 /* logo */
 .logo {
