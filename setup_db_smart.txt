@@ -17,7 +17,8 @@ create table if not exists
 create table if not exists
  customers (
     customerId int auto_increment primary key, 
-    customerName varchar(40), 
+    customerName varchar(40),
+    customerPassword varchar(30), 
     customerGender tinyint(1), 
     customerPhone varchar(24), 
     customerEmail varchar(100), 
