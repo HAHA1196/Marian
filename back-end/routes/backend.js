@@ -21,7 +21,7 @@ router.get("/product", function (req, res, next) {
 /* member page */
 // http://localhost:8000/backend/member
 router.get("/member", function (req, res, next) {
-    res.render("backend/bkendMember.ejs", {}); //這裡還沒改黨名
+    res.render("backend/member.ejs", {});
 });
 
 /* order page */
