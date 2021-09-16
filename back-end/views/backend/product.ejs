@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Marian後台</title>
+        <link rel="stylesheet" href="/stylesheets/product.css" />
+    </head>
+    <body>
+        <!-- ------------------------- main section start ------------------------- -->
+        <div><%- include('./main.ejs'); %></div>
+        <!-- ------------------------- main section end ------------------------- -->
+
+        <!-- ------------------------- function section ------------------------- -->
+
+        <div id="functionSec">
+            <!-- heading section -->
+            <div id="headingSec">
+                <div id="notification">
+                    <i class="fa fa-bell-o" aria-hidden="true">系統公告：</i>
+                    <marquee>
+                        📣 🎉 🍾️
+                        熱烈歡迎以下六位同仁加入Marian團隊：黃李豪、黃靖雯、凃家愷、張簡玉湞、廖昱榕、洪宇涓
+                        ～～我們將舉辦員工訓練 &
+                        迎新茶會，請各位於下述時間攜帶簡章至五樓會議室集合唷！～～2021年9月13日～～下午1:30～～🥳
+                        👏 🥂
+                    </marquee>
+                </div>
+                <form action="">
+                    <div class="searchInput">
+                        <span>分類 |</span>
+                        <select name="sortProduct" id="sortProduct">
+                            <option value="">請選擇</option>
+                            <optgroup label="種類">
+                                <option value="sortProductSS">SS</option>
+                                <option value="sortProductD">D</option>
+                                <option value="sortProductACC">ACC</option>
+                            </optgroup>
+                            <optgroup label="價格">
+                                <option value="sortProductHigh">
+                                    價格高&#8594;低
+                                </option>
+                                <option value="sortProductLow">
+                                    價格低&#8594;高
+                                </option>
+                            </optgroup>
+                            <optgroup label="庫存量">
+                                <option value="sortProductStockFull">
+                                    庫存多&#8594;少
+                                </option>
+                                <option value="sortProductStockLow">
+                                    庫存少&#8594;多
+                                </option>
+                            </optgroup>
+                        </select>
+                        <!--想客製化select display但願望還沒實現： https://www.w3schools.com/howto/howto_custom_select.asp -->
+                    </div>
+                    <div class="searchInput">
+                        <span>產品型號 |</span>
+                        <input type="text" />
+                    </div>
+                    <button type="submit" id="searchBtn">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        搜尋項目
+                    </button>
+                    <button type="reset" id="clearBtn">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        清除輸入
+                    </button>
+                    <button type="submit" id="updateBtn">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        上傳新品
+                    </button>
+                </form>
+                <div class="dividingLine"></div>
+            </div>
+            <!-- content section -->
+            <div id="contentSec">
+                <table id="contentData">
+                    <tr>
+                        <th>編輯/刪除</th>
+                        <th>＃Id</th>
+                        <th>產品照</th>
+                        <th>種類</th>
+                        <th>產品型號</th>
+                        <th>產品名稱</th>
+                        <th>價格</th>
+                        <th>尺寸</th>
+                        <th>庫存</th>
+                        <th>產品描述</th>
+                    </tr>
+                    <tr onClick="toggleRow(this)">
+                        <td>
+                            <button class="editDeleteBtn">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </button>
+                            <button class="editDeleteBtn">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                        <td>3244</td>
+                        <td>
+                            <div class="productImg">
+                                <img src="/img/test.webp" alt="test img" />
+                            </div>
+                        </td>
+                        <td>ACC</td>
+                        <td>
+                            ACC-1234
+                            <div class="divider"></div>
+                        </td>
+
+                        <td>女款塑身兩件式泳裝</td>
+
+                        <td>1980 元</td>
+                        <td>S 號</td>
+                        <td>205 件</td>
+                        <td>
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the
+                            industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and
+                            scrambled it to make a type specimen book. It has
+                            survived not only five centuries, but also the leap
+                            into electronic typesetting, remaining essentially
+                            unchanged.
+                        </td>
+                        <td class="showContent hiderow">
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the
+                            industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and
+                            scrambled it to make a type specimen book. It has
+                            survived not only five centuries, but also the leap
+                            into electronic typesetting, remaining essentially
+                            unchanged. It was popularised in the 1960s with the
+                            release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing
+                            software like Aldus PageMaker including versions of
+                            Lorem Ipsum.
+                        </td>
+                    </tr>
+                    <tr onClick="toggleRow(this)">
+                        <td>
+                            <button class="editDeleteBtn">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </button>
+                            <button class="editDeleteBtn">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                        <td>3245</td>
+                        <td>
+                            <div class="productImg">
+                                <img src="/img/test.webp" alt="test img" />
+                            </div>
+                        </td>
+                        <td>ACC</td>
+                        <td>ACC-1234</td>
+
+                        <td>女款塑身兩件式泳裝</td>
+
+                        <td>1980 元</td>
+                        <td>M 號</td>
+                        <td>89 件</td>
+                        <td>
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the
+                            industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and
+                            scrambled it to make a type specimen book. It has
+                            survived not only five centuries, but also the leap
+                            into electronic typesetting, remaining essentially
+                            unchanged.
+                        </td>
+                        <td class="showContent hideRow">
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the
+                            industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and
+                            scrambled it to make a type specimen book. It has
+                            survived not only five centuries, but also the leap
+                            into electronic typesetting, remaining essentially
+                            unchanged. It was popularised in the 1960s with the
+                            release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing
+                            software like Aldus PageMaker including versions of
+                            Lorem Ipsum.
+                        </td>
+                    </tr>
+                    <tr onClick="toggleRow(this)">
+                        <td>
+                            <button class="editDeleteBtn">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </button>
+                            <button class="editDeleteBtn">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                        <td>3246</td>
+                        <td>
+                            <div class="productImg">
+                                <img src="/img/test.webp" alt="test img" />
+                            </div>
+                        </td>
+                        <td>ACC</td>
+                        <td>ACC-1234</td>
+
+                        <td>女款塑身兩件式泳裝</td>
+
+                        <td>1980 元</td>
+                        <td>L 號</td>
+                        <td>156 件</td>
+                        <td>
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the
+                            industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and
+                            scrambled it to make a type specimen book. It has
+                            survived not only five centuries, but also the leap
+                            into electronic typesetting, remaining essentially
+                            unchanged.
+                        </td>
+                        <td class="showContent hideRow">
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the
+                            industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and
+                            scrambled it to make a type specimen book. It has
+                            survived not only five centuries, but also the leap
+                            into electronic typesetting, remaining essentially
+                            unchanged. It was popularised in the 1960s with the
+                            release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing
+                            software like Aldus PageMaker including versions of
+                            Lorem Ipsum.
+                        </td>
+                    </tr>
+                    <tr onClick="toggleRow(this)">
+                        <td>
+                            <button class="editDeleteBtn">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </button>
+                            <button class="editDeleteBtn">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                        <td>26</td>
+                        <td>
+                            <div class="productImg">
+                                <img src="/img/test2.jpeg" alt="test img" />
+                            </div>
+                        </td>
+                        <td>SS</td>
+                        <td>SS-508</td>
+
+                        <td>初階9'充氣式旅行立式划槳板</td>
+
+                        <td>12500 元</td>
+                        <td>F 號</td>
+                        <td>27 件</td>
+                        <td>
+                            一款輕量、穩定且易於操作的充氣式立式划槳板，適合體重60
+                            kg以下的划槳手在巡航或是衝小浪時使用。
+                        </td>
+                        <td class="showContent hideRow">
+                            <div class="dividingLine"></div>
+                            <div class="onOff">
+                                <i class="fa fa-times-circle" aria-hidden="true"
+                                    >&nbsp;</i
+                                >
+                                <i
+                                    class="fa fa-minus-circle"
+                                    aria-hidden="true"
+                                ></i>
+                            </div>
+                            <div class="Info">
+                                <div class="infoImg">
+                                    <img src="/img/test2.jpeg" alt="" />
+                                </div>
+                                <div class="infoTxt">
+                                    <ul>
+                                        <li class="productStyleNumber">
+                                            <span>產品型號 |</span> SS-508
+                                        </li>
+                                        <li class="productName">
+                                            <span>產品名稱 |</span>
+                                            初階9'充氣式旅行立式划槳板
+                                        </li>
+                                        <li class="productClass">
+                                            <span>種類 |</span>
+                                            SS
+                                        </li>
+                                        <li class="productPrice">
+                                            <span>價格 |</span>
+                                            12500 元
+                                        </li>
+                                        <li class="productSize">
+                                            <span>尺寸 |</span>
+                                            F 號
+                                        </li>
+                                        <li class="productInStock">
+                                            <span>進貨 |</span>
+                                            27 件
+                                        </li>
+                                        <li class="productDescription">
+                                            <span>產品描述 |</span>
+                                            <div>
+                                                一款輕量、穩定且易於操作的充氣式立式划槳板，適合體重60kg以下的划槳手在巡航或是衝小浪時使用。
+                                                一款輕量、穩定且易於操作的充氣式立式划槳板，適合體重60kg以下的划槳手在巡航或是衝小浪時使用。
+                                                一款輕量、穩定且易於操作的充氣式立式划槳板，適合體重60kg以下的划槳手在巡航或是衝小浪時使用。
+                                                一款輕量、穩定且易於操作的充氣式立式划槳板，適合體重60kg以下的划槳手在巡航或是衝小浪時使用。
+                                                一款輕量、穩定且易於操作的充氣式立式划槳板，適合體重60kg以下的划槳手在巡航或是衝小浪時使用。
+                                                一款輕量、穩定且易於操作的充氣式立式划槳板，適合體重60kg以下的划槳手在巡航或是衝小浪時使用。
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button id="confirmBtn">
+                                <i
+                                    class="fa fa-check-circle-o"
+                                    aria-hidden="true"
+                                ></i>
+                                確認上傳
+                            </button>
+                            <div class="dividingLine"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/main.js"></script>
+    </body>
+</html>

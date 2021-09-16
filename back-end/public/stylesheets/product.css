@@ -1,0 +1,239 @@
+/* ------------------------- function section ------------------------- */
+#functionSec {
+    width: calc(100vw - 250px);
+    min-width: 82vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+/*  heading section  */
+#headingSec {
+    width: 90%;
+    margin: 0 auto;
+}
+#notification {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    margin: 3% 0;
+}
+#notification i {
+    width: 120px;
+}
+marquee {
+    direction: left;
+}
+.searchInput {
+    display: inline;
+    border: 1px solid var(--white);
+    border-radius: 50px;
+    color: var(--white);
+    padding: 8px 20px;
+    margin: 0 8px;
+}
+.searchInput:hover {
+    box-shadow: 1px 1px 10px 1px rgba(255, 255, 255, 0.2);
+}
+.searchInput select,
+.searchInput input {
+    background-color: var(--lightBlue);
+    border: none;
+    outline: none;
+    color: var(--darkBlue);
+}
+#searchBtn,
+#clearBtn,
+#updateBtn {
+    padding: 8px 20px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 0px 20px 0px 20px;
+    color: var(--darkBlue);
+    margin: 0 8px 20px;
+    position: relative;
+}
+#searchBtn:hover,
+#clearBtn:hover,
+#updateBtn:hover {
+    filter: drop-shadow(1px 1px 3px var(--darkBlue));
+}
+#searchBtn {
+    background-color: var(--white);
+}
+#clearBtn {
+    background-color: var(--darkBlue);
+    color: var(--white);
+}
+#updateBtn {
+    background-color: var(--lightYellow);
+}
+
+/*  content section  */
+#contentSec {
+    padding: 0 5%;
+}
+#contentData {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    text-align: center;
+}
+td,
+th {
+    min-height: 40px;
+    vertical-align: middle;
+    padding: 8px;
+    position: relative;
+}
+th {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+td:not(:last-child) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+tr {
+    border: none;
+    border-radius: 0 30px 0 0;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr 2fr 2fr 4fr 1.5fr 1fr 1.5fr 5fr;
+    justify-content: flex-start;
+}
+
+tr:first-child:hover {
+    cursor: default;
+}
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.4);
+}
+tr:not(:first-child):hover {
+    background-color: var(--lightYellow);
+}
+.lightYellowBgc {
+    background-color: var(--lightYellow);
+}
+.showContent {
+    height: auto;
+    display: grid;
+    grid-column: 1/-1;
+    justify-content: flex-start;
+    text-align: left;
+}
+.hideRow {
+    display: none;
+}
+
+.divider {
+    display: inline;
+    border-right: 2px solid var(--darkBlue);
+    height: 30px;
+    vertical-align: middle;
+    position: absolute;
+    right: 0;
+    bottom: 12px;
+}
+.productImg {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+}
+.productImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.editDeleteBtn {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+}
+.editDeleteBtn:hover {
+    color: var(--lightBlue);
+}
+/* --------------------手風琴展開---------------------- */
+.onOff {
+    color: var(--lightYellow);
+    font-size: 1.5rem;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+.Info {
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 3%;
+    margin: 0 auto;
+}
+.infoImg {
+    /* width: 70%; */
+    min-width: 200px;
+    margin: auto 3% auto 0;
+}
+.infoImg img {
+    width: 100%;
+    object-fit: contain;
+}
+/* .infoTxt {
+    width: 60%;
+} */
+.infoTxt ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.infoTxt li {
+    width: 30%;
+    list-style-type: none;
+    border-left: 1px solid var(--lightYellow);
+    border-bottom: 1px solid var(--lightYellow);
+    border-radius: 0 0 0 15px;
+    color: var(--darkBlue);
+    margin: 0 5% 30px 0;
+    padding: 0 10px 5px;
+}
+.infoTxt span {
+    color: var(--white);
+}
+/* .infoTxt .productStyleNumber {
+} */
+.infoTxt .productName {
+    width: 60%;
+}
+/* .infoTxt .productClass {
+}
+.infoTxt .productPrice {
+}
+.infoTxt .productSize {
+}
+.infoTxt .productInStock {
+} */
+.infoTxt .productDescription {
+    width: 80%;
+}
+
+#confirmBtn {
+    position: absolute;
+    bottom: 0;
+    right: 3%;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 0px 20px 0px 20px;
+    background-color: var(--lightYellow);
+    color: var(--darkBlue);
+    margin: 0 8px 30px;
+    padding: 8px 20px;
+    width: 120px;
+}
+/* ------------------------------------------------ */
+@media only screen and (min-width: 1300px) {
+    .searchBtn:nth-of-type(3) {
+        position: fixed;
+        right: 10%;
+    }
+}
