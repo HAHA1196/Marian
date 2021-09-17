@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marian後台</title>
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="/stylesheets/member.css" />
+</head>
+
+<body>
+    <!-- ------------------------- left section ------------------------- -->
+    <div>
+        <%- include('./main.ejs'); %>
+    </div>
+
+    <!-- ------------------------- right section ------------------------- -->
+    <div id="container">
+        <!-- heading section -->
+        <div id="headingSec">
+            <div id="notification">
+                <%- include('./marquee.ejs'); %>
+            </div>
+            <!-- 組長這裏面的 input & button 給你寫
+                    開始創作..... -->
+            <form action="">
+                <div class="searchInput">
+                    <span>會員姓名 |</span>
+                    <input type="text" />
+                </div>
+                <button type="submit" id="searchBtn">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    搜尋會員
+                </button>
+                <button type="reset" id="clearBtn">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    清除輸入
+                </button>
+            </form>
+            <div class="dividingLine"></div>
+        </div>
+
+        <!-- content section -->
+        <div id="contentSec">
+            <!-- 開始創作..... 記得調整top-->
+            <table id="contentData">
+                <tr>
+                    <th>會員編號</th>
+                    <th>會員名稱</th>
+                    <th>性別</th>
+                    <th>電話</th>
+                    <th>Email</th>
+                    <th>地址</th>
+                </tr>
+                <tr onClick="toggleRow(this)">
+                    <td>1</td>
+                    <td>王小明</td>
+                    <td>男</td>
+                    <td>0987654321</td>
+                    <td>wolfgang.chien@gmail.com</td>
+                    <td>台中市北區陜西路62號</td>
+                    <td class="showContent hideRow">
+                        <div class="dividingLine"></div>
+                        <div class="info infoTxt">
+                            <ul>
+                                <span>歷史訂單 |</span>
+                                <li>
+                                    訂單編號：5678&nbsp;&nbsp;｜&nbsp;&nbsp;下訂日期：2021/09/14 08:24&nbsp;&nbsp;｜&nbsp;&nbsp;訂單總額：1337元
+                                </li>
+                                <li>
+                                    訂單編號：5678&nbsp;&nbsp;｜&nbsp;&nbsp;下訂日期：2021/09/14 08:24&nbsp;&nbsp;｜&nbsp;&nbsp;訂單總額：1337元
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dividingLine"></div>
+                    </td>
+                </tr>
+                <tr onClick="toggleRow(this)">
+                    <td>1</td>
+                    <td>王小明</td>
+                    <td>男</td>
+                    <td>0987654321</td>
+                    <td>jgjgjgjgjgjgjgjgjgjg@gmail.com</td>
+                    <td>台中市北屯區大鵬路陳平里12之3巷5之1弄3之2鄰58號6樓之3</td>
+                    <td class="showContent hideRow">
+                        <div class="dividingLine"></div>
+                        <div class="info infoTxt">
+                            <ul>
+                                <span>歷史訂單 |</span>
+                                <li>
+                                    訂單編號：5678&nbsp;&nbsp;｜&nbsp;&nbsp;下訂日期：2021/09/14 08:24&nbsp;&nbsp;｜&nbsp;&nbsp;訂單總額：1337元
+                                </li>
+                                <li>
+                                    訂單編號：5678&nbsp;&nbsp;｜&nbsp;&nbsp;下訂日期：2021/09/14 08:24&nbsp;&nbsp;｜&nbsp;&nbsp;訂單總額：1337元
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dividingLine"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/main.js"></script>
+    </div>
+</body>
+
+</html>

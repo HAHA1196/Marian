@@ -6,6 +6,12 @@ $(document).ready(function () {
     $("#goToOrder").on("click", function () {
         window.location.replace("http://localhost:8000/backend/order");
     });
+    $("#goToMember").on("click", function () {
+        window.location.replace("http://localhost:8000/backend/member");
+    });
+    $("#goToNews").on("click", function () {
+        window.location.replace("http://localhost:8000/backend/News");
+    });
 });
 
 // --------------------------left section---------------------

@@ -10,7 +10,7 @@
     --lightBlue: #b4cfeb;
     --darkBlue: #697a95;
     --fontBlue: #546279;
-    overflow-y: overlay;
+    overflow: overlay;
 }
 
 body {
