@@ -5,8 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+// 0917建立member
+var memberRouter = require('./routes/member');
 var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/marian');
+
 
 var app = express();
 
@@ -44,6 +47,7 @@ app.use(function (req, res, next) {
 })
 
 app.use('/', indexRouter);
+app.use('/',memberRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
 
