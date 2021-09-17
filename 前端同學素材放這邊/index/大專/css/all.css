@@ -308,6 +308,13 @@ header.sticky >.navbar >ul>li>a{
     .navbar{
         display: none;
     }
+    .logo {
+        width:3rem;
+    }
+    .headerLogo>span{
+        font-size: .3rem;
+        color: white;
+    }
 }
   
 /* Hamburger only show up when 768px */
@@ -532,7 +539,7 @@ header.sticky >.navbar >ul>li>a{
 @media only screen and  (max-width: 1024px){
  
 }
-/* @media only screen  and (max-width: 768px){
+@media only screen  and (max-width: 768px){
     #header{
         margin: 0;
     }
@@ -553,11 +560,7 @@ header.sticky >.navbar >ul>li>a{
 }
 
 
-@media only screen and  (max-width: 414px){
-    #header{
-        padding: 0.8rem 0.3rem 0.2rem 0.8rem ;
-        margin: 0;
-    }
+/* @media only screen and  (max-width: 450px){
     #header .navbar{
         display: none;
     }
@@ -575,8 +578,11 @@ header.sticky >.navbar >ul>li>a{
     .headerLogo>span{
         display: none;
     }
+    .navbar{
+        display: unset;
+    }
 
-}
+} */
 @media  only screen  and  (max-width: 320px){
     .hamburger{
         width: 100%;
@@ -589,7 +595,7 @@ header.sticky >.navbar >ul>li>a{
         
      }
    
-} */
+}
 /* Header RWD end */
 /* footer */
 #footer{

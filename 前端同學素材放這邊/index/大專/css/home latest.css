@@ -280,9 +280,6 @@
             line-height: 1.8;
 
         }
-        .title-h2 {
-            font-size: 23px;
-        }
         .conceptTxt > span{
             font-size: 5rem;
         }
@@ -291,60 +288,25 @@
         }
 }
 @media only screen and (max-width: 450px){
-        #concept #concept-inner .right .title {
-            padding-bottom: 30px;
-            transform: none;
+        .conceptTxt > span{
+            font-size: 2rem;
         }
-        #concept #concept-inner .right {
-                width: auto;
-                padding: 0;
-            }
-        #concept #concept-inner {
-            display: block;
+        .conceptTxt::before {
+            height: 10px;
+            width: 150px;
         }
-        .concept-left {
-           display: none;
+        .conceptTxt{
+            margin-bottom: unset;
         }
-        .concept_img{
-            display: none;
-        }
-        .concept-right {
+        .conceptContent>div{
             width: 100%;
-            padding: 10px 0 60px 0; 
-        
         }
-        .concept-title {
-            color: #212529;
-            transform: unset;
+        .conceptInner{
+            padding-bottom: unset;
+
+
         }
-        .concept-right::after {
-            content: "";
-            left: 0;
-        }
-        .concept-right::after{
-            /* margin-top: 2rem; */
-            content: "";
-            position: absolute;
-            top:7rem;
-            left: 0;
-            width: 90%;
-            height:70%;
-            background-image: url(../img/0001.jpg);
-            background-position: center;
-            opacity: 0.1;
-            z-index: -1;
-        }
-        .box p {
-            padding-bottom: 3rem;
-            padding-right: .8rem;
-            font-weight: 500;
-            font-size: 1.2rem;
-            line-height: 2;
-        }
-        .title-sp {
-           line-height:3rem;
-        }
-      
+
 }
 
 /* concept RWD end */
@@ -369,7 +331,7 @@
 #materialInner::after {
     content: "";
     position: absolute;
-    top:30%;
+    top:20%;
     left:50%;
     width: 5px;
     height: 70%;
@@ -742,8 +704,124 @@
     .materialTxt::before{
         width: 300px;
     }
-    
+    .matfLeft>div>img{
+        transform: translateX(20px);
+    }
+    .mattRight>p{
+        font-size: 1.1rem;
+        line-height: 3rem;
 
+    }
+
+
+} 
+@media only screen and (max-width: 450px){
+    .materialTxt > span{
+        font-size: 2rem;
+    }
+    .materialTxt::before{
+        width: 150px;
+        height: 10px;
+    }
+    .matF {
+        display: block;
+        margin-bottom: unset;
+    }
+    .materialTxt{
+        margin-bottom: 30px;
+
+    }
+    .matfLeft>div>img{
+        width: 100%;
+        transform: translateX(0);
+    }
+    .matfLeft::before{
+        content: unset;
+        height: 100%;
+    }
+    .matsRight{
+       
+        width: 100%;
+    }
+    .matfLeft {
+        width: 100%;
+        height: 65vh;
+    }
+    .matfRight{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .matfRight>h1 {
+        position: unset;
+        padding: 30px 0px;
+        transform: translateX(0);
+    }
+    .matfRight>p {
+        position: unset;
+        padding: 10px 0px;
+        transform: translateX(0);
+
+    }
+    /*  */
+    .matsLeft{
+        width: 100%;
+    }
+    .matS{
+        flex-wrap: wrap-reverse;
+        margin-bottom: 50px;
+    }
+    .matsLeft>h1{
+        padding: 10px;
+        position: unset;
+    }
+    .matsLeft::after{
+        position: unset;
+    }
+    .matsLeft>p{
+        position: unset;
+    }
+    /*  */
+    .matT{
+        display: block;
+    }
+    .mattLeft{
+        width: 100%;
+    }
+    .mattRight{
+        width: 100%;
+        margin-top: 20px;
+
+    }
+    .mattRight>h1 {
+        position: unset;
+        padding: 30px 0px;
+    }
+    .mattRight>p {
+        position: unset;
+        padding: 10px 0px;
+    }
+    /*  */
+    #materialInner::after{
+        width: 1px;
+        z-index: -1;
+
+
+    }
+    /*  */
+    .btnContainer>.btnCenter{
+        left:0;
+    }
+    #materialInner{
+        padding-bottom: unset;
+    }
+    .matsRight>div>img{
+        transform: translateY(-5%);
+    }
+    /*  */
+    #material{
+        padding:60px 6.5% 0px 6.5%
+
+    }
 } 
 /* material RWD end */
 
@@ -900,6 +978,7 @@
     flex-direction: column;
     position: relative;
     width: 20%;
+    height: 400px !important;
    
 
   }
@@ -926,7 +1005,7 @@
     width:100%;
     height:70% ;
     margin-bottom: 20px;
-    /* width: 400px !important; */
+    
 
 
 
@@ -1008,7 +1087,27 @@
   }
 
   
+@media only screen and (max-width: 768px){
+    
+    .newsTxt > span{
+        font-size: 5rem;
+    }
+    .newsTxt > span{
+    
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 7rem;
+        color: #697a95;
+    }
+} 
 @media only screen and (max-width: 450px){
+    
+    .newsTxt > span{
+        font-size:2rem;
+    }
+    .newsTxt::before {
+        width: 100px;
+        height: 10px;
+    }
 } 
 /* Product  START*/
 #product{
@@ -1246,6 +1345,28 @@
     right: 0;
     margin-top: 2rem;
 }
+  
+@media only screen and (max-width: 768px){
+    
+    .productTxt > span{
+        font-size: 5rem;
+    }
+} 
+@media only screen and (max-width: 450px){
+    
+    .productTxt > span{
+        font-size: 2rem;
+    }
+    #product{
+        padding-top:0 ;
+    }
+    .productTxt ::before{
+        height: 10px;
+    }
+    .productTxt{
+        margin-bottom: unset;
+    }
+}
 
 /* sns */
 #sns{
@@ -1281,7 +1402,6 @@
     /* height: 80vh; */
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 7rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1382,5 +1502,26 @@
         width: 100%;
     }
     
+    
+} 
+
+@media only screen and (max-width: 768px){
+    .snsTxt > span {
+        font-size: 5rem;
+    }
+    .snsTxt::before {
+        width: 330px;
+        height: 30px;
+    }
+    
+} 
+@media only screen and (max-width: 768px){
+    .snsTxt::before {
+        width: 140px;
+        height: 10px;
+    }
+    .snsTxt > span{
+        font-size: 2rem;
+    }
     
 } 
