@@ -1,6 +1,6 @@
 /* ------------------------- right section ------------------------- */
 
-/*  heading section  */
+/*  ----------heading section----------  */
 .searchInput {
     display: inline;
     border: 1px solid var(--white);
@@ -20,8 +20,7 @@
     color: var(--fontBlue);
 }
 #searchBtn,
-#clearBtn,
-#updateBtn {
+#clearBtn {
     padding: 8px 20px;
     border: 1px solid rgba(255, 255, 255, 0);
     border-radius: 0px 20px 0px 20px;
@@ -30,8 +29,7 @@
     /* position: relative; */
 }
 #searchBtn:hover,
-#clearBtn:hover,
-#updateBtn:hover {
+#clearBtn:hover {
     filter: drop-shadow(1px 1px 3px var(--darkBlue));
 }
 #searchBtn {
@@ -41,7 +39,90 @@
     background-color: var(--darkBlue);
     color: var(--white);
 }
-#updateBtn {
+
+/*  ----------content section----------  */
+#contentSec {
+    /* main.css檔案裡面 這裡有設定 position: relative; */
+    top: 200px; /*組長 這邊要依據heading高度調整*/
+}
+tr {
+    border: none;
+    border-radius: 0 30px 0 0;
+    display: grid;
+    grid-template-columns: 2fr 3.5fr 2fr 2.5fr 6fr;
+    justify-content: flex-start;
+}
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.4);
+}
+tr:not(:first-child):hover {
     background-color: var(--lightYellow);
 }
-
+td,
+th {
+    min-height: 40px;
+    vertical-align: middle;
+    padding: 8px;
+    position: relative;
+    /* border: 2px solid blue; */
+}
+th {
+    font-size: 14px;
+    line-height: 20px;
+}
+td:last-child {
+    background-color: var(--lightBlue);
+    outline: 1px solid var(--lightBlue); /*蓋住背景右方的細線*/
+}
+td:not(:last-child) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.showContent {
+    /*使用js插入*/
+    height: auto;
+    display: grid;
+    grid-column: 1/-1;
+    justify-content: flex-start;
+    text-align: left;
+}
+.hideRow {
+    /*使用js插入*/
+    display: none;
+}
+.divider {
+    /*使用js插入、表格裡面的分隔島*/
+    display: inline;
+    border-right: 2px solid var(--darkBlue);
+    height: 30px;
+    vertical-align: middle;
+    position: absolute;
+    right: 0;
+    bottom: 12px;
+}
+/* --------------------手風琴展開---------------------- */
+.info {
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 3%;
+    margin: 0 auto;
+}
+.infoTxt ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.infoTxt li {
+    width: 30%;
+    list-style-type: none;
+    border-left: 1px solid var(--lightYellow);
+    border-bottom: 1px solid var(--lightYellow);
+    border-radius: 0 0 0 15px;
+    color: var(--fontBlue);
+    margin: 0 5% 30px 0;
+    padding: 0 10px 5px;
+}
+.infoTxt span {
+    color: var(--white);
+}

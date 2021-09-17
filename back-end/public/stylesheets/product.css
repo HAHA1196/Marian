@@ -145,7 +145,7 @@ tr:not(:first-child):hover {
     left: 30px;
 }
 
-.Info {
+.info {
     position: relative;
     width: 100%;
     display: flex;

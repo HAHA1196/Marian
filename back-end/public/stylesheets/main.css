@@ -10,6 +10,7 @@
     --lightBlue: #b4cfeb;
     --darkBlue: #697a95;
     --fontBlue: #546279;
+    overflow-y: overlay;
 }
 
 body {
@@ -116,7 +117,7 @@ marquee {
 /*  content section  */
 #contentSec {
     position: relative;
-    top: 200px; /*組長 這邊要依據heading高度調整*/
+    top: 200px; /* 組長 這邊要依據heading高度調整 */
 }
 #contentData {
     width: 90%;
