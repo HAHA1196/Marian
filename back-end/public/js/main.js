@@ -14,7 +14,7 @@ const toggleRow = (element) => {
     element
         .getElementsByClassName("showContent")[0]
         .classList.toggle("hideRow");
-    console.log(event);
+    console.log(element);
 };
 
 //td之間的分隔島產生器

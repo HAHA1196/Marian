@@ -135,6 +135,7 @@ tr:not(:first-child):hover {
     border: none;
     color: var(--darkBlue);
     font-size: 18px;
+    cursor: pointer;
 }
 .editBtn:hover {
     color: var(--fontBlue);
