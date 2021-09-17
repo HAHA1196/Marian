@@ -283,10 +283,10 @@ header.sticky >.navbar >ul>li>a{
     .headerHambur{
         display: none;
     }
-    .navbar{
+    /* .navbar{
         display: unset;
 
-    }
+    } */
    
     .toggleContent{
         width: 55%;

@@ -103,7 +103,6 @@
     padding: 200px 6.5% 0px 6.5%;
     z-index: 1;
     position: relative;
-    margin-bottom: 200px;
 }
 #conceptInner {
     position: relative;
@@ -283,6 +282,12 @@
         }
         .title-h2 {
             font-size: 23px;
+        }
+        .conceptTxt > span{
+            font-size: 5rem;
+        }
+        .conceptTxt::before {
+            width: 350px;
         }
 }
 @media only screen and (max-width: 450px){
@@ -544,7 +549,7 @@
 .matsRight>div>img{
     width: 100%;
     object-fit: cover;
-    transform: translate(-65px,-5%);
+    transform: translate(-20px,-5%);
     z-index: 3;
     border-radius: 20px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -700,12 +705,9 @@
         line-height: 3rem;
     }
     /*  */
-    .matS{
-        margin-bottom: unset;
-    }
     .matsLeft{
         width:50%;
-        height: 80vh;
+        height: unset;
     }
     .matsLeft>h1{
         font-size: 1.8rem;
@@ -734,10 +736,13 @@
         font-size: 1.8rem;
     
     }
-    .mattRight>p{
-        font-size:  1.1rem;
-    
+    .materialTxt > span{
+        font-size: 5rem;
     }
+    .materialTxt::before{
+        width: 300px;
+    }
+    
 
 } 
 /* material RWD end */
@@ -895,11 +900,12 @@
     flex-direction: column;
     position: relative;
     width: 20%;
+   
+
   }
   
   
   .swiper-wrapper{
-      
     display: flex;
   }
 .nThumbnail:hover:after{
@@ -920,6 +926,8 @@
     width:100%;
     height:70% ;
     margin-bottom: 20px;
+    /* width: 400px !important; */
+
 
 
     
