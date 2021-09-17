@@ -86,7 +86,8 @@ a {
    font-size: 3rem;
    padding-bottom: 1rem;
    z-index: 5;
-   text-shadow:1px 1px 1px   #212529;
+   /* text-shadow:3px 3px 1px #CCCCCC; */
+   text-shadow: 2px 2px 12px rgba(202, 198, 197, 0.87);
 
 
 }
@@ -100,8 +101,8 @@ a {
 /* contact */
 #contactus{
     padding: 160px 6.5% 0px 6.5% ;
-    background-color: #fff;
-    background-image: url(../img/a03.jpg);
+    /* background-color: #ffe6b7; */
+    /* background-image: url(../img/a03.jpg); */
     background-position: left;
     background-repeat:no-repeat ;
     position: relative;
