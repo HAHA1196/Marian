@@ -106,15 +106,11 @@ td:not(:last-child) {
     position: relative;
     width: 100%;
     display: flex;
-    padding: 3%;
+    padding: 3% 0 0;
     margin: 0 auto;
 }
-.infoTxt ul {
-    display: flex;
-    flex-wrap: wrap;
-}
 .infoTxt li {
-    width: 30%;
+    width: 45%;
     list-style-type: none;
     border-left: 1px solid var(--lightYellow);
     border-bottom: 1px solid var(--lightYellow);
@@ -123,6 +119,14 @@ td:not(:last-child) {
     margin: 0 5% 30px 0;
     padding: 0 10px 5px;
 }
+.infoTxt li:first-child {
+    float: right;
+    height: 274px;
+    overflow: auto;
+}
 .infoTxt span {
     color: var(--white);
+}
+.infoTxt span ~ div {
+    padding: 3%;
 }

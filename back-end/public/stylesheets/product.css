@@ -143,10 +143,6 @@ tr:not(:first-child):hover {
     top: 20px;
     left: 30px;
 }
-<<<<<<< HEAD
-
-.info {
-=======
 .onOff button {
     width: 30px;
     background-color: transparent;
@@ -161,7 +157,6 @@ tr:not(:first-child):hover {
     background-color: tomato;
 }
 .Info {
->>>>>>> b29cf9a27045471877fd876ac7d85c8e995fa0e9
     position: relative;
     width: 100%;
     display: flex;
