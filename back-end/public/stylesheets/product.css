@@ -76,15 +76,11 @@ td:not(:last-child) {
 tr {
     border: none;
     border-radius: 0 30px 0 0;
-    /* cursor: pointer; */
     display: grid;
     grid-template-columns: 1fr 1fr 1.5fr 2fr 2fr 4fr 1.5fr 1fr 1.5fr 5fr;
     justify-content: flex-start;
 }
 
-/* tr:first-child:hover {
-    cursor: default;
-} */
 tr:nth-child(even) {
     background: rgba(255, 255, 255, 0.4);
 }
@@ -148,6 +144,7 @@ tr:not(:first-child):hover {
     top: 20px;
     left: 30px;
 }
+
 .Info {
     position: relative;
     width: 100%;
