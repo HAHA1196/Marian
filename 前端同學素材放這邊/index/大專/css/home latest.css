@@ -729,6 +729,16 @@
     .matsRight{
         height: 100%;
     }
+    /*  */
+    .mattRight>h1{
+        font-size: 1.8rem;
+    
+    }
+    .mattRight>p{
+        font-size:  1.1rem;
+    
+    }
+
 } 
 /* material RWD end */
 

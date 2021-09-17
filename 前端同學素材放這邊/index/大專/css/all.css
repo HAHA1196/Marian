@@ -85,10 +85,12 @@ ul{
     background-color: #b4cfeb;
 }
 /*  */
-header.sticky{
+/* header.sticky{
     padding: 5px 10px 5px 2%;
+    padding: 10px 10px 0px  10px;
+
     background-color: #fff;
-}
+} */
 header.sticky >.navbar >ul>li>a{
     color:rgb(131, 40, 59);
 }
@@ -281,6 +283,11 @@ header.sticky >.navbar >ul>li>a{
     .headerHambur{
         display: none;
     }
+    .navbar{
+        display: unset;
+
+    }
+   
     .toggleContent{
         width: 55%;
     }
@@ -290,7 +297,10 @@ header.sticky >.navbar >ul>li>a{
         }
 }
 @media only screen and  (max-width: 768px){
-    .navbar{
+    .navbar >.navbarUl {
+        display: none;
+    }
+    .navbar >.navbarIcon {
         display: none;
     }
 }
@@ -302,16 +312,11 @@ header.sticky >.navbar >ul>li>a{
   
 /* Hamburger only show up when 768px */
 .headerHambur{
-    /* position: absolute; */
     position: relative;
     align-self: center;
-    /* margin: 10px; */
-    /* padding: 10px; */
     z-index: 101;
-    /* top: 1.5rem;
-    right:0; */
     cursor: pointer;
-    /* display: none; */
+    display: none;
 }
 #toggle {
     display: none;
@@ -333,35 +338,14 @@ header.sticky >.navbar >ul>li>a{
     transition: all 0.3s ease-in-out;
 
 }
-/* .hamburger div::after{
-    content: "";
-    background-color: #000;
-    position: absolute;
-    left: 50%;
-
-} */
 /* Hamburger RWD */
 @media only screen and  (max-width:1024px){
- 
-    /* .toggleContent{
-        width: 55%;
-    }
-    .toggleContent>div{
-        width: 55vw;
-        justify-content: flex-start;
-        } */
        
 }
 @media only screen and  (max-width: 768px){
     .headerHambur{
-        display: block;
-    }
-    #toggle {
         display: unset;
     }
-    /* #toggle {
-        display: unset;
-    } */
     .toggleContent{
         width: 55%;
     }
@@ -548,9 +532,8 @@ header.sticky >.navbar >ul>li>a{
 @media only screen and  (max-width: 1024px){
  
 }
-@media only screen  and (max-width: 768px){
+/* @media only screen  and (max-width: 768px){
     #header{
-        padding: 0.8rem 0.3rem 0.2rem 0.8rem ;
         margin: 0;
     }
     .headerLogo{
@@ -606,7 +589,7 @@ header.sticky >.navbar >ul>li>a{
         
      }
    
-}
+} */
 /* Header RWD end */
 /* footer */
 #footer{
