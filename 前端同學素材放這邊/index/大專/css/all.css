@@ -335,21 +335,30 @@ header.sticky >.navbar >ul>li>a{
 }
 /* Hamburger RWD */
 @media only screen and  (max-width:1024px){
-    .headerHambur{
-        display: unset;
-    }
-    .toggleContent{
+ 
+    /* .toggleContent{
         width: 55%;
     }
     .toggleContent>div{
         width: 55vw;
         justify-content: flex-start;
-        }
+        } */
+       
 }
 @media only screen and  (max-width: 768px){
+    .navbar{
+        display: none;
+
+    }
     .headerHambur{
         display: unset;
     }
+    #toggle {
+        display: unset;
+    }
+    /* #toggle {
+        display: unset;
+    } */
     .toggleContent{
         width: 55%;
     }
