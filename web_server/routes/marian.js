@@ -4,8 +4,12 @@ var router = express.Router();
 /* GET users listing. */
 // http://localhost:8000/api 
 router.get('/', function (req, res, next) {
-    res.send('123');
+    // res.send('123');
+    console.log(req.body.test);
 });
+
+
+
 
 // 前台 news 僅供查
 // http://localhost:8000/api/news
