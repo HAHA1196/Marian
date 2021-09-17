@@ -380,6 +380,7 @@
     position: relative;
     margin-bottom: 150px;
     text-align: right;
+    transform: translateX(100px);
 
 }
 .materialTxt > span{
@@ -734,7 +735,7 @@
 /* NEWS */
 #news{
     position: relative;
-    padding: 200px 6.5% 0px 6.5%;
+   
 
 }
  #newsInner{
@@ -745,13 +746,15 @@
 
 .newsTxt{
     position: relative;
+    padding: 0 6.5% 0px 6.5%;
+
 
 }
 .newsTxt::before{
     content: "";
     position: absolute;
     top:70%;
-    left:0;
+    left: 6%;
     width: 300px;
     height: 30px;
     border-radius: 30px;
@@ -1352,7 +1355,7 @@
 .snsBtn:hover{
     background-color: #adb5bd;
 }
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 1024px){
     .snsCard {
         width: 100%;
     }
@@ -1360,5 +1363,6 @@
         display: block;
         width: 100%;
     }
+    
     
 } 

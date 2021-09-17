@@ -302,11 +302,16 @@ header.sticky >.navbar >ul>li>a{
   
 /* Hamburger only show up when 768px */
 .headerHambur{
+    /* position: absolute; */
+    position: relative;
+    align-self: center;
+    /* margin: 10px; */
+    /* padding: 10px; */
     z-index: 101;
-    top: 1.5rem;
-    right:0;
+    /* top: 1.5rem;
+    right:0; */
     cursor: pointer;
-    display: none;
+    /* display: none; */
 }
 #toggle {
     display: none;
@@ -315,7 +320,9 @@ header.sticky >.navbar >ul>li>a{
     z-index: 101;
     cursor: pointer;
     display: block;
-    position: relative;
+    position: absolute;
+    right: 0;
+    
 }
 .hamburger div {
     width: 2em;
@@ -326,13 +333,13 @@ header.sticky >.navbar >ul>li>a{
     transition: all 0.3s ease-in-out;
 
 }
-.hamburger div::after{
+/* .hamburger div::after{
     content: "";
     background-color: #000;
     position: absolute;
     left: 50%;
 
-}
+} */
 /* Hamburger RWD */
 @media only screen and  (max-width:1024px){
  
@@ -346,12 +353,8 @@ header.sticky >.navbar >ul>li>a{
        
 }
 @media only screen and  (max-width: 768px){
-    .navbar{
-        display: none;
-
-    }
     .headerHambur{
-        display: unset;
+        display: block;
     }
     #toggle {
         display: unset;
@@ -642,24 +645,7 @@ header.sticky >.navbar >ul>li>a{
     align-self: stretch;
    
 }
-.fTxt{
-    width: 45%;
-    justify-content: center;
-}
-.fTxt>span:nth-child(1){
-    font-size: 1.5rem;
-    line-height: 10px;
-    height: 20px;
-    font-family: 'Fira Sans', sans-serif;
-    padding-bottom:2rem;
 
-}
-.fTxt>span:nth-child(4){
-    font-size: 1.2rem;
-    font-weight: 200;
-    line-height: 16px;
-    font-family: 'Fira Sans', sans-serif;
-}
 .fIcon{
     width: 45%;
     display: flex;
@@ -699,6 +685,11 @@ header.sticky >.navbar >ul>li>a{
     color: #b9b9b9;
     font-size:.9rem;
 }
+/*  */
+.detail{
+    flex-wrap: wrap;
+}
+/*  */
 .detail>span{
     line-height: 50px;
 }
@@ -706,7 +697,18 @@ header.sticky >.navbar >ul>li>a{
     padding-top:1.5rem;
 }
 
-
+.fTxt>span:nth-child(1){
+    font-size: 1.5rem;
+    line-height: 10px;
+    font-family: 'Fira Sans', sans-serif;
+    padding-bottom: 2rem;
+}
+.fTxt>span:nth-child(4) {
+    font-size: 1.2rem;
+    font-weight: 200;
+    line-height: 16px;
+    font-family: 'Fira Sans', sans-serif;
+}
 .footerBottom {
     width: 100%;
     padding-top: 7rem;
@@ -717,15 +719,45 @@ header.sticky >.navbar >ul>li>a{
     font-size: 15px;
   
 }
- 
+@media only screen and (max-width: 768px){
+    .fTxt{
+      width: unset;
+      padding: 1rem;
+    }
+    .fTxt>span:nth-child(1){
+        font-size: unset;
+    }
+    .fTxt>span:nth-child(4){
+        font-size: unset;
+    }
+    .fIcon{
+        width: unset;
+
+    }
+
+
+
+}
+
 @media only screen and (max-width: 450px){
-    .foo-contain{
+    .footerInner{
         display: block;
     }
-    .foo-contain .footer__ul {
-        max-width: 100%;
-        padding: 23px 0 23px 0;
-        border-bottom: 1px solid #212529;
+    .fTxt{
+        width: unset;
+        padding: 0;
+      }
+    .fLine{
+       flex-wrap: wrap;
+       padding-bottom: 1rem;
+
+    }
+    .fNav{
+       display: block;
+
+    }
+    .fNav{
+        margin-top: 0;
     }
     #footer{
         padding: 50px 6.5% 0px 6.5% ;
