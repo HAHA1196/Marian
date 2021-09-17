@@ -6,6 +6,7 @@
 	.st0{fill:#FFE6B7;}
 	.st1{fill:#B4CFEB;}
 </style>
-<path class="st0" d="M96,0c53,0,96,43,96,96s-43,96-96,96S0,149,0,96C0.1,43,43,0.1,96,0"/>
-<rect x="35.5" y="89.9" class="st1" width="121" height="12.1"/>
+<path class="st0" d="M96,0c53,0,96,43,96,96s-43,96-96,96S0,149,0,96S43,0,96,0"/>
+<rect x="89.9" y="35.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -39.7327 95.9861)" class="st1" width="12.1" height="121"/>
+<rect x="35.5" y="89.9" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -39.7327 95.9861)" class="st1" width="121" height="12.1"/>
 </svg>

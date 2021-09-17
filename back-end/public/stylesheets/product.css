@@ -139,12 +139,23 @@ tr:not(:first-child):hover {
 /* --------------------手風琴展開---------------------- */
 .onOff {
     color: var(--lightYellow);
-    font-size: 1.5rem;
     position: absolute;
     top: 20px;
     left: 30px;
 }
-
+.onOff button {
+    width: 30px;
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    margin: 3% 0 0 10px;
+}
+.onOff > button > img {
+    cursor: pointer; /*為什麼改不了手指！！！！！*/
+    pointer-events: auto;
+    background-color: tomato;
+}
 .Info {
     position: relative;
     width: 100%;
@@ -153,17 +164,28 @@ tr:not(:first-child):hover {
     margin: 0 auto;
 }
 .infoImg {
-    /* width: 70%; */
-    min-width: 200px;
-    margin: auto 3% auto 0;
+    width: 30%;
+    /* min-width: 200px; */
+    /* margin: auto 3% auto 0; */
+    position: relative;
+    margin: auto 0;
+    padding-right: 5%;
 }
-.infoImg img {
-    width: 100%;
-    object-fit: contain;
+#imgEditBtn {
+    width: 30%;
+    position: absolute;
+    top: 25%;
+    left: 26%;
+    z-index: 1;
 }
-/* .infoTxt {
-    width: 60%;
-} */
+#imgEditBtn:hover {
+    filter: drop-shadow(3px 3px 2px var(--fontBlue));
+}
+
+.infoTxt {
+    position: relative;
+    width: 70%;
+}
 .infoTxt ul {
     display: flex;
     flex-wrap: wrap;

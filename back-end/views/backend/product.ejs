@@ -5,10 +5,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Marian後台</title>
+        <!-- fotorama -->
+        <script src="/js/jquery.min.js"></script>
+        <link
+            href="/stylesheets/fotoramaMarianVersion-4.6.4/fotoramaMarianVer.css"
+            rel="stylesheet"
+        />
+        <script src="/stylesheets/fotoramaMarianVersion-4.6.4/fotorama.js"></script>
+
+        <!-- fontawesome -->
         <link
             rel="stylesheet"
-            href="/font-awesome-4.7.0/css/font-awesome.css"
+            href="/stylesheets/font-awesome-4.7.0/css/font-awesome.css"
         />
+        <!-- ours -->
         <link rel="stylesheet" href="/stylesheets/main.css" />
         <link rel="stylesheet" href="/stylesheets/product.css" />
     </head>
@@ -249,17 +259,46 @@
                         <td class="showContent hideRow">
                             <div class="dividingLine"></div>
                             <div class="onOff">
-                                <i class="fa fa-times-circle" aria-hidden="true"
+                                <!-- <i class="fa fa-times-circle" aria-hidden="true"
                                     >&nbsp;</i
                                 >
                                 <i
                                     class="fa fa-minus-circle"
                                     aria-hidden="true"
-                                ></i>
+                                ></i> -->
+                                <button>
+                                    <img src="/img/close2.svg" alt="" />
+                                </button>
+                                <button>
+                                    <img src="/img/zoom2.svg" alt="" />
+                                </button>
                             </div>
                             <div class="Info">
                                 <div class="infoImg">
-                                    <img src="/img/test2.jpeg" alt="" />
+                                    <img
+                                        id="imgEditBtn"
+                                        src="/img/edit.svg"
+                                        alt="按我修改圖片yo"
+                                    />
+                                    <div
+                                        class="fotorama"
+                                        data-nav="thumbs"
+                                        data-loop="true"
+                                        data-ratio="1/1"
+                                        data-maxwidth="100%"
+                                        data-thumbwidth="70"
+                                        data-thumbheight="70"
+                                        data-allowfullscreen="true"
+                                        data-fit="cover"
+                                        data-click="false"
+                                    >
+                                        <img src="../img/test.webp" />
+                                        <img src="../img/test2.jpeg" />
+                                        <img src="../img/test.webp" />
+                                        <img src="../img/test2.jpeg" />
+                                        <img src="../img/test.webp" />
+                                        <img src="../img/test2.jpeg" />
+                                    </div>
                                 </div>
                                 <div class="infoTxt">
                                     <ul>
@@ -314,7 +353,7 @@
             </div>
         </div>
 
-        <script src="/js/jquery.min.js"></script>
         <script src="/js/main.js"></script>
+        <script src="/js/product.js"></script>
     </body>
 </html>
