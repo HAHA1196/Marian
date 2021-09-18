@@ -88,28 +88,28 @@ $( ".navbarMenu" ).find( ".hover" ).css( "transition", "transform .5s ease-in-ou
 //       im.addEventListener("mousemove",conceptBg,false);
 //     }  
 //   }
-  $(document).ready(function() {
-    var movementStrength = 25;
-    var height = movementStrength / $(window).height();
-    var width = movementStrength / $(window).width();
-    $(".conceptF").mousemove(function(e){
-              var pageX = e.pageX - ($(window).width() / 2);
-              var pageY = e.pageY - ($(window).height() / 2);
-              var newvalueX = width * pageX * -1 - 25;
-              var newvalueY = height * pageY * -1 - 50;
-              $('.conceptImg>img').css("background-position", newvalueX+"px     "+newvalueY+"px");
-    });
-    });
-      // document.addEventListener("mousemove", parallax);
-      // function parallax(event) {
-      //   this.querySelectorAll(".mouse").forEach((shift) => {
-      //     const position = shift.getAttribute("value");
-      //     const x = (window.innerWidth - event.pageX * position) / 90;
-      //     const y = (window.innerHeight - event.pageY * position) / 90;
+  // $(document).ready(function() {
+  //   var movementStrength = 25;
+  //   var height = movementStrength / $(window).height();
+  //   var width = movementStrength / $(window).width();
+  //   $(".conceptCont").mousemove(function(e){
+  //             var pageX = e.pageX - ($(window).width() / 2);
+  //             var pageY = e.pageY - ($(window).height() / 2);
+  //             var newvalueX = width * pageX * -1 - 25;
+  //             var newvalueY = height * pageY * -1 - 50;
+  //             $('.conceptImg').css("background-position", newvalueX+"px "+newvalueY+"px");
+  //   });
+  //   });
+      document.addEventListener("mousemove", parallax);
+      function parallax(event) {
+        this.querySelectorAll(".conceptCont>img").forEach((shift) => {
+          const position = shift.getAttribute("value");
+          const x = (window.innerWidth - event.pageX * position) / 90;
+          const y = (window.innerHeight - event.pageY * position) / 90;
   
-      //     shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
-      //   });
-      // }
+          shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        });
+      }
 // Swiper Configuration
 // material
 $(function(){

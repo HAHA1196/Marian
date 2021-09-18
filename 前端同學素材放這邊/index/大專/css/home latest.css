@@ -136,13 +136,14 @@
     background-color: #ffe6b7;
     z-index: -1;
 }
+.conceptCont{
+    width: 80%;
+    height: 80vh;
+
+}
 .conceptF{
     margin-top: 5rem;
     position: relative;
-    height: 80vh;
-}
-.conceptF>div{
-    width: 80%;
     height: 80vh;
 }
 
