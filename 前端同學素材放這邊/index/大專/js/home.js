@@ -83,7 +83,7 @@ $( ".navbarMenu" ).find( ".hover" ).css( "transition", "transform .5s ease-in-ou
 //     this.style.backgroundPositionY = valueY + "px"
 //   }
   // window.onload = function() {
-  //   var im = document.getElementById("conceptImg");
+  //   var im = document.getElementById("");
   //   if (im) {
   //     im.addEventListener("mousemove",conceptBg,false);
   //   }  
@@ -111,29 +111,34 @@ $( ".navbarMenu" ).find( ".hover" ).css( "transition", "transform .5s ease-in-ou
       //   });
       // }
 
-      window.onmousemove=function(e){
+      // window.onmousemove=function(e){
 
-        let moveNum=(e.pageX/innerWidth)*80;
-        let moveNum2=(e.pageY/innerHeight)*80;
+      //   let moveNum=(e.pageX/innerWidth)*80;
+      //   let moveNum2=(e.pageY/innerHeight)*80;
 
-        let newNum=((e.pageX - innerWidth/2)/(innerWidth/2));
-        let newNum2=((e.pageY - innerHeight/2)/(innerHeight/2));
+      //   let newNum=((e.pageX - innerWidth/2)/(innerWidth/2));
+      //   let newNum2=((e.pageY - innerHeight/2)/(innerHeight/2));
 
-        // console.log(newNum)
-        document.querySelector(".conceptImg").style.transform=`translate(${-50 - (newNum*10)}%,${-50 - (newNum2*10)}%)`
-        }
+      //   // console.log(newNum)
+      //   document.querySelector(".conceptImg").style.transform=`translate(${-50 - (newNum*10)}%,${-50 - (newNum2*10)}%)`
+      //   }
         
-      window.onmousemove=function(e){
 
-        let moveNum=(e.pageX/innerWidth)*80;
-        let moveNum2=(e.pageY/innerHeight)*80;
+        // 
 
-        let newNum=((e.pageX - innerWidth/2)/(innerWidth/2));
-        let newNum2=((e.pageY - innerHeight/2)/(innerHeight/2));
+        
+          window.onmousemove=function(e){
 
-        // console.log(newNum)
-        document.querySelector(".conceptBg").style.transform=`translate(${-50 - (newNum*10)}%,${-50 - (newNum2*10)}%)`
-        }
+            let moveNum=(e.pageX/innerWidth)*10;
+            let moveNum2=(e.pageY/innerHeight)*10;
+    
+            let newNum=((e.pageX - innerWidth/2)/(innerWidth/2));
+            let newNum2=((e.pageY - innerHeight/2)/(innerHeight/2));
+    
+            // console.log(newNum)
+            document.querySelector(".conceptBg").style.transform=`translate(${-50 - (newNum*10)}%,${-50 - (newNum2*10)}%)`
+            }
+            // 
 // Swiper Configuration
 // material
 $(function(){

@@ -160,7 +160,7 @@
     z-index:3;
     border-radius: 30px;
     background-color: #ffe6b7;
-    background-position: right;
+    background-position: center;
     transform: translate(-50%,-50%);
     }
     /*  */
@@ -174,7 +174,7 @@
     z-index: 4;
     background-image: url(../img/a02.jpg);
     object-fit: cover;
-    background-position: right;
+    background-position: center;
     /* background-color: #F4C443; */
     /* width: 550px; */
     
@@ -208,8 +208,35 @@
     line-height: 3rem;
 }
 /* COM Concept left img */
+.conceptLine{
+    position: absolute;
+    bottom:0%;
+    left:0;
+    /* width: 40%; */
+    /* height: 700px; */
+    z-index: 5;
+    /* transform: translate(0, 0%) skewX(360deg); */
+    transform: translate(32%,50%);
 
-
+}
+.conceptLine>span{
+    display: inline-block;
+    font-size: 7rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #b4cfeb;
+    text-shadow: #ffe6b7 3px 5px 2px;
+    /* transform: translate(0,0); */
+    z-index: 6;
+    /* background-color: #F8F9FA; */
+}
+.c{
+    display: inline-block;
+}
+.o{
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
 
 
 /* COM Concept right txt */
@@ -273,8 +300,14 @@
         z-index: 1;
     }
     .conceptImg{
-        height: unset;
+        /* height: 700px; */
+        width: 60%;
         
+    }
+    .conceptF{
+        height: 80vh;
+
+
     }
     .conceptContent>div{
         width: 50%;
@@ -283,6 +316,10 @@
         line-height: 2em;
         font-size: 1rem;
     }
+    .conceptBg{
+        display: none;
+    }
+
     
 
 }
@@ -297,6 +334,18 @@
         }
         .conceptTxt::before {
             width: 350px;
+        }
+        .conceptImg{
+            height: 80%;
+            width:80%;
+            background-position: right;
+        }
+        .conceptBg{
+            display: none;
+        }
+        .conceptLine{
+            height: unset;
+            left:-5%;
         }
 }
 @media only screen and (max-width: 450px){
@@ -317,6 +366,17 @@
             padding-bottom: unset;
 
 
+        }
+        .conceptImg{
+            height: 100%;
+            width: 100%;
+            background-position: right;
+        }
+        .conceptBg{
+            display: none;
+        }
+        .conceptLine{
+            bottom: unset;
         }
 
 }
@@ -830,10 +890,10 @@
         transform: translateY(-5%);
     }
     /*  */
-    #material{
+    /* #material{
         padding:60px 6.5% 0px 6.5%
 
-    }
+    } */
 } 
 /* material RWD end */
 
@@ -1103,12 +1163,6 @@
     
     .newsTxt > span{
         font-size: 5rem;
-    }
-    .newsTxt > span{
-    
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 7rem;
-        color: #697a95;
     }
 } 
 @media only screen and (max-width: 450px){
