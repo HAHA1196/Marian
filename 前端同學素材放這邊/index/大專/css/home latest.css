@@ -141,6 +141,10 @@
     position: relative;
     height: 80vh;
 }
+.conceptF>div{
+    width: 80%;
+    height: 80vh;
+}
 
 /*  */
 
