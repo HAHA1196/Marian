@@ -13,20 +13,29 @@
 /* main */
 main{
     width: 100%;
+    padding: 50px 0;
     /* background-color: rgb(180,207,235); */
+    background-image: url('./登入之前.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 section{
     max-width: 600px;
-    /* padding: 30px 0; */
-    margin: 30px auto;
-    border: 1px solid #ccc;
-    border-radius: 0 40px 0 0;
+    /* padding: 0 20px; */
+    margin: 0 auto;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 0 40px 0 0; */
     position: relative;
 }
 .membersCondition{
     display: flex;
     background-color: rgb(149, 169, 201);
     border-radius: 0 40px 0 0;
+}
+.membersCondition i{
+    padding: 0 10px;
 }
 .memberConditionRegister,
 .memberConditionLogin{
@@ -54,7 +63,7 @@ section{
     border-radius: 0 40px 0 0;
     /* opacity: .5; */
     margin-left: auto;
-    color: rgb(255, 230, 183);
+    color: white;
 }
 .membersRegister{
     width: 100%;
@@ -78,6 +87,9 @@ section{
     position: absolute;
     bottom: -20px;
     opacity: 0.7;
+}
+.membersRegisterInfo input{
+    border: none;
 }
 .membersRegisterInfo p{
     line-height: 1.2rem;
@@ -119,22 +131,30 @@ section{
     margin: 10px 0;
     font-size: 1.1rem;
     line-height: 2rem;
-    border: 1px solid #ccc;
+    border: none;
+    /* border: 1px solid #ccc; */
     box-sizing: border-box;
+    box-shadow: inset 1px 1px 3px 2px #969696;
+}
+.membersButton{
+    text-align: center;
+}
+.membersButton i{
+    padding: 0 10px;
 }
 button{
-    width: 100%;
+    width: 50%;
     padding: 15px 0;
     margin: 20px 0 20px 0;
     font-size: 1.2rem;
     border-radius: 0 40px 0 40px;
-    background-color:rgb(149, 169, 201);
-    color:rgb(255, 230, 183);
+    background-color:#ffe6b7;
+    color:rgb(105, 122, 149);
     border: none;
     cursor: pointer;
 }
 button:disabled{
-    background-color:rgb(149, 169, 201);
+    background-color:#ffe6b7;
     opacity: .6;
 }
 

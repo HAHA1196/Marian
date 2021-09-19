@@ -10,18 +10,21 @@
     <!-- <link rel="stylesheet" href="/stylesheets/members.css"> -->
     <link rel="stylesheet" href="/前端同學素材放這邊/members/members.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <header>
+    <!-- <header>
         Cora design
-    </header>
+    </header> -->
     <main>
         <section>
             <div class="membersCondition">
                 <div class="memberConditionRegister">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     <p>Member Register</p>
                 </div>
                 <div class="memberConditionLogin">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
                     <p>Member Login</p>
                 </div>
             </div>
@@ -43,7 +46,9 @@
                 <div class="membersRegisterAgreement">
                     <label><input class="agreeCheckbox" type="checkbox" >I agree....</label>
                 </div>
-                <button onclick="joinNow()" disabled>Join Now !</button>               
+               <div class="membersButton">
+                    <button onclick="joinNow()" disabled><i class="fa fa-hand-o-right" aria-hidden="true"></i>Join Now !</button>      
+               </div>         
             </div>
             <div class="membersLogin">
                 <div class="membersLoginTitle">
@@ -53,14 +58,16 @@
                     <input type="text" placeholder="Email">
                     <input type="text" placeholder="Password">
                 </div>
-                <button>Shop Now !</button>
+                <div class="membersButton">
+                    <button>Shop Now !</button>
+                </div>
                 <p><a href="#">Forgot Password ?</a></p>
             </div>
         </section>
     </main>
-    <footer>
+    <!-- <footer>
         Cora design
-    </footer>
+    </footer> -->
 
     <script>
         $(document).ready(function(){
@@ -68,7 +75,7 @@
             $('.memberConditionRegister').on('click',function(){
                 $('.membersCondition').css("background-color","rgb(149, 169, 201)");
                 $('.memberConditionRegister').css("color","rgb(105, 122, 149)").css("background-color","rgb(255, 230, 183)");
-                $('.memberConditionLogin').css("color","rgb(255, 230, 183)").css("background-color","rgb(149, 169, 201)");
+                $('.memberConditionLogin').css("color","white").css("background-color","rgb(149, 169, 201)");
                 $('.membersRegister').css("display","block");
                 $('.membersLogin').css("display","none");
             })
@@ -76,7 +83,7 @@
             // member login display
             $('.memberConditionLogin').on('click',function(){
                 $('.membersCondition').css("background-color","rgb(255, 230, 183)");
-                $('.memberConditionRegister').css("color","rgb(255, 230, 183)").css("background-color","rgb(149, 169, 201)");
+                $('.memberConditionRegister').css("color","white").css("background-color","rgb(149, 169, 201)");
                 $('.memberConditionLogin').css("color","rgb(105, 122, 149)").css("background-color","rgb(255, 230, 183)");
                 $('.membersRegister').css("display","none");
                 $('.membersLogin').css("display","block");
@@ -106,12 +113,12 @@
             let number_check = /^.*(?=.{1,})(?=.*\d).*$/;
             $('.registerPassword').on('input',function(){
                 if(length_check.test(pwd.value) && upper_check.test(pwd.value) && lower_check.test(pwd.value) && number_check.test(pwd.value)){
-                    $('.passwordAlertCharacters').css('color','green');
-                    $('.passwordAlertUpper').css('color','green');
-                    $('.passwordAlertLower').css('color','green');
-                    $('.passwordAlertNum').css('color','green');
+                    $('.passwordAlertCharacters').css('color','#99a9c6');
+                    $('.passwordAlertUpper').css('color','#99a9c6');
+                    $('.passwordAlertLower').css('color','#99a9c6');
+                    $('.passwordAlertNum').css('color','#99a9c6');
                     if(pwd.value.length > 15){
-                        $('.passwordAlertCharacters').html('Strong password').css('color','green');
+                        $('.passwordAlertCharacters').html('Strong password').css('color','#99a9c6');
                     }else if(pwd.value.length >= 8){
                         $('.passwordAlertCharacters').html('Weak password').css('color','#f77b1c');
                     }
@@ -119,34 +126,34 @@
                 }
                 else{
                     pwdFlag = 0;
-                    $('.passwordAlertCharacters').html('Enter at least 8 characters').css('color','red');
-                    $('.passwordAlertLower').css('color','red');
-                    $('.passwordAlertUpper').css('color','red');
-                    $('.passwordAlertNum').css('color','red');
+                    $('.passwordAlertCharacters').html('Enter at least 8 characters').css('color','#546279');
+                    $('.passwordAlertLower').css('color','#546279');
+                    $('.passwordAlertUpper').css('color','#546279');
+                    $('.passwordAlertNum').css('color','#546279');
                     if(length_check.test(pwd.value)){
-                        $('.passwordAlertCharacters').css('color','green');
+                        $('.passwordAlertCharacters').css('color','#99a9c6');
                     }else{
                         if(upper_check.test(pwd.value)){
-                            $('.passwordAlertUpper').css('color','green');
+                            $('.passwordAlertUpper').css('color','#99a9c6');
                             if(lower_check.test(pwd.value)){
-                                $('.passwordAlertLower').css('color','green');
+                                $('.passwordAlertLower').css('color','#99a9c6');
                                 if(number_check.test(pwd.value)){
-                                    $('.passwordAlertNum').css('color','green');
+                                    $('.passwordAlertNum').css('color','#99a9c6');
                                 }
                             }else{
                                 if(number_check.test(pwd.value)){
-                                    $('.passwordAlertNum').css('color','green');
+                                    $('.passwordAlertNum').css('color','#99a9c6');
                                 }
                             }
                         }else{
                             if(lower_check.test(pwd.value)){
-                                $('.passwordAlertLower').css('color','green');
+                                $('.passwordAlertLower').css('color','#99a9c6');
                                 if(number_check.test(pwd.value)){
-                                    $('.passwordAlertNum').css('color','green');
+                                    $('.passwordAlertNum').css('color','#99a9c6');
                                 }
                             }else{
                                 if(number_check.test(pwd.value)){
-                                    $('.passwordAlertNum').css('color','green');
+                                    $('.passwordAlertNum').css('color','#99a9c6');
                                 }
                             }
                         }
@@ -161,7 +168,7 @@
                     $('.emailAlert').css('display','none');
                     emailFlag = 1;
                 }else{
-                    $('.emailAlert').html('Email address is invalid!').css('color','red').css('display','block');
+                    $('.emailAlert').html('Email address is invalid!').css('color','#546279').css('display','block');
                     emailFlag = 0;
                 }
             })
@@ -169,7 +176,7 @@
             //user name check
             $('.registerName').on('input',function(){
                 if($('.registerName')[0].value.length < 1){
-                    $('.usernameAlert').html('Please enter user name!').css('color','red').css('display','block');
+                    $('.usernameAlert').html('Please enter user name!').css('color','#546279').css('display','block');
                     nameFlag = 0;
                 }else{
                     $('.usernameAlert').css('display','none');
@@ -187,27 +194,27 @@
             if(pwdFlag == 0){
                 if(emailFlag == 0){
                     if(nameFlag == 0){
-                        $('.usernameAlert').html('Please enter user name!').css('color','red').css('display','block');
+                        $('.usernameAlert').html('Please enter user name!').css('color','#546279').css('display','block');
                     }
-                    $('.emailAlert').html('Email address is invalid!').css('color','red').css('display','block');
+                    $('.emailAlert').html('Email address is invalid!').css('color','#546279').css('display','block');
                 }else{
                     if(nameFlag == 0){
-                        $('.usernameAlert').html('Please enter user name!').css('color','red').css('display','block');
+                        $('.usernameAlert').html('Please enter user name!').css('color','#546279').css('display','block');
                     }
                 }
-                $('.passwordAlertCharacters').html('Enter at least 8 characters').css('color','red');
-                $('.passwordAlertLower').css('color','red');
-                $('.passwordAlertUpper').css('color','red');
-                $('.passwordAlertNum').css('color','red');
+                $('.passwordAlertCharacters').html('Enter at least 8 characters').css('color','#546279');
+                $('.passwordAlertLower').css('color','#546279');
+                $('.passwordAlertUpper').css('color','#546279');
+                $('.passwordAlertNum').css('color','#546279');
             }else{
                 if(emailFlag == 0){
                     if(nameFlag == 0){
-                        $('.usernameAlert').html('Please enter user name!').css('color','red').css('display','block');
+                        $('.usernameAlert').html('Please enter user name!').css('color','#546279').css('display','block');
                     }
-                    $('.emailAlert').html('Email address is invalid!').css('color','red').css('display','block');
+                    $('.emailAlert').html('Email address is invalid!').css('color','#546279').css('display','block');
                 }else{
                     if(nameFlag == 0){
-                        $('.usernameAlert').html('Please enter user name!').css('color','red').css('display','block');
+                        $('.usernameAlert').html('Please enter user name!').css('color','#546279').css('display','block');
                     }else{
                         //can join now
                         console.log('asshole');

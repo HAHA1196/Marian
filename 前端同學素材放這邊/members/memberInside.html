@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./memberInside.css">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="membersCondition">
+                <div class="memberConditionInfo">
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    <p>Member Info</p>
+                </div>
+                <div class="memberConditionOrders">
+                    <i class="fa fa-history" aria-hidden="true"></i>
+                    <p>Member Orders</p>
+                </div>
+            </div>
+            <div class="memberInfo">
+                <div class="memberInfoItem">
+                    <div class="memberInfoRows">
+                        <p class="memberInfoText">哈囉～老闆，以下是你的會員資料，<br><br> <span>如欲更改請直接輸入，並按下方確認按鈕即可！</span></p>
+                    </div>
+                    <div class="memberInfoRows">
+                        <p class="memberInfoTitle">Member Id</p>
+                        <p class="memberInfoDetails">#1487</p>
+                    </div>
+                    <div class="memberInfoRows">
+                        <p class="memberInfoTitle">Name</p>
+                        <input type="text" class="memberInfoDetails" placeholder="Jen Hung">
+                    </div>
+                    <div class="memberInfoRows">
+                        <p class="memberInfoTitle">Gender</p>
+                        <input type="text" class="memberInfoDetails" placeholder="Female">
+                    </div>
+                    <div class="memberInfoRows">
+                        <p class="memberInfoTitle">Phone</p>
+                        <input type="text" class="memberInfoDetails" placeholder="0987654321">
+                    </div>
+                    <div class="memberInfoRows">
+                        <p class="memberInfoTitle">Address</p>
+                        <input type="text" class="memberInfoDetails" placeholder="台北市大安區忠孝東路四段123巷45號5樓之二">
+                    </div>
+                    <div class="memberInfoRows">
+                        <p class="memberInfoTitle">Email</p>
+                        <input type="text" class="memberInfoDetails" placeholder="jenhung910271@gmail.com">
+                    </div>
+                    <div class="memberInfoRows">
+                        <p class="memberInfoTitle">Password</p>
+                        <input type="text" class="memberInfoDetails" placeholder="**************">
+                    </div>
+                </div> 
+                <div class="memberButton">
+                    <button class="memberInfoButton deleteButton"><i class="fa fa-minus-circle" aria-hidden="true"></i><p>Discard</p></button>
+                    <button class="memberInfoButton saveButton"><i class="fa fa-check-circle-o" aria-hidden="true"></i>Save Changes</button>
+                </div>
+            </div>
+            <div class="memberOrders">
+                <div class="memberOrdersTitle">
+                    <div class="memberOrdersSee"></div>
+                    <div class="memberOrdersId">Orders ID</div>
+                    <div class="memberOrdersTime">Orders Time</div>
+                    <div class="memberOrdersTotal">Orders Total</div>
+                </div>
+                <div class="memberOrdersItem">
+                    <div class="memberOrdersSee" id="1"><i class="fa fa-list" aria-hidden="true"></i>Details</div>
+                    <div class="memberOrdersId">135790</div>
+                    <div class="memberOrdersTime">2020-12-28</div>
+                    <div class="memberOrdersTotal">NT$3990</div>
+                </div>
+                <div class="memberOrdersDetails">
+                    <ul>
+                        <li><#27, 灰色印花棉踢, M, 3件, NT$4500></li>
+                        <li><#453, 兒童100%環保登山刷毛衣, 1件, NT$1280></li>
+                        <li><#1987, 高機能防風防水登山外套, 1件, NT$3780></li>
+                        <li><#3329, 15L超輕量側背包, 1件, NT$3780></li>
+                    </ul>
+                </div>
+                <div class="memberOrdersItem">
+                    <div class="memberOrdersSee" id="2"><i class="fa fa-list" aria-hidden="true"></i>Details</div>
+                    <div class="memberOrdersId">246802</div>
+                    <div class="memberOrdersTime">2020-09-30</div>
+                    <div class="memberOrdersTotal">NT$2570</div>
+                </div>
+                <div class="memberOrdersDetails">
+                    <ul>
+                        <li><#27, 灰色印花棉踢, M, 3件, NT$4500></li>
+                        <li><#453, 兒童100%環保登山刷毛衣, 1件, NT$1280></li>
+                        <li><#1987, 高機能防風防水登山外套, 1件, NT$3780></li>
+                        <li><#3329, 15L超輕量側背包, 1件, NT$3780></li>
+                    </ul>
+                </div>
+                <div class="memberOrdersItem">
+                    <div class="memberOrdersSee" id="3"><i class="fa fa-list" aria-hidden="true"></i>Details</div>
+                    <div class="memberOrdersId">148778</div>
+                    <div class="memberOrdersTime">2020-05-19</div>
+                    <div class="memberOrdersTotal">NT$12400</div>
+                </div>
+                <div class="memberOrdersDetails">
+                    <ul>
+                        <li><#27, 灰色印花棉踢, M, 3件, NT$4500></li>
+                        <li><#453, 兒童100%環保登山刷毛衣, 1件, NT$1280></li>
+                        <li><#1987, 高機能防風防水登山外套, 1件, NT$3780></li>
+                        <li><#3329, 15L超輕量側背包, 1件, NT$3780></li>
+                    </ul>
+                </div>
+                <div class="memberOrdersItem">
+                    <div class="memberOrdersSee" id="4"><i class="fa fa-list" aria-hidden="true"></i>Details</div>
+                    <div class="memberOrdersId">307896</div>
+                    <div class="memberOrdersTime">2019-04-27</div>
+                    <div class="memberOrdersTotal">NT$1550</div>
+                </div>
+                <div class="memberOrdersDetails">
+                    <ul>
+                        <li><#27, 灰色印花棉踢, M, 3件, NT$4500></li>
+                        <li><#453, 兒童100%環保登山刷毛衣, 1件, NT$1280></li>
+                        <li><#1987, 高機能防風防水登山外套, 1件, NT$3780></li>
+                        <li><#3329, 15L超輕量側背包, 1件, NT$3780></li>
+                    </ul>
+                </div>
+                <div class="memberOrdersItem">
+                    <div class="memberOrdersSee" id="5"><i class="fa fa-list" aria-hidden="true"></i>Details</div>
+                    <div class="memberOrdersId">107396</div>
+                    <div class="memberOrdersTime">2019-03-29</div>
+                    <div class="memberOrdersTotal">NT$3290</div>
+                </div>
+                <div class="memberOrdersDetails">
+                    <ul>
+                        <li><#27, 灰色印花棉踢, M, 3件, NT$4500></li>
+                        <li><#453, 兒童100%環保登山刷毛衣, 1件, NT$1280></li>
+                        <li><#1987, 高機能防風防水登山外套, 1件, NT$3780></li>
+                        <li><#3329, 15L超輕量側背包, 1件, NT$3780></li>
+                    </ul>
+                </div>
+                <div class="memberOrdersItem">
+                    <div class="memberOrdersSee" id="6"><i class="fa fa-list" aria-hidden="true"></i>Details</div>
+                    <div class="memberOrdersId">308741</div>
+                    <div class="memberOrdersTime">2019-02-11</div>
+                    <div class="memberOrdersTotal">NT$4360</div>
+                </div>
+                <div class="memberOrdersDetails">
+                    <ul>
+                        <li><#27, 灰色印花棉踢, M, 3件, NT$4500></li>
+                        <li><#453, 兒童100%環保登山刷毛衣, 1件, NT$1280></li>
+                        <li><#1987, 高機能防風防水登山外套, 1件, NT$3780></li>
+                        <li><#3329, 15L超輕量側背包, 1件, NT$3780></li>
+                    </ul>
+                </div>
+                <div class="memberOrdersTitle">
+                    <div class="memberOrdersSee"></div>
+                    <div class="memberOrdersId"></div>
+                    <div class="memberOrdersTime"></div>
+                    <div class="memberOrdersTotal"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        $(document).ready(function(){
+            // member register display
+            $('.memberConditionInfo').on('click',function(){
+                $('.membersCondition').css("background-color","rgb(149, 169, 201)");
+                $('.memberConditionInfo').css("color","rgb(105, 122, 149)").css("background-color","rgb(255, 230, 183)");
+                $('.memberConditionOrders').css("color","white").css("background-color","rgb(149, 169, 201)");
+                $('.memberInfo').css("display","block");
+                $('.memberOrders').css("display","none");
+            })
+
+            // member login display
+            $('.memberConditionOrders').on('click',function(){
+                $('.membersCondition').css("background-color","rgb(255, 230, 183)");
+                $('.memberConditionInfo').css("color","white").css("background-color","rgb(149, 169, 201)");
+                $('.memberConditionOrders').css("color","rgb(105, 122, 149)").css("background-color","rgb(255, 230, 183)");
+                $('.memberInfo').css("display","none");
+                $('.memberOrders').css("display","block");
+                console.log('fuck')
+            })
+
+            // member order details
+            $('.memberOrdersDetails').slideToggle();
+            document.querySelectorAll('.memberOrdersItem').forEach((element)=>{
+                element.addEventListener('click',shit)
+            });
+            let flag = 0;
+            function shit(){
+                console.log(this.before)
+                // let width = window.getComputedStyle(
+	            // document.querySelector('.memberOrdersItem'), ':before'
+                // ).getPropertyValue('background-color');
+                // let color = window.getComputedStyle(
+	            // document.querySelector('.memberOrdersItem'), ':before');
+                if(flag == 0){
+                    this.nextElementSibling.style.display = 'flex';
+                    // width = 'white';
+                    // color.style.color = '#f00';
+                    flag = 1;
+                }else{
+                    this.nextElementSibling.style.display = 'none';
+                    // width = 'rgb(149, 169, 201)';
+                    flag = 0;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
