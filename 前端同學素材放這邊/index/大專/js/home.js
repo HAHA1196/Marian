@@ -136,7 +136,7 @@ $( ".navbarMenu" ).find( ".hover" ).css( "transition", "transform .5s ease-in-ou
             let newNum2=((e.pageY - innerHeight/2)/(innerHeight/2));
     
             // console.log(newNum)
-            document.querySelector(".conceptBg").style.transform=`translate(${-50 - (newNum*10)}%,${-50 - (newNum2*10)}%)`
+            // document.querySelector(".conceptBg").style.transform=`translate(${-50 - (newNum*10)}%,${-50 - (newNum2*10)}%)`
             }
             // 
 // Swiper Configuration
