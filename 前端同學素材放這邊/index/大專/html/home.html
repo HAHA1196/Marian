@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/logo2.svg" type="image/x-icon">
-   
+    <link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
     <title>Marian</title>
     <!-- icon -->
     <link
@@ -14,445 +14,561 @@
   />
     <link rel="stylesheet" href="../css/all.css">
     <link rel="stylesheet" href="../css/home.css">
-    <script src="../js/jquery-3.4.1.js"></script> 
+    <script src="../js/jquery-3.4.1.js"></script>
+
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js -->
 </head>
 <body>
     <!-- Loading -->
     <!-- Header -->
+    <div class="cursor"></div>
     <header id="header">
           
-        <a href="../html/OP.html" class=" header-logo" >
-            <img class="logo " target="style" src="../img/earth.png" alt="">
+        <a href="../html/OP.html" class=" headerLogo" >
+                <img class="logo" target="style" src="../img/大專LOGO.png" alt="">
             <span> 
-                &nbsp&nbspMarian
+                Marian
             </span>
         </a>
         <div class="navbar">
-            <ul  class="navbar-ul">
-                <li class="nav-a" onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a href="../html/OP.html">ABOUT</a>
-                    <ul class="navbar-menu">
+            <ul  class="navbarUl">
+                <li class="nav-a navAbout" >
+                    <a href="../html/OP.html">ABOUT
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                    <ul class="navbarMenu">
                         <li><a href="../html/OP.html">F&Q</a></li>
                     </ul>
                 </li>
-                <li><a href="../html/team.html">NEWS</a></li>
-                <li><a href="../html/project.html">PROJECT</a>
-                    <ul class="navbar-menu">
+                <li>
+                    <a href="../html/team.html">NEWS
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </li>
+                <li class="nav-a navProject">
+                    <a href="../html/project.html">PRODUCT
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                    <ul class="navbarMenu">
                         <li><a href="../html/OP.html">ALL</a></li>
                         <li><a href="../html/OP.html">BOARD</a></li>
                         <li><a href="../html/OP.html">SWIMSUIT</a></li>
-                        <li><a href="../html/OP.html">ACCESSORY</a></li>
+                        <li><a href="../html/OP.html">ACC</a></li>
                     </ul>
                 </li>
-                <li><a href="../html/contact.html">CONTACT</a></li>
+                <li>
+                    <a href="../html/contact.html">CONTACT
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </li>
             </ul>
-            <ul  class="navbar-ul-icon">
-                <li><a href="../html/contact.html"><img src="../img/member.png" alt=""></a></li>
-                <li><a href="../html/contact.html"><img src="../img/cart.png" alt=""></a></li>
-                <li><a href="../html/contact.html"><img src="../img/earth.png" alt=""></a></li>
-            </ul>
-           
-        </div>
-        <div class="header-hambur">
-            <input id="toggle" type="checkbox"></input>
-            <label for="toggle" class="hamburger">
-                <div class="top-bun"></div>
-                <div class="meat"></div>
-                <div class="bottom-bun"></div>
-            </label>
-            <div class="toggle-content" >
-                <div>
-                    <div class="toggle-content-l">
-                        <a href="../html/OP.html">HOME</a><br>
-                        <a href="../html/team.html">ABOUT</a><br>
-                        <a href="../html/project.html">PROJECT</a><br>
-                        <a href="../html/news.html">NEWS</a><br>
-                        <a href="../html/contact.html">CONTACT</a>
-                    </div>
-                    <div class="toggle-content-R">
-                        <a href="../html/prague.html" target="_blank" class="loc_link">
-                            <!-- <span class="loc__icon">
-                                <i class="fab fa-facebook-square"></i>                                       
-                            </span> -->
-                        </a> 
+            <div  class="navbarIcon">
+                <a href=""><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-shopping-bag fa-2x" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-globe fa-2x" aria-hidden="true"></i></a>
+            </div>
+            <div class="headerHambur">
+                <input id="toggle" type="checkbox"></input>
+                <label for="toggle" class="hamburger">
+                    <div class="topBun"></div>
+                    <div class="meat"></div>
+                    <div class="bottomBun"></div>
+                </label>
+                <div class="toggleContent" >
+                    <div>
+                        <div class="toggleContentL">
+                            <a href="../html/OP.html">HOME</a><br>
+                            <a href="../html/team.html">ABOUT</a><br>
+                            <a href="../html/project.html">PRODUCT</a><br>
+                            <a href="../html/news.html">NEWS</a><br>
+                            <a href="../html/contact.html">CONTACT</a>
+                        </div>
+                        <div class="toggleContentR">
+                            <a href="../html/prague.html" target="_blank" class="loc_link">
+                            </a> 
+                                <a href="" target="_blank" class="loc_link">
+                            </a> 
                             <a href="" target="_blank" class="loc_link">
-                            <!-- <span class="loc__icon">
-                                <i class="fab fa-instagram"></i>
-                            </span> -->
-                        </a> 
-                        <a href="" target="_blank" class="loc_link">
-                            <!-- <span class="loc__icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </span> -->
-                        </a> 
-                    </div>
-                    <div class="toggle-content-addr">
-                        <input type="text" class="inputMail " name="fldEmail" maxlength="100" placeholder="Mail Address">
-                        <div class="toggle-content-btn">
-                            <button type="submit" class="btnSubmit " value="SEND" krydebug="1751">SEND</button>
+                            </a> 
+                        </div>
+                        <div class="toggleAddr">
+                            <input type="text" class="inputMail " name="fldEmail" maxlength="100" placeholder="Mail Address">
+                            <div class="toggleBtn">
+                                <button type="submit" class="btnSubmit " value="SEND" krydebug="1751">SEND</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+       
+        
     </header>
 
     <article>
         <section id="welcome" >
-                <div id="welcome-inner">
-                    <div class="welcome-cont" >
+                <div id="welcomeInner">
+                    <div class="welcomeContainer" >
                         <h2></h2>
                         <p></p>
                     </div>
-                    <div class="w-carousel">
+                    <div class="w-carousel wCarousel">
                         <div class="slide">
-                            <img src="../img/we08.jpg" alt="">
+                            <img src="../img/B04.jpg" alt="">
                         </div>
                         <div class="slide">
-                            <img src="../img/we04.jpg" alt="">
+                            <img src="../img/b10.jpeg" alt="">
                         </div>
                         <div class="slide">
-                            <img src="../img/cover02.jpg" alt="">
+                            <img src="../img/b05.jpeg" alt="">
                         </div>
                     </div>
-
                 </div>
         </section>
-        <section id="concept" >
-            <div id="concept-inner">
-                <div class="concept-left" >
-                    <div class="concept_img">
+        <section id="concept" data-aos="fade-up">
+            <div id="conceptInner">
+                <div class="conceptTxt"> 
+                    <span>CONCEPT</span>
+                </div>
+        
+                <div class="conceptF">
+                    <div id="conceptImg" class="conceptImg"></div>
+                    <div id="conceptBg" class="conceptBg"></div>
+                    <div class="conceptLine">
+                        <span>Less</span><br>
+                        <span>is</span><br>
+                        <span>More</span><br>
                     </div>
                 </div>
-                <div class="concept-right inview active">
-                    <div class="concept-title">
-                        <h1 >CONCEPT</h1>
-                        <span class="title-sp">Less Is Better</span><br>
-                        <span class="title-sp">Less Is Better</span>
-                    </div>
-                    <div class="box ">
-                        <p>
-                            Real comfort visual and physical is vital to every room,<br>
-                            our duty is making the best of available space for you.
+               
+                <div class="conceptContent">
+                    <div>
+                        <h1>Brand Concept</h1>
+                        <p>Marian, Mar,represent the ocean,Marian
+                            also means the preciousness of origin, Whales are associated with compassion and solitude, 
+                            and knowledge of both life and death. remind us the sustainable environmental protection.
                         </p>
-
-                        <p> We drivies the design process with enthusiasm and creativity. 
-                        </p> 
-                        <p> Combined with the patient and technical skills, <br>
-                            ensures that every client is fully catered .
-                        </p>  
-                        
-                    </div>
-                    <div class="btn-c">
-                        <a class="btn" href="">
-                           
-                            <h1>view more</h1>
-                        </a>      
                     </div>
                 </div>
-              
+            </div>
+            <!-- <div class="btnContainer"> 
+               <div class="btnMore btnCenter">
+                    <span>Read&nbspMore</span>
+                    <div  class="btn">
+                        <a href="../html/project.html"></a>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+        <section  id="material" >
+            <div id="materialInner">
+                <div data-aos="fade-up"  class="materialTxt"> 
+                    <span>MATERIAL</span>
+                </div>
+                    <div  class="matF">
+                        <div data-aos="fade-up" data-aos-duration="3000"  class="matfLeft">
+                            <div>
+                                <img src="../img/m04.jpg" alt="">
+                            </div>
+                        </div>
+                        <div   data-aos="fade-up-right" data-aos-duration="2500"  class="matfRight">
+                            <h1>Ethoxyline Resin</h1>
+                            <p>Firewire, which is ECOBOARD-certified
+                                 by the watchdog Sustainable Surf, 
+                                is the only major brand to use all bio-boards</p>
+                        </div>
+                    </div>
+                    <div   class="matS">
+                        <div data-aos="fade-up" data-aos-duration="3000" class="matsLeft">
+                            <h1>guayule plant</h1>
+                            <p> We makes plant-based bio-rubbers derived from the guayule plant,
+                                and compsed it with  60% guayule rubber and 40% neoprene.
+                            </p>
+                        </div>
+                        <div data-aos="fade-up" data-aos-duration="2000"  class="matsRight">
+                            <div>
+                                <img src="../img/m102.jpg" alt="">
+                            </div>
+                            
+                        </div>
+                        
+
+                    </div>
+                    <div  class="matT">
+                        <div data-aos="fade-down" data-aos-duration="3000"  class="mattLeft">
+                            <div>
+                                <img src="../img/m201.jpg" alt="">
+                            </div>
+                        </div>
+                        <div  data-aos="fade-up-right" data-aos-duration="3000"  class="mattRight">
+                            <h1>Coconut Oil</h1>
+                            <p> Coconut oil  can  block around 20 percent of the sun's damaging rays. 
+                            which also block 97 percent of the sun rays.</p>
+                        </div>
+                    </div>
+                <!-- <div class="btnContainer">
+                    <div class="btnMore btnCenter">
+                        <span>Read&nbspMore</span>
+                        <div  class="btn">
+                            <a href="../html/project.html"></a>
+                        </div>
+                    </div>
+                </div> -->
             </div>
         </section>
-        <!-- <section id="material" >
-            <div id="material-inner">
+        <section id="news">
+            <div id="newsInner" class="newsInner">
+                <div data-aos="fade-right" data-aos-duration="1500" class="newsTxt"> 
+                    <span>NEWS</span>
+                </div>
+            </div>
+            <!--swiper　swiper-wrapper swiper-slide是套件專用名稱　請勿修改  -->
+            <div class="swiper mySwiper">
+                <div class=" swiper-wrapper ">
+                    <div class=" swiper-slide ">
+                        <a class="nThumbnail" href="">
+                            <img src="../img/we06.jpg" alt="">
+                        </a>
+                        <a class="ntxtName">
+                            <span>Vol.01 【Toorak River.】</span>
+                        </a>
+                        <a class="ntxt">
+                            <span>Xitun DistrictTaichung CityXitun DistrictTaichung City</span>
+                        </a>
+                        <div class="nHr"></div>
+                        <div class="nBot">
+                            <a  class="N-bot-a" href="">Read More
+                            </a>
+                            <div class="nSmall">
+                                <a>Information</a>
+                                <span>|</span>
+                                <span>2021.7 up</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ">
+                        <a class="nThumbnail" href="">
+                            <img src="../img/we07.jpg" alt="">
+                        </a>
+                        <a class="ntxtName">
+                            <span>Vol.02 【Toorak River.】</span>
+                        </a>
+                        <a class="ntxt">
+                            <span>Xitun DistrictTaichung CityXitun DistrictTaichung City</span>
+                        </a>
+                        <div class="nHr"></div>
+                        <div class="nBot">
+                            <a  class="N-bot-a" href="">Read More
+                            </a>
+                            <div class="nSmall">
+                                <a>Information</a>
+                                <span>|</span>
+                                <span>2021.7 up</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ">
+                        <a class="nThumbnail" href="">
+                            <img src="../img/出荷業務休止インフォメーション.jpeg" alt="">
+                        </a>
+                        <a class="ntxtName">
+                            <span>Vol.03 【Toorak River.】</span>
+                        </a>
+                        <a class="ntxt">
+                            <span>Xitun DistrictTaichung CityXitun DistrictTaichung City</span>
+                        </a>
+                        <div class="nHr"></div>
+                        <div class="nBot">
+                            <a  class="N-bot-a" href="">Read More
+                            </a>
+                            <div class="nSmall">
+                                <a>Information</a>
+                                <span>|</span>
+                                <span>2021.7 up</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ">
+                        <a class="nThumbnail" href="">
+                            <img src="../img/we07.jpg" alt="">
+                        </a>
+                        <a class="ntxtName">
+                            <span>Vol.04 【Toorak River.】</span>
+                        </a>
+                        <a class="ntxt">
+                            <span>Xitun DistrictTaichung CityXitun DistrictTaichung City</span>
+                        </a>
+                        <div class="nHr"></div>
+                        <div class="nBot">
+                            <a  class="N-bot-a" href="">Read More
+                            </a>
+                            <div class="nSmall">
+                                <a>Information</a>
+                                <span>|</span>
+                                <span>2021.7 up</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ">
+                        <a class="nThumbnail" href="">
+                            <img src="../img/we06.jpg" alt="">
+                        </a>
+                        <a class="ntxtName">
+                            <span>Vol.05 【Toorak River.】</span>
+                        </a>
+                        <a class="ntxt">
+                            <span>Xitun DistrictTaichung CityXitun DistrictTaichung City</span>
+                        </a>
+                        <div class="nHr"></div>
+                        <div class="nBot">
+                            <a  class="N-bot-a" href="">Read More
+                            </a>
+                            <div class="nSmall">
+                                <a>Information</a>
+                                <span>|</span>
+                                <span>2021.7 up</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ">
+                        <a class="nThumbnail" href="">
+                            <img src="../img/we07.jpg" alt="">
+                        </a>
+                        <a class="ntxtName">
+                            <span>Vol.02 【Toorak River.】</span>
+                        </a>
+                        <a class="ntxt">
+                            <span>Xitun DistrictTaichung CityXitun DistrictTaichung City</span>
+                        </a>
+                        <div class="nHr"></div>
+                        <div class="nBot">
+                            <a  class="N-bot-a" href="">Read More
+                            </a>
+                            <div class="nSmall">
+                                <a>Information</a>
+                                <span>|</span>
+                                <span>2021.7 up</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                
             </div>
-        </section> -->
-        <section id="news">
-            <div id="journal-inner" class="journal-inner">
-                <!-- <div class="journal-header" > -->
-                    <div class="journal_txt"> 
-                        <span>NEWS</span>
-                    </div>
-                <!-- </div> -->
-            </div>
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                            <a class="N_thumbnail" href="">
-                                <img src="../img/we06.jpg" alt="">
-                            </a>
-                            <!-- <div class="j-card-txt"> -->
-                            <a class="N-txt-name">
-                                <span>Vol.01 【Toorak River.】</span>
-                            </a>
-                            <a class="N-txt">
-                                <span>Xitun DistrictTaichung CityXitun DistrictTaichung City</span>
-                            </a>
-                            <div class="N-hr"></div>
-                            <!-- </div> -->
-                            <div class="N-bot">
-                                <a  class="N-bot-a" href="">Read More
-                                    <!-- <span> read more</span> -->
-                                </a>
-                                <div class="N-bot-small">
-                                    <a>Information</a>
-                                    <span>|</span>
-                                    <span>2021.7 up</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="N_thumbnail" href="">
-                                <img src="../img/we07.jpg" alt="">
-                            </a>
-                            <!-- <div class="j-card-txt"> -->
-                            <a class="N-txt-name">
-                                <span>Vol.01 【Toorak River.】</span>
-                            </a>
-                            <a class="N-txt">
-                                <span>Xitun DistrictTaichung CityXitun DistrictTaichung City</span>
-                            </a>
-                            <div class="N-hr"></div>
-                            <!-- </div> -->
-                            <div class="N-bot">
-                                <a  class="N-bot-a" href="">Read More
-                                    <!-- <span> read more</span> -->
-                                </a>
-                                <div class="N-bot-small">
-                                    <a>Information</a>
-                                    <span>|</span>
-                                    <span>2021.7 up</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="N_thumbnail" href="">
-                                <img src="../img/出荷業務休止インフォメーション.jpeg" alt="">
-                            </a>
-                            <!-- <div class="j-card-txt"> -->
-                            <a class="N-txt-name">
-                                <span>Vol.01 【Toorak River.】</span>
-                            </a>
-                            <a class="N-txt">
-                                <span>Xitun DistrictTaichung CityXitun DistrictTaichung City</span>
-                            </a>
-                            <div class="N-hr"></div>
-                            <!-- </div> -->
-                            <div class="N-bot">
-                                <a  class="N-bot-a" href="">Read More
-                                    <!-- <span> read more</span> -->
-                                </a>
-                                <div class="N-bot-small">
-                                    <a>Information</a>
-                                    <span>|</span>
-                                    <span>2021.7 up</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="N_thumbnail" href="">
-                                <img src="../img/we07.jpg" alt="">
-                            </a>
-                            <!-- <div class="j-card-txt"> -->
-                            <a class="N-txt-name">
-                                <span>Vol.01 【Toorak River.】</span>
-                            </a>
-                            <a class="N-txt">
-                                <span>Xitun DistrictTaichung CityXitun DistrictTaichung City</span>
-                            </a>
-                            <div class="N-hr"></div>
-                            <!-- </div> -->
-                            <div class="N-bot">
-                                <a  class="N-bot-a" href="">Read More
-                                    <!-- <span> read more</span> -->
-                                </a>
-                                <div class="N-bot-small">
-                                    <a>Information</a>
-                                    <span>|</span>
-                                    <span>2021.7 up</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="N_thumbnail" href="">
-                                <img src="../img/we06.jpg" alt="">
-                            </a>
-                            <!-- <div class="j-card-txt"> -->
-                            <a class="N-txt-name">
-                                <span>Vol.01 【Toorak River.】</span>
-                            </a>
-                            <a class="N-txt">
-                                <span>Xitun DistrictTaichung CityXitun DistrictTaichung City</span>
-                            </a>
-                            <div class="N-hr"></div>
-                            <!-- </div> -->
-                            <div class="N-bot">
-                                <a  class="N-bot-a" href="">Read More
-                                    <!-- <span> read more</span> -->
-                                </a>
-                                <div class="N-bot-small">
-                                    <a>Information</a>
-                                    <span>|</span>
-                                    <span>2021.7 up</span>
-                                </div>
-                            </div>
-                        </div>
+            <!-- <div class="btnContainer btnCenter">
+                <div class="btnMore">
+                    <span>Read&nbspMore</span>
+                    <div  class="btn">
+                        <a href="../html/project.html"></a>
                     </div>
                 </div>
+            </div> -->
+            
         </section>
         <section id="product" >
-            <div class="product-inner">
-                <!-- <div class="product_txt"> 
+            <div class="productInner">
+                <div data-aos="fade" data-aos-duration="1500"  class="productTxt"> 
                     <span>PRODUCT</span>
-                </div> -->
-                <div class="p-img-c">
+                    <!-- <span></span> -->
+                </div>
+                <div class="productImgC">
                     <div class="item">
-                        A
-                    </div>
-                    <div class="item">
-                        B
-                    </div>
-                    <div class="item">
-                        C
+                        <p>Marian. </p>
                     </div>
                     <div class="item">
                         <a href="">
-                            <img src="../img/p02.jpg" alt="">
+                            <div>
+                                <img src="../img/p12.jpg" alt="">
+                            </div>
                         </a>
-                        
+                      
                     </div>
                     <div class="item">
                         <a href="">
-                            <img src="../img/p03.jpg" alt="">
+                            <div>
+                                <img src="../img/p07.jpg" alt="">
+                            </div>
                         </a>
                     </div>
                     <div class="item">
-                        <a href=""> PRODUCT</a>
+                       
+                        <a href="">
+                            <div>
+                                <img src="../img/p10.jpg" alt="">
+                            </div>
+                        </a>
                     </div>
                     <div class="item">
-                        g
+                        <a href="">
+                            <div>
+                                <img src="../img/p05.jpg" alt="">
+                            </div>
+                        </a>
                     </div>
                     <div class="item">
-                        h
+                        <p>Nature all around you. </p>
+                     
                     </div>
                     <div class="item">
-                        i
+                        <a href="">
+                            <div>
+                                <img src="../img/p11.jpg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                      
+                        <a href="">
+                            <div>
+                                <img src="../img/p08.jpg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item btnMore" >
+                        <div class="btnMore">
+                            <span>Read&nbspMore</span>
+                            <div  class="btn">
+                                <a href="../html/project.html"></a>
+                            </div>
+                        </div>
+                            
                     </div>
                 </div>
-                <br><br><br><br>
+            
 
             </div>
         </section>
         <section id="sns" >
-            <div class="sns-inner">
-                <span>SNS</span>
-                <div >
-                    <ul class="sns-img-c">
-                        <li class="sns-img"><img src="../img/ig01.jpg" alt=""></li>
-                        <li class="sns-img"><img src="../img/ig01.jpg" alt=""></li>
-                        <li class="sns-img"><img src="../img/ig01.jpg" alt=""></li>
-                        <li class="sns-img"><img src="../img/ig01.jpg" alt=""></li>
-                        <li class="sns-img"><img src="../img/ig01.jpg" alt=""></li>
-       
-                    </ul>
+            <div    class="snsInner">
+                <!--  data-aos="fade" -->
+                <div  data-aos-duration="1500"  class="snsTxt"> 
+                    <span>REVIEWS</span>
+                </div> 
+                <div class="snsContianer" >
+                   <div  class="snsCard">
+                       <div>
+                           <img src="../img/0003.jpg" alt="">
+                       </div>
+                       <h2>Our lover in that summer</h2>
+                       <p>
+                        The texture of sunscreen was really softly and it have the pure favor of coconut
+                        with no chemical composition in it,it still can prevent me from Sunburn!
+                       </p>
+                       <h3>cora zhan</h3>
+
+
+                   </div>
+                   <div  class="snsCard">
+                        <div>
+                            <img src="../img/0003.jpg" alt="">
+                        </div>
+                        <h2>Our lover in that summer</h2>
+                        <p>
+                            The texture of sunscreen was really softly and it have the pure favor of coconut
+                            with no chemical composition in it,it still can prevent me from Sunburn!
+                        </p>
+                        <h3>cora zhan</h3>
+                    </div>
+                    <div  class="snsCard">
+                        <div>
+                            <img src="../img/0003.jpg" alt="">
+                        </div>
+                        <h2>Our lover in that summer</h2>
+                        <p>
+                            The texture of sunscreen was really softly and it have the pure favor of coconut
+                            with no chemical composition in it,it still can prevent me from Sunburn!
+                        </p>
+                        <h3>cora zhan</h3>
+                    </div>
                 </div>
-         
-                <!-- <div class="sns-img-c">
-                    <div  class="sns-img">
-                        <img src="../img/ig01.jpg" alt="">
+                    <div class="btnMore">
+                        <span>Read&nbspMore</span>
+                        <div  class="btn">
+                            <a href="../html/project.html"></a>
+                        </div>
                     </div>
-                    <div  class="sns-img">
-                        <img src="../img/ig01.jpg" alt="">
-                    </div>
-                    <div class="sns-img">
-                        <img src="../img/ig01.jpg" alt="">
-                    </div>
-                    <div  class="sns-img">
-                        <img src="../img/ig01.jpg" alt="">
-                    </div>
-                    <div  class="sns-img">
-                        <img src="../img/ig01.jpg" alt="">
-                    </div>
-
-                </div> -->
             </div>
+         
         </section>
+    </article>    
         <footer id="footer">
-            <div id="footer-inner" class="footer-inner">
-                <div class="f-line">
-                    <div class="f-f-logo">
+            <div id="footerInner" class="footerInner">
+                <div class="fLine">
+                    <div class="fLogo">
                         <a href="">
-                            <img class="footer-logo" src="../img/earth.png" alt="">
-                        </a>
-                        <h1>Maria</h1>
-
-                        
-                    </div>
-                    <div class="f-f-icon">
-                        <a href=""><img class="footer-icon" src="../img/cart.png" alt="">
-                        </a>
-                        <a href=""><img class="footer-icon" src="../img/cart.png" alt="">
-                        </a>
-                        <a href=""><img class="footer-icon" src="../img/cart.png" alt="">
+                            <img class="footerLogo" src="../img/大專LOGO.png" alt="">
                         </a>
                     </div>
-                    
-                                
-                        
+                    <div class="fTxt">
+                        <span>Be Kind To Everything That Lives.</span><br><br>
+                        <span>Maria co.ltd/</span>
+                    </div>
+                    <div class="fIcon">
+                        <a href=""><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                    </div>
                 </div>  
-                <nav class="f-nav">
+                <nav class="fNav">
                     <ul >
                         <li>
-                            <span>ABOUT</span>
+                            <a href=""><span>ABOUT</span></a>
                             <ul>
-                                <li><a  href="../html/news.html">NEWS</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul >
-                        <li>
-                            <span>PRODUCT</span>
-                            <ul>
-                                <li><a   href="../html/team.html">sup</a> </li>
-                                <li><a   href="../html/project.html">sup</a></li>
-                                <li><a   href="../html/news.html">sup</a></li>
-                                <li><a   href="../html/news.html">sup</a></li>
+                                <li><a  href="../html/news.html">F&Q</a></li>
                             </ul>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <span>CONTACT</span>
+                            <a href=""><span>NEWS</span></a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href=""><span>PRODUCT</span></a>
                             <ul>
-                                <li><a  href="../html/team.html">Log in</a> </li>
+                                <li><a  href="../html/team.html">ALL</a> </li>
+                                <li><a  href="../html/project.html">SUP</a></li>
+                                <li><a  href="../html/news.html">BOARD</a></li>
+                                <li><a  href="../html/nㄍˇews.html">ACC</a></li>
                             </ul>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <span>F&Q</span>
-                            <ul>
-                                <li><a   href="../html/team.html">sup</a> </li>
-                                <li><a   href="../html/project.html">sup</a></li>
-                                <li><a   href="../html/news.html">sup</a></li>
-                                <li><a   href="../html/news.html">sup</a></li>
-                            </ul>
+                            <a href=""><span>CONTACT</span></a>
                         </li>
                     </ul>
-
-
-                    <ul>
-                        <li>
-                            <span>---</span>
-                            
-                            <ul>
-                                <li >台中市南屯區公益路二段51號18樓</li>
-                                <li>04-12345678</li>
-                                <li>8:30-17:30</li>
-
-                            </ul>
-                        </li>
-                </ul>
+                    <div class="detail">
+                        <p>台中市南屯區</p>
+                            <span>公益路二段51號18樓</span>
+                        <p> 04-12345678</p>
+                        <p> 8:30-17:30</p>
+                    </div>
                 </nav>
-                <div class="footer-bottom">
-                    <small class="copy">© 2021 CORA Interior Design.</small>
+                <div class="footerBottom">
+                    <small class="copy">© 2021 Marian Co., Ltd.</small>
                 </div>     
             </div>     
         </footer >      
-    </article>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>  
-    <script src="../js/all.js"> </script>    
-    <script src="../js/home.js"> </script>
+    <script src="../js/all.js"></script>    
+    <script src="../js/home.js"></script>
     
 
       
