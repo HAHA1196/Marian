@@ -23,9 +23,11 @@ const toggleRow = (element) => {
     // console.log(element);
 };
 
-//td之間的分隔島產生器
-var thCount = $("tr").find("th").length;
-console.log(thCount);
-for (i = 0; i < thCount; i++) {
-    $(`td:nth-child(${i})`).append("<div class='divider'></div>");
-}
+$(function () {
+    //td之間的分隔島產生器
+    var thCount = $("tr").find("th").length;
+    // console.log(thCount);
+    for (i = 0; i < thCount; i++) {
+        $(`td:nth-child(${i})`).append("<div class='divider'></div>");
+    }
+})

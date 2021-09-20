@@ -10,9 +10,9 @@ create table if not exists
     productName varchar(40), 
     productSize varchar(10) null, 
     productPrice smallint,
-    productInStock smallint
+    productInStock smallint, 
     productDescription text, 
-    productImg longblob, 
+    productImg longblob
 );
 create table if not exists
  customers (
@@ -58,7 +58,7 @@ create table if not exists
 );
 
 /*products 資料*/
-	INSERT INTO `products` (`productStyleNumber`, `productClass`, `productName`, `productDescription`, `productImg`, `productSize`, `productPrice`, `productInStock`) VALUES 
+	INSERT INTO `products` (`productStyleNumber`, `productClass`, `productName`, `productSize`, `productPrice`, `productInStock`, `productDescription`, `productImg`) VALUES 
 		('ACC001', 'ACC', '友善海洋防曬乳', 'F', '350', '50', '一些敘述', NULL), 
 		('D001', 'D', '木頭衝浪板', 'F', '1290', '20', '木材，是一種相當有溫度的材質，當它被運用在衝浪板上時，帶給這張板子的不只是溫度，更有著獨特的靈魂。\r\n \r\n{曾經有人說過，木頭會呼吸。這正是我們挑選木頭來做為衝浪板材質的原因}\r\n\r\n\r\n相較現代化的玻纖，木頭更為溫潤，同時也更好加工。對於沒有削板基礎的初學者來說，用木頭製作一張衝浪板無疑是更簡單的選擇。\r\n\r\n當然，木頭衝浪板的製作依然相當繁複，但在老皮的精心規劃下，總是可以將這樣的過程化繁為簡。但卻又保留住當時製作木頭衝浪板的樂趣。當初海浪木制所創立的初衷正是希望每個人都可以透過製作木頭衝浪板來找回自己當時衝浪那種單純站在浪上的感動。\r\n\r\n{少了那些太多餘浮誇的技巧，享受衝浪的感動}\r\n\r\n', NULL), 
 		('D002', 'D', 'Marian SUP', 'F', '1300', '15', 'SUP 立槳運動近年在台灣颳起旋風，好多人都站上充氣立槳板，在大海上也好、河流上也好、湖泊上也好，享受與流水融為一體的感覺。不知道熱愛 SUP 的你，或是還沒有機會玩玩看 SUP 的你，是否嘗試過雙人甚至是多人 SUP 呢？有些人可能會想，我自己滑就可以滑得很好，不需要多一個人；或是認為多一個人等於多一個負擔，很麻煩。但其實很多人體會過雙人、多人 SUP 後就回不去了！\r\n', NULL), 

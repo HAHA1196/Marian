@@ -89,7 +89,16 @@ router.put('/members', function (req, res, next) {
 // 後台 orders 僅供查
 // http://localhost:8001/api/orders
 router.get('/orders', function (req, res, next) {
-    req.mysql.query('select * from orders o join orderdetails od on (o.orderId = od.orderId)',
+    req.mysql.query('SELECT o.orderId, o.orderDate, o.customerId, SUM(od.productPrice * od.quantity) AS totalPrice FROM orders o JOIN orderdetails od ON (o.orderId = od.orderId) GROUP BY o.orderId',
+        [],
+        function (err, result) {
+            res.send(JSON.stringify(result));
+        }
+    )
+});
+// http://localhost:8001/api/orderdetails
+router.get('/orderdetails', function (req, res, next) {
+    req.mysql.query("SELECT od.orderId, CONCAT(p.productName, ', ', p.productSize, ', ', od.quantity, ', ', (p.productPrice * od.quantity)) AS detail FROM orderdetails od JOIN products p ON (od.productId = p.productId)",
         [],
         function (err, result) {
             res.send(JSON.stringify(result));
