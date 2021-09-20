@@ -4,8 +4,7 @@ var router = express.Router();
 /* GET users listing. */
 // http://localhost:8000/api 
 router.get('/', function (req, res, next) {
-    // res.send('123');
-    console.log(req.body.test);
+    res.send('123');
 });
 
 
