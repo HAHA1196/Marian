@@ -114,6 +114,7 @@ tr:not(:first-child):hover {
     right: 0;
     bottom: 12px;
 }
+
 .productImg {
     width: 40px;
     height: 40px;
@@ -129,6 +130,7 @@ tr:not(:first-child):hover {
     height: 25px;
     background-color: transparent;
     border: none;
+    outline: none;
     color: var(--darkBlue);
     font-size: 18px;
     cursor: pointer;

@@ -110,10 +110,112 @@ tr:not(:first-child):hover {
 }
 
 /* --------------------手風琴展開---------------------- */
-.info {
-    position: relative;
+#newsContainer {
     width: 100%;
-    display: flex;
-    padding: 3%;
-    margin: 0 auto;
+    position: relative;
+    background-color: rosybrown;
+}
+.tab {
+    /* background-color: tomato; */
+    float: left;
+    width: 90px;
+}
+/* ------------左側tabs------------ */
+.tab button {
+    width: 100%;
+    display: block;
+    background-color: var(--darkBlue);
+    border-radius: 0 20px 0 20px;
+    border: none;
+    outline: none;
+    color: var(--white);
+    cursor: pointer;
+    margin: 30px auto;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    transition: 0.3s;
+}
+.tab button:hover {
+    background-color: var(--white);
+    color: var(--fontBlue);
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: var(--lightYellow);
+    color: var(--fontBlue);
+}
+
+/* ------------右側content------------ */
+.tabContent {
+    float: left;
+    width: calc(100% - 90px);
+    height: auto;
+    /* background-color: turquoise; */
+    border-left: 1px solid var(--lightYellow);
+    border-bottom: 1px solid var(--lightYellow);
+    border-radius: 0 0 0 30px;
+    padding: 30px;
+    position: relative;
+    top: 70px;
+}
+.newsInput {
+    width: 70%;
+    background-color: transparent;
+    border: none;
+    color: var(--fontBlue);
+    font-size: 16px;
+    outline: none;
+}
+.decoLine {
+    display: inline-block;
+    width: 100%;
+    border-left: 1px solid var(--lightYellow);
+    border-bottom: 1px solid var(--lightYellow);
+    border-radius: 0 0 0 20px;
+    padding: 0 10px 5px;
+    margin-bottom: 20px;
+}
+textarea {
+    width: 70%;
+    height: 200px;
+    background-color: transparent;
+    border: 1px solid var(--lightYellow);
+    color: var(--fontBlue);
+    font-size: 16px;
+
+    outline: none;
+}
+label ~ div {
+    /* background-color: violet; */
+    padding: 10px;
+}
+.uploadImg {
+    position: relative;
+    background-color: var(--darkBlue);
+    width: 520px;
+    height: 260px;
+    margin: 0 100px;
+}
+
+/* 上傳圖片的圓形加號 */
+.uploadImg img {
+    width: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#confirmBtn {
+    position: absolute;
+    bottom: 0;
+    right: 3%;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 0px 20px 0px 20px;
+    background-color: var(--lightYellow);
+    color: var(--fontBlue);
+    margin: 0 8px 30px;
+    padding: 8px 20px;
+    width: 120px;
 }
