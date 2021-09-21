@@ -249,6 +249,7 @@ header.sticky >.navbar >ul>li>a{
 .navAbout{
     position: relative;
 }
+
 .navAbout .navbarMenu{
     position: absolute;
     top: 3rem;
@@ -256,6 +257,8 @@ header.sticky >.navbar >ul>li>a{
     width: 123px;
     display: none;
 }
+/*  */
+/*  */
 .navProject{
     position: relative;
 
@@ -267,7 +270,6 @@ header.sticky >.navbar >ul>li>a{
     width: 146px;
     display: none;
 }
-
 .navbarMenu>li{
     border: #fff 2px solid;
     background-color: #b4cfeb;

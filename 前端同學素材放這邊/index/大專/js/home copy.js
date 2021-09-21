@@ -38,7 +38,7 @@ $(function(){
     sliderInterval = setInterval(slideNext, 5000);
 
 });
-// $( ".navbarMenu" ).find( ".hover" ).css( "transition", "transform .5s ease-in-out 0s" )
+$( ".navbarMenu" ).find( ".hover" ).css( "transition", "transform .5s ease-in-out 0s" )
 //  
 // news
 // news

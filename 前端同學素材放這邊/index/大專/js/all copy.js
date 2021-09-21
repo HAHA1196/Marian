@@ -5,22 +5,22 @@
 $(document).ready(function(){
     $('.navProject').hover(function() {
         $(".navProject>.navbarMenu").css('display', 'block');
+        
 
     }, 
     function() {
         $(".navProject>.navbarMenu").css('display', 'none');
     });
 }) 
+// $(document).ready(function(){
+//     $('.navAbout').hover(function() {
+//         $(".navAbout>.navbarMenu").css('display', 'block');
 
-$(document).ready(function(){
-    $('.navAbout').hover(function() {
-        $(".navAbout>.navbarMenu").css('display', 'block');
-
-    }, 
-    function() {
-        $(".navAbout>.navbarMenu").css('display', 'none');
-    });
-})
+//     }, 
+//     function() {
+//         $(".navAbout>.navbarMenu").css('display', 'none');
+//     });
+// })
 
 // navnar scroll
 $(document).ready(function () {
