@@ -10,7 +10,7 @@ import moment from 'moment';
 
 export default function News() {
   const [postList, setPostList] = useState([]);
-  //let history = useHistory();
+  let history = useHistory();
 
   useEffect(() => {
     Axios.get("http://localhost:8000/api/news").then((data) => {
@@ -49,7 +49,7 @@ export default function News() {
                   <div class="newsPic">
                     {/* <Link to="/marian/newsinside"> */}
                     <div className="newsClick" 
-                      //onClick={() => history.push(`/marian/news/${val.newsId}`)}
+                      onClick={() => history.push(`/marian/news/${val.newsId}`)}
                     >
                      <img src={`https://picsum.photos/400/200/?random=${val.newsId}`} />
                     </div>
@@ -60,7 +60,7 @@ export default function News() {
                     </div>
                     <h2>
                       <div className="newsClick"
-                        //onClick={() => history.push(`/marian/news/${val.newsId}`)}
+                        onClick={() => history.push(`/marian/news/${val.newsId}`)}
                       >
                         {val.newsTitle}
                       </div>
@@ -71,7 +71,7 @@ export default function News() {
                     <div class="newsExtend">
                       <p>
                         <div className="newsClick"
-                          //onClick={() => history.push(`/marian/news/${val.newsId}`)}
+                          onClick={() => history.push(`/marian/news/${val.newsId}`)}
                         >Read More
                         </div>
                       </p>
