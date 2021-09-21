@@ -94,7 +94,7 @@ select {
     top: 0;
     background-color: var(--lightBlue);
     padding: 0 5%;
-    z-index: 1;
+    z-index: 2;
 }
 #notification {
     color: var(--white);

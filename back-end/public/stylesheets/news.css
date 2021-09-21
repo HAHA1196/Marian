@@ -1,6 +1,6 @@
 /* ------------------------- right section ------------------------- */
 
-/*  ----------heading section----------  */
+/*  heading section  */
 .searchInput {
     display: inline;
     border: 1px solid var(--white);
@@ -12,7 +12,6 @@
 .searchInput:hover {
     box-shadow: 1px 1px 10px 1px rgba(255, 255, 255, 0.2);
 }
-.searchInput select,
 .searchInput input {
     background-color: var(--lightBlue);
     border: none;
@@ -40,31 +39,18 @@
     color: var(--white);
 }
 
-/*  ----------content section----------  */
+/*  content section  */
 #contentSec {
     /* main.css檔案裡面 這裡有設定 position: relative; */
-    top: 200px; /*組長 這邊要依據heading高度調整*/
+    top: 180px; /*組長 這邊要依據heading高度調整*/
 }
-tr {
-    border: none;
-    border-radius: 0 30px 0 0;
-    display: grid;
-    grid-template-columns: 2fr 3.5fr 2fr 2fr 6fr;
-    justify-content: flex-start;
-}
-tr:nth-child(even) {
-    background: rgba(255, 255, 255, 0.4);
-}
-tr:not(:first-child):hover {
-    background-color: var(--lightYellow);
-}
+
 td,
 th {
     min-height: 40px;
     vertical-align: middle;
     padding: 8px;
     position: relative;
-    /* border: 2px solid blue; */
 }
 th {
     font-size: 14px;
@@ -74,10 +60,30 @@ td:last-child {
     background-color: var(--lightBlue);
     outline: 1px solid var(--lightBlue); /*蓋住背景右方的細線*/
 }
+
 td:not(:last-child) {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+tr {
+    border: none;
+    border-radius: 0 30px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr 6fr;
+    justify-content: flex-start;
+}
+
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.4);
+}
+tr:not(:first-child):hover {
+    background-color: var(--lightYellow);
+}
+.lightYellowBgc {
+    /*使用js插入*/
+    background-color: var(--lightYellow);
 }
 .showContent {
     /*使用js插入*/
@@ -91,6 +97,7 @@ td:not(:last-child) {
     /*使用js插入*/
     display: none;
 }
+
 .divider {
     /*使用js插入、表格裡面的分隔島*/
     display: inline;
@@ -101,35 +108,12 @@ td:not(:last-child) {
     right: 0;
     bottom: 12px;
 }
+
 /* --------------------手風琴展開---------------------- */
 .info {
     position: relative;
     width: 100%;
     display: flex;
-    padding: 3% 0 0;
-    margin: 0 auto;
-}
-/* .info ul {
-    border: 2px solid red;
-} */
-.infoTxt li {
-    width: 45%;
-    list-style-type: none;
-    border-left: 1px solid var(--lightYellow);
-    border-bottom: 1px solid var(--lightYellow);
-    border-radius: 0 0 0 15px;
-    color: var(--fontBlue);
-    margin: 0 5% 30px 0;
-    padding: 0 10px 5px;
-}
-.infoTxt li:first-child {
-    float: right;
-    height: 274px;
-    overflow: auto;
-}
-.infoTxt span {
-    color: var(--white);
-}
-.infoTxt span ~ div {
     padding: 3%;
+    margin: 0 auto;
 }

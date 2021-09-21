@@ -10,7 +10,7 @@ $(document).ready(function () {
         window.location.replace("http://localhost:8000/backend/member");
     });
     $("#goToNews").on("click", function () {
-        window.location.replace("http://localhost:8000/backend/News");
+        window.location.replace("http://localhost:8000/backend/news");
     });
 });
 
@@ -30,4 +30,4 @@ $(function () {
     for (i = 0; i < thCount; i++) {
         $(`td:nth-child(${i})`).append("<div class='divider'></div>");
     }
-})
+});

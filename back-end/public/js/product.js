@@ -1,3 +1,3 @@
-$("#imgEdit").on("click", function () {
+$("#imgEditBtn").on("click", function () {
     alert("edit this yo");
 });

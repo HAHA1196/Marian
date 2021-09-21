@@ -30,4 +30,10 @@ router.get("/order", function (req, res, next) {
     res.render("backend/order.ejs", {});
 });
 
+/* news page */
+// http://localhost:8000/backend/news
+router.get("/news", function (req, res, next) {
+    res.render("backend/news.ejs", {});
+});
+
 module.exports = router;
