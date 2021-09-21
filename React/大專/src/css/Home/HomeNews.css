@@ -1,0 +1,360 @@
+/* NEWS */
+
+#newsInner{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* display: flex; */
+
+
+}
+
+.newsTxt{
+    position: relative;
+
+}
+.newsTxt::before{
+    content: "";
+    position: absolute;
+    top:70%;
+    left:2%;
+    width: 30%;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #ffe6b7;
+    z-index: -1;
+
+}
+
+.newsTxt > span{
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 7rem;
+    color: #697a95;
+}
+.newsTxt > span:nth-child(2){
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    
+}
+
+.newsTxt > span:nth-child(3){
+    position: absolute;
+    right: .5%;
+    bottom: 9%;
+    
+}
+.newsTxt > span:nth-child(3)::before{
+    content: '';
+    position: absolute;
+    right: -20px;
+    bottom: -35px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #697a95;
+    
+}
+.newsTxt > span:nth-child(4){
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+    
+}
+.newsTxt > span:nth-child(5){
+    position: absolute;
+    right: 8%;
+    bottom: 9%;
+    
+}
+.newsTxt > span:nth-child(5)::before{
+    content: '';
+    position: absolute;
+    right: -10px;
+    bottom: -35px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #697a95;
+    
+}
+/*  */
+.arrowLeft{
+    border: solid #697a95;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    transform: rotate(-45deg);
+
+    }
+.arrowLine{
+    position: absolute;
+    background-color: #697a95;
+    width: 50px;
+    height: 10px;
+    border-radius: 5px;
+
+    }
+.arrowRight{
+    border: solid #697a95;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    transform: rotate(135deg);
+
+
+}
+/*  */
+.newsMore{
+    width: 200px;
+    margin:0px auto;
+    margin-top: 200px;
+    padding-bottom: 3rem;
+    text-align: center;
+
+}
+.newsBtn {
+    display: block;
+    border-radius: 30px;
+    width: 100%;
+    text-align: center;
+    line-height: 54px;
+    height: 60px;
+    border: 2px solid #000;
+    font-size: 1.5rem;
+    letter-spacing: .8px;
+    position: relative;
+    transition: .3s;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* .sns-btn::before{
+
+    content: '';
+    background-image: url(//cdn.shopify.com/s/files/1/0284/7109/9437/files/icon_arrow1_black_2x_4fb76695-d37f-491b-b2f0-05f6c176b6ce.png?v=1580873581);
+    background-size: 6px 10px;
+    width: 6px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+} */
+.newsBtn:hover{
+    background-color: #adb5bd;
+}
+
+/* swiper news */
+.swiper {
+    width: 100%;
+    height:90vh;
+    margin: 0 auto;
+    padding: 160px 6.5% 0px 6.5% ;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+
+  
+  }
+  .swiper::before{
+    content: "";
+    position: absolute;
+    bottom:0;
+    left : 0;
+    width: 100%;
+    height: 50%;
+    background-color: #c3d5e769;
+}
+  .swiper-slide {
+    text-align: center;
+    font-size: 16px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    /* -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center; */
+    justify-content: center;
+    /* -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center; */
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    width: 20%;
+    /* height: 50%; */
+    /* background-color: #212529; */
+
+  
+  
+  }
+  
+  
+  .swiper-wrapper{
+      
+    display: flex;
+  }
+
+  /* .N_thumbnail>img :hover .mask{
+      opacity:.7;
+    
+      
+    } */
+    /* .N_thumbnail:hover{
+        position: absolute;
+        top:0;
+        left: 0;
+        width:100%;
+        height: 100%;
+        background-color: rgba(43, 40, 40, 0.322);
+
+    } */
+.nThumbnail:hover:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(26, 25, 25, 0.445);
+    z-index: 3;
+    cursor: pointer;
+}
+/* .nThumbnail:hover::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    z-index: 4;
+    cursor: pointer;
+} */
+  .nThumbnail{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:70% ;
+    margin-bottom: 20px;
+
+
+    
+  }
+  .swiper-slide>i{
+    position: absolute;
+    display: block;
+    top:0;
+    left:0;
+    width:100px;
+    height: 100px;
+    z-index: 7;
+}
+
+  .nThumbnail>img {
+  
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+  
+  }
+  .ntxtName{
+    position: absolute;
+    top:72%;
+    left:0px;
+    text-align: left;
+  }
+  .ntxt{
+    position: absolute;
+    top:78%;
+    left:0;
+    font-weight: bold;
+    text-align: left;
+    line-height: 25px;
+  
+  }
+  .NBot{
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    
+    left:0;
+    bottom:0;
+  }
+  .nSmall{
+    width:180px;
+    text-align: right;
+    font-size: .8rem;
+    color: rgb(59, 59, 59);
+    letter-spacing: .2px;
+    font-weight: bold;
+    
+  
+  
+  }
+  .nBot>a{
+    width:100px;
+    font-size: .9rem;
+    color: rgb(59, 59, 59);
+    letter-spacing: .2px;
+    text-align: left;
+    font-weight: bold;
+    text-decoration:underline ;
+  }
+  .nHr{
+    background-color: rgb(185, 185, 185);
+    height: .5px;
+    width: 100%;
+    bottom:5%;
+    left:0;
+    position: absolute;
+    
+  }
+
+  
+@media only screen and (max-width: 450px){
+    /* .journal_cont {
+        margin-left:0;
+        display: block;
+    }
+    .journal_item {
+        width:100%;
+
+        margin-left:0;
+        margin-bottom: 43px;
+    }
+    .j_thumbnail{
+        padding-top: 58.61%;
+    }
+    .j-card-txt hr {
+        margin-top: 20px;
+        margin-bottom: 12px;
+    }
+    .j-card-read {
+        font-size: 1.2rem;
+    }
+    .j-card-txt>p {
+        font-size: .8rem;
+        letter-spacing: .1px;
+        margin-top: 10px;
+    }
+    .j-btn {
+        line-height: 45px;
+        height: 50px;
+        font-size: 1.6rem;
+    }
+    .j-card-txt-name>div{
+        font-size: 1rem;
+        font-weight: bold;
+    } */
+} 

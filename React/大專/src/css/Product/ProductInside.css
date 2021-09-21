@@ -1,0 +1,310 @@
+/* header */
+/* header{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: rgb(105, 122, 149);
+    font-size: 36px;
+    font-weight: 900;
+    color:rgb(255, 230, 183);
+} */
+
+/* main */
+.productInsideMain{
+    width: 100%;
+    padding: 100px 0 0 0;
+    position: relative;
+    background-color: rgb(180,207,235);
+}
+.productInside{
+    position: relative;
+}
+.productsInfo{
+    width: 50%;
+    padding: 20px 20px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    flex-direction: column;
+    line-height: 3rem;
+    float: left;
+    color: rgb(77,89,107);
+}
+.fotorama{
+    margin: auto;
+}
+.productsDetails{
+    width: 50%;
+    padding: 0 50px;
+    color:rgb(105, 122, 149); 
+}
+.productsDetails p{
+    font-size: 1.5rem;
+}
+.productsDesc p{
+    font-size: 1.2rem;
+    line-height: 3rem;
+}
+.productsSpec li{
+    list-style:inside;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+.productsInsideBuy{
+    width: 50%;
+    min-height: 100vh;
+    height: 100%;
+    padding: 50px;
+    background-color: #ccc;
+    float: right;
+    position: sticky;
+    top: 0;
+}
+.productsBuyContainer{
+    max-width: 600px;
+    width: 100%;
+    padding: 0 30px;
+}
+.productsInsideBuyTitle h1{
+    padding: 10px 0;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 3rem;
+}
+.productsInsideBuyTitle h3{
+    padding: 10px 0;
+    font-weight: 500;
+}
+.productsInsideBuyNum div{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+.productsInsideBuyNum p{
+    width: 65px;
+}
+.productsInsideBuyNum select,
+.productsInsideBuyNum input{
+    width: 80%;
+    height: 50px;
+    margin-left: auto;
+}
+.productsInsideBuyNum input{
+    box-sizing: border-box;
+    padding: 0;
+    border: 1px solid gray;
+}
+.productsInsideBuyNum .productsBuyNumSold{
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: red;
+    display: none;
+}
+.productsInsideBuy button{
+    width: 100%;
+    padding: 20px 0;
+    margin: 20px 0;
+    text-align: center;
+    background-color: rgb(105, 122, 149);
+    color: rgb(255, 230, 183);
+    border-radius: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.productsInsideBuy li{
+    list-style:outside;
+    margin: 0 0 0 20px;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+.productsShipping{
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 10px;
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-top: 2px solid rgb(255, 230, 183);
+    border-bottom: 2px solid rgb(255, 230, 183);
+}
+.shipping{
+    width: 100%;
+    cursor: pointer;
+    margin-right: auto;
+}
+.shippingMinus{
+    display: none;
+    cursor: pointer;
+}
+.shippingPlus{
+    display: block;
+    cursor: pointer;
+}
+.shippingDetails{
+    display: none;
+}
+
+/* cart */
+.productsBuyCart{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(128, 128, 128, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    display: none;
+}
+.productsCart{
+    width: 400px;
+    height: 100vh;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    background-color: rgb(180,207,235);
+    display: none;
+    overflow: auto;
+}
+.cartTitle{
+    padding: 20px;
+    border-top: 2px solid rgb(255, 230, 183);
+    border-bottom: 2px solid rgb(255, 230, 183);
+    display: flex;
+    align-items: center;
+}
+.cartTitle span{
+    padding: 3px 5px;
+    margin-left: auto;
+    border: 1px solid  rgb(255, 230, 183);
+    border-radius: 3px;
+    cursor: pointer;
+}
+.cartItem{
+    padding: 20px 20px 10px 20px;
+    display: flex;
+}
+.cartItemPic{
+    width: 100px;
+}
+.cartItemProducts{
+    padding: 0 10px;
+    color:rgb(77,89,107);
+}
+.cartItemProducts p{
+    padding-bottom: 10px;
+}
+.cartItemProductsDelete{
+    padding: 3px 5px;
+    border: 1px solid rgb(255, 230, 183);
+    border-radius: 3px;
+    float: right;
+    cursor: pointer;
+}
+.productsCart button{
+    width: calc(100% - 40px);
+    padding: 10px 0;
+    margin: 10px 20px;
+    font-size: 1rem;
+    background-color: rgb(149,169,201);
+    color: rgb(255, 230, 183);
+    border: none;
+    border-radius: 0;
+}
+
+/* products page */
+.productsInsidePage{
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+    background-color: white;
+}
+.productsInsidePage a{
+    text-decoration: none;
+    color: rgb(77,89,107);
+    font-size: 1.2rem;
+    position: relative;
+}
+.productsInsidePage a::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    display: block;
+    background-color: rgb(77,89,107);
+    position: absolute;
+    left: 0;
+}
+
+/* footer */
+/* footer{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color:rgb(105, 122, 149);
+    color: rgb(255, 230, 183);
+    font-size: 36px;
+    font-weight: 900;
+} */
+
+@media screen and (max-width:992px) {
+    section{
+        padding: 10px 50px;
+        flex-direction: column;
+    }
+    .productsInfo{
+        width: 100%;
+        padding: 20px;
+    }
+    .productsInsideBuy{
+        max-width: 992px;
+        width: 100%;
+        min-height: 50px;
+        padding: 0 0 30px 0;
+        margin: auto;
+        background-color: transparent;
+        position: relative;
+    }
+    .productsBuyContainer{
+        max-width: 992px;
+        position: relative;
+        margin: auto;
+    }
+
+    .productsDetails{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    /* .productsInsideBuyNum div{
+    } */
+    .productsInsideBuyNum p{
+        padding: 10px 0;
+    }
+    .productsInsideBuyNum select{
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width:600px) {
+    section{
+        padding: 10px 0;
+    }
+
+    .productsInsideBuyTitle h1{
+        font-size: 1.5rem;
+    }
+    .productsInsideBuy button{
+        font-size: 1.2rem;
+    }
+    .productsShipping{
+        align-items: center;
+    }
+    .productsShipping .shipping{
+        font-size: 1.2rem;
+    }
+}

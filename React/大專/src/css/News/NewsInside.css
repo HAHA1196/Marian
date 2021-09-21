@@ -1,0 +1,230 @@
+/* header */
+/* header{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color:rgb(105, 122, 149);
+    font-size: 36px;
+    font-weight: 900;
+    color: rgb(255, 230, 183);
+} */
+
+/* main */
+.newsInsideMain{
+    width: 100%;
+    padding: 80px 0 50px 0;
+    background-color:rgb(180,207,235);
+}
+.newsInsideTitle, .newsInsideArticle, .newsInsideSocial, .newsInsidePageItem{
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 100px;
+}
+h1{line-height: 3rem;}
+h2, p{line-height: 2rem;}
+.newsInsideTitle{
+    position: relative;
+}
+.newsInsideTitle h1{
+    padding: 20px 0;
+    font-size: 2rem;
+    font-weight: 900;
+    color:rgb(105, 122, 149);
+}
+.newsInsidePic{
+    width: 100%;
+    padding:  0;
+    text-align: center;
+}
+.newsInsidePic img{
+    width: 70%;
+}
+.newsInsideShare{
+    padding: 30px 100px;
+    display: flex;
+    align-items: center;
+}
+.newsInsideShareItem::before{
+    content: '';
+    width: 100%;
+    height: 2px;
+    display: block;
+    background-color: rgb(255, 230, 183);
+    position: absolute;
+    top: -30px;
+}
+.newsInsideShareItem{
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.newsInsideShareItem p{
+    margin-right: auto;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color:rgb(105, 122, 149);
+}
+.newsInsideShareItem a{
+    text-decoration: none;
+}
+.newsInsideShareItem i{
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #9f9f9f;
+    border-radius: 50%;
+}
+
+.newsInsideArticleItem{
+    padding: 40px 0;
+}
+.newsInsideArticleItem h2{
+    padding: 0 0 50px 0;
+    font-size: 1.5rem;
+    color: rgb(105, 122, 149);
+}
+.newsInsideArticleItem p{
+    padding: 0 0 50px 0;
+    color: rgb(105, 122, 149);
+}
+.newsInsideArticleItem figure{
+    width: 100%;
+}
+.newsInsideArticleItem img{
+    width: 100%;
+}
+.newsInsideArticleItem figcaption{
+    padding: 15px 0;
+    font-size: .8rem;
+    color: rgb(105, 122, 149);
+}
+
+
+/* news social */
+.newsInsideSocial::before{
+    content: 'Share';
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 100px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgb(105, 122, 149);
+}
+.newsInsideSocial{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+}
+.newsInsideSocialItem{
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(105, 122, 149)
+}
+.newsInsideSocialItem a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+.newsInsideSocial i{
+    width: 30px;
+    height: 30px;
+    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #9f9f9f;
+    border-radius: 50%;
+}
+.newsInsideSocialItem p{
+    color:rgb(255, 230, 183);
+}
+
+/* news page */
+.newsInsidePage{
+    width: 100%;
+    background-color:  rgb(105, 122, 149);
+    border: 1px solid rgb(255, 230, 183);
+}
+.newsInsidePageItem{
+    padding: 50px 100px;
+    margin:  auto;
+    display: flex;
+}
+.newsInsidePage a{
+    text-decoration: none;
+    color: rgb(255, 230, 183);
+    font-size: 1.2rem;
+}
+.newsInsidePage a:nth-child(2){
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.newsInsidePage a:nth-child(2)::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    display: block;
+    background-color: rgb(255, 230, 183);
+    position: absolute;
+}
+
+/* footer */
+/* footer{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: rgb(105, 122, 149);
+    font-size: 36px;
+    font-weight: 900;
+    color: rgb(255, 230, 183);
+} */
+
+
+@media screen and (max-width:768px) {
+    .newsInsideTitle, .newsInsideArticle, section, .newsInsideSocial, .newsInsidePageItem, .newsInsideShare{
+        padding: 30px 50px;
+    }
+
+    .newsInsideSocial::before{
+        left: 50px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .newsInsideTitle, .newsInsideArticle, section, .newsInsideSocial, .newsInsidePageItem, .newsInsideShare{
+        padding: 30px;
+    }
+
+    .newsInsidePic img{
+        width: 80%;
+    }
+
+    .newsInsideSocial::before{
+        left: 30px;
+    }
+    .newsInsideSocialItem{
+        width: 100%;
+        padding:15px 0;
+        display: flex;
+        justify-content: center;
+    }
+    .newsInsideSocial i{
+        margin: 0 15px;
+    }
+    .newsInsideSocialItem p{
+        display: none;
+    }
+}
