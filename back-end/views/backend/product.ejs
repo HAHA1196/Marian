@@ -33,7 +33,7 @@
                 <div id="notification"><%- include('./marquee.ejs'); %></div>
                 <form action="">
                     <div class="searchInput">
-                        <span>分類 |</span>
+                        <span>分類&nbsp;|</span>
                         <select name="sortProduct" id="sortProduct">
                             <option value="">請選擇</option>
                             <optgroup label="種類">
@@ -61,7 +61,7 @@
                         <!--想客製化select display但願望還沒實現： https://www.w3schools.com/howto/howto_custom_select.asp -->
                     </div>
                     <div class="searchInput">
-                        <span>產品型號 |</span>
+                        <span>產品型號&nbsp;|</span>
                         <input type="text" />
                     </div>
                     <button type="submit" id="searchBtn">
@@ -72,7 +72,7 @@
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
                         清除輸入
                     </button>
-                    <button type="submit" id="updateBtn">
+                    <button type="submit" id="uploadBtn">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         上傳新品
                     </button>
