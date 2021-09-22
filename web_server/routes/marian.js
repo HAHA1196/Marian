@@ -58,14 +58,16 @@ router.get("/products/:productId", function (req, res, next) {
 // 後台 members 可供增查修
 // 這裡有點執行上的難度，要從登入狀態判定用戶 customerId 為多少
 // 決定要給他看到那哪筆會員資料
+
+// 查詢所有會員資料
 // http://localhost:8001/api/members
 router.get("/members", function (req, res, next) {
     req.mysql.query("select * from customers", [], function (err, result) {
         res.send(JSON.stringify(result));
     });
 });
-//---------------------------------------
-// jen 0922 14:50
+
+// 查詢單一會員的 訂單資料
 // http://localhost:8001/api/member-order-history/5
 router.get("/member-order-history/:customerId", function (req, res, next) {
     req.mysql.query(
@@ -76,7 +78,7 @@ router.get("/member-order-history/:customerId", function (req, res, next) {
         }
     );
 });
-//---------------------------------------
+
 // 新增會員資料
 router.post("/members", function (req, res, next) {
     req.mysql.query(
@@ -93,6 +95,7 @@ router.post("/members", function (req, res, next) {
         }
     );
 });
+// 修改會員資料
 router.put("/members", function (req, res, next) {
     req.mysql.query(
         "update customers set customerName = ?, customerGender = ?, customerPhone = ?, customerEmail = ?, customerAddress = ? where customerId = ?",
@@ -145,7 +148,7 @@ router.get("/orders/:orderId", function (req, res, next) {
 // http://localhost:8001/api/orderdetails/2
 router.get("/orderdetails/:orderId", function (req, res, next) {
     req.mysql.query(
-        "SELECT od.orderId, CONCAT(p.productName, ', ', p.productSize, ', ', od.quantity, ', ', (p.productPrice * od.quantity)) AS detail FROM orderdetails od JOIN products p ON (od.productId = p.productId) where od.orderId = ?",
+        "SELECT od.orderId, CONCAT(p.productName, ', ', p.productSize, ', 數量', od.quantity, '個, 總價', (p.productPrice * od.quantity),' 元' ) AS detail FROM orderdetails od JOIN products p ON (od.productId = p.productId) where od.orderId = ?",
         [req.params.orderId],
         function (err, result) {
             res.send(JSON.stringify(result));
