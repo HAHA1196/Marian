@@ -8,17 +8,23 @@ $(function () {
     // 定義空陣列將來要存放資料庫撈出來的資料
     var orderList = [];
     var orderdetailList = [];
-    var toggleList = ['訂單明細 | ', '訂單編號 | ', '下訂日期 | ', '會員編號 | ', '消費總額 | '];
+    var toggleList = [
+        "訂單明細 | ",
+        "訂單編號 | ",
+        "下訂日期 | ",
+        "會員編號 | ",
+        "消費總額 | ",
+    ];
 
     // 從下列網址撈出資料並以陣列形式儲存
-    $.get('http://localhost:8001/api/orders', function (data) {
+    $.get("http://localhost:8001/api/orders", function (data) {
         orderList = JSON.parse(data);
         // 查看資料型態
         console.log(orderList);
 
         // 此段是從 orderList 中尋訪每一筆資料，
         // 並包裝成 <tr> 包 <td> 的樣子輸出
-        // 目前可以穩定的將資料輸出成一個 <tr> 包四筆 <td> 
+        // 目前可以穩定的將資料輸出成一個 <tr> 包四筆 <td>
         // 總共要六筆 <td> ，剩下來的兩筆會從下面那個 get 輸出
         // !!!困難點!!!我現在寫出來的 click 事件裡面的 this 是單一個 <td> 裡面的資料，
         // 而非 <tr> ，可以 F12 看看你之前寫的 main.js 23 行 console 出的結果
@@ -28,14 +34,18 @@ $(function () {
             // var _this = document.getElementsByTagName(`tr:nth-child(${key})`);
             $.each(obj, function (kk, vv) {
                 // console.log(vv);
-                $tr.append($('<td></td>').text(vv).append("<div class='divider'></div>"));
-            })
-            $('#contentData').append($tr);
-        })
-    })
+                $tr.append(
+                    $("<td></td>")
+                        .text(vv)
+                        .append("<div class='divider'></div>")
+                );
+            });
+            $("#contentData").append($tr);
+        });
+    });
 
     // 這邊也是撈資料並以陣列形式儲存
-    $.get('http://localhost:8001/api/orderdetails', function (data) {
+    $.get("http://localhost:8001/api/orderdetails", function (data) {
         orderdetailList = JSON.parse(data);
         console.log(orderdetailList);
 
@@ -50,59 +60,74 @@ $(function () {
         // 你可以先處理 toggleRow 還有你之前寫好的分隔島們消失的問題
         var trChild = 1;
         $.each(orderdetailList, function (key, obj) {
-            if (obj.orderId == $(`tr:nth-child(${trChild + 3}) td:nth-child(1)`).text()) {
+            if (
+                obj.orderId ==
+                $(`tr:nth-child(${trChild + 3}) td:nth-child(1)`).text()
+            ) {
                 // console.log($(`tr:nth-child(${trChild}) td:nth-child(5)`).text());
-                if ($(`tr:nth-child(${trChild + 3}) td:nth-child(5)`).text() == '') {
-                    $(`tr:nth-child(${trChild + 3})`).append($('<td></td>').text(obj.detail));
+                if (
+                    $(`tr:nth-child(${trChild + 3}) td:nth-child(5)`).text() ==
+                    ""
+                ) {
+                    $(`tr:nth-child(${trChild + 3})`).append(
+                        $("<td></td>").text(obj.detail)
+                    );
                 } else {
-                    $(`tr:nth-child(${trChild + 3}) td:nth-child(5)`).append(` | ${obj.detail}`);
+                    $(`tr:nth-child(${trChild + 3}) td:nth-child(5)`).append(
+                        ` | ${obj.detail}`
+                    );
                 }
             } else {
                 trChild++;
-                $(`tr:nth-child(${trChild + 3})`).append($('<td></td>').text(obj.detail));
+                $(`tr:nth-child(${trChild + 3})`).append(
+                    $("<td></td>").text(obj.detail)
+                );
             }
             // $.each(obj, function (kk, vv) {
             //     $(`tr:nth-child(${key + 2})`).append($('<td></td>').text(vv));
             // })
-        })
+        });
 
         // 完成第六個 <td>
         // trChild = 3
         for (i = 1; i <= trChild; i++) {
             // console.log(trChild);
-            $(`tr:nth-child(${i + 3})`).append('<td class="showContent hideRow"><div class="dividingLine"></div><div class="info infoTxt"><ul></ul></div><div class="dividingLine"></div></td>');
-            toggleList.forEach(element => {
-                $(`tr:nth-child(${i + 3}) ul:nth-child(1)`).append($('<li></li>').append($('<span></span>').text(element)));
+            $(`tr:nth-child(${i + 3})`).append(
+                '<td class="showContent hideRow"><div class="dividingLine"></div><div class="info infoTxt"><ul></ul></div><div class="dividingLine"></div></td>'
+            );
+            toggleList.forEach((element) => {
+                $(`tr:nth-child(${i + 3}) ul:nth-child(1)`).append(
+                    $("<li></li>").append($("<span></span>").text(element))
+                );
             });
             // 這個寫法跟上面一樣
             // for (j = 0; j <= 4; j++) {
-            //     $(`tr:nth-child(${i + 3}) ul:nth-child(1)`).append($('<li></li>').append($('<span></span>').text(toggleList[j]))); 
+            //     $(`tr:nth-child(${i + 3}) ul:nth-child(1)`).append($('<li></li>').append($('<span></span>').text(toggleList[j])));
             // }
 
             // console.log($(`tr:nth-child(${i + 3}) td:nth-child(5)`).text());
-            $(`tr:nth-child(${i + 3}) li:nth-child(1)`).append($('<div></div>').text($(`tr:nth-child(${i + 3}) td:nth-child(5)`).text()));
+            $(`tr:nth-child(${i + 3}) li:nth-child(1)`).append(
+                $("<div></div>").text(
+                    $(`tr:nth-child(${i + 3}) td:nth-child(5)`).text()
+                )
+            );
         }
 
-        $.get('http://localhost:8001/api/orders', function (data) {
+        $.get("http://localhost:8001/api/orders", function (data) {
             orderList = JSON.parse(data);
             // 查看資料型態
             console.log(orderList);
-    
+
             $.each(orderList, function (idx, obj) {
                 var ii = 2;
                 $.each(obj, function (kk, vv) {
                     // console.log();
-                    $(`tr:nth-child(${idx + 4}) li:nth-child(${ii})`).append(vv);
+                    $(`tr:nth-child(${idx + 4}) li:nth-child(${ii})`).append(
+                        vv
+                    );
                     ii++;
-                })
-            })
-        })
-    
-        
-
-    })
-
-
-
-    
-})
+                });
+            });
+        });
+    });
+});
