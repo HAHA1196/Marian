@@ -70,7 +70,7 @@ router.get('/members/:customerId', function (req, res, next) {
 });
 // 新增會員資料
 router.post('/members', function (req, res, next) {
-    req.mysql.query('insert into customers (customerName, customerGender, customerPhone, customerEmail, customerAddress) values ("Cname", ?, "Cphone", "Cemail", "Caddress")',
+    req.mysql.query('insert into customers (customerName, customerGender, customerPhone, customerEmail, customerAddress) values ("cName", ?, "cPhone", "cEmail", "cAddress")',
         [req.body.customerName, req.body.customerGender, req.body.customerPhone, req.body.customerEmail, req.body.customerAddress],
         function (err, result) {
             res.send('member inserted. ');
