@@ -73,6 +73,11 @@ th {
 td:nth-last-child(2) {
     text-align: left;
 }
+td:nth-child(6),
+td:nth-child(5) {
+    overflow: auto;
+    text-overflow: initial;
+}
 td:last-child {
     background-color: var(--lightBlue);
     outline: 1px solid var(--lightBlue); /*蓋住背景右方的細線*/
@@ -82,17 +87,11 @@ td:not(:last-child) {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-td:nth-child(6),
-td:nth-child(5) {
-    overflow: auto;
-    text-overflow: initial;
-}
 .showContent {
     /*使用js插入*/
     height: auto;
-    display: grid;
     grid-column: 1/-1;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     text-align: left;
 }
 .hideRow {
