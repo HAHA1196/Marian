@@ -115,7 +115,7 @@ tr:not(:first-child):hover {
 #newsContainer {
     width: 100%;
     position: relative;
-    background-color: rosybrown;
+    /* background-color: rosybrown; */
 }
 .tab {
     /* background-color: tomato; */

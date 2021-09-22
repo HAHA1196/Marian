@@ -8,16 +8,12 @@ $(function () {
     // 定義空陣列將來要存放資料庫撈出來的資料
     var orderList = [];
     var orderdetailList = [];
-    var toggleList = [
-        "訂單明細 | ",
-        "訂單編號 | ",
-        "下訂日期 | ",
-        "會員編號 | ",
-        "消費總額 | ",
-    ];
+    var toggleList = ["歷史訂單 | "];
 
     // 從下列網址撈出資料並以陣列形式儲存
-    $.get("http://localhost:8001/api/orders", function (data) {
+    //http://localhost:8001/api/member-order-history/5
+    // $.get("http://localhost:8001/api/members", function (data) {
+    $.get("http://localhost:8001/api/member-order-history", function (data) {
         orderList = JSON.parse(data);
         // 查看資料型態
         console.log(orderList);
