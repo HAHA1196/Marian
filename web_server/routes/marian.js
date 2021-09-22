@@ -69,7 +69,7 @@ router.get("/members", function (req, res, next) {
 // http://localhost:8001/api/member-order-history/5
 router.get("/member-order-history/:customerId", function (req, res, next) {
     req.mysql.query(
-        "select * from orders where customerId = ?",
+        "SELECT o.orderId, o.orderDate, SUM(od.productPrice * od.quantity) AS totalPrice FROM orders o JOIN orderdetails od ON (o.orderId = od.orderId) WHERE o.customerId = ? GROUP BY o.orderId",
         [req.params.customerId],
         function (err, result) {
             res.send(JSON.stringify(result));

@@ -96,7 +96,7 @@ create table if not exists
 		('4', '4', '790', '2'),
 		('5', '1', '350', '1'),
 		('5', '2', '22900', '1'),
-		('5', '5', '800', '4');
+		('6', '5', '800', '4');
 
 /*news 資料*/
 	INSERT INTO `news` (`newsTitle`, `newsDate`, `newsCoverImg`) VALUES 
