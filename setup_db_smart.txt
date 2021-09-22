@@ -62,12 +62,12 @@ create table if not exists
 		('SS-002', 'SS', '女式機能環保連身泳裝', '亞洲版型可拆式胸墊\r\n私密處貼心小貼紙，乾淨衛生\r\n後背背花設計，時尚有型', NULL, 'M', '800', '20');
 
 /*customers 資料*/
- 	INSERT INTO `customers` (`customerName`, `customerGender`, `customerPhone`, `customerEmail`, `customerAddress`) VALUES 
-		('小蘭', '1', '092223338857', 'e123@gmail.com', '42047台中市豐原區大明路23號'), 
-		('大黃', '0', '0912345678', 'a123@gmail.com', '408台中市南屯區公益路二段51號18樓'), 
-		('小黑', '1', '091233334234', 'b123@gmail.com', '106台北市大安區復興南路一段390號2樓'), 
-		('小粉紅', '1', '0924222376', 'c123@gmail.com', '420台中市豐原區中正路145號'), 
-		('大白', '0', '0943222476', 'd123@gmail.com', '404台中市北區三民路三段125號');
+ 	INSERT INTO `customers` (`customerName`,`customerPassword`,`customerGender`, `customerPhone`, `customerEmail`, `customerAddress`) VALUES 
+		('小蘭', '123rruby','1', '092223338857', 'e123@gmail.com', '42047台中市豐原區大明路23號'), 
+		('大黃', '456rruby','0', '0912345678', 'a123@gmail.com', '408台中市南屯區公益路二段51號18樓'), 
+		('小黑', '789rruby','1', '091233334234', 'b123@gmail.com', '106台北市大安區復興南路一段390號2樓'), 
+		('小粉紅', '1011rruby','1', '0924222376', 'c123@gmail.com', '420台中市豐原區中正路145號'), 
+		('大白', '1213rruby','0', '0943222476', 'd123@gmail.com', '404台中市北區三民路三段125號');
 
 /*orders 資料*/
  	INSERT INTO `orders` (`customerId`, `orderDate`) VALUES 
