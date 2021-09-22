@@ -70,6 +70,9 @@ th {
     font-size: 14px;
     line-height: 20px;
 }
+td:nth-last-child(2) {
+    text-align: left;
+}
 td:last-child {
     background-color: var(--lightBlue);
     outline: 1px solid var(--lightBlue); /*蓋住背景右方的細線*/
@@ -79,7 +82,8 @@ td:not(:last-child) {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-td:nth-child(6), td:nth-child(5) {
+td:nth-child(6),
+td:nth-child(5) {
     overflow: auto;
     text-overflow: initial;
 }
