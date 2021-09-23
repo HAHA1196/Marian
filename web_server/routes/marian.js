@@ -44,8 +44,8 @@ router.get("/products/:productClass", function (req, res, next) {
     );
 });
 // 單一商品詳細介紹頁面
-// http://localhost:8001/api/products/2
-router.get("/products/:productId", function (req, res, next) {
+// http://localhost:8001/api/products/id/2
+router.get("/products/id/:productId", function (req, res, next) {
     req.mysql.query(
         "select * from products where productId = ?",
         [req.params.productId],
@@ -62,9 +62,13 @@ router.get("/products/:productId", function (req, res, next) {
 // 查詢 所有會員資料
 // http://localhost:8001/api/members
 router.get("/members", function (req, res, next) {
-    req.mysql.query("select * from customers", [], function (err, result) {
-        res.send(JSON.stringify(result));
-    });
+    req.mysql.query(
+        "SELECT `customerId`, `customerName`, `customerGender`, `customerPhone`, `customerEmail`, `customerAddress` FROM `customers`",
+        [],
+        function (err, result) {
+            res.send(JSON.stringify(result));
+        }
+    );
 });
 // 查詢 單一會員資料
 // http://localhost:8001/api/members/3
@@ -82,7 +86,7 @@ router.get("/members/:customerId", function (req, res, next) {
 // http://localhost:8001/api/member-order-history/5
 router.get("/member-order-history/:customerId", function (req, res, next) {
     req.mysql.query(
-        "SELECT o.orderId, o.orderDate, SUM(od.productPrice * od.quantity) AS totalPrice FROM orders o JOIN orderdetails od ON (o.orderId = od.orderId) WHERE o.customerId = ? GROUP BY o.orderId",
+        "SELECT o.orderId, o.orderDate, SUM(od.productPrice * od.quantity) AS 總價 FROM orders o JOIN orderdetails od ON (o.orderId = od.orderId) WHERE o.customerId = ? GROUP BY o.orderId",
         [req.params.customerId],
         function (err, result) {
             res.send(JSON.stringify(result));
