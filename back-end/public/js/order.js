@@ -12,39 +12,37 @@ $(function () {
         "訂單明細 | ",
         "訂單編號 | ",
         "下訂日期 | ",
-        "會員編號 | ",
+        "會員編號 - 姓名 | ",
         "消費總額 | "
     ];
     var trList = [
         "訂單編號",
         "下訂日期",
-        "會員編號",
+        "會員編號 - 姓名",
         "消費總額",
         "訂單明細"
     ];
 
-    // 從下列網址撈出資料並以陣列形式儲存
+    // 撈 <td> NO.1 ~ NO.4
     $.get("http://localhost:8001/api/orders", function (data) {
         orderList = JSON.parse(data);
         // 查看資料型態
         // console.log(orderList);
-
         functionOne();
     });
 
-    // 這邊也是撈資料並以陣列形式儲存
+    // 撈 <td> NO.5
     $.get("http://localhost:8001/api/orderdetails", function (data) {
         orderdetailList = JSON.parse(data);
         // console.log(orderdetailList);
-
         functionTwo();
     });
 
+    // 撈 <td> NO.6
     $.get("http://localhost:8001/api/orders", function (data) {
         orderList = JSON.parse(data);
         // 查看資料型態
         // console.log(orderList);
-
         functionThree();
     });
 
