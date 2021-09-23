@@ -59,15 +59,26 @@ router.get("/products/:productId", function (req, res, next) {
 // 這裡有點執行上的難度，要從登入狀態判定用戶 customerId 為多少
 // 決定要給他看到那哪筆會員資料
 
-// 查詢所有會員資料
+// 查詢 所有會員資料
 // http://localhost:8001/api/members
 router.get("/members", function (req, res, next) {
     req.mysql.query("select * from customers", [], function (err, result) {
         res.send(JSON.stringify(result));
     });
 });
+// 查詢 單一會員資料
+// http://localhost:8001/api/members/3
+router.get("/members/:customerId", function (req, res, next) {
+    req.mysql.query(
+        "select * from customers where customerId = ?",
+        [req.params.customerId],
+        function (err, result) {
+            res.send(JSON.stringify(result));
+        }
+    );
+});
 
-// 查詢單一會員的 訂單資料
+// 查詢 單一會員的 訂單資料
 // http://localhost:8001/api/member-order-history/5
 router.get("/member-order-history/:customerId", function (req, res, next) {
     req.mysql.query(
@@ -84,6 +95,7 @@ router.post("/members", function (req, res, next) {
     req.mysql.query(
         'insert into customers (customerName, customerGender, customerPhone, customerEmail, customerAddress) values ("cName", ?, "cPhone", "cEmail", "cAddress")',
         [
+            /* 凃 裡面好像要補會員密碼？？對嗎？？ */
             req.body.customerName,
             req.body.customerGender,
             req.body.customerPhone,
@@ -100,6 +112,7 @@ router.put("/members", function (req, res, next) {
     req.mysql.query(
         "update customers set customerName = ?, customerGender = ?, customerPhone = ?, customerEmail = ?, customerAddress = ? where customerId = ?",
         [
+            /* 凃 裡面好像要補會員密碼、然後customerId不能修改？？對嗎？？ */
             req.body.customerName,
             req.body.customerGender,
             req.body.customerPhone,
