@@ -9,7 +9,7 @@ export default function Header() {
     
   return (
     <React.Fragment>
-      <header id="header">
+      <header id="header" class="indexH">
         <Link to="/" class=" headerLogo" >
             <img class="logo" target="style" src={logo}  alt=""/>
             <span> 

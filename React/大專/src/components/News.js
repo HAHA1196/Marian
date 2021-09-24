@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "../css/News.css";
-import "../js/news";
+// import "../js/news";
 import news1 from "../img/c01.jpg";
 import news2 from "../img/c02.jpg";
-import news3 from "../img/c03.jpg";
+import news3 from "../img/C05.jpg";
 import { Link, useHistory } from "react-router-dom";
 import moment from 'moment';
 
@@ -90,7 +90,7 @@ export default function News() {
             </div>
             <div class="newsContent">
               <div class="newsTag">
-                <p>Asshole</p>
+                <p>apple</p>
               </div>
               <h2>
                 <Link to="/marian/newsinside">Lorem ipsum dolor sit.</Link>

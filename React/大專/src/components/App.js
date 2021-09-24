@@ -16,7 +16,6 @@ import '../css/reset.css'
 import '../css/all.css'
 import '../css/font-awesome-4.7.0/css/font-awesome.min.css'
 import { Route} from "react-router-dom";
-import Fuck from './Fuck'
 require('react-dom');
 window.React2 = require('react');
 console.log(window.React1 === window.React2);
@@ -38,7 +37,6 @@ export default function App() {
             <Route exact path='/marian/member' component={Member} />
             <Route exact path='/marian/memberinside' component={MemberInside} />
             <Route exact path='/marian/cart' component={Cart} />
-            <Route exact path='/marian/fuck' component={Fuck} />
             <Footer />
         </React.Fragment>
     )

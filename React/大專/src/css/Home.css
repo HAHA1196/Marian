@@ -1,11 +1,11 @@
-
-#welcome{
+/* 
+#welcomeI{
     padding: 160px 6.5% 0px 6.5% ;
     position: relative;
     min-height: 100vh;
     max-width: 100%;
 }
-#welcome::before{
+#welcomeI::before{
     content: "scroll";
     position: absolute;
     left:48% ;
@@ -20,7 +20,7 @@
     padding-top:45px;
     background-color: #6b8dafb7;
 }
-#welcome::after{
+#welcomeI::after{
     content: "ˇ";
     position: absolute;
     left:51%;
@@ -59,9 +59,9 @@
     text-align: center;
     font-size: .8rem;
    text-shadow:1px 1px 1px   #212529;
-}
+} */
 /* carousel */
-.wCarousel{
+/* .wCarousel{
     width: 100%;
 }
 
@@ -94,7 +94,118 @@
     }
     
 
+} */
+/* .indexH{
+    background-color:unset !important;
+    box-shadow: unset !important;
+
+
+} */
+/*  */
+/* 輪播層圖片製作 */
+#cover{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 80vh; */
+    min-height: 100vh;
+    max-width: 100%;
+
+
 }
+#cover::before{
+    content: "scroll";
+    position: absolute;
+    left:48% ;
+    bottom:5%;
+    vertical-align: bottom;
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding-top:45px;
+    background-color: #6b8dafb7;
+    z-index: 5;
+} 
+#cover::after{
+    content: "ˇ";
+    position: absolute;
+    left:51%;
+    bottom:-10px;
+    font-size: 2rem;
+    color: #fff;
+    animation: loopDown 2s infinite;
+    z-index: 5;
+
+}
+@keyframes  loopDown{
+    0%{
+        transform:translateY(-10px);
+    }
+    100%{
+        transform:translateY(5px);
+    }
+}
+/* 設定大圖樣式 */
+.main_img-container{
+    height:100%;
+}
+.main_img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    position: absolute;
+
+}
+/* 圖片輪播動畫 必將圖片設定重疊  */
+
+.main_img-container div{
+    opacity: 0;
+    filter: alpha(opacity=0);
+    animation: round 25s linear infinite;
+
+}
+
+@keyframes round {
+    4% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 0 - 1秒 淡入*/
+    }
+
+    20% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 1- 5秒靜止*/
+    }
+    24% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        /* 5-6秒淡出*/
+    }
+}
+.main_img-container div:nth-child(5) {
+          animation-delay: 0s;
+}
+
+.main_img-container div:nth-child(4) {
+          animation-delay: 5s;
+}
+
+.main_img-container div:nth-child(3) {
+          animation-delay: 10s;
+}
+.main_img-container div:nth-child(2) {
+    animation-delay: 15s;
+}
+.main_img-container div:nth-child(1) {
+    animation-delay: 20s;
+} 
+/*  */
 /* Welcome End */
 
 /* COM Concept  */
@@ -108,6 +219,16 @@
     width: 100%;
     margin: 0 auto;
     padding-bottom: 3rem;
+}
+#conceptInner::before {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #697a95;
 }
 .conceptTxt{
     text-align: left;
@@ -150,7 +271,7 @@
 
 /*  */
 
-.conceptBg{
+/* .conceptBg{
     position: absolute;
     top: 80%;
     left:50%;
@@ -161,7 +282,7 @@
     background-color: #ffe6b7;
     background-position: center;
     transform: translate(-50%,-50%);
-    }
+    } */
     /*  */
 .conceptImg{
     position: absolute;
@@ -184,6 +305,7 @@
 
 
 .conceptContent{
+    position: relative;
     padding: 1rem;
     width: 100%;
     display: flex;
@@ -196,6 +318,29 @@
     padding: 1rem;
 
     
+}
+.conceptContent::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    width: 100px;
+    height: 200px;
+    width: 200px;
+    background-color: #ffe6b7;
+
+}
+.conceptContent::after{
+    content: "";
+    position: absolute;
+    top:45%;
+    left: 10%;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #95a9c9;
+
 }
 .conceptContent>div>h1{
     font-size:1.8rem ;
@@ -418,7 +563,7 @@
     position: relative;
     margin-bottom: 150px;
     text-align: right;
-    transform: translateX(100px);
+    /* transform: translateX(100px); */
 
 }
 .materialTxt > span{
@@ -1565,11 +1710,6 @@
         display: none;
  
      }
-     .item:nth-child(8){
-        /* display: none; */
-
-  
-      }
       .item:nth-child(9){
          grid-column: 3/ 4;
          grid-row: 3 / 4;  

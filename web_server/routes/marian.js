@@ -11,7 +11,9 @@ router.get('/', function (req, res, next) {
 
 
 // 前台 news 僅供查
+// nodejs 專案預設8000
 // http://localhost:8000/api/news
+// query 是資料庫的句法
 router.get('/news', function (req, res, next) {
     req.mysql.query('select * from news', [],
         function (err, result) {
@@ -20,6 +22,7 @@ router.get('/news', function (req, res, next) {
     )
 });
 // http://localhost:8000/api/news/4
+// /news/:newsId 這樣就可以進入mysql相關id資料
 router.get('/news/:newsId', function (req, res, next) {
     req.mysql.query('select * from news n join newsContent nc on (n.newsId = nc.newsId) where n.newsId = ?',
         [req.params.newsId],

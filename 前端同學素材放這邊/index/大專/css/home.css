@@ -112,11 +112,22 @@
     padding-bottom: 3rem;
 }
 #conceptInner::before {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 2px;
+    height: 70%;
+    border-radius: 30px;
+    background-color: #697a95;
+    /* z-index: -1; */
+}
+/* #conceptInner::before {
     position: absolute;
     width: 100%;
     margin: 0 auto;
     padding-bottom: 3rem;
-}
+} */
 .conceptTxt{
     text-align: left;
     margin-bottom: 150px;
