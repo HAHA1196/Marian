@@ -144,7 +144,7 @@ router.get("/orders", function (req, res, next) {
 // http://localhost:8001/api/orderdetails
 router.get("/orderdetails", function (req, res, next) {
     req.mysql.query(
-        "SELECT od.orderId, CONCAT(p.productName, ', ', p.productSize, ', ', od.quantity, ', ', (p.productPrice * od.quantity)) AS detail FROM orderdetails od JOIN products p ON (od.productId = p.productId)",
+        "SELECT od.orderId, CONCAT(p.productName, ', ', p.productSize, ', ', od.quantity, ', ', (p.productPrice * od.quantity)) AS detail FROM orderdetails od JOIN products p ON (od.productId = p.productId) ORDER BY od.orderId",
         [],
         function (err, result) {
             res.send(JSON.stringify(result));
