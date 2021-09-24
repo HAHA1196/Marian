@@ -44,8 +44,8 @@ router.get("/products/:productClass", function (req, res, next) {
     );
 });
 // 單一商品詳細介紹頁面
-// http://localhost:8001/api/products/id/2
-router.get("/products/id/:productId", function (req, res, next) {
+// http://localhost:8001/api/products/2
+router.get("/products/:productId", function (req, res, next) {
     req.mysql.query(
         "select * from products where productId = ?",
         [req.params.productId],
@@ -134,7 +134,7 @@ router.put("/members", function (req, res, next) {
 // http://localhost:8001/api/orders
 router.get("/orders", function (req, res, next) {
     req.mysql.query(
-        "SELECT o.orderId, o.orderDate, CONCAT(o.customerId, ' - ', c.customerName), SUM(od.productPrice * od.quantity) AS totalPrice FROM orders o JOIN orderdetails od ON (o.orderId = od.orderId) JOIN customers c ON (o.customerId = c.customerId) GROUP BY o.orderId",
+        "SELECT o.orderId, o.orderDate, o.customerId, SUM(od.productPrice * od.quantity) AS totalPrice FROM orders o JOIN orderdetails od ON (o.orderId = od.orderId) GROUP BY o.orderId",
         [],
         function (err, result) {
             res.send(JSON.stringify(result));
@@ -155,7 +155,7 @@ router.get("/orderdetails", function (req, res, next) {
 // http://localhost:8001/api/orders/2
 router.get("/orders/:orderId", function (req, res, next) {
     req.mysql.query(
-        "SELECT o.orderId, o.orderDate, CONCAT(o.customerId, ' - ', c.customerName), SUM(od.productPrice * od.quantity) AS totalPrice FROM orders o JOIN orderdetails od ON (o.orderId = od.orderId) JOIN customers c ON (o.customerId = c.customerId) where o.orderId = ? GROUP BY o.orderId",
+        "SELECT o.orderId, o.orderDate, o.customerId, SUM(od.productPrice * od.quantity) AS totalPrice FROM orders o JOIN orderdetails od ON (o.orderId = od.orderId) where o.orderId = ? GROUP BY o.orderId",
         [req.params.orderId],
         function (err, result) {
             res.send(JSON.stringify(result));
