@@ -1,35 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/Faq.css";
 //import '../js/faq';
-import $ from 'jquery';
-import '../css/font-awesome-4.7.0/css/font-awesome.css'
+import $ from "jquery";
+import "../css/font-awesome-4.7.0/css/font-awesome.css";
 import Faq1 from "../img/Faq圖片.png";
 
-class Faq extends React.Component {
-  faqMove = () => {
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
+function faqMove(){
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
 
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
-    }
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
   }
-  componentDidMount(){
-    this.faqMove();
-  }
+};
 
-  render() {
-    return (
-      <React.Fragment>
-       <section class="faqsection">
+export default function Asshole() {
+  useEffect(() => {
+    faqMove();
+  }, []);
+
+  return (
+    <React.Fragment>
+      <section class="faqsection">
         <div class="decorateContainer">
           <div class="decorateBoxOne" id="apple"></div>
           <div class="decorateBoxTwo"></div>
@@ -181,9 +181,6 @@ class Faq extends React.Component {
           </div>
         </div>
       </section>
-      </React.Fragment>
-    );
-  }
+    </React.Fragment>
+  );
 }
-
-export default Faq;

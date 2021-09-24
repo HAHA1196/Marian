@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
 import '../css/Member.css'
 import '../js/member'
 
 export default function Member() {
+    const [member, setMember] = useState([]);
+
+    useEffect(() => {
+        Axios.get("http://localhost:8000/api/members").then((data) => {
+          console.log(data.data);
+          setMember(data.data);
+        });
+      }, []);
+
     return (
         <main className="memberMain">
         <section className="memberSection">
@@ -50,7 +60,7 @@ export default function Member() {
                     <input type="text" placeholder="Password"/>
                 </div>
                 <div className="membersButton">
-                    <button>Shop Now !</button>
+                    <button className="membersBtn">Shop Now !</button>
                 </div>
                 <p><a href="#">Forgot Password ?</a></p>
             </div>

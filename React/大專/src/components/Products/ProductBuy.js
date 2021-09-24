@@ -44,7 +44,7 @@ export default function ProductBuy() {
                     <div className="productsBuyClose">x</div>
                 </div>
                 <div className="productsCart">
-                    <div className="cartTitle"><p>Shopping Cart</p> <span className="cartExit">x</span></div>
+                    <div className="productsCartTitle"><p>Shopping Cart</p> <span className="cartExit">x</span></div>
                     <div className="cartItem">
                         <div className="cartItemPic">
                             <img src="https://picsum.photos/100/100/?random=1"/>

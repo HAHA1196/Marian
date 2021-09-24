@@ -1,12 +1,43 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useRef, useState } from "react";
 
-export default function Fuck() {
-    let history = useHistory();
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
-    return (
-        <div>
-            shit
-        </div>
-    )
+// Import Swiper styles
+import "../css/swiper.css";
+
+// import Swiper core and required modules
+import SwiperCore, { Pagination, Navigation } from "swiper";
+
+SwiperCore.use([Pagination, Navigation]);
+
+function Fuck() {
+  return (
+    <>
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        slidesPerGroup={3}
+        loop={true}
+        loopFillGroupWithBlank={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        className="mySwiper"
+      >
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper>
+    </>
+  );
 }
+
+export default Fuck;

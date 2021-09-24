@@ -11,7 +11,6 @@ export default function Contact() {
                 <div id="welcomecInner">
                     <div className="welcomecCont" >
                         <h2>Contacts Us</h2>
-                        <p>Marian Co.,Ltd</p>
                     </div>
                     <div className="wCarousel">
                         <div className="slide">
