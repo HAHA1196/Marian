@@ -30,7 +30,7 @@ a {
 }
 /* header :end */
 /* welcome */
-#welcomeC{
+/* #welcomeC{
     padding: 160px 6.5% 0px 6.5% ;
     background-position:  center;
     position: relative;
@@ -54,13 +54,13 @@ a {
     object-fit: cover;
     top: 0;
     left:0;
-    /* filter: grayscale(2); */
+    filter: grayscale(2);
     transition: all .3s ease;
     z-index:-1;
    
     
-}
-#welcome::before{
+} */
+/* #welcome::before{
     content: "";
     position: absolute;
     width: 100%;
@@ -86,7 +86,6 @@ a {
    font-size: 3rem;
    padding-bottom: 1rem;
    z-index: 5;
-   /* text-shadow:3px 3px 1px #CCCCCC; */
    text-shadow: 2px 2px 12px rgba(202, 198, 197, 0.87);
 
 
@@ -95,9 +94,98 @@ a {
     text-align: center;
     font-size: .8rem;
    text-shadow:1px 1px 1px   #212529;
-}
+} */
 
 /* welcome end */
+/* cover css */
+#coverC{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+.coverTxt{
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
+}
+.coverTxt>h2{
+
+    color: #f8f9fa;
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    z-index: 5;
+    text-shadow: 2px 2px 12px rgba(202, 198, 197, 0.87);
+
+}
+/* 設定大圖樣式 */
+.main_img-containerC{
+    height:100%;
+}
+.main_imgC{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 3;
+    filter: grayscale(.5);
+
+
+}
+/* 圖片輪播動畫 必將圖片設定重疊  */
+
+.main_img-containerC div{
+    opacity: 0;
+    /* filter: alpha(opacity=0); */
+    animation: round 25s linear infinite;
+
+
+}
+
+@keyframes round {
+    4% {
+        opacity: 1;
+        /* filter: alpha(opacity=100); */
+        /* 0 - 1秒 淡入*/
+    }
+
+    20% {
+        opacity: 1;
+        /* filter: alpha(opacity=100); */
+        /* 1- 5秒靜止*/
+    }
+    24% {
+        opacity: 0;
+        /* filter: alpha(opacity=0); */
+        /* 5-6秒淡出*/
+    }
+}
+.main_img-containerC div:nth-child(5) {
+          animation-delay: 0s;
+}
+
+.main_img-containerC div:nth-child(4) {
+          animation-delay: 5s;
+}
+
+.main_img-containerC div:nth-child(3) {
+          animation-delay: 10s;
+}
+.main_img-containerC div:nth-child(2) {
+    animation-delay: 15s;
+}
+.main_img-containerC div:nth-child(1) {
+    animation-delay: 20s;
+} 
+/*  */
 /* contact */
 #contactus{
     padding: 160px 6.5% 0px 6.5% ;

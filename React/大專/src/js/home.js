@@ -1,48 +1,48 @@
 import $ from 'jquery'
 
 // caroual
-$(function(){
-    var inwrap=$('.w-carousel'),
-    $slide=$('.slide');
+// $(function(){
+//     var inwrap=$('.w-carousel'),
+//     $slide=$('.slide');
 
-    // 設定如何滑動到一下個           
-    function slideNext() {
+//     // 設定如何滑動到一下個           
+//     function slideNext() {
 
-        inwrap.animate(
-            {left: '0'}, 200,function() {
+//         inwrap.animate(
+//             {left: '0'}, 200,function() {
 
-                inwrap.css('left', '-100%');
+//                 inwrap.css('left', '-100%');
 
-                $('.slide').last().after($('.slide').first());
+//                 $('.slide').last().after($('.slide').first());
 
-            });
-        $('.prev').click(function() {
+//             });
+//         $('.prev').click(function() {
 
-        inwrap.animate({left: '0%'}, 1000,"ease",function() {
+//         inwrap.animate({left: '0%'}, 1000,"ease",function() {
 
-        inwrap.css('left', '-100%');
+//         inwrap.css('left', '-100%');
 
-        $('.slide').first().before($('.slide').last());
+//         $('.slide').first().before($('.slide').last());
 
-        });
-        });
+//         });
+//         });
 
 
-        $('.next').click( function() {
+//         $('.next').click( function() {
 
-        clearInterval(sliderInterval);
+//         clearInterval(sliderInterval);
 
-        slideNext();
+//         slideNext();
 
-        });
-    }
-    //Enabling auto scroll
-    function sliderInterval(){
-        setInterval(slideNext, 5000);
-    } 
+//         });
+//     }
+//     //Enabling auto scroll
+//     function sliderInterval(){
+//         setInterval(slideNext, 5000);
+//     } 
 
-});
-$( ".navbarMenu" ).find( ".hover" ).css( "transition", "transform .5s ease-in-out 0s" )
+// });
+// $( ".navbarMenu" ).find( ".hover" ).css( "transition", "transform .5s ease-in-out 0s" )
  
 
 

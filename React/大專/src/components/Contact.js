@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/Contact.css'
 import contact1 from '../img/c01.jpg'
 import contact2 from '../img/c02.jpg'
-import contact3 from '../img/c03.jpg'
+import contact3 from '../img/C05.jpg'
 
 export default function Contact() {
     return (
@@ -11,7 +11,6 @@ export default function Contact() {
                 <div id="welcomecInner">
                     <div className="welcomecCont" >
                         <h2>Contacts Us</h2>
-                        <p>Marian Co.,Ltd</p>
                     </div>
                     <div className="wCarousel">
                         <div className="slide">

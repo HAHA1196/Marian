@@ -53,7 +53,7 @@ export default function Home() {
     return (
         <React.Fragment>
     <article>
-       <section id="welcome" >
+       {/* <section id="welcomeI" >
                  <div id="welcomeInner">
                    <div class="welcomeContainer" >
                         <h2></h2>
@@ -71,7 +71,26 @@ export default function Home() {
                          </div>
                      </div>
                  </div>
-         </section>
+         </section> */}
+        <section id="cover" class="main">
+            <div class="main_img-container">
+                <div>
+                    <img class="main_img" src={slide01} alt=""/>
+                </div>
+                <div>
+                    <img class="main_img " src={slide02} alt=""/>
+                </div>
+                <div>
+                    <img class="main_img " src={slide03} alt=""/>
+                </div> 
+                <div>
+                    <img class="main_img "src={slide01}  alt=""/>
+                </div>
+                <div>
+                    <img class="main_img " src={slide02} alt=""/>
+                </div>  
+            </div>
+        </section>
          <section id="concept" data-aos="fade-up">
             <div id="conceptInner">
                  <div class="conceptTxt"> 
@@ -98,7 +117,7 @@ export default function Home() {
            </div>
             <div class="btnContainer"> 
                 <div class="btnMore btnCenter">
-                     <span>Read&nbspMore</span>
+                     <span>Read&nbsp;More</span>
                      <div  class="btn">
                          <Link to="/marian/product"></Link>
                      </div>
@@ -296,14 +315,14 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            {/* <div class="btnContainer btnCenter"> */}
+            {/* <div class="btnContainer btnCenter">
                 <div class="btnMore">
                     <span>Read&nbsp;More</span>
                     <div  class="btn">
                         <Link to="/marian/product"></Link>
                     </div>
                 </div>
-            {/* </div>  */}
+            </div>  */}
         </section>
         <section id="product" >
             <div class="productInner">
@@ -365,7 +384,7 @@ export default function Home() {
                     </div>
                     <div class="item btnMore" >
                         <div class="btnMore">
-                            <span>Read&nbspMore</span>
+                            <span>Read&nbsp;More</span>
                             <div  class="btn">
                                 <a href="../html/project.html"></a>
                             </div>
@@ -415,7 +434,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div class="btnMore">
-                    <span>Read&nbspMore</span>
+                    <span>Read&nbsp;More</span>
                     <div  class="btn">
                         <a href="../html/project.html"></a>
                     </div>

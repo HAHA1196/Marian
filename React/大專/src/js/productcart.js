@@ -38,5 +38,4 @@ $(document).ready(function(){
             $('.productsCart').css("top",0);
         }
     })
-    
 })

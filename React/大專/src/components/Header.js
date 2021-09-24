@@ -1,15 +1,17 @@
 import React from "react";
 import "../css/all.css";
 import "../js/headerItem";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 //import { NavLink, Switch, Route } from "react-router-dom";
 import logo from '../img/大專LOGO.png'
 
 export default function Header() {
+    let location = useLocation();
+    console.log(location);
     
   return (
     <React.Fragment>
-      <header id="header">
+      <header id="header" class="indexH">
         <Link to="/" class=" headerLogo" >
             <img class="logo" target="style" src={logo}  alt=""/>
             <span> 
@@ -45,10 +47,10 @@ export default function Header() {
                         <span></span>
                     </Link>
                     <ul class="navbarMenu">
-                        <li><Link to="/marian/product/all">ALL</Link></li>
-                        <li><Link to="/marian/product/board">BOARD</Link></li>
-                        <li><Link to="/marian/product/swimsuit">SWIMSUIT</Link></li>
-                        <li><Link to="/marian/product/acc">ACC</Link></li>
+                        <li><Link to="/marian/product">ALL</Link></li>
+                        <li><Link to="/marian/product/D">BOARD</Link></li>
+                        <li><Link to="/marian/product/SS">SWIMSUIT</Link></li>
+                        <li><Link to="/marian/product/ACC">ACC</Link></li>
                     </ul>
                 </li>
                 <li>

@@ -11,7 +11,9 @@ router.get('/', function (req, res, next) {
 
 
 // 前台 news 僅供查
+// nodejs 專案預設8000
 // http://localhost:8000/api/news
+// query 是資料庫的句法
 router.get('/news', function (req, res, next) {
     req.mysql.query('select * from news', [],
         function (err, result) {
@@ -20,6 +22,7 @@ router.get('/news', function (req, res, next) {
     )
 });
 // http://localhost:8000/api/news/4
+// /news/:newsId 這樣就可以進入mysql相關id資料
 router.get('/news/:newsId', function (req, res, next) {
     req.mysql.query('select * from news n join newsContent nc on (n.newsId = nc.newsId) where n.newsId = ?',
         [req.params.newsId],
@@ -49,8 +52,8 @@ router.get('/products/:productClass', function (req, res, next) {
     )
 });
 // 單一商品詳細介紹頁面
-// http://localhost:8000/api/products/2
-router.get('/products/:productId', function (req, res, next) {
+// http://localhost:8000/api/products/id/2
+router.get('/products/id/:productId', function (req, res, next) {
     req.mysql.query('select * from products where productId = ?',
         [req.params.productId],
         function (err, result) {
@@ -60,6 +63,13 @@ router.get('/products/:productId', function (req, res, next) {
 });
 
 // 前台 members 可供增查修
+router.get('/members', function (req, res, next) {
+    req.mysql.query('select * from customers', [],
+        function (err, result) {
+            res.send(JSON.stringify(result));
+        }
+    )
+});
 // 這裡有點執行上的難度，要從登入狀態判定用戶 customerId 為多少
 // 決定要給他看到那哪筆會員資料
 // http://localhost:8000/api/members/6
@@ -71,6 +81,19 @@ router.get('/members/:customerId', function (req, res, next) {
         }
     )
 });
+
+// 查詢單一會員的 訂單資料
+// http://localhost:8001/api/member-order-history/5
+router.get("/member-order-history/:customerId", function (req, res, next) {
+    req.mysql.query(
+        "SELECT o.orderId, o.orderDate, SUM(od.productPrice * od.quantity) AS totalPrice FROM orders o JOIN orderdetails od ON (o.orderId = od.orderId) WHERE o.customerId = ? GROUP BY o.orderId",
+        [req.params.customerId],
+        function (err, result) {
+            res.send(JSON.stringify(result));
+        }
+    );
+});
+
 // 新增會員資料
 router.post('/members', function (req, res, next) {
     req.mysql.query('insert into customers (customerName, customerPassword, customerEmail) values (?, ?, ?, ?, ?)',
