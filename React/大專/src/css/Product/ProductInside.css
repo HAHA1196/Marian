@@ -1,15 +1,3 @@
-/* header */
-/* header{
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    background-color: rgb(105, 122, 149);
-    font-size: 36px;
-    font-weight: 900;
-    color:rgb(255, 230, 183);
-} */
-
 /* main */
 .productInsideMain{
     width: 100%;
@@ -22,17 +10,14 @@
 }
 .productsInfo{
     width: 50%;
-    padding: 20px 20px 0 20px;
+    padding: 0px 20px 100px 20px;
     display: flex;
     justify-content: center;
     align-items:flex-start;
     flex-direction: column;
     line-height: 3rem;
     float: left;
-    color: rgb(77,89,107);
-}
-.fotorama{
-    margin: auto;
+    /* color: rgb(77,89,107); */
 }
 .productsDetails{
     width: 50%;
@@ -56,7 +41,7 @@
     min-height: 100vh;
     height: 100%;
     padding: 50px;
-    background-color: #ccc;
+    background-color:rgb(149,169,201);
     float: right;
     position: sticky;
     top: 0;
@@ -65,6 +50,7 @@
     max-width: 600px;
     width: 100%;
     padding: 0 30px;
+    color: rgb(79,94,117);
 }
 .productsInsideBuyTitle h1{
     padding: 10px 0;
@@ -110,9 +96,9 @@
     text-align: center;
     background-color: rgb(105, 122, 149);
     color: rgb(255, 230, 183);
-    border-radius: 0;
     font-size: 1.5rem;
     cursor: pointer;
+    border: 1px solid rgb(255, 230, 183);
 }
 .productsInsideBuy li{
     list-style:outside;
@@ -127,8 +113,8 @@
     display: flex;
     font-size: 1.5rem;
     font-weight: 500;
-    border-top: 2px solid rgb(255, 230, 183);
-    border-bottom: 2px solid rgb(255, 230, 183);
+    border-top: 1.5px solid rgb(255, 230, 183);
+    border-bottom: 1.5px solid rgb(255, 230, 183);
 }
 .shipping{
     width: 100%;
@@ -164,21 +150,21 @@
     position: fixed;
     top: 50px;
     left: 0;
-    background-color: rgb(180,207,235);
+    /* background-color: white; */
     display: none;
     overflow: auto;
 }
-.cartTitle{
+.productsInsideCartTitle{
     padding: 20px;
-    border-top: 2px solid rgb(255, 230, 183);
-    border-bottom: 2px solid rgb(255, 230, 183);
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     display: flex;
     align-items: center;
 }
-.cartTitle span{
+.productsInsideCartTitle span{
     padding: 3px 5px;
     margin-left: auto;
-    border: 1px solid  rgb(255, 230, 183);
+    border: 1px solid #ccc;
     border-radius: 3px;
     cursor: pointer;
 }
@@ -191,14 +177,14 @@
 }
 .cartItemProducts{
     padding: 0 10px;
-    color:rgb(77,89,107);
+    /* color:rgb(77,89,107); */
 }
 .cartItemProducts p{
     padding-bottom: 10px;
 }
 .cartItemProductsDelete{
     padding: 3px 5px;
-    border: 1px solid rgb(255, 230, 183);
+    border: 1px solid #ccc;
     border-radius: 3px;
     float: right;
     cursor: pointer;
@@ -207,11 +193,9 @@
     width: calc(100% - 40px);
     padding: 10px 0;
     margin: 10px 20px;
-    font-size: 1rem;
-    background-color: rgb(149,169,201);
-    color: rgb(255, 230, 183);
+    background-color: #F77B1C;
+    color: white;
     border: none;
-    border-radius: 0;
 }
 
 /* products page */
@@ -219,11 +203,11 @@
     width: 100%;
     padding: 30px 0;
     text-align: center;
-    background-color: white;
+    background-color:rgb(149,169,201);
 }
 .productsInsidePage a{
     text-decoration: none;
-    color: rgb(77,89,107);
+    color:rgb(79,94,117);
     font-size: 1.2rem;
     position: relative;
 }
@@ -232,22 +216,11 @@
     width: 100%;
     height: 2px;
     display: block;
-    background-color: rgb(77,89,107);
+    background-color: rgb(79,94,117);
     position: absolute;
     left: 0;
 }
 
-/* footer */
-/* footer{
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    background-color:rgb(105, 122, 149);
-    color: rgb(255, 230, 183);
-    font-size: 36px;
-    font-weight: 900;
-} */
 
 @media screen and (max-width:992px) {
     section{

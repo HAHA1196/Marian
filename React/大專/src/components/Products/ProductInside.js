@@ -1,30 +1,102 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import Axios from "axios";
+import $ from "jquery";
 import ProductBuy from './ProductBuy'
+import ProductPic from './ProductPic'
 import '../../css/Product.css'
 import '../../css/Product/ProductInside.css'
 import '../../css/reset.css'
 import '../../js/productinside'
-//import Fotorama from 'fotorama-react-wrapper'
+
+function fuck(){
+    $(document).ready(function(){
+        $('.addToCart').on('click',function(){
+            console.log('shit')
+            $('.productsBuyCart').css("display","block");
+            $('.productsCart').css("display","block");
+            $('.cartItem').css("display","flex");
+        })
+        $('.cartItemProductsDelete').on('click',function(){
+            $('.cartItem').css("display","none");
+        })
+        $('.cartExit').on('click',function(){
+            $('.productsBuyCart').css("display","none");
+        })
+        $(window).scroll(function(){
+              let cartStickTop = 50 - $(window).scrollTop();
+              if($(window).scrollTop() <= 50){
+                  $('.productsCart').css("top",cartStickTop);
+              }else{
+                  $('.productsCart').css("top",0);
+              }
+          })
+      })
+}
+
+let flag = 0;
+function shipping(){
+    $(document).ready(function(){
+        let plus = $('.shippingPlus');
+        let minus = $('.shippingMinus');
+            $('.shippingDetails').slideToggle();
+            flag == 0 ? plus.css("display", "none") : plus.css("display", "block");
+            flag == 0 ? minus.css("display", "block") : minus.css("display", "none");
+            flag == 0 ? flag = 1 : flag = 0; 
+    });
+}
+
+function shippingPlus(){
+    $(document).ready(function(){
+        let plus = $('.shippingPlus');
+        let minus = $('.shippingMinus');
+            $('.shippingDetails').slideToggle();
+            flag == 0 ? plus.css("display", "none") : plus.css("display", "block");
+            flag == 0 ? minus.css("display", "block") : minus.css("display", "none");
+            flag == 0 ? flag = 1 : flag = 0; 
+    });
+}
+
+function shippingMinus(){
+    $(document).ready(function(){
+        let plus = $('.shippingPlus');
+        let minus = $('.shippingMinus');
+            $('.shippingDetails').slideToggle();
+            flag == 0 ? plus.css("display", "none") : plus.css("display", "block");
+            flag == 0 ? minus.css("display", "block") : minus.css("display", "none");
+            flag == 0 ? flag = 1 : flag = 0; 
+    });
+}
 
 export default function ProductInside() {
+    let { productId } = useParams();
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        Axios.get(`http://localhost:8000/api/products/id/${productId}`).then((data) => {
+          console.log(data);
+          console.log(data.data);
+          setProducts({
+              productName: data.data[0].productName,
+              productPrice: data.data[0].productPrice,
+              productDescription: data.data[0].productDescription,
+          });
+        });
+      }, [productId]);
+      
+
     return (
         <main className="productInsideMain">
             <div className="productsInside">
             <div className="productsInfo">
-                <div data-width="450" data-height="450" data-nav="thumbs" data-loop="true" data-thumbwidth="100" data-thumbheight="100" data-thumbmargin="10"> 
-                    <img className="smallPic" src="https://picsum.photos/500/500/?random=1"/>
-                    <img className="smallPic" src="https://picsum.photos/500/500/?random=2"/>
-                    <img className="smallPic" src="https://picsum.photos/500/500/?random=3"/>
-                    <img className="smallPic" src="https://picsum.photos/500/500/?random=4"/>
-                    <img className="smallPic" src="https://picsum.photos/500/500/?random=5"/>
-                </div>
+            <ProductPic />
             </div>
             <div className="productsInsideBuy">
                 <div className="productsBuyContainer">
                   <div className="productsInsideBuyTitle">
                     <p>Tag</p>
-                    <h1>PRODUCT TITLE</h1>
-                    <h3>NT$2,000</h3>
+                    <h1>{products.productName}</h1>
+                    <h3>NT${products.productPrice}</h3>
                   </div>
                   <div className="productsInsideBuyNum">
                     <div>
@@ -53,8 +125,14 @@ export default function ProductInside() {
                       <p className="productsBuyNumSold">SOLD OUT</p>
                     </div>
                   </div>
-                  <button className="addToCart">Add to cart</button>
-                  <div className="productsShipping">
+                  <button 
+                    onClick={fuck}
+                    className="addToCart"
+                    >Add to cart
+                  </button>
+                  <div 
+                    onClick={shipping}
+                    className="productsShipping">
                     <div className="shipping">Shipping</div>
                     <div className="shippingPlus">+</div>
                     <div className="shippingMinus">-</div>
@@ -79,7 +157,7 @@ export default function ProductInside() {
             </div>
             <div className="productsDetails">
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+                    {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
                     soluta facilis quibusdam non laudantium eaque deleniti quae nobis
                     tempora provident commodi consequatur quia minus quasi iusto ipsam,
                     autem enim ratione atque perspiciatis necessitatibus. Corporis
@@ -102,18 +180,12 @@ export default function ProductInside() {
                     explicabo, non aliquam. Tenetur beatae doloribus suscipit tempora
                     nam dignissimos consequuntur ab iste laboriosam consequatur mollitia
                     cumque quis, maiores reprehenderit voluptatum voluptates nemo harum.
-                    Necessitatibus optio exercitationem qui.
+                    Necessitatibus optio exercitationem qui. */}
                 </p>
                 <div className="productsDesc">
                     <h2>Description</h2>
                     <p>
-                      Lorem ipsum dolor sit, <br />
-                      amet consectetur adipisicing elit. <br />
-                      Beatae officia repellendus perferendis <br />
-                      cumque omnis fugiat consequuntur! <br />
-                      Ea, maxime dolore dolorum provident, <br />
-                      esse minus beatae, <br />
-                      at corporis repellat doloremque nisi alias.
+                        {products.productDescription}
                     </p>
                 </div>
                 <div className="productsSpec">
@@ -130,7 +202,7 @@ export default function ProductInside() {
 
         <div className="productsBuyCart">
             <div className="productsCart">
-                <div className="cartTitle"><p>Shopping Cart</p> <span className="cartExit">x</span></div>
+                <div className="productsInsideCartTitle"><p>Shopping Cart</p> <span className="cartExit">x</span></div>
                 <div className="cartItem">
                     <div className="cartItemPic">
                         <img src="https://picsum.photos/100/100/?random=1"/>

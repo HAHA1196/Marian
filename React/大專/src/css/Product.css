@@ -288,7 +288,7 @@ a{
     display: none;
     overflow: auto;
 }
-.cartTitle{
+.productsCartTitle{
     padding: 20px;
     border-top: 2px solid rgb(255, 230, 183);
     border-bottom: 2px solid rgb(255, 230, 183);
@@ -296,7 +296,7 @@ a{
     align-items: center;
     color: rgb(77,89,107);
 }
-.cartTitle span{
+.productsCartTitle span{
     padding: 3px 5px;
     margin-left: auto;
     border: 1px solid rgb(255, 230, 183);
