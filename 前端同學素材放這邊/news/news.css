@@ -1,4 +1,4 @@
-a{
+a {
     text-decoration: none;
     color: black;
 }
@@ -16,11 +16,11 @@ a{
 } */
 
 /* main */
-main{
+main {
     padding: 15px 0;
-    background-color: rgb(180,207,235);
+    background-color: rgb(180, 207, 235);
 }
-.news{
+.news {
     max-width: 1200px;
     margin: auto;
     padding: 30px 50px;
@@ -28,14 +28,14 @@ main{
     flex-wrap: wrap;
     position: relative;
 }
-.newsTitle{
+.newsTitle {
     width: 100%;
     padding: 20px;
     font-size: 3rem;
     font-weight: 400;
     color: rgb(105, 122, 149);
 }
-.newsTagSearch{
+.newsTagSearch {
     width: 100%;
     height: 50px;
     margin: 20px;
@@ -43,49 +43,49 @@ main{
 }
 
 /* section */
-section{
+section {
     width: 50%;
     padding: 20px;
-    transition: 1s ;
+    transition: 1s;
 }
-.newsPic{
+.newsPic {
     width: 100%;
 }
-.newsPic img{
+.newsPic img {
     width: 100%;
     /* filter:grayscale(100%); */
     transition: 1s;
 }
-.newsPic a:hover img{
-    filter:none;
+.newsPic a:hover img {
+    filter: none;
 }
-.newsContent{
+.newsContent {
     width: 100%;
     padding: 20px 0 30px 0;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
-.newsContent a:hover{
-    color: rgb(255,255,255);
+.newsContent a:hover {
+    color: rgb(255, 255, 255);
 }
-.newsContent h2{
+.newsContent h2 {
     padding: 20px 0;
     font-size: 1.5rem;
     font-weight: 900;
 }
-.newsContent a{
+.newsContent a {
     color: rgb(105, 122, 149);
 }
-.newsContent p{
+.newsContent p {
     padding: 5px 10px 5px 10px;
     font-size: 16px;
     color: rgb(105, 122, 149);
 }
-.newsTag{
+.newsTag {
     padding: 5px 0 5px 20px;
 }
-.newsTag p{
+.newsTag p {
     padding: 5px 10px;
     background-color: rgb(255, 230, 183);
     color: black;
@@ -93,8 +93,8 @@ section{
     text-align: center;
     position: relative;
 }
-.newsTag p::before{
-    content:"\A";
+.newsTag p::before {
+    content: "\A";
     border-style: solid;
     border-width: 16px 20px 16px 0;
     border-color: transparent rgb(255, 230, 183) transparent transparent;
@@ -102,17 +102,17 @@ section{
     top: 0px;
     left: -20px;
 }
-.newsDate{
+.newsDate {
     width: 100%;
     padding: 0 0 20px 0;
     display: flex;
 }
-.newsDate p{
+.newsDate p {
     padding: 0;
     margin-left: auto;
 }
-.newsExtend::before{
-    content: '';
+.newsExtend::before {
+    content: "";
     width: 100%;
     height: 2px;
     display: block;
@@ -120,18 +120,18 @@ section{
     top: 0;
     background-color: rgb(255, 230, 183);
 }
-.newsExtend{
+.newsExtend {
     margin-top: auto;
     display: flex;
     align-items: center;
     position: relative;
 }
-.newsExtend p{
+.newsExtend p {
     padding: 20px 0 0 0;
     margin-left: auto;
 }
-.newsExtend p::after{
-    content: '';
+.newsExtend p::after {
+    content: "";
     width: 100%;
     height: 1px;
     display: block;
@@ -139,7 +139,7 @@ section{
 }
 
 /* loadmore */
-.loadMore{
+.loadMore {
     width: 100%;
     padding: 20px;
     margin: 20px;
@@ -150,25 +150,24 @@ section{
     display: flex;
     justify-content: center;
 }
-.loadMoreArrow{
+.loadMoreArrow {
     padding: 0 10px;
 }
-.loadMore:hover{
+.loadMore:hover {
     cursor: pointer;
     animation-name: loadMoreArrow;
 }
-.loadMore:hover .loadMoreArrow{
+.loadMore:hover .loadMoreArrow {
     animation: loadMoreArrow 1s infinite;
 }
-@keyframes loadMoreArrow{
-    0%{
+@keyframes loadMoreArrow {
+    0% {
         transform: translateY(-10px);
     }
-    100%{
+    100% {
         transform: translateY(10px);
     }
 }
-
 
 /* footer */
 /* footer{
@@ -182,11 +181,11 @@ section{
     color: rgb(255, 230, 183);
 } */
 
-@media screen and (max-width:768px) {
-    .news{
+@media screen and (max-width: 768px) {
+    .news {
         padding: 30px;
     }
-    section{
+    section {
         width: 100%;
     }
 }
