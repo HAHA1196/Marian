@@ -110,11 +110,11 @@ export default function Member() {
                     <p >Register by Email</p>
                 </div>
                 <div className="membersRegisterInfo">
-                    <input type="text" className="registerName" placeholder="User Name"/>
+                    <input type="text"  id="signupName" className="registerName" placeholder="User Name" value="ruby"/>
                     <p className="usernameAlert"></p>
-                    <input type="text" className="registerEmail" placeholder="Email"/>
+                    <input type="text" id="signupEmail" className="registerEmail" placeholder="Email" value="Q123@gmail.com"/>
                     <p className="emailAlert"></p>
-                    <input type="password" className="registerPassword" placeholder="Password"/>
+                    <input type="password" id="signupPassword" className="registerPassword" placeholder="Password" value="Qq1234567"/>
                     <p className="passwordAlertCharacters">Enter at least 8 characters</p>
                     <p className="passwordAlertUpper">At least 1 Uppercase</p>
                     <p className="passwordAlertLower">At least 1 Lowercase</p>
@@ -122,7 +122,7 @@ export default function Member() {
                 </div> 
                 <div className="membersRegisterAgreement">
                     <label>
-                        <input className="agreeCheckbox" type="checkbox" />
+                        <input className="agreeCheckbox" type="checkbox" checked/>
                         <p>I agree....</p>
                     </label>
                 </div>

@@ -1,0 +1,425 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
+}
+   
+ *:before, *:after {
+    box-sizing: border-box;
+}
+body{
+    color: #2E2E2E;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.08em;
+
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#header{
+    box-shadow: rgb(0 0 0 / 13%) 0 4px 16px;
+    background-color: rgba(252, 249, 249, 0.404);
+    
+}
+/* header :end */
+/* welcome */
+#welcomeC{
+    padding: 160px 6.5% 0px 6.5% ;
+    background-position:  center;
+    position: relative;
+
+}
+#welcomecInner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 7rem;
+
+}
+.wCarousel{
+    width: 100%;
+   
+}
+.wCarousel>div>img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left:0;
+    /* filter: grayscale(2); */
+    transition: all .3s ease;
+    z-index:-1;
+   
+    
+}
+#welcome::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left:0;
+    background-color: #3131313a;
+    z-index: 1;
+   
+    
+}
+
+.welcomecCont{
+    color: #f8f9fa;
+    z-index: 5;
+  
+
+  
+}
+.welcomecCont>h2{
+   text-align: center;
+   font-size: 3rem;
+   padding-bottom: 1rem;
+   z-index: 5;
+   /* text-shadow:3px 3px 1px #CCCCCC; */
+   text-shadow: 2px 2px 12px rgba(202, 198, 197, 0.87);
+
+
+}
+.welcomecCont>p{
+    text-align: center;
+    font-size: .8rem;
+   text-shadow:1px 1px 1px   #212529;
+}
+
+/* welcome end */
+/* contact */
+#contactus{
+    padding: 160px 6.5% 0px 6.5% ;
+    /* background-color: #ffe6b7; */
+    /* background-image: url(../img/a03.jpg); */
+    background-position: left;
+    background-repeat:no-repeat ;
+    position: relative;
+    z-index: 1;
+    background-color: #ffe6b7;
+
+
+}
+#contactusInner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+
+
+} 
+#contactus::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 37.1%;
+    height: 100%;
+    background-color: #ffffff;
+    opacity: 0.6;
+    z-index: 2;
+
+}
+.contactusTit{
+    font-size: 2rem;
+    position: absolute;
+    top:5rem;
+    right: 10rem;
+
+
+}
+.contusContain{
+    display: flex;
+    flex-direction: row;
+}
+.mapInner {
+    margin-top: 2rem;
+    filter: grayscale(1);
+
+}
+.mapInner>iframe{
+    width: 400px;
+    height: 300px;
+
+}
+/* form */
+.contusForm{
+    width: 60%;
+    text-align: left;
+   margin-left: 7rem;
+    display: block;
+    font-size: 1rem;
+    line-height: 1.42857143;
+    background-color:#e3e3e4;
+    background-color: #343333;
+    color: #f8f9fa;
+    box-shadow: 10px 10px  #9da0a3 ;
+    border-radius: 15px;
+    position: relative;
+
+
+}
+.contusForm>h3{
+    font-size:1.8rem;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+}
+form {
+    width: 100%;
+}
+/* .contus-form ::before{
+   content: "";
+   position: absolute;
+   top: 0;
+   left:0;
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   background-color: #ffe6b7;
+} */
+.formGroup{
+    padding-top:.8rem;
+    position: relative;
+    padding: 1rem;
+
+
+}
+
+.formGroup>label{
+    text-align: left;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 300;
+
+}
+.formControl{
+    padding: .3rem;
+    height: 2.5rem;
+    width: 100%;
+    font-size: 1.2rem;
+   font-weight: 400;
+   letter-spacing: .4rem;
+    color: #e3e3e4;
+    list-style: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: none;
+    border-bottom:2px solid #e3e3e4;
+    background-color: #343333;
+
+
+}
+.formGroup>i{
+    position: absolute;
+    top: 35px;
+    right: 0;
+    text-align: center;
+    vertical-align: middle;
+    height: 40px;
+    width: 50px;
+    padding-top: 10px;
+    z-index: 4;
+
+}
+.formGroup>textarea{
+    height: 80px;
+}
+input:focus {
+    outline: none;
+}
+textarea:focus{
+    outline: none;
+}
+textarea{
+    border: 1px;
+}
+
+@media only screen and  (max-width: 1024px){
+    .contactusTit{
+        right:5rem;
+    }
+}
+@media only screen  and (max-width: 812px){
+    .contactusTit{
+        display: block;
+        position: relative;
+        width: 100%;
+
+
+    }
+    #contactus::before{
+        display: none;
+
+    }
+    .contusForm{
+        width:100%;
+        margin-left: unset;
+        margin-top: 10rem;
+    }
+    .mapInner{
+        position: absolute;
+        top: 4rem;
+        right:0;
+    }
+    .contusTxt{
+        width: 50%;
+    }
+    .mapInner>iframe{
+        width: 320px;
+        height: 280px;
+    
+    }
+    .contusTxt>p{
+        line-height: 2rem;
+    }
+}
+@media only screen  and (max-width: 450px){
+    .contusContain{
+        display: block;
+        position: relative;
+        width: 100%;
+
+
+    }
+    #contactus::before{
+        display: none;
+
+    }
+    .contusForm{
+        width:100%;
+        margin-left: unset;
+        margin-top: 2rem;
+    }
+    .mapInner{
+        position: unset;
+    }
+    .contusContain .contusTxt{
+        width: 100%;
+        padding-top:0;
+    }
+    .mapInner>iframe{
+        width: 320px;
+        height: 280px;
+    
+    }
+    .contusTxt>p{
+        line-height: 2rem;
+    }
+    .quoteCont>h2{
+        line-height: 2rem;
+    }
+    .contactusTit{
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    .uslocLink .uslocIcon{
+        font-size: 1.3rem;
+    }
+    .uslocLink .uslocName{
+        font-size:1rem;
+    }
+}
+/* form  end*/
+.contusContain>h1{
+    text-align: center;
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.contusTxt{
+    padding-top:5rem;
+    text-align: center;
+    z-index: 3;
+
+  
+
+}
+.contusTxt>p{
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 31px;
+    text-align: center;
+}
+.uslocLink{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: inherit;
+    text-decoration: none;
+    padding-left: 4rem;
+}
+.uslocIcon{
+    display: inline-block;
+    width: 20px;
+    margin-right: 15px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.uslocName{
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding-left: 10px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+/* contact rwd */
+
+/* contactus rwd:end */
+/* quote */
+#quote{
+    padding: 100px 6.5% 0px 6.5% ;
+   background-color: #b4cfeb59;
+   background-blend-mode: multiply;
+    background-size: contain;
+
+
+}
+#quoteInner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+
+}
+.quoteCont{
+    color: #697a95;
+    
+
+}
+.quoteCont>h2{
+   text-align: center;
+   font-size: 1.5rem;
+   padding-bottom: 1rem;
+   text-shadow: 1px 1px #495057;
+
+}
+.quoteCont>p{
+    text-align: center;
+    font-size: .8rem;
+ 
+
+}
+/* quote end */
+
+/* footer */
+#footer{
+    margin-top: unset!important;
+
+}

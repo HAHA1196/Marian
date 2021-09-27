@@ -1,0 +1,175 @@
+/* sns */
+#sns{
+    padding: 30px 1% 0px 1% ;
+    margin-bottom: 10rem;
+    
+
+   
+
+}
+.snsTxt{
+    position: relative;
+    margin-bottom: 3rem;
+    text-align: center;
+
+}
+.snsTxt::before{
+    content: "";
+    position: absolute;
+    top:70%;
+    left:30%;
+    width: 40%;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #ffe6b7;
+    z-index: -1;
+
+}
+.snsTxt > span{
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 7rem;
+    color: #697a95;
+}
+.snsInner{
+    width: 100%;
+    /* height: 80vh; */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 7rem;
+   
+
+}
+.snsInner>span{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+
+}
+.snsContianer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+}
+.snsCard>div{
+   width: 100%;
+   height: 300px;
+
+
+}
+.snsCard>div>img{
+   object-fit: cover;
+   /* width: 100%; */
+   height:100%;
+   clip-path: circle(24.3% at 50% 50%);
+
+
+   
+}
+.snsCard{
+    padding: 5px;
+    /* display: flex;
+   flex-direction:column; */
+    width: 33%;
+    /* height:100%; */
+    position: relative;
+    text-align:center;
+    /* border: 2px solid #212529; */
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    
+
+
+}
+.snsCard>h1{
+
+    font-size: 2rem;
+    padding: 1rem;
+    line-height: 2px;
+    letter-spacing: .5px;
+    
+
+}
+.snsCard>p{
+    font-size: 1rem;
+    padding: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 2px;
+    text-align: left;
+
+   
+}
+.snsCard>h3{
+    padding-top: 3rem;
+    position: relative;
+    margin-bottom: 1rem;
+    text-align:center;
+
+    
+   
+
+}
+.snsCard>h3::before{
+   content: "";
+   position: absolute;
+   bottom: 5%;
+   /* left: 25%; */
+   transform: translateX(-55px);
+   border-radius: 30px;
+   width: 40px;
+   height: 8px;
+   text-align: center;
+   background-color: #ffe6b7;
+    
+   
+
+}
+.snsMore{
+    width: 200px;
+    margin: 3rem auto;
+    margin-bottom: 3rem;
+    text-align: center;
+
+}
+.snsBtn {
+    display: block;
+    border-radius: 30px;
+    width: 100%;
+    text-align: center;
+    line-height: 54px;
+    height: 60px;
+    border: 2px solid #000;
+    font-size: 1.5rem;
+    letter-spacing: .8px;
+    position: relative;
+    transition: .3s;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.snsBtn:hover{
+    background-color: #adb5bd;
+}
+
+/* .sns-btn::before{
+
+    content: '';
+    background-image: url(//cdn.shopify.com/s/files/1/0284/7109/9437/files/icon_arrow1_black_2x_4fb76695-d37f-491b-b2f0-05f6c176b6ce.png?v=1580873581);
+    background-size: 6px 10px;
+    width: 6px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+} */
+@media only screen and (max-width: 768px){
+    .snsCard {
+        width: 100%;
+        /* display: block; */
+    }
+    .snsContianer {
+        display: block;
+        width: 100%;
+
+    }
+    
+} 

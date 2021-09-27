@@ -149,7 +149,8 @@ function joinNow(){
                 $('.usernameAlert').html('Please enter user name!').css('color','#546279').css('display','block');
             }else{
                 //can join now
-                console.log('asshole');
+               $.post("http://localhost:8000/api/members/3");
+               console.log('OK');
             }
         }
     }
