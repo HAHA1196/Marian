@@ -339,18 +339,21 @@ textarea{
     font-size: 2rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
+
 }
 .contusTxt{
     padding-top:5rem;
     text-align: center;
     z-index: 3;
 
+
   
 
 }
 .contusTxt>p{
     font-size: 1.5rem;
-    color: #555;
+    color: #697a95;
+
     margin-bottom: 31px;
     text-align: center;
 }
@@ -375,7 +378,7 @@ textarea{
     font-size: 1.1rem;
     letter-spacing: 1px;
     padding-left: 10px;
-
+    color: #697a95;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }

@@ -33,6 +33,8 @@ import p06 from '../img/p08.jpg'
 import sns01 from '../img/0003.jpg'
 import sns02 from '../img/0003.jpg'
 import sns03 from '../img/0003.jpg'
+import Fuck from './Fuck'
+
 
 
 
@@ -185,7 +187,8 @@ export default function Home() {
                     <span>NEWS</span>
                 </div>
             </div>
-            <div class="swiper mySwiper">
+            <Fuck/>
+            {/* <div class="swiper mySwiper">
                 <div class=" swiper-wrapper ">
                     <div class=" swiper-slide ">
                         <a class="nThumbnail" href="">
@@ -314,7 +317,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             {/* <div class="btnContainer btnCenter">
                 <div class="btnMore">
                     <span>Read&nbsp;More</span>

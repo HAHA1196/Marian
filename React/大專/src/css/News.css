@@ -54,7 +54,7 @@ a{
 /* main */
 .newsMain{
     padding: 15px 0;
-    background-color: rgb(180,207,235);
+    /* background-color: rgb(180,207,235); */
 }
 .news{
     max-width: 1200px;
@@ -106,12 +106,38 @@ a{
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    /* cora */
+    position: relative;
+    padding: 1rem;
+    background-color: rgba(198, 212, 235, 0.459);
+
+
+
+
 }
+/* cora */
+/* .newsContent::after{
+    content: "";
+    position: absolute;
+    top:3rem;
+    left:1rem;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    cora
+    background-color: rgba(198, 212, 235, 0.459);
+    z-index: -1;
+    
+
+
+} */
 .newsContent a:hover{
     color: rgb(255,255,255);
 }
 .newsClick{
     color: rgb(105, 122, 149);
+    color: black;
+
     cursor: pointer;
 }
 .newsClick:hover{
@@ -121,14 +147,23 @@ a{
     padding: 20px 0;
     font-size: 1.5rem;
     font-weight: 900;
+
 }
 .newsContent a{
+    /* cora */
     color: rgb(105, 122, 149);
+
+    /* color: rgb(255, 255, 255); */
+
 }
 .newsContent p{
     padding: 5px 10px 5px 10px;
     font-size: 16px;
-    color: rgb(105, 122, 149);
+    /* cora */
+    /* color: rgb(105, 122, 149); */
+    color: black;
+
+    /* color: rgb(255, 255, 255); */
 }
 .newsTag{
     padding: 5px 0 5px 20px;
@@ -193,10 +228,17 @@ a{
     margin: 20px;
     text-align: center;
     border: 2px solid rgb(255, 230, 183);
-    background-color: rgb(105, 122, 149);
-    color: rgb(255, 230, 183);
+
     display: flex;
     justify-content: center;
+    /* cora */
+    /* background-color: rgb(105, 122, 149); */
+    background-color:rgb(180,207,235) ;
+    /* color: rgb(255, 230, 183); */
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 0 20px 0 20px;;
 }
 .loadMoreArrow{
     padding: 0 10px;

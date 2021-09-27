@@ -267,7 +267,7 @@ export default function News() {
             </div>
           </section>
           <div class="loadMore" id="loadMore">
-            Load More
+            MORE
             <p class="loadMoreArrow">ｖ</p>
           </div>
         </div>
