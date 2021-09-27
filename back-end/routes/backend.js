@@ -27,7 +27,14 @@ router.get("/member", function (req, res, next) {
 /* order page */
 // http://localhost:8000/backend/order
 router.get("/order", function (req, res, next) {
-    res.render("backend/order.ejs", {});
+    req.mysql.query(
+        "SELECT o.orderId, o.orderDate, o.customerId, SUM(od.productPrice * od.quantity) AS totalPrice FROM orders o JOIN orderdetails od ON (o.orderId = od.orderId) GROUP BY o.orderId; SELECT od.orderId, CONCAT(p.productName, ', ', p.productSize, ', ', od.quantity, ', ', (p.productPrice * od.quantity)) AS detail FROM orderdetails od JOIN products p ON (od.productId = p.productId) ORDER BY od.orderId;",
+        [],
+        function (err, result) {
+            console.log(result);
+            res.render('backend/order.ejs', {list: result[0], odList: result[1]});
+        }
+    );
 });
 
 /* news page */

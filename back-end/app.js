@@ -7,12 +7,12 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var backendRouter = require("./routes/backend");
+// var apiRouter = require("./routes/marian");
 
 var app = express();
 
 // var cors = require('cors');
 // app.use(cors());
-
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -24,25 +24,35 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(function (req, res, next){
+app.use(function (req, res, next) {
     var mysql = require("mysql");
     var connection = mysql.createConnection({
-        host: '127.0.0.1', 
-        user: 'root', 
-        password: '', 
-        database: 'marian'
+        // socketPath : '/Applications/MAMP/tmp/mysql/mysql.sock',
+        host: "127.0.0.1",
+        port: 3306,
+        user: "root",
+        password: "root",
+        database: "marian",
+        multipleStatements: true
     });
 
     connection.connect(function (err) {
+        if (err) {
+            console.log("!!! No !!!");
+            throw err;
+        } else {
+            console.log("connected.");
+        }
     });
 
     req.mysql = connection;
     next();
-})
+});
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/backend", backendRouter);
+// app.use("/api", apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
