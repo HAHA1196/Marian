@@ -67,11 +67,11 @@ create table if not exists
 
 /*customers 資料*/
  	INSERT INTO `customers` (`customerName`,`customerPassword`, `customerGender`, `customerPhone`, `customerEmail`, `customerAddress`) VALUES 
-		('謝慧珊','123rruby', '1', '0924223515', 'e123@gmail.com', '42047台中市豐原區大明路23號'), 
-		('李玲凌', '456rruby','1', '0988900654', 'a123@gmail.com', '408台中市南屯區公益路二段51號18樓'), 
-		('王麗芬', '789rruby','1', '0920192938', 'b123@gmail.com', '106台北市大安區復興南路一段390號2樓'), 
-		('林憲延','1011rruby', '0', '0959916561', 'c123@gmail.com', '420台中市豐原區中正路145號'), 
-		('黃俞湖', '1213rruby','0', '0979774661', 'd123@gmail.com', '404台中市北區三民路三段125號');
+		('謝慧珊', '123rruby', '1', '0924223515', 'e123@gmail.com', '42047台中市豐原區大明路23號'), 
+		('李玲凌', '456rruby', '1', '0988900654', 'a123@gmail.com', '408台中市南屯區公益路二段51號18樓'), 
+		('王麗芬', '789rruby', '1', '0920192938', 'b123@gmail.com', '106台北市大安區復興南路一段390號2樓'), 
+		('林憲延', '1011rruby', '0', '0959916561', 'c123@gmail.com', '420台中市豐原區中正路145號'), 
+		('黃俞湖', '1213rruby', '0', '0979774661', 'd123@gmail.com', '404台中市北區三民路三段125號');
 
 /*orders 資料*/
  	INSERT INTO `orders` (`customerId`, `orderDate`) VALUES 

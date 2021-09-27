@@ -12,83 +12,81 @@ $(function () {
         "訂單明細 | ",
         "訂單編號 | ",
         "下訂日期 | ",
-        "會員編號 - 姓名 | ",
-        "消費總額 | "
+        "會員編號 | ",
+        "消費總額 | ",
     ];
-    var trList = [
-        "訂單編號",
-        "下訂日期",
-        "會員編號 - 姓名",
-        "消費總額",
-        "訂單明細"
-    ];
+    var trList = ["訂單編號", "下訂日期", "會員編號", "消費總額", "訂單明細"];
 
-    // 撈 <td> NO.1 ~ NO.4
+    // 從下列網址撈出資料並以陣列形式儲存
     $.get("http://localhost:8001/api/orders", function (data) {
         orderList = JSON.parse(data);
         // 查看資料型態
         // console.log(orderList);
+
         functionOne();
     });
 
-    // 撈 <td> NO.5
+    // 這邊也是撈資料並以陣列形式儲存
     $.get("http://localhost:8001/api/orderdetails", function (data) {
         orderdetailList = JSON.parse(data);
-        // console.log(orderdetailList);
+        console.log(orderdetailList);
+
         functionTwo();
     });
 
-    // 撈 <td> NO.6
     $.get("http://localhost:8001/api/orders", function (data) {
         orderList = JSON.parse(data);
         // 查看資料型態
         // console.log(orderList);
+
         functionThree();
     });
 
-    $('#searchBtn').click(function () {
-        var inputOrderId = $('#orderId').val();
+    $("#searchBtn").click(function () {
+        var inputOrderId = $("#orderId").val();
         // console.log(inputOrderId);
 
-        $('#contentData').empty();
-        var $tr = $('<tr></tr>');
+        $("#contentData").empty();
+        var $tr = $("<tr></tr>");
         $.each(trList, function (idx, val) {
-            $tr.append(
-                $("<th></th>")
-                    .text(val)
-            );
-        })
+            $tr.append($("<th></th>").text(val));
+        });
         $("#contentData").append($tr);
 
-
         // 從下列網址撈出資料並以陣列形式儲存
-        $.get(`http://localhost:8001/api/orders/${inputOrderId}`, function (data) {
-            orderList = JSON.parse(data);
-            // 查看資料型態
-            // console.log(orderList);
+        $.get(
+            `http://localhost:8001/api/orders/${inputOrderId}`,
+            function (data) {
+                orderList = JSON.parse(data);
+                // 查看資料型態
+                // console.log(orderList);
 
-            functionOne();
-        });
+                functionOne();
+            }
+        );
 
         // 這邊也是撈資料並以陣列形式儲存
-        $.get(`http://localhost:8001/api/orderdetails/${inputOrderId}`, function (data) {
-            orderdetailList = JSON.parse(data);
-            // console.log(orderdetailList);
+        $.get(
+            `http://localhost:8001/api/orderdetails/${inputOrderId}`,
+            function (data) {
+                orderdetailList = JSON.parse(data);
+                // console.log(orderdetailList);
 
-            functionTwo();
-        });
+                functionTwo();
+            }
+        );
 
-        $.get(`http://localhost:8001/api/orders/${inputOrderId}`, function (data) {
-            orderList = JSON.parse(data);
-            // 查看資料型態
-            // console.log(orderList);
+        $.get(
+            `http://localhost:8001/api/orders/${inputOrderId}`,
+            function (data) {
+                orderList = JSON.parse(data);
+                // 查看資料型態
+                // console.log(orderList);
 
-            functionThree();
-        });
-
-    })
-
-
+                functionThree();
+            }
+        );
+    });
 
     function functionOne() {
         // 此段是從 orderList 中尋訪每一筆資料，
@@ -131,8 +129,7 @@ $(function () {
             ) {
                 // console.log($(`tr:nth-child(${trChild}) td:nth-child(5)`).text());
                 if (
-                    $(`tr:nth-child(${trChild}) td:nth-child(5)`).text() ==
-                    ""
+                    $(`tr:nth-child(${trChild}) td:nth-child(5)`).text() == ""
                 ) {
                     $(`tr:nth-child(${trChild})`).append(
                         $("<td></td>").text(obj.detail)
@@ -184,9 +181,7 @@ $(function () {
             var ii = 2;
             $.each(obj, function (kk, vv) {
                 console.log(vv);
-                $(`tr:nth-child(${idx + 2}) li:nth-child(${ii})`).append(
-                    vv
-                );
+                $(`tr:nth-child(${idx + 2}) li:nth-child(${ii})`).append(vv);
                 ii++;
             });
         });
