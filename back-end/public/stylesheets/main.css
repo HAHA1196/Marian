@@ -111,7 +111,7 @@ marquee {
 
 .dividingLine {
     width: 100%;
-    border-bottom: 1px solid var(--white);
+    border-bottom: 2px solid var(--white);
 }
 /*  content section  */
 #contentSec {

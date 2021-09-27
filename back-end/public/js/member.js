@@ -1,13 +1,7 @@
 $(function () {
-    // 我要撈兩筆不同的資料，
-    // 因為SQL語法以我的能力實在沒有辦法把他們寫在同一個
-    // （使用情境上好像也不適合寫在同一個，所以就分兩個網址撈）
-    // 你可以點下面 get 的兩個連結來看看我撈了甚麼
-    // （SQL語法在 Marian > web_server > routes > marian.js 裡 92 行跟 101 行）
-
-    // 定義空陣列將來要存放資料庫撈出來的資料
     var member = [];
     var memberOrder = [];
+    var orderList = [];
     var orderdetailList = [];
     var toggleList = ["歷史訂單 | "];
     // 撈 <td> NO.1 ~ NO.6
@@ -18,18 +12,31 @@ $(function () {
         // 撈到第一筆會員資料的 id
         console.log(member[0].customerId);
         functionOne();
-        // // 準備 <td> NO.6 內容物
-        for (var i = 0; i < member.length; i++) {
-            $.get(
-                `http://localhost:8001/api/member-order-history/${member[i].customerId}`,
-                function (data) {
-                    memberOrder = JSON.parse(data);
-                    // 查看資料型態
-                    console.log(memberOrder);
-                    functionThree();
-                }
-            );
-        }
+        // 準備 <td> NO.7 內容物
+        // for (var i = 0; i < member.length; i++) {
+        //     $.get(
+        //         `http://localhost:8001/api/member-order-history/${member[i].customerId}`,
+        //         function (data) {
+        //             memberOrder = JSON.parse(data);
+        //             // 查看資料型態
+        //             console.log(memberOrder);
+        //             functionThree();
+        //         }
+        //     );
+        // }
+    });
+    $.get("http://localhost:8001/api/orders", function (data) {
+        orderList = JSON.parse(data);
+        // 查看資料型態
+        // console.log(orderList);
+
+        functionOne();
+    });
+    $.get("http://localhost:8001/api/orderdetails", function (data) {
+        orderdetailList = JSON.parse(data);
+        console.log(orderdetailList);
+
+        functionTwo();
     });
 
     $("#searchBtn").click(function () {
@@ -93,15 +100,15 @@ $(function () {
             $("#contentData").append($tr);
         });
     }
-
+    // functionTwo 如果order的customerId=會員編號、就把member-order-history放到第七個td裡
+    // functionTwo 如果order的customerId=會員編號、就把擁有相同customerId 的 orderId 放到第七個td裡
     function functionTwo() {
         var trChild = 2;
-        $.each(orderdetailList, function (key, obj) {
+        $.each(orderList, function (key, obj) {
             if (
                 obj.orderId ==
                 $(`tr:nth-child(${trChild}) td:nth-child(1)`).text()
             ) {
-                // console.log($(`tr:nth-child(${trChild}) td:nth-child(5)`).text());
                 if (
                     $(`tr:nth-child(${trChild}) td:nth-child(5)`).text() == ""
                 ) {

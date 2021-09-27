@@ -3,7 +3,7 @@
 /*  ----------heading section----------  */
 .searchInput {
     display: inline;
-    border: 1px solid var(--white);
+    border: 2px solid var(--white);
     border-radius: 50px;
     color: var(--white);
     padding: 8px 20px;
@@ -122,8 +122,8 @@ td:not(:last-child) {
 .infoTxt li {
     width: 100%;
     list-style-type: none;
-    border-left: 1px solid var(--lightYellow);
-    border-bottom: 1px solid var(--lightYellow);
+    border-left: 2px solid var(--lightYellow);
+    border-bottom: 2px solid var(--lightYellow);
     border-radius: 0 0 0 15px;
     color: var(--fontBlue);
     margin: 0 5% 30px 0;
