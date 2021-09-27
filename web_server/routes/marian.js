@@ -96,7 +96,7 @@ router.get("/member-order-history/:customerId", function (req, res, next) {
 
 // 新增會員資料
 router.post('/members', function (req, res, next) {
-    req.mysql.query('insert into customers (customerName, customerPassword, customerEmail) values (?, ?, ?, ?, ?)',
+    req.mysql.query('insert into customers (customerName, customerPassword, customerEmail) values (?, ?, ?)',
         [req.body.customerName, req.body.customerPassword, req.body.customerEmail],
         function (err, result) {
             res.send('member inserted. ');
