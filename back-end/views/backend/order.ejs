@@ -60,7 +60,7 @@
                     <tr onClick="toggleRow(this)">
                         <td><%= list[i].orderId %></td>
                         <td><%= list[i].orderDate %></td>
-                        <td><%= list[i].customerId %></td>
+                        <td><%= list[i].customer %></td>
                         <td><%= list[i].totalPrice %></td>
                         <td>
                         <% for (var j = 0; j < odList.length; j++) { %>
@@ -84,7 +84,7 @@
                                     </li>
                                     <li><span>訂單編號 | </span><%= list[i].orderId %></li>
                                     <li><span>下訂日期 | </span><%= list[i].orderDate %></li>
-                                    <li><span>會員編號 | </span><%= list[i].customerId %></li>
+                                    <li><span>會員編號 - 姓名 | </span><%= list[i].customer %></li>
                                     <li><span>消費總額 | </span><%= list[i].totalPrice %></li>
                                 </ul>
                             </div>
