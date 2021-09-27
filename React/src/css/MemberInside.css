@@ -1,0 +1,268 @@
+/* main */
+.memberInsideMain{
+    width: 100%;
+    padding: 100px 0;
+    background-image: url('../img/augustine-wong-T0BYurbDK_M-unsplash.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* section */
+.memberInsideSection{
+    max-width: 900px;
+    padding: 0 20px;
+    margin: 0 auto;
+    /* border: 1px solid #ccc;
+    border-radius: 0 40px 0 0;
+    background-color: white; */
+    position: relative;
+}
+.membersCondition{
+    display: flex;
+    background-color: rgb(149, 169, 201);
+    border-radius: 0 40px 0 0;
+    font-size: 1.2rem;
+}
+.membersCondition i{
+    padding: 0 10px;
+}
+.memberConditionInfo,
+.memberConditionOrders{
+    width: 50%;
+    padding: 20px 0;
+    /* margin: 0 0 20px 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(149, 169, 201);
+}
+.memberConditionInfo{
+    background-color: rgb(255, 230, 183);
+    color:rgb(105, 122, 149) ;
+    border-radius: 0 40px 0 0;
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+.memberConditionOrders{
+    /* width: 100%; */
+    /* border-bottom: 1px solid #ccc; */
+    border-radius: 0 40px 0 0;
+    /* opacity: .5; */
+    margin-left: auto;
+    color: white;
+}
+.memberInfo{
+    padding: 30px 100px;
+    /* display: none; */
+    background-color: white;
+}
+.memberInfoItem{
+    padding: 0 0 50px 0;
+    position: relative;
+}
+.memberInfoItem::after{
+    content: '';
+    width: 100%;
+    height: 3px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(149, 169, 201);
+}
+.memberInfoRows{
+    width: 100%;
+    display: flex;
+}
+.memberInfoText{
+    width: 100%;
+    padding: 10px 0 0 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.memberInfoText span{
+    padding: 10px 0 0 0;
+    position: relative;
+}
+.memberInfoText span::after{
+    content: '';
+    width: 100%;
+    height: 15px;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    right: 2px;
+    z-index: -1;
+    background-color: rgb(255, 230, 183);
+    border-radius: 15px;
+}
+.memberInfoTitle{
+    width: 20%;
+    padding: 40px 0 0 20px;
+}
+.memberInfoDetails{
+    width: 80%;
+    padding: 40px 0 5px 15px;
+    border: none;
+}
+.memberInfoDetails:focus{
+    outline: none;
+}
+.memberInfoRows p:nth-child(2){
+    position: relative;
+}
+.memberInfoRows input{
+    border-bottom: 1px solid rgb(149, 169, 201);
+}
+::placeholder{
+    color: black;
+}
+.memberButton{
+    width: 100%;
+    padding: 50px 0 20px 0;
+    display: flex;
+    justify-content: center;
+}
+.memberInfoButton{
+    padding: 15px;
+    margin: 0;
+    border: none;
+    border-radius: 0 20px 0 20px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.memberInfoButton i{
+    padding: 0 10px;
+    color: black;
+    font-size: 1.2rem;
+}
+.deleteButton{
+    width: 30%;
+    color: white;
+    background-color: rgb(149, 169, 201);
+}
+.saveButton{
+    width: 40%;
+    margin: 0 0 0 30px;
+    color: rgb(149, 169, 201);
+    background-color:rgb(255, 230, 183) ;
+}
+
+.memberOrders{
+    padding: 30px 100px 100px 100px;
+    display: none;
+    background-color: white;
+}
+.memberOrdersTitle,
+.memberOrdersItem{
+    padding: 40px 0 5px 0;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.memberOrdersItem{
+    margin: 0 20px 0 30px;
+}
+.memberOrdersTitle::before,
+.memberOrdersItem::before{
+    content: '';
+    width: 100%;
+    height: 3px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(149, 169, 201);
+}
+.memberOrdersItem::before{
+    height: 1px;
+    bottom: 0px;
+}
+.memberOrdersSee{
+    /* width: 15%; */
+    margin-right: auto;
+}
+.memberOrdersId,
+.memberOrdersTime,
+.memberOrdersTotal{
+    width: 25%;
+}
+.memberOrdersDetails{
+    width: 80%;
+    padding: 30px 20px;
+    margin: 0 20px 0 30px;
+    margin-left: auto;
+    border-left: 2px solid rgb(255, 230, 183);
+    border-bottom: 2px solid rgb(255, 230, 183);
+    border-radius: 0 0 0 20px;
+}
+.memberOrdersDetails li{
+    padding: 5px 0;
+}
+.memberOrdersItem .memberOrdersSee{
+    padding: 0 0 0 2px;
+    position: relative;
+    z-index: 1;
+    color: white;
+    cursor: pointer;
+}
+.memberOrdersItem .memberOrdersSee::after{
+    content: '';
+    width: 92px;
+    /* width: 53%; */
+    height: 25px;
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: -7px;
+    z-index: -1;
+    border-radius: 0 10px 0 10px;
+    background-color: rgb(149, 169, 201);
+}
+.memberOrdersItem .memberOrdersTotal{
+    padding: 0 0 0 10px;
+}
+.memberOrdersItem i{
+    padding: 0 5px 0 0;
+}
+
+@media screen and (max-width:992px) {
+    .memberInfo{
+        padding: 30px 80px;
+    }
+}
+@media screen and (max-width:768px) {
+    .memberInfo{
+        padding: 30px 50px;
+    }
+    .memberInfoTitle{
+        width: 25%;
+    }
+    .memberInfoDetails{
+        width: 70%;
+    }
+}
+@media screen and (max-width:600px) {
+    .memberInfoRows{
+        flex-direction: column;
+    }
+    .memberInfoRows:nth-child(2) p:nth-child(2){
+        margin: 0 0 0 8px;
+        text-align: center;
+    }
+    .memberInfoTitle{
+        width: 100%;
+        text-align: center;
+    }
+    .memberInfoDetails{
+        width: 100%;
+        padding: 40px 0 5px 0;
+        margin: 0 0 0 20px;
+    }
+}

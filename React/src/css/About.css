@@ -1,0 +1,574 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.aboutSection{
+    max-width: 100%;
+    padding: 0px;
+    padding-top: 60px;
+}
+
+.allContainer{
+    width: 100%;
+    background-color: white;
+}
+.conceptTitle{
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    position: relative;
+    margin: 0px auto;
+}
+
+.conceptTitle span{
+    margin-top: 39px;
+}
+
+.conceptTitle span::before{
+    content: "";
+    width: 50px;
+    height: 15px;
+    background-color: rgb(123,141,163);
+    border-radius: 2em;
+    position: absolute;
+    top:15px;
+    left:-55px;
+    margin-top: 39px;
+}
+
+
+.conceptLeft{
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    position: relative;
+}
+
+.imgRectangle{
+    position: relative;
+    width: 50%;
+    padding-left: 150px;
+}
+.imgRectangle img{
+    height: auto;
+    max-width: 100%;
+}
+.roundedRectangle {
+    width: 100px;
+    height: 15px;
+    background-color: rgb(123,141,163);
+    border-radius: 2em;
+    position: absolute;
+    z-index: 2;
+    top:49px;
+    left: 80px;
+} 
+
+.conceptRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+    color: rgb(123,141,163);
+    padding-left:75px;
+}
+.conceptRight p{
+    font-size:16px;
+    line-height: 26px;
+    word-spacing: 2px;
+}
+
+
+
+.conceptBottom{
+    width: 100%;
+    background-color:rgb(105,122,149);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.conceptBottomLeft{
+    width: 50%;
+    position: relative;
+}
+
+.conceptBottomRight{
+    width: 50%;
+    color: white;
+    padding-left: 75px;
+    padding-top: 10px;
+}
+
+.conceptBottomRight p{
+    font-size:16px;
+    line-height: 26px;
+    word-spacing: 2px;
+}
+
+.materialTitle{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 20px auto;
+        position: relative;
+}
+
+.roundedRectangle2{
+    width: 22px;
+    height: 140px;
+    background-color: rgb(255,230,183);
+    border-radius: 2em;
+    position: absolute;
+    left: 150px; 
+}
+
+.materialTitle span{
+    position: relative;
+}
+    
+.materialTitle span::before{
+    content: "";
+    width: 50px;
+    height: 15px;
+    background-color: rgb(123,141,163);
+    border-radius: 2em;
+    position: absolute;
+    top:15px;
+    left:-55px;
+}
+
+.materialContainer{
+    width: 100%;
+    background-color:rgb(149,169,201);
+    
+}
+
+.materialOne{
+width: 100%;
+display: flex;
+}
+
+.materialOneLeft{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.materialOneLeft img{
+    max-width: 100%;
+    max-height: 100%;
+    padding-left: 200px;
+    padding-top: 80px;
+}
+
+
+
+.materialOneRight{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.materialOneRightText{
+    position: relative;
+    margin-top: 100px;
+}
+
+.materialOneRightText h3{
+    font-size: 34px;
+}
+
+.materialOneRightText p{
+    word-spacing: 3px;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.eleTwo{
+    position: absolute;
+    top:20px;
+}
+
+.eleTwo img{
+    max-width: 100%;
+    max-height: 100%;
+    padding-left: 220px;
+}
+
+
+.materialTwo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.materialTwoLeft{
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.roundedRectangle3{
+    width: 22px;
+    height: 180px;
+    background-color: rgb(255,230,183);
+    border-radius: 2em;
+    position: absolute;
+    right: -10px; 
+    top:-125px;
+}
+
+.eleThree{
+    position: absolute;
+    top: -35px;
+}
+
+.eleThree img{
+    max-width: 96%;
+    max-height: 96%;
+    padding-left: 90px;
+}
+
+.materialTwoLeftText{
+    padding-left: 250px;
+    padding-top: 80px;
+}
+
+.materialTwoLeftText h3{
+    font-size: 34px;
+}
+
+.materialTwoLeftText p{
+    word-spacing: 3px;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.materialTwoRight{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.eleFour img{
+    max-width: 100%;
+    max-height: 100%;
+    padding-right: 90px;
+}
+
+.materialThree{
+    width: 100%;
+    display: flex;
+    margin-top: 75px;
+}
+
+.materialThreeLeft{
+    width: 50%;
+    position: relative;
+}
+
+.roundedRectangle4{
+    width: 22px;
+    height: 180px;
+    background-color: rgb(255,230,183);
+    border-radius: 2em;
+    position: absolute;
+    right: -10px; 
+    top: -188px;
+}
+
+.materialThreeLeft img{
+    max-width: 100%;
+    max-height: 100%;
+    padding-left: 90px;
+}
+
+.materialThreeRight{
+    width: 50%;
+}
+
+.materialThreeRightText{
+    padding: 0 90px;
+}
+
+.materialThreeRightText h3{
+    font-size: 34px;
+}
+
+.materialThreeRightText p{
+    word-spacing: 3px;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+
+@media only screen and (max-width: 1024px){
+    .conceptRight {
+        padding-left:60px;
+    }
+    .conceptRight p{
+        font-size:14px;
+    }
+    .roundedRectangle {
+        width: 80px;
+        left: 95px;
+    } 
+    .conceptBottomRight{
+        padding-left: 60px;
+    }
+    .conceptBottomRight p{
+        font-size:14px;
+    }
+    .roundedRectangle2{
+        height: 110px;
+    }
+    .materialOneRightText h3{
+        font-size: 28px;
+    }
+    
+    .materialOneRightText p{
+        font-size: 14px;
+    }
+    .roundedRectangle3{
+        height: 140px;
+        top:-98px;
+    }
+    .materialTwo{
+        margin-top: 30px;
+    }
+    .eleThree{
+        top: -19px;
+    }
+
+    .materialTwoLeftText{
+        padding-top: 35px;
+    }
+    .materialTwoLeftText h3{
+        font-size: 28px;
+    }
+    
+    .materialTwoLeftText p{
+        font-size: 14px;
+    }
+    .roundedRectangle4{
+        height: 140px;
+        top: -150px;
+    }
+    .materialThreeRightText h3{
+        font-size: 28px;
+    }
+    
+    .materialThreeRightText p{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 768px){
+    .conceptTitle{
+        font-size:22px;
+    }
+    .conceptTitle span::before{
+        width: 30px;
+        top:15px;
+        left:-35px;
+        margin-top: 32px;
+    }
+    .roundedRectangle {
+        width: 60px;
+        left: 40px;
+    } 
+    .imgRectangle{
+        padding-left: 80px;
+    }
+
+    .conceptRight {
+        padding-left:30px;
+    }
+    .conceptRight p{
+        font-size:10px;
+        line-height: 20px;
+    }
+    .conceptBottomRight{
+        padding-left: 30px;
+    }
+    .conceptBottomRight p{
+        font-size:10px;
+        line-height: 20px;
+    }
+
+    .materialTitle{
+        font-size: 22px;
+    }
+    .materialTitle span::before{
+        width: 30px;
+        top:9px;
+        left:-35px;
+    }
+    .roundedRectangle2{
+        height: 80px;
+        left: 80px; 
+    }
+    .materialOneLeft img{
+        padding-left: 80px;
+    }
+    .materialOneRightText h3{
+        font-size: 25px;
+    }
+    .materialOneRightText p{
+        font-size: 10px;
+        line-height: 20px;
+    }
+    .roundedRectangle3{
+        height: 100px;
+        top:-50px;
+    }
+    .materialTwo{
+        margin-top: 0px;
+    }
+    .eleThree{
+        top: 0px;
+    }
+    .eleThree img{
+        padding-left: 40px;
+        padding-right: 5px;
+    }
+    .materialTwoLeftText{
+        padding-left: 150px;
+        padding-top: 50px;
+    }
+    
+    .materialTwoLeftText h3{
+        font-size: 25px;
+    }
+    .materialTwoLeftText p{
+        font-size: 10px;
+        line-height: 20px;
+    }
+    .eleFour img{
+        padding-left: 5px;
+        padding-right: 40px;
+        padding-top: 15px;
+    }
+    .roundedRectangle4{
+        height: 100px;
+        top: -125px;
+    }
+    .materialThreeLeft img{
+        padding-left: 40px;
+    }
+    .materialThreeRightText{
+        padding: 0 50px;
+    }
+    .materialThreeRightText h3{
+        font-size: 25px;
+    }
+    .materialThreeRightText p{
+        font-size: 10px;
+        line-height: 20px;
+    }
+
+}
+@media only screen and (max-width: 450px){
+    .conceptLeft{
+        display: block;
+        margin-top: 48px;
+    }
+    .imgRectangle{
+        position: relative;
+        width: 100%;
+        padding:0 70px;
+    }
+    .roundedRectangle {
+        left: 30px;
+    } 
+    .conceptRight {
+        display: block;
+        width: 100%;
+        padding: 0 70px;
+    }
+    .conceptBottomLeft{
+        width: 0%;
+    }
+    .conceptBottomRight{
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 70px;
+        padding-top: 10px;
+    }
+    .roundedRectangle2{
+        height: 60px;
+        width: 14px;
+        left: 70px; 
+        top: 20px;
+    }
+
+    .materialOne{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .materialOneLeft{
+        width: 100%;
+        margin-top: 40px;
+    }
+    .materialOneLeft img{
+        padding:0  60px;
+    }
+    .materialOneRight{
+        width: 100%;
+    }
+    .materialOneRightText{
+        margin-top: -20px;
+    }
+    .roundedRectangle3{
+        width: 14px;
+        height: 60px;
+        left: 50%;
+        top: -34px;
+        z-index: 3;
+    }
+    .materialTwo{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+    .materialTwoLeft{
+        display: block;
+        width: 100%;
+    }
+    .materialTwoRight{
+        width: 100%;
+        padding: 10px 40px;
+    }
+    .eleThree img{
+        padding: 10px 50px;
+    }
+    .materialThree{
+        flex-wrap: wrap;
+    }
+    .materialThreeLeft{
+        width: 100%;
+    }
+    .roundedRectangle4{
+        width: 14px;
+        height: 60px;
+        left: 50%; 
+        top: -38px;
+    }
+    .materialThreeLeft img{
+        padding: 30px  60px;
+    }
+    .materialThreeRight{
+        width: 100%;
+    }
+    .materialThreeRightText{
+        padding: 0 80px;
+    }
+}

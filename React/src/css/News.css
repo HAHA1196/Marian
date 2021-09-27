@@ -1,0 +1,240 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#welcomeC{
+    padding: 160px 6.5% 0px 6.5% ;
+    background-position:  center;
+    position: relative;
+}
+#welcomecInner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 7rem;
+}
+.wCarousel{
+    width: 100%;
+}
+.wCarousel>div>img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left:0;
+    /* filter: grayscale(2); */
+    transition: all .3s ease;
+    z-index:-1;
+}
+#welcome::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left:0;
+    background-color: #3131313a;
+    z-index: 1;
+}
+.welcomecCont{
+    color: #f8f9fa;
+    z-index: 5;
+}
+.welcomecCont>h2{
+   text-align: center;
+   font-size: 3rem;
+   padding-bottom: 1rem;
+   z-index: 5;
+   text-shadow:1px 1px 1px   #212529;
+}
+
+/* main */
+.newsMain{
+    padding: 15px 0;
+    background-color: rgb(180,207,235);
+}
+.news{
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.newsTitle{
+    width: 100%;
+    padding: 20px;
+    font-size: 3rem;
+    font-weight: 400;
+    color: rgb(105, 122, 149);
+}
+.newsTagSearch{
+    width: 100%;
+    height: 50px;
+    margin: 20px;
+    border-top: 4px solid rgb(255, 230, 183);
+}
+
+/* .newsSection */
+.newsSection{
+    width: 50%;
+    padding: 20px;
+    transition: 1s ;
+}
+.newsSectionDiv{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.newsPic{
+    width: 100%;
+}
+.newsPic img{
+    width: 100%;
+    /* filter:grayscale(100%); */
+    transition: 1s;
+}
+.newsPic a:hover img{
+    filter:none;
+}
+.newsContent{
+    width: 100%;
+    padding: 20px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.newsContent a:hover{
+    color: rgb(255,255,255);
+}
+.newsClick{
+    color: rgb(105, 122, 149);
+    cursor: pointer;
+}
+.newsClick:hover{
+    color: white;
+}
+.newsContent h2{
+    padding: 20px 0;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+.newsContent a{
+    color: rgb(105, 122, 149);
+}
+.newsContent p{
+    padding: 5px 10px 5px 10px;
+    font-size: 16px;
+    color: rgb(105, 122, 149);
+}
+.newsTag{
+    padding: 5px 0 5px 20px;
+}
+.newsTag p{
+    padding: 5px 10px;
+    background-color: rgb(255, 230, 183);
+    color: black;
+    display: inline;
+    text-align: center;
+    position: relative;
+}
+.newsTag p::before{
+    content:"\A";
+    border-style: solid;
+    border-width: 16px 20px 16px 0;
+    border-color: transparent rgb(255, 230, 183) transparent transparent;
+    position: absolute;
+    top: 0px;
+    left: -20px;
+}
+.newsDate{
+    width: 100%;
+    padding: 0 0 20px 0;
+    display: flex;
+}
+.newsDate p{
+    padding: 0;
+    margin-left: auto;
+}
+.newsExtend::before{
+    content: '';
+    width: 100%;
+    height: 2px;
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: rgb(255, 230, 183);
+}
+.newsExtend{
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.newsExtend p{
+    padding: 20px 0 0 0;
+    margin-left: auto;
+}
+.newsExtend p::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    display: block;
+    background-color: rgb(105, 122, 149);
+}
+
+/* loadmore */
+.loadMore{
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    border: 2px solid rgb(255, 230, 183);
+    background-color: rgb(105, 122, 149);
+    color: rgb(255, 230, 183);
+    display: flex;
+    justify-content: center;
+}
+.loadMoreArrow{
+    padding: 0 10px;
+}
+.loadMore:hover{
+    cursor: pointer;
+    animation-name: loadMoreArrow;
+}
+.loadMore:hover .loadMoreArrow{
+    animation: loadMoreArrow 1s infinite;
+}
+@keyframes loadMoreArrow{
+    0%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(10px);
+    }
+}
+
+
+/* footer */
+/* footer{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: rgb(105, 122, 149);
+    font-size: 36px;
+    font-weight: 900;
+    color: rgb(255, 230, 183);
+} */
+
+@media screen and (max-width:768px) {
+    .news{
+        padding: 30px;
+    }
+    .newsSection{
+        width: 100%;
+    }
+}
