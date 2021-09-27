@@ -32,14 +32,13 @@ $(function () {
         "產品描述 |"
     ];
 
-    // 撈 <td> NO.1 ~ NO.4
     $.get("http://localhost:8001/api/products", function (data) {
         productList = JSON.parse(data);
         // 查看所以產品資料
         // console.log(orderList);
         catchProductList();
     });
-    
+
 
     $('#searchBtn').click(function()
     {
@@ -68,9 +67,10 @@ $(function () {
     
     function catchProductList()
     {
-        console.log(productList);
+        
+        // console.log(productList);
         $.each(productList, function (key, obj) {
-            var $tr = $('<tr onClick="toggleRow(this)"></tr>');
+            var $tr = $('<tr><td onClick="toggleRow(this.parentNode)"><button class="editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></button></td></tr>');
             $.each(obj, function (kk, vv) {
                 $tr.append(
                     $("<td></td>")
@@ -80,27 +80,14 @@ $(function () {
             });
             $("#contentData").append($tr);
         });
-    }
-    
-    function a()
-    {
-        for (i = 1; i <= trChild; i++) {
+        for (i = 5; i <= 9; i++) {
             // console.log(trChild);
             $(`tr:nth-child(${i})`).append(
-                '<td class="showContent hideRow"><div class="dividingLine"></div><div class="info infoTxt"><ul></ul></div><div class="dividingLine"></div></td>'
+                '<td class="showContent hideRow">123</td>'
             );
-            toggleList.forEach((element) => {
-                $(`tr:nth-child(${i}) ul:nth-child(1)`).append(
-                    $("<li></li>").append($("<span></span>").text(element))
-                );
-            });
-            $(`tr:nth-child(${i}) li:nth-child(1)`).append(
-                $("<div></div>").text(
-                    $(`tr:nth-child(${i}) td:nth-child(5)`).text()
-                )
-            );
-        }
+        };
     }
+
     
 });
 // ---------------------get data from database-----------------------
