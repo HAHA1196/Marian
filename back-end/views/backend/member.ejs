@@ -54,6 +54,37 @@
                         <th>Email</th>
                         <th>地址</th>
                     </tr>
+                    <% for (var i = 0; i < member.length; i++){ %>
+                    <tr onclick="toggleRow(this)">
+                        <td><%= member[i].customerId %></td>
+                        <td><%= member[i].customerName %></td>
+                        <td><%= member[i].customerGender %></td>
+                        <td><%= member[i].customerPhone %></td>
+                        <td><%= member[i].customerEmail %></td>
+                        <td><%= member[i].customerAddress %></td>
+                        <td class="showContent hideRow">
+                            <div class="dividingLine"></div>
+                            <div class="info infoTxt">
+                                <div>歷史訂單 |</div>
+                                <ul>
+                                    <% for (var k = 0; k <
+                                    memberOrderHistory.length; k++){ %> <% if
+                                    (member[i].customerId ==
+                                    memberOrderHistory[k].customerId){ %>
+                                    <li>
+                                        <span>訂單明細 ｜</span>
+                                        <span>
+                                            <%= memberOrderHistory[k].details %>
+                                        </span>
+                                    </li>
+                                    <% } %> <% } %>
+                                </ul>
+                            </div>
+                            <div class="dividingLine"></div>
+                        </td>
+                    </tr>
+                    <% } %>
+
                     <tr onClick="toggleRow(this)">
                         <td>1</td>
                         <td>王小明</td>
@@ -110,7 +141,6 @@
             </div>
             <script src="/js/jquery.min.js"></script>
             <script src="/js/main.js"></script>
-            <script src="/js/member.js"></script>
         </div>
     </body>
 </html>

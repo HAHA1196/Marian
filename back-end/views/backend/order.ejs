@@ -1,64 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Marian後台</title>
-        <!-- fontawesome -->
-        <link
-            rel="stylesheet"
-            href="/stylesheets/font-awesome-4.7.0/css/font-awesome.css"
-        />
-        <!-- ours -->
-        <link rel="stylesheet" href="/stylesheets/main.css" />
-        <link rel="stylesheet" href="/stylesheets/order.css" />
-    </head>
 
-    <body>
-        <!-- ------------------------- left section ------------------------- -->
-        <div><%- include('./main.ejs'); %></div>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marian後台</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="/stylesheets/font-awesome-4.7.0/css/font-awesome.css" />
+    <!-- ours -->
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="/stylesheets/order.css" />
+</head>
 
-        <!-- ------------------------- right section ------------------------- -->
-        <div id="container">
-            <!-- heading section -->
-            <div id="headingSec">
-                <div id="notification"><%- include('./marquee.ejs'); %></div>
-                <!-- 組長這裏面的 input & button 給你寫
+<body>
+    <!-- ------------------------- left section ------------------------- -->
+    <div>
+        <%- include('./main.ejs'); %>
+    </div>
+
+    <!-- ------------------------- right section ------------------------- -->
+    <div id="container">
+        <!-- heading section -->
+        <div id="headingSec">
+            <div id="notification">
+                <%- include('./marquee.ejs'); %>
+            </div>
+            <!-- 組長這裏面的 input & button 給你寫
                     開始創作..... -->
-                <form action="">
-                    <div class="searchInput">
-                        <span>訂單編號&nbsp;|</span>
-                        <input id="orderId" type="text" />
-                    </div>
-                    <button type="button" id="searchBtn">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                        搜尋訂單
-                    </button>
-                    <button type="reset" id="clearBtn">
-                        <i class="fa fa-trash-o" aria-hidden="true"></i>
-                        清除輸入
-                    </button>
-                </form>
-                <div class="dividingLine"></div>
-            </div>
-
-            <!-- content section -->
-            <div id="contentSec">
-                <!-- 開始創作..... 記得調整top-->
-                <table id="contentData">
-                    <tr>
-                        <th>訂單編號</th>
-                        <th>下訂時間</th>
-                        <th>會員編號 - 姓名</th>
-                        <th>消費總額</th>
-                        <th>訂單明細</th>
-                    </tr>
-                </table>
-            </div>
-            <script src="/js/jquery.min.js"></script>
-            <script src="/js/order.js"></script>
-            <script src="/js/main.js"></script>
+            <form action="">
+                <div class="searchInput">
+                    <span>訂單編號&nbsp;|</span>
+                    <input id="orderId" type="text" />
+                </div>
+                <button type="button" id="searchBtn">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    搜尋訂單
+                </button>
+                <button type="reset" id="clearBtn">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    清除輸入
+                </button>
+            </form>
+            <div class="dividingLine"></div>
         </div>
-    </body>
+
+        <!-- content section -->
+        <div id="contentSec">
+            <!-- 開始創作..... 記得調整top-->
+            <table id="contentData">
+                <tr>
+                    <th>訂單編號</th>
+                    <th>下訂時間</th>
+                    <th>會員編號 - 姓名</th>
+                    <th>消費總額</th>
+                    <th>訂單明細</th>
+                </tr>
+                <% for (var i = 0; i < list.length; i++) { %>
+                    <tr onClick="toggleRow(this)">
+                        <td><%= list[i].orderId %></td>
+                        <td><%= list[i].orderDate %></td>
+                        <td><%= list[i].customer %></td>
+                        <td><%= list[i].totalPrice %></td>
+                        <td>
+                        <% for (var j = 0; j < odList.length; j++) { %>
+                            <% if (odList[j].orderId == list[i].orderId) { %>
+                                <%= odList[j].detail %>
+                            <% } %>
+                        <% } %>
+                        </td>
+                        <td class="showContent hideRow">
+                            <div class="dividingLine"></div>
+                            <div class="info infoTxt">
+                                <ul>
+                                    <li><span>訂單明細 | </span>
+                                        <div>
+                                        <% for (var k = 0; k < odList.length; k++) { %>
+                                            <% if (odList[k].orderId == list[i].orderId) { %>
+                                                <%= odList[k].detail %>
+                                            <% } %>
+                                        <% } %>                    
+                                        </div>
+                                    </li>
+                                    <li><span>訂單編號 | </span><%= list[i].orderId %></li>
+                                    <li><span>下訂日期 | </span><%= list[i].orderDate %></li>
+                                    <li><span>會員編號 - 姓名 | </span><%= list[i].customer %></li>
+                                    <li><span>消費總額 | </span><%= list[i].totalPrice %></li>
+                                </ul>
+                            </div>
+                            <div class="dividingLine"></div>
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+        <script src="/js/jquery.min.js"></script>
+        <!-- <script src="/js/order.js"></script> -->
+        <script src="/js/main.js"></script>
+    </div>
+</body>
+
 </html>
