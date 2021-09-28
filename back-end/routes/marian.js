@@ -28,7 +28,7 @@ router.get("/news/:newsId", function (req, res, next) {
 // 後台 products 僅供查
 // http://localhost:8000/api/products
 router.get("/products", function (req, res, next) {
-    req.mysql.query("select * from products", [], function (err, result) {
+    req.mysql.query("SELECT `productId`,`productImg`,`productClass`, `productStyleNumber`,`productName`,`productPrice`,`productSize`,`productInStock`,`productDescription`FROM products", [], function (err, result) {
         res.send(JSON.stringify(result));
     });
 });

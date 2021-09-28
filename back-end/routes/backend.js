@@ -3,19 +3,18 @@ var router = express.Router();
 
 /* GET 測試用 page. */
 router.get("/", function (req, res, next) {
-    res.render("backend/index.ejs", {});
-});
-
-/* main page */
-// http://localhost:8000/backend/main
-router.get("/main", function (req, res, next) {
-    res.render("backend/main.ejs", {});
+    res.render("backend/product.ejs", {});
 });
 
 /* product page */
 // http://localhost:8000/backend/product
 router.get("/product", function (req, res, next) {
-    res.render("backend/product.ejs", {});
+        req.mysql.query("SELECT `productId`,`productImg`,`productClass`, `productStyleNumber`,`productName`,`productPrice`,`productSize`,`productInStock`,`productDescription`FROM products", 
+        [], 
+        function (err, result) {
+            res.render("backend/product.ejs", {product: result});
+        }
+    );
 });
 
 /* member page */
@@ -52,8 +51,8 @@ router.get("/order", function (req, res, next) {
         "SELECT o.orderId, DATE_FORMAT(o.orderDate,'%Y/%m/%d %k:%i') AS orderDate, CONCAT(o.customerId, ' - ', c.customerName) as customer, SUM(od.productPrice * od.quantity) AS totalPrice FROM orders o JOIN orderdetails od ON (o.orderId = od.orderId) JOIN customers c ON (o.customerId = c.customerId) GROUP BY o.orderId; SELECT od.orderId, CONCAT(p.productName, ', ', p.productSize, ', ', od.quantity, ', ', (p.productPrice * od.quantity)) AS detail FROM orderdetails od JOIN products p ON (od.productId = p.productId) ORDER BY od.orderId;",
         [],
         function (err, result) {
-            console.log(result);
-            res.render('backend/order.ejs', {list: result[0], odList: result[1]});
+            // console.log(result);
+            res.render('backend/order.ejs', {orders: result[0], orderdetails: result[1]});
         }
     );
 });
@@ -61,7 +60,12 @@ router.get("/order", function (req, res, next) {
 /* news page */
 // http://localhost:8000/backend/news
 router.get("/news", function (req, res, next) {
-    res.render("backend/news.ejs", {});
+    req.mysql.query("select newsId, DATE_FORMAT(newsDate,'%Y/%m/%d %H:%i') AS newsDate, newsTitle, newsCoverImg from news", 
+        [], 
+        function (err, result) {
+            res.render('backend/news.ejs', {news: result});
+        }
+    );
 });
 
 module.exports = router;

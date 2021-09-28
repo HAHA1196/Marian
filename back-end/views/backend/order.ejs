@@ -33,11 +33,11 @@
                     <span>訂單編號&nbsp;|</span>
                     <input id="orderId" type="text" />
                 </div>
-                <button type="button" id="searchBtn">
+                <button id="searchBtn" type="button">
                     <i class="fa fa-search" aria-hidden="true"></i>
                     搜尋訂單
                 </button>
-                <button type="reset" id="clearBtn">
+                <button id="clearBtn" type="button">
                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                     清除輸入
                 </button>
@@ -46,9 +46,15 @@
         </div>
 
         <!-- content section -->
+        <span id='orders' hidden>
+            <%= JSON.stringify(orders); %>
+        </span>
+        <span id='orderdetails' hidden>
+            <%= JSON.stringify(orderdetails); %>
+        </span>
         <div id="contentSec">
             <!-- 開始創作..... 記得調整top-->
-            <table id="contentData">
+            <table id="contentData" >
                 <tr>
                     <th>訂單編號</th>
                     <th>下訂時間</th>
@@ -56,16 +62,16 @@
                     <th>消費總額</th>
                     <th>訂單明細</th>
                 </tr>
-                <% for (var i = 0; i < list.length; i++) { %>
+                <% for (var i = 0; i < orders.length; i++) { %>
                     <tr onClick="toggleRow(this)">
-                        <td><%= list[i].orderId %></td>
-                        <td><%= list[i].orderDate %></td>
-                        <td><%= list[i].customer %></td>
-                        <td><%= list[i].totalPrice %></td>
+                        <td><%= orders[i].orderId %></td>
+                        <td><%= orders[i].orderDate %></td>
+                        <td><%= orders[i].customer %></td>
+                        <td><%= orders[i].totalPrice %></td>
                         <td>
-                        <% for (var j = 0; j < odList.length; j++) { %>
-                            <% if (odList[j].orderId == list[i].orderId) { %>
-                                <%= odList[j].detail %>
+                        <% for (var j = 0; j < orderdetails.length; j++) { %>
+                            <% if (orderdetails[j].orderId == orders[i].orderId) { %>
+                                <%= orderdetails[j].detail %>
                             <% } %>
                         <% } %>
                         </td>
@@ -75,17 +81,17 @@
                                 <ul>
                                     <li><span>訂單明細 | </span>
                                         <div>
-                                        <% for (var k = 0; k < odList.length; k++) { %>
-                                            <% if (odList[k].orderId == list[i].orderId) { %>
-                                                <%= odList[k].detail %>
+                                        <% for (var k = 0; k < orderdetails.length; k++) { %>
+                                            <% if (orderdetails[k].orderId == orders[i].orderId) { %>
+                                                <%= orderdetails[k].detail %>
                                             <% } %>
                                         <% } %>                    
                                         </div>
                                     </li>
-                                    <li><span>訂單編號 | </span><%= list[i].orderId %></li>
-                                    <li><span>下訂日期 | </span><%= list[i].orderDate %></li>
-                                    <li><span>會員編號 - 姓名 | </span><%= list[i].customer %></li>
-                                    <li><span>消費總額 | </span><%= list[i].totalPrice %></li>
+                                    <li><span>訂單編號 | </span><%= orders[i].orderId %></li>
+                                    <li><span>下訂日期 | </span><%= orders[i].orderDate %></li>
+                                    <li><span>會員編號 - 姓名 | </span><%= orders[i].customer %></li>
+                                    <li><span>消費總額 | </span><%= orders[i].totalPrice %></li>
                                 </ul>
                             </div>
                             <div class="dividingLine"></div>
@@ -95,7 +101,7 @@
             </table>
         </div>
         <script src="/js/jquery.min.js"></script>
-        <!-- <script src="/js/order.js"></script> -->
+        <script src="/js/order.js"></script>
         <script src="/js/main.js"></script>
     </div>
 </body>
