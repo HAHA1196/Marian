@@ -3,13 +3,7 @@ var router = express.Router();
 
 /* GET 測試用 page. */
 router.get("/", function (req, res, next) {
-    res.render("backend/index.ejs", {});
-});
-
-/* main page */
-// http://localhost:8000/backend/main
-router.get("/main", function (req, res, next) {
-    res.render("backend/main.ejs", {});
+    res.render("backend/product.ejs", {});
 });
 
 /* product page */
@@ -42,7 +36,7 @@ router.get("/order", function (req, res, next) {
         [],
         function (err, result) {
             // console.log(result);
-            res.render('backend/order.ejs', {list: result[0], odList: result[1]});
+            res.render('backend/order.ejs', {orders: result[0], orderdetails: result[1]});
         }
     );
 });
@@ -50,7 +44,12 @@ router.get("/order", function (req, res, next) {
 /* news page */
 // http://localhost:8000/backend/news
 router.get("/news", function (req, res, next) {
-    res.render("backend/news.ejs", {});
+    req.mysql.query("select newsId, DATE_FORMAT(newsDate,'%Y/%m/%d %H:%i') AS newsDate, newsTitle, newsCoverImg from news", 
+        [], 
+        function (err, result) {
+            res.render('backend/news.ejs', {news: result});
+        }
+    );
 });
 
 module.exports = router;
