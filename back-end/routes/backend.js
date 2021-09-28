@@ -15,7 +15,12 @@ router.get("/main", function (req, res, next) {
 /* product page */
 // http://localhost:8000/backend/product
 router.get("/product", function (req, res, next) {
-    res.render("backend/product.ejs", {});
+        req.mysql.query("SELECT `productId`,`productImg`,`productClass`, `productStyleNumber`,`productName`,`productPrice`,`productSize`,`productInStock`,`productDescription`FROM products", 
+        [], 
+        function (err, result) {
+            res.render("backend/product.ejs", {product: result});
+        }
+    );
 });
 
 /* member page */
