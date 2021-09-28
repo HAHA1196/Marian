@@ -33,11 +33,11 @@
                     <span>訂單編號&nbsp;|</span>
                     <input id="orderId" type="text" />
                 </div>
-                <button type="button" id="searchBtn">
+                <button id="searchBtn" type="button">
                     <i class="fa fa-search" aria-hidden="true"></i>
                     搜尋訂單
                 </button>
-                <button type="reset" id="clearBtn">
+                <button id="clearBtn" type="button">
                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                     清除輸入
                 </button>
@@ -46,9 +46,15 @@
         </div>
 
         <!-- content section -->
+        <span id='list' hidden>
+            <%= JSON.stringify(list); %>
+        </span>
+        <span id='odList' hidden>
+            <%= JSON.stringify(odList); %>
+        </span>
         <div id="contentSec">
             <!-- 開始創作..... 記得調整top-->
-            <table id="contentData">
+            <table id="contentData" >
                 <tr>
                     <th>訂單編號</th>
                     <th>下訂時間</th>
@@ -95,7 +101,7 @@
             </table>
         </div>
         <script src="/js/jquery.min.js"></script>
-        <!-- <script src="/js/order.js"></script> -->
+        <script src="/js/order.js"></script>
         <script src="/js/main.js"></script>
     </div>
 </body>
