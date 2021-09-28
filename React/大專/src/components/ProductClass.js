@@ -7,7 +7,7 @@ import "../css/reset.css";
 import "../js/productcart";
 import product1 from "../img/c01.jpg";
 import product2 from "../img/c02.jpg";
-import product3 from "../img/c03.jpg";
+import product3 from "../img/C05.jpg";
 
 export default function ProductClass() {
     let { productClass } = useParams();

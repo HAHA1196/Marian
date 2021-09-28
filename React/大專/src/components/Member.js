@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import $ from "jquery";
-import '../css/Member.css'
-import '../js/member'
+import '../css/Member.css';
+import '../js/member';
+
+// import { Link, useHistory } from "react-router-dom";
+
 
 export default function Member() {
     const [member, setMember] = useState([]);
@@ -14,6 +17,7 @@ export default function Member() {
         //   console.log(data.data);
           setMember(data.data);
         });
+        reload();
       }, []);
 
     function register(){
@@ -91,6 +95,26 @@ export default function Member() {
                     $('.LoginPassword').html('The account does not exist or the account is wrong!').css('color','red').css('display','block');
                 }
             }
+            
+    }
+    function reload(){
+        $('.memberConditionRegister').on('click',function(){
+            $('.membersCondition').css("background-color","rgb(149, 169, 201)");
+            $('.memberConditionRegister').css("color","rgb(105, 122, 149)").css("background-color","rgb(255, 230, 183)");
+            $('.memberConditionLogin').css("color","white").css("background-color","rgb(149, 169, 201)");
+            $('.membersRegister').css("display","block");
+            $('.membersLogin').css("display","none");
+        })
+    
+        // member login display
+        $('.memberConditionLogin').on('click',function(){
+            $('.membersCondition').css("background-color","rgb(255, 230, 183)");
+            $('.memberConditionRegister').css("color","white").css("background-color","rgb(149, 169, 201)");
+            $('.memberConditionLogin').css("color","rgb(105, 122, 149)").css("background-color","rgb(255, 230, 183)");
+            $('.membersRegister').css("display","none");
+            $('.membersLogin').css("display","block");
+        })
+    
     }
     return (
         <main className="memberMain">

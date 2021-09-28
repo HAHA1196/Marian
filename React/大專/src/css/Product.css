@@ -109,6 +109,14 @@ a{
 
 
 }
+ /* cora */
+
+.productsItem:hover{
+    border:2px solid rgb(198, 212, 235);
+
+
+}
+/*  */
 .productsItemPic{
     width: 100%;
     transition: .5s ease;
@@ -175,21 +183,25 @@ a{
     width: 100%;
     padding: 50px 0 0 0;
     margin: 40px 20px 0px 20px;
-    border-top: 4px solid rgb(255, 230, 183);
+    border-top: 8px solid rgb(255, 230, 183);
     display: flex;
     justify-content: flex-end;
     font-size: 1.5rem;
+
 }
 .productsPage{
     margin-left: auto;
 }
 .productsPage a{
     padding: 0 5px;
+    /* cora */
+    color:rgb(105, 122, 149) ;
 
 }
 .productsPage a:nth-child(1){
     border-bottom: 3px solid rgb(255, 230, 183);
     font-weight: 900;
+
 }
 .productsPagePrev{
     visibility: hidden;
@@ -283,6 +295,7 @@ a{
     cursor: pointer;
     border:1px solid rgb(255, 230, 183);
     border-radius: 0;
+    
 }
 .productsBuyClose{
     width: 30px;

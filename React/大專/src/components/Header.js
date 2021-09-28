@@ -63,7 +63,12 @@ export default function Header() {
                 </li>
             </ul>
             <div  class="navbarIcon">
-                <Link to="/marian/member"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></Link>
+                <Link to="/marian/member"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+                <div class="memberIcon">
+                    <Link to="/marian/product">PROFILE</Link>
+                    <Link to="/marian/product/D">LOG&nbsp;OUT</Link>
+                </div>
+                </Link>
                 <Link to="/marian/memberinside"><i class="fa fa-shopping-bag fa-2x" aria-hidden="true"></i></Link>
                 <Link to="/marian/cart"><i class="fa fa-globe fa-2x" aria-hidden="true"></i></Link>
             </div>

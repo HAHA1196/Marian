@@ -317,7 +317,50 @@ header.sticky >.navbar >ul>li>a{
         color: white;
     }
 }
+/* membericon */
+.memberIcon{
+    position: relative;
+
+}
+.memberIcon>a{
+    font-size: 1rem;
+    border-bottom:2px solid#B4CFEB;
+    background-color:#fff;
+    padding: 10px;
+    /* text-align: center; */
+    font-weight: bold;
+    display: none;
+
+
   
+
+}
+.memberIcon>a:nth-child(1){
+    position: absolute;
+    top:5px;
+    left:0;
+    width: 100px;
+    height: 40px;
+    display: block;
+    
+}
+.memberIcon>a:nth-child(2){
+    position: absolute;
+    top:45px;
+    left:0;
+    width: 100px;
+    height: 40px;
+    display: block;
+   
+    
+}
+/* 登入時的樣式改變 */
+.navbarIcon>a:nth-child(1)>i{
+    border:6px solid #ebd8b4;
+    border-radius: 60% ;
+
+}
+/*  */
 /* Hamburger only show up when 768px */
 .headerHambur{
     position: relative;

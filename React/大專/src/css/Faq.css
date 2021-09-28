@@ -7,6 +7,11 @@
 .faqsection{
     max-width: 100%;
     padding: 0px;
+    /* cora */
+    font-size:1.2rem;
+    font-weight: 700;
+
+
 }
 .decorateContainer{
     width: 100%;
@@ -29,12 +34,16 @@
     left:0;
     /* cora */
     margin-top: 5.1rem;
+
 }
 
 .contentBox{
     width: 100%;
     display: flex;
     height: auto;
+    /* cora */
+    font-size:1.1rem;
+   font-weight: 700;
 }
 
 .contentBoxLeft{
@@ -44,6 +53,7 @@
 .contentBoxRight{
    width: 60%;
    padding-top: 99px;
+   margin-bottom: 20px;
 }
 
 .contentBoxTitle{ 
@@ -53,6 +63,7 @@
     padding-left: 90px;
     position: relative;
     color: rgb(180,207,235);
+    z-index: -2;
 }
 .faqRoundedRectangle{
     position: relative;
@@ -80,15 +91,45 @@
     max-width: 100%;
 }
 
-
-
-/* 還須改 */
 .faq{
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
 
 }
+/* CORA */
+.faqOne>p{
+     /* cora */
+     font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+}
+.faqTwo>p{
+    /* cora */
+    font-size: 1.5rem;
+
+
+}
+.faqThree>p{
+    /* cora */
+    font-size: 1.5rem;
+
+
+}
+.faqFour>p{
+    /* cora */
+    font-size: 1.5rem;
+
+
+}
+.faqFive>p{
+    /* cora */
+    font-size: 1.5rem;
+
+
+}
+/* CORA */
 
 .collapsible {
     background: rgb(105,122,149);
@@ -104,14 +145,17 @@
     font-size: 15px;
     margin-top: 2px;
     position: relative;
+    /* cora */
+    font-size:1.25rem;
+    line-height: 1.5rem;
+    letter-spacing: .8px;
   }
   
 .fa-arrow-down{
     font-size: 25px;
-    /* transform: rotate(90deg); */
     position: absolute;
+    top: 20px;
     right: 25px;
-    /* color: rgb(255,230,183); */
 }
   
   .content {
@@ -121,6 +165,7 @@
    color: rgb(105,122,149);
     width: 75%;
     line-height: 35px;
+
   }
 
   .content a{
@@ -138,6 +183,10 @@
 
 .faqOne ,.faqTwo, .faqThree, .faqFour, .faqFive p{
     color: rgb(105,122,149);
+    font-size:1.2rem;
+    /* font-family: 'Fira Sans', sans-serif; */
+    
+   
 }
 
 .contactUs{
@@ -146,6 +195,13 @@
 
 .contactUs p{
     color: rgb(105,122,149);
+    margin-bottom: 10px;
+     /* cora */
+     font-size:1.5rem;
+     line-height: 2rem;
+     
+    font-family: 'Fira Sans', sans-serif;
+
 }
 
 .contactUsBtn{
@@ -154,11 +210,15 @@
     border-radius: 2em;;
     cursor: pointer;
     padding: 10px;
-    width: 90px;
+    width: 100px;
     border: none;
     text-align: center;
     outline: none;
     font-size: 15px;
+    /* cora */
+    font-size: 1.5rem;
+    width: 200px;
+
 }
 
 .contactUsBtn a{
@@ -169,3 +229,10 @@
 .contactUsBtn a:hover{
     color: rgb(255,230,183);
 }
+
+.animate-icon {
+    transition: 0.4s;
+  }
+  .rotate {
+    transform:rotate(180deg);
+  }

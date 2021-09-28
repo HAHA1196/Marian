@@ -36,6 +36,16 @@ $(document).ready(function(){
     });
 })
 
+$(document).ready(function(){
+    $('.navbarIcon>a:nth-child(1)>i').hover(function() {
+        $(".memberIcon>a").css('display', 'block');
+
+    }, 
+    function() {
+        $(".memberIcon>a").css('display', 'none');
+    });
+})
+
 // navnar scroll
 $(document).ready(function () {
   
