@@ -20,7 +20,7 @@ const toggleRow = (element) => {
     // element
     //     .getElementsByClassName("showContent")[0]
     //     .classList.toggle("hideRow");
-    console.log(element);
+    // console.log(element);
     $(element).find('.showContent').toggleClass('hideRow');
 };
 
