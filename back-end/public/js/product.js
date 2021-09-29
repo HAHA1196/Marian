@@ -2,7 +2,7 @@ $("#imgEditBtn").on("click", function () {
     alert("edit this yo");
 });
 // --------------------creat new data from database-----------------
-
+// 上傳新品按鈕
 $(function(){
     $("#uploadBtn").click(function(){
         $("#newProducts").toggle();
