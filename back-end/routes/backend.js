@@ -1,6 +1,9 @@
 var express = require("express");
 const app = require("../app");
 var router = express.Router();
+var path = require("path");
+
+
 
 /* GET 測試用 page. */
 router.get("/", function (req, res, next) {
@@ -57,5 +60,22 @@ router.get("/news", function (req, res, next) {
         }
     );
 });
+
+// upload file
+router.post('/upload', function (req, res, next) {
+    if (!req.files) {
+        return res.status(400).send("No files were uploaded.");
+    }
+
+    const file = req.files.fileUploaded;
+    var uploadPath = path.join(__dirname, "../public/img/upload/" + file.name);
+
+    file.mv(uploadPath, (err) => {
+      if (err) {
+        return res.status(500).send(err);
+      }
+      return res.send({ status: "success", path: uploadPath });
+    });
+})
 
 module.exports = router;
