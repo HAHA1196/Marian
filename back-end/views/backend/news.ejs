@@ -943,13 +943,16 @@
                             <div class="dividingLine"></div>
                         </td>
                     </tr>
+                    <% for (var i = 0; i < news.length; i++) { %>
                     <tr>
-                        <td onClick="toggleRow(this.parentNode)">34</td>
                         <td onClick="toggleRow(this.parentNode)">
-                            2021/09/14 08:24
+                            <%= news[i].newsId %>
                         </td>
                         <td onClick="toggleRow(this.parentNode)">
-                            this is news title
+                            <%= news[i].newsDate %>
+                        </td>
+                        <td onClick="toggleRow(this.parentNode)">
+                            <%= news[i].newsTitle %>
                         </td>
                         <td class="showContent hideRow">
                             <div class="dividingLine"></div>
@@ -1240,6 +1243,7 @@
                             <div class="dividingLine"></div>
                         </td>
                     </tr>
+                    <% } %>
 
                     <!-- 這邊插入 -->
                     <!-- 這邊插入 -->
