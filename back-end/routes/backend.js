@@ -3,8 +3,6 @@ const app = require("../app");
 var router = express.Router();
 var path = require("path");
 
-
-
 /* GET 測試用 page. */
 router.get("/", function (req, res, next) {
     res.render("backend/product.ejs", {});
@@ -13,10 +11,11 @@ router.get("/", function (req, res, next) {
 /* product page */
 // http://localhost:8000/backend/product
 router.get("/product", function (req, res, next) {
-        req.mysql.query("SELECT `productId`,`productImg`,`productClass`, `productStyleNumber`,`productName`,`productPrice`,`productSize`,`productInStock`,`productDescription`FROM products", 
-        [], 
+    req.mysql.query(
+        "SELECT `productId`,`productImg`,`productClass`, `productStyleNumber`,`productName`,`productPrice`,`productSize`,`productInStock`,`productDescription`FROM products",
+        [],
         function (err, result) {
-            res.render("backend/product.ejs", {product: result});
+            res.render("backend/product.ejs", { product: result });
         }
     );
 });
@@ -35,7 +34,6 @@ router.get("/member", function (req, res, next) {
             });
         }
     );
-
 });
 /* order page */
 // http://localhost:8000/backend/order
@@ -45,7 +43,10 @@ router.get("/order", function (req, res, next) {
         [],
         function (err, result) {
             // console.log(result);
-            res.render('backend/order.ejs', {orders: result[0], orderdetails: result[1]});
+            res.render("backend/order.ejs", {
+                orders: result[0],
+                orderdetails: result[1],
+            });
         }
     );
 });
@@ -53,16 +54,20 @@ router.get("/order", function (req, res, next) {
 /* news page */
 // http://localhost:8000/backend/news
 router.get("/news", function (req, res, next) {
-    req.mysql.query("select newsId, DATE_FORMAT(newsDate,'%Y/%m/%d %H:%i') AS newsDate, newsTitle, newsCoverImg from news", 
-        [], 
+    req.mysql.query(
+        "select newsId, DATE_FORMAT(newsDate,'%Y/%m/%d %H:%i') AS newsDate, newsTitle, newsCoverImg from news; SELECT * FROM newsContent",
+        [],
         function (err, result) {
-            res.render('backend/news.ejs', {news: result});
+            res.render("backend/news.ejs", {
+                news: result[0],
+                newsContent: result[1],
+            });
         }
     );
 });
 
 // upload file
-router.post('/upload', function (req, res, next) {
+router.post("/upload", function (req, res, next) {
     if (!req.files) {
         return res.status(400).send("No files were uploaded.");
     }
@@ -71,11 +76,11 @@ router.post('/upload', function (req, res, next) {
     var uploadPath = path.join(__dirname, "../public/img/upload/" + file.name);
 
     file.mv(uploadPath, (err) => {
-      if (err) {
-        return res.status(500).send(err);
-      }
-      return res.send({ status: "success", path: uploadPath });
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.send({ status: "success", path: uploadPath });
     });
-})
+});
 
 module.exports = router;

@@ -118,10 +118,10 @@ tr:not(:first-child):hover {
     text-align: center;
     transition: 0.3s;
 }
-.tab button:hover {
+/* .tab button:hover {
     background-color: var(--white);
     color: var(--fontBlue);
-}
+} */
 
 /* Create an active/current "tab button" class */
 .tab button.active {
