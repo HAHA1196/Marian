@@ -1,16 +1,13 @@
-function switchTab(evt, cityName) {
-    var i, tabContent, tabLinks;
-    tabContent = document.getElementsByClassName("tabContent");
-    for (i = 0; i < tabContent.length; i++) {
-        tabContent[i].style.display = "none";
-    }
-    tabLinks = document.getElementsByClassName("tabLinks");
-    for (i = 0; i < tabLinks.length; i++) {
-        tabLinks[i].className = tabLinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
+$(function () {
+    // function switchTab(evt, nextTab){
+    // }
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+    $(".tab>button").on("click", function (e) {
+        console.log(e);
+        console.log(this);
+        let idx = Number(e.currentTarget.className.slice(3));
+        console.log(idx);
+        $(`.tabContent:nth-child(${idx + 1})`).css("display", "block");
+        $(`.tabContent:not(:nth-child(${idx + 1}))`).css("display", "none");
+    });
+});

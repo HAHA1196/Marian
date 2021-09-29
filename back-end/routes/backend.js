@@ -1,5 +1,9 @@
 var express = require("express");
+const app = require("../app");
 var router = express.Router();
+var path = require("path");
+
+
 
 /* GET 測試用 page. */
 router.get("/", function (req, res, next) {
@@ -31,19 +35,8 @@ router.get("/member", function (req, res, next) {
             });
         }
     );
-    // req.mysql.query(
-    //     "SELECT customerId, customerName, customerGender, customerPhone, customerEmail, customerAddress FROM customers; SELECT o.customerId, o.orderId, CONCAT(p.productName,', ', od.quantity,'件, ', (od.quantity * od.productPrice), '元, ',o.orderDate)AS details FROM orderdetails od JOIN orders o USING(orderId) JOIN products p USING(productId) ORDER BY o.customerId",
-    //     [],
-    //     function (err, result) {
-    //         console.log(result);
-    //         res.render("backend/member.ejs", {
-    //             member: result[0],
-    //             memberOrderHistory: result[1],
-    //         });
-    //     }
-    // );
-});
 
+});
 /* order page */
 // http://localhost:8000/backend/order
 router.get("/order", function (req, res, next) {
@@ -67,5 +60,22 @@ router.get("/news", function (req, res, next) {
         }
     );
 });
+
+// upload file
+router.post('/upload', function (req, res, next) {
+    if (!req.files) {
+        return res.status(400).send("No files were uploaded.");
+    }
+
+    const file = req.files.fileUploaded;
+    var uploadPath = path.join(__dirname, "../public/img/upload/" + file.name);
+
+    file.mv(uploadPath, (err) => {
+      if (err) {
+        return res.status(500).send(err);
+      }
+      return res.send({ status: "success", path: uploadPath });
+    });
+})
 
 module.exports = router;
