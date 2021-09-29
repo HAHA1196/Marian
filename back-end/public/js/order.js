@@ -10,17 +10,17 @@ $(function () {
     $('#searchBtn').click(function () {
         // console.log('OK');
         var inputOrderId = $('#orderId').val();
-        $('tr:not(:nth-child(1))').hide();
+        $('tr:not(:nth-child(1))').slideUp();
         for (var i = 0; i < orders.length; i++) {
             // console.log(orders[i].orderId);
             if (inputOrderId == orders[i].orderId) {
-                $(`tr:nth-child(${i + 2})`).show();
+                $(`tr:nth-child(${i + 2})`).slideDown();
             }
         }
     })
 
     $('#clearBtn').click(function () {
-        $('tr').show();
+        $('tr').slideDown();
         $('#orderId').val('');
     })
 })
