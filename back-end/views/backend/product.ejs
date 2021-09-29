@@ -72,17 +72,44 @@
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
                         清除輸入
                     </button>
-                    <button type="submit" id="uploadBtn">
+                    <button type="button" id="uploadBtn" >
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         上傳新品
                     </button>
                 </form>
                 <div class="dividingLine"></div>
             </div>
-            <!-- create new products -->
-        
+            
             <!-- content section -->
             <div id="contentSec">
+                <!-- create new products -->
+                <div class=" ">
+                    <div class="infoTxt">
+                        <ul>
+                            <li class="productStyleNumber">
+                                <span>產品型號 |</span>        
+                            </li>
+                            <li class="productName">
+                                <span>產品名稱 |</span>
+                            </li>
+                            <li class="productClass">
+                                <span>種類 |</span>
+                            </li>
+                            <li class="productPrice">
+                                <span>價格 |</span>
+                            </li>
+                            <li class="productSize">
+                                <span>尺寸 |</span>
+                            </li>
+                            <li class="productInStock">
+                                <span>進貨 |</span>
+                            </li>
+                            <li class="productDescription">
+                                <span>產品描述 |</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <table id="contentData">
                     <tr>
                         <th>編輯</th>
@@ -359,8 +386,8 @@
                             <td><%= product[i].productDescription %></td>
                             <td class="showContent hideRow">
                                 <div class="dividingLine"></div>
-                                <div class="info">
-                                    <div class="infoImg">
+                                <div class="info" >
+                                    <!-- <div class="infoImg">
                                         <img
                                             id="imgEditBtn"
                                             src="/img/edit.svg"
@@ -384,7 +411,7 @@
                                         <img src="../img/test2.jpeg" />
                                         <img src="../img/test.webp" />
                                         <img src="../img/test2.jpeg" />
-                                    </div> 
+                                    </div>  -->
                                     <div class="infoTxt">
                                         <ul>
                                             <li class="productStyleNumber">
@@ -421,8 +448,6 @@
                                 <button id="confirmBtn"><i class="fa fa-check-circle-o" aria-hidden="true"></i>確認修改</button>
                                 <div class="dividingLine"></div>
                             </td>
-                                
-                            
                         </tr>
                     <% } %>
                 </table>

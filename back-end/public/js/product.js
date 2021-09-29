@@ -8,15 +8,15 @@ $("#imgEditBtn").on("click", function () {
 // ---------------------get data from database-----------------------
 
 $(function () {
-//     // 我要撈兩筆不同的資料，
-//     // 因為SQL語法以我的能力實在沒有辦法把他們寫在同一個
-//     // （使用情境上好像也不適合寫在同一個，所以就分兩個網址撈）
-//     // 你可以點下面 get 的兩個連結來看看我撈了甚麼
-//     // （SQL語法在 Marian > web_server > routes > marian.js 裡 92 行跟 101 行）
+     // 我要撈兩筆不同的資料，
+     // 因為SQL語法以我的能力實在沒有辦法把他們寫在同一個
+     // （使用情境上好像也不適合寫在同一個，所以就分兩個網址撈）
+     // 你可以點下面 get 的兩個連結來看看我撈了甚麼
+     // （SQL語法在 Marian > web_server > routes > marian.js 裡 92 行跟 101 行）
 
-//     // 定義空陣列將來要存放資料庫撈出來的資料
+     // 定義空陣列將來要存放資料庫撈出來的資料
     var productList = [];
-    // var productClass = [];
+
     var toggleList = [
         "產品型號 | ",
         "產品名稱 | ",

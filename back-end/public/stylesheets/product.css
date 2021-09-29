@@ -194,6 +194,7 @@ tr:not(:first-child):hover {
 .infoTxt ul {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 .infoTxt li {
     width: 30%;
