@@ -125,3 +125,25 @@ marquee {
     border-collapse: collapse;
     text-align: center;
 }
+
+.showContent {
+    /*使用js插入*/
+    height: auto;
+    grid-column: 1/-1;
+    justify-content: space-evenly;
+    text-align: left;
+}
+.hideRow {
+    /*使用js插入*/
+    display: none;
+}
+.divider {
+    /*使用js插入、表格裡面的分隔島*/
+    display: inline;
+    border-right: 2px solid var(--darkBlue);
+    height: 30px;
+    vertical-align: middle;
+    position: absolute;
+    right: 0;
+    bottom: 12px;
+}
