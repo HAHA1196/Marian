@@ -17,10 +17,11 @@ $(document).ready(function () {
 // --------------------------left section---------------------
 //手風琴收合
 const toggleRow = (element) => {
-    element
-        .getElementsByClassName("showContent")[0]
-        .classList.toggle("hideRow");
-    // console.log(element);
+    // element
+    //     .getElementsByClassName("showContent")[0]
+    //     .classList.toggle("hideRow");
+    console.log(element);
+    $(element).find('.showContent').toggleClass('hideRow');
 };
 
 $(function () {
