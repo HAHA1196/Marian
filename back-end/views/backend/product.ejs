@@ -72,7 +72,7 @@
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
                         清除輸入
                     </button>
-                    <button type="button" id="uploadBtn" >
+                    <button type="button" id="uploadBtn">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         上傳新品
                     </button>
@@ -83,7 +83,7 @@
             <!-- content section -->
             <div id="contentSec">
                 <!-- create new products -->
-                <div class=" ">
+                <div id="newProducts" hidden>
                     <div class="infoTxt">
                         <ul>
                             <li class="productStyleNumber">
@@ -108,6 +108,13 @@
                                 <span>產品描述 |</span>
                             </li>
                         </ul>
+                        <button id="confirmBtn">
+                            <i
+                                class="fa fa-check-circle-o"
+                                aria-hidden="true"
+                            ></i>
+                            確認新增
+                        </button>
                     </div>
                 </div>
                 <table id="contentData">

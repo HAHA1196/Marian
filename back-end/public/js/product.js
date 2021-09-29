@@ -3,7 +3,11 @@ $("#imgEditBtn").on("click", function () {
 });
 // --------------------creat new data from database-----------------
 
-
+$(function(){
+    $("#uploadBtn").click(function(){
+        $("#newProducts").toggle();
+    })
+});
 
 // ---------------------get data from database-----------------------
 
