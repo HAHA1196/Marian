@@ -25,10 +25,10 @@
                 <div id="notification"><%- include('./marquee.ejs'); %></div>
                 <!-- 組長這裏面的 input & button 給你寫
                     開始創作..... -->
-                <form action="/member.ejs" method="POST">
+                <form action="">
                     <div class="searchInput">
                         <span>分類&nbsp;|</span>
-                        <select name="sortProduct" id="sortProduct">
+                        <select name="sortMember" id="sortMember">
                             <option value="">請選擇</option>
                             <option value="customerId">編號</option>
                             <option value="customerName">名稱</option>
@@ -40,11 +40,11 @@
                     </div>
                     <div class="searchInput">
                         <span>會員搜尋&nbsp;|</span>
-                        <input id="memberSearch" type="text" />
+                        <input id="searchMember" type="text" />
                     </div>
                     <button type="button" id="searchBtn">
                         <i class="fa fa-search" aria-hidden="true"></i>
-                        開始搜尋
+                        搜尋會員
                     </button>
                     <button type="reset" id="clearBtn">
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
@@ -55,6 +55,10 @@
             </div>
 
             <!-- content section -->
+            <span id="member" hidden> <%= JSON.stringify(member); %> </span>
+            <span id="memberOrderHistory" hidden>
+                <%= JSON.stringify(memberOrderHistory); %>
+            </span>
             <div id="contentSec">
                 <!-- 開始創作..... 記得調整top-->
                 <table id="contentData">
@@ -68,12 +72,25 @@
                     </tr>
                     <% for (var i = 0; i < member.length; i++){ %>
                     <tr>
-                        <td onclick="toggleRow(this.parentNode)"><%= member[i].customerId %></td>
-                        <td onclick="toggleRow(this.parentNode)"><%= member[i].customerName %></td>
-                        <td onclick="toggleRow(this.parentNode)"><%= Number(member[i].customerGender)===1? "女":"男";%></td>
-                        <td onclick="toggleRow(this.parentNode)"><%= member[i].customerPhone %></td>
-                        <td onclick="toggleRow(this.parentNode)"><%= member[i].customerEmail %></td>
-                        <td onclick="toggleRow(this.parentNode)"><%= member[i].customerAddress %></td>
+                        <td onclick="toggleRow(this.parentNode)">
+                            <%= member[i].customerId %>
+                        </td>
+                        <td onclick="toggleRow(this.parentNode)">
+                            <%= member[i].customerName %>
+                        </td>
+                        <td onclick="toggleRow(this.parentNode)">
+                            <%= Number(member[i].customerGender)===1?
+                            "女":"男";%>
+                        </td>
+                        <td onclick="toggleRow(this.parentNode)">
+                            <%= member[i].customerPhone %>
+                        </td>
+                        <td onclick="toggleRow(this.parentNode)">
+                            <%= member[i].customerEmail %>
+                        </td>
+                        <td onclick="toggleRow(this.parentNode)">
+                            <%= member[i].customerAddress %>
+                        </td>
                         <td class="showContent hideRow">
                             <div class="dividingLine"></div>
                             <div class="info infoTxt">
@@ -84,9 +101,21 @@
                                     (member[i].customerId ==
                                     memberOrderHistory[k].customerId){ %>
                                     <li>
-                                        <span>訂單編號｜<%= memberOrderHistory[k].orderId %></span>
-                                        <span>下訂日期｜<%= memberOrderHistory[k].orderDate %></span>
-                                        <span>訂單總額｜<%= memberOrderHistory[k].total %> 元</span>
+                                        <span
+                                            >訂單編號｜<%=
+                                            memberOrderHistory[k].orderId
+                                            %></span
+                                        >
+                                        <span
+                                            >下訂日期｜<%=
+                                            memberOrderHistory[k].orderDate
+                                            %></span
+                                        >
+                                        <span
+                                            >訂單總額｜<%=
+                                            memberOrderHistory[k].total %>
+                                            元</span
+                                        >
                                     </li>
                                     <% } %> <% } %>
                                 </ul>
@@ -96,7 +125,6 @@
                     </tr>
                     <% } %>
 
-<<<<<<< HEAD
                     <!-- <tr>
                         <td onClick="toggleRow(this.parentNode)">1</td>
                         <td onClick="toggleRow(this.parentNode)">王小明</td>
@@ -104,15 +132,6 @@
                         <td onClick="toggleRow(this.parentNode)">0987654321</td>
                         <td onClick="toggleRow(this.parentNode)">wolfgang.chien@gmail.com</td>
                         <td onClick="toggleRow(this.parentNode)">台中市北區陜西路62號</td>
-=======
-                    <!-- <tr onClick="toggleRow(this)">
-                        <td>1</td>
-                        <td>王小明</td>
-                        <td>男</td>
-                        <td>0987654321</td>
-                        <td>wolfgang.chien@gmail.com</td>
-                        <td>台中市北區陜西路62號</td>
->>>>>>> 06c5bdd6743b6f74c958f0862e4c1e1715f2920c
                         <td class="showContent hideRow">
                             <div class="dividingLine"></div>
                             <div class="info infoTxt">

@@ -10,7 +10,7 @@
     margin: 0 8px;
 }
 .searchInput:hover {
-    box-shadow: 1px 1px 10px 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 1px 1px 10px 2px rgba(255, 255, 255, 0.2);
 }
 .searchInput input {
     background-color: var(--lightBlue);
@@ -90,7 +90,7 @@ tr:not(:first-child):hover {
 }
 
 /* --------------------手風琴展開---------------------- */
-#newsContainer {
+.newsContainer {
     width: 100%;
     height: calc(100% + 500px);
     /* position: relative; */
@@ -133,9 +133,6 @@ tr:not(:first-child):hover {
 .tabContent {
     float: left;
     width: calc(100% - 90px);
-    /* height: calc(100% + 500px); */
-    /* background-color: turquoise; */
-    /* border: 2px solid red; */
     border-left: 2px solid var(--lightYellow);
     border-bottom: 2px solid var(--lightYellow);
     border-radius: 0 0 0 30px;
@@ -144,6 +141,10 @@ tr:not(:first-child):hover {
     position: relative;
     top: 72px;
     left: -2px;
+    display: none;
+}
+.tabContent:nth-child(8) {
+    display: block;
 }
 .newsInput {
     width: 70%;
@@ -192,7 +193,7 @@ label ~ div {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-#confirmBtn {
+.confirmBtn {
     position: absolute;
     bottom: 0;
     right: 3%;
