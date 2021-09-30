@@ -218,7 +218,7 @@ tr:not(:first-child):hover {
     width: 120px;
 }
 /* 確認上傳紐 */
-#createNewBtn {
+#newProductBtn {
     position: absolute;
     bottom: 0;
     right: 3%;
@@ -238,15 +238,12 @@ tr:not(:first-child):hover {
 .productInStock, input {
     background-color: transparent;
     border:none;
+    border-bottom: 2px solid var(--lightYellow);
     color: var(--fontBlue);
     font-size: 16px;
     outline: none;
 }
 .productDescription textarea{
-    /* background-color: var(--lightBlue);
-    border: 2px solid var(--lightYellow);
-    outline: none;
-    color:var(--fontBlue) ; */
     width: 80%;
     height: 200px;
     background-color: transparent;

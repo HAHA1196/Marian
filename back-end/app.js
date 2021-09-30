@@ -5,6 +5,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var fileUpload = require("express-fileupload");
 
+
+
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var backendRouter = require("./routes/backend");
@@ -25,6 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(fileUpload({createParentPath: true}));
+
 
 app.use(function (req, res, next) {
     var mysql = require("mysql");
