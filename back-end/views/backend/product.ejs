@@ -19,6 +19,7 @@
             href="/stylesheets/font-awesome-4.7.0/css/font-awesome.css"
         />
         <!-- ours -->
+        <link rel="icon" href="/img/大專LOGOtest.png" />
         <link rel="stylesheet" href="/stylesheets/main.css" />
         <link rel="stylesheet" href="/stylesheets/product.css" />
     </head>
@@ -79,44 +80,44 @@
                 </form>
                 <div class="dividingLine"></div>
             </div>
-            
+
             <!-- content section -->
             <div id="contentSec">
                 <!-- create new products -->
                 <div id="newProducts" hidden>
                     <div class="info">
                         <div class="infoImg">
-                            <img src="" alt="">
+                            <img src="" alt="" />
                         </div>
                         <div class="infoTxt">
                             <ul>
                                 <li class="productStyleNumber">
                                     <span>產品型號 |</span>
-                                    <input type="text" >        
+                                    <input type="text" />
                                 </li>
                                 <li class="productName">
                                     <span>產品名稱 |</span>
-                                    <input type="text">        
+                                    <input type="text" />
                                 </li>
                                 <li class="productClass">
                                     <span>種類 |</span>
-                                    <input type="text">        
+                                    <input type="text" />
                                 </li>
                                 <li class="productPrice">
                                     <span>價格 |</span>
-                                    <input type="text">        
+                                    <input type="text" />
                                 </li>
                                 <li class="productSize">
                                     <span>尺寸 |</span>
-                                    <input type="text">       
+                                    <input type="text" />
                                 </li>
                                 <li class="productInStock">
                                     <span>進貨 |</span>
-                                    <input type="text">        
+                                    <input type="text" />
                                 </li>
                                 <li class="productDescription">
                                     <span>產品描述 |</span>
-                                    <input type="">
+                                    <input type="" />
                                 </li>
                             </ul>
                             <button id="createNewBtn">
@@ -454,25 +455,25 @@
                         </td>
                     </tr>
                     <% for (var i = 0; i < product.length; i++) { %>
-                        <tr>
-                            <td onClick="toggleRow(this.parentNode)">
-                                <button class="editBtn">
-                                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                                </button>
-                            </td>
-                            <td><%= product[i].productId %></td>
-                            <td><%= product[i].productImg %></td>
-                            <td><%= product[i].productClass %></td>
-                            <td><%= product[i].productStyleNumber %></td>
-                            <td><%= product[i].productName %></td>
-                            <td><%= product[i].productPrice %></td>
-                            <td><%= product[i].productSize %></td>
-                            <td><%= product[i].productInStock %></td>
-                            <td><%= product[i].productDescription %></td>
-                            <td class="showContent hideRow">
-                                <div class="dividingLine"></div>
-                                <div class="info" >
-                                    <!-- <div class="infoImg">
+                    <tr>
+                        <td onClick="toggleRow(this.parentNode)">
+                            <button class="editBtn">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                        <td><%= product[i].productId %></td>
+                        <td><%= product[i].productImg %></td>
+                        <td><%= product[i].productClass %></td>
+                        <td><%= product[i].productStyleNumber %></td>
+                        <td><%= product[i].productName %></td>
+                        <td><%= product[i].productPrice %></td>
+                        <td><%= product[i].productSize %></td>
+                        <td><%= product[i].productInStock %></td>
+                        <td><%= product[i].productDescription %></td>
+                        <td class="showContent hideRow">
+                            <div class="dividingLine"></div>
+                            <div class="info">
+                                <!-- <div class="infoImg">
                                         <img
                                                 id="imgEditBtn"
                                                 src="/img/edit.svg"
@@ -497,49 +498,54 @@
                                         <img src="../img/test.webp" />
                                         <img src="../img/test2.jpeg" />
                                     </div>  -->
-                                    <div class="infoTxt">
-                                        <ul>
-                                            <li class="productStyleNumber">
-                                                <span>產品型號 |</span>
-                                                <%= product[i].productStyleNumber %>
-                                            </li>
-                                            <li class="productName">
-                                                <span>產品名稱 |</span>
-                                                <%= product[i].productName %>
-                                            </li>
-                                            <li class="productClass">
-                                                <span>種類 |</span>
-                                                <%= product[i].productClass %>
-                                            </li>
-                                            <li class="productPrice">
-                                                <span>價格 |</span>
-                                                <%= product[i].productPrice %>
-                                            </li>
-                                            <li class="productSize">
-                                                <span>尺寸 |</span>
-                                                <%= product[i].productSize %>
-                                            </li>
-                                            <li class="productInStock">
-                                                <span>進貨 |</span>
-                                                <%= product[i].productInStock %>
-                                            </li>
-                                            <li class="productDescription">
-                                                <span>產品描述 |</span>
-                                                <%= product[i].productDescription %>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <div class="infoTxt">
+                                    <ul>
+                                        <li class="productStyleNumber">
+                                            <span>產品型號 |</span>
+                                            <%= product[i].productStyleNumber %>
+                                        </li>
+                                        <li class="productName">
+                                            <span>產品名稱 |</span>
+                                            <%= product[i].productName %>
+                                        </li>
+                                        <li class="productClass">
+                                            <span>種類 |</span>
+                                            <%= product[i].productClass %>
+                                        </li>
+                                        <li class="productPrice">
+                                            <span>價格 |</span>
+                                            <%= product[i].productPrice %>
+                                        </li>
+                                        <li class="productSize">
+                                            <span>尺寸 |</span>
+                                            <%= product[i].productSize %>
+                                        </li>
+                                        <li class="productInStock">
+                                            <span>進貨 |</span>
+                                            <%= product[i].productInStock %>
+                                        </li>
+                                        <li class="productDescription">
+                                            <span>產品描述 |</span>
+                                            <%= product[i].productDescription %>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <button id="confirmBtn"><i class="fa fa-check-circle-o" aria-hidden="true"></i>確認修改</button>
-                                <div class="dividingLine"></div>
-                            </td>
-                        </tr>
+                            </div>
+                            <button id="confirmBtn">
+                                <i
+                                    class="fa fa-check-circle-o"
+                                    aria-hidden="true"
+                                ></i
+                                >確認修改
+                            </button>
+                            <div class="dividingLine"></div>
+                        </td>
+                    </tr>
                     <% } %>
                 </table>
             </div>
         </div>
         <script src="/js/product.js"></script>
         <script src="/js/main.js"></script>
-        
     </body>
 </html>

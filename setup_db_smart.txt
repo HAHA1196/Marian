@@ -67,18 +67,18 @@ create table if not exists
 
 /*customers 資料*/
  	INSERT INTO `customers` (`customerName`,`customerPassword`, `customerGender`, `customerPhone`, `customerEmail`, `customerAddress`) VALUES 
-		('謝慧珊', '123rruby', '1', '0924223515', 'e123@gmail.com', '42047台中市豐原區大明路23號'), 
-		('李玲凌', '456rruby', '1', '0988900654', 'a123@gmail.com', '408台中市南屯區公益路二段51號18樓'), 
-		('王麗芬', '789rruby', '1', '0920192938', 'b123@gmail.com', '106台北市大安區復興南路一段390號2樓'), 
-		('林憲延', '1011rruby', '0', '0959916561', 'c123@gmail.com', '420台中市豐原區中正路145號'), 
-		('黃俞湖', '1213rruby', '0', '0928550085', 'd123@gmail.com', '404台中市北區三民路三段125號'),
-		('陳純亨', '23123', '1', '0961964243', 'Wagen1972@einrot.com', '741臺南市善化區蓮潭路29號'),
-		('林彥依', '23445', '0', '0979774661', 'TheCuriousGamer@gmail.com', '632雲林縣虎尾鎮光復2號'),
-		('黃冠玫', '34453', '1', '0931669909', 'TheIcyGamer@gmail.com', '411臺中市太平區振福路9號'),
-		('廖柏宇', '456', '0', '0934614050', 'd1wf23@gmail.com', '413臺中市霧峰區光明路16號'),
-		('陳涵琪', '335', '1', '0932708682', '9mohammedhassana6@gddao.com', '807高雄市三民區士良街15號'),
-		('邱嘉宏', '675', '0', '0992538666', 'kgabriel_cosminb@zipm.site', '327桃園市新屋區新洲一街35號'),
-		('童竣傑', '1165', '0', '0979307401', 'rarshadfelon8@halumail.com', '439臺中市大安區五甲北路25號');
+		('謝慧珊', '123rruby', '0', '0924223515', 'e123@gmail.com', '42047台中市豐原區大明路23號'), 
+		('李玲凌', '456rruby', '0', '0988900654', 'a123@gmail.com', '408台中市南屯區公益路二段51號18樓'), 
+		('王麗芬', '789rruby', '0', '0920192938', 'b123@gmail.com', '106台北市大安區復興南路一段390號2樓'), 
+		('林憲延', '1011rruby', '1', '0959916561', 'c123@gmail.com', '420台中市豐原區中正路145號'), 
+		('黃俞湖', '1213rruby', '1', '0928550085', 'd123@gmail.com', '404台中市北區三民路三段125號'),
+		('陳純亨', '23123', '0', '0961964243', 'Wagen1972@einrot.com', '741臺南市善化區蓮潭路29號'),
+		('林彥依', '23445', '1', '0979774661', 'TheCuriousGamer@gmail.com', '632雲林縣虎尾鎮光復2號'),
+		('黃冠玫', '34453', '0', '0931669909', 'TheIcyGamer@gmail.com', '411臺中市太平區振福路9號'),
+		('廖柏宇', '456', '1', '0934614050', 'd1wf23@gmail.com', '413臺中市霧峰區光明路16號'),
+		('陳涵琪', '335', '0', '0932708682', '9mohammedhassana6@gddao.com', '807高雄市三民區士良街15號'),
+		('邱嘉宏', '675', '1', '0992538666', 'kgabriel_cosminb@zipm.site', '327桃園市新屋區新洲一街35號'),
+		('童竣傑', '1165', '1', '0979307401', 'rarshadfelon8@halumail.com', '439臺中市大安區五甲北路25號');
 
 /*orders 資料*/
  	INSERT INTO `orders` (`customerId`, `orderDate`) VALUES 
@@ -107,11 +107,12 @@ create table if not exists
 
 /*news 資料*/
 	INSERT INTO `news` (`newsTitle`, `newsDate`, `newsCoverImg`) VALUES 
-		('跟著Marian一起挑選衝浪配備', '2021-09-03 16:22:34', NULL), 
-		('讓衝浪板反璞歸真，選擇Marian木頭衝浪板吧', '2021-09-09 16:22:34', NULL), 
-		('想要拯救珊瑚？海洋友善防曬乳怎麼挑？', '2021-09-08 16:35:59', NULL), 
+		('跟著Marian一起挑選衝浪配備', '2021-08-03 16:22:34', NULL), 
+		('讓衝浪板反璞歸真，選擇Marian木頭衝浪板吧', '2021-08-09 09:22:34', NULL), 
+		('想要拯救珊瑚？海洋友善防曬乳怎麼挑？', '2021-08-30 16:35:59', NULL), 
 		('我們不塑這樣野餐的', '2021-09-09 08:30:00', NULL), 
-		('SUP? SUP!', '2021-09-03 16:22:34', NULL);
+		('SUP? SUP!', '2021-09-10 11:22:34', NULL),
+		('第二組今天的午餐', '2021-09-22 15:22:34', NULL);
 
 /*newsContent*/
 	INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES
@@ -119,16 +120,29 @@ create table if not exists
 		('1', '腳繩Leash', '跟著Marian一起挑選衝浪配備第2段落內容blahblahblah', null, '123'), 
 		('1', '舵Fin', '跟著Marian一起挑選衝浪配備第3段落內容blahblahblah', null, '123'), 
 		('1', '蠟Wax', '跟著Marian一起挑選衝浪配備第4段落內容blahblahblah', null, '123'), 
+		('1', null, null, null, null), 
 		('2', '曾經有人說過，木頭會呼吸。這正是我們挑選木頭來做為衝浪板材質的原因', '讓衝浪板反璞歸真，選擇Marian木頭衝浪板吧第1段落內容blahblahblah', null, '456'), 
 		('2', '少了那些太多餘浮誇的技巧，享受衝浪的感動', '讓衝浪板反璞歸真，選擇Marian木頭衝浪板吧第2段落內容blahblahblah', null, '456'), 
+		('2', null, null, null, null), 
+		('2', null, null, null, null), 
+		('2', null, null, null, null), 
 		('3', '該如何挑選海洋友善的防曬呢？', '想要拯救珊瑚？海洋友善防曬乳怎麼挑？第1段落內容blahblahblah', null, '789'), 
 		('3', '艾珞皙所研發的兩款防曬', '想要拯救珊瑚？海洋友善防曬乳怎麼挑？第2段落內容blahblahblah', null, '789'), 
 		('3', '曾關注過海洋友善防曬的讀者', '想要拯救珊瑚？海洋友善防曬乳怎麼挑？第3段落內容blahblahblah', null, '789'), 
 		('3', '不只是海洋友善', '想要拯救珊瑚？海洋友善防曬乳怎麼挑？第4段落內容blahblahblah', null, '789'), 
+		('3', null, null, null, null), 
 		('4', '無塑野餐法（健行、爬山、搭飛機都適用）', '我們不塑這樣野餐的第1段落內容blahblahblah', null, '963'), 
 		('4', '我們可以用玻璃瓶裝沙拉', '我們不塑這樣野餐的第2段落內容blahblahblah', null, '963'), 
 		('4', '準備便當', '我們不塑這樣野餐的第3段落內容blahblahblah', null, '963'), 
 		('4', '如何做到減塑', '我們不塑這樣野餐的第4段落內容blahblahblah', null, '963'), 
+		('4', '輕鬆野餐趣', '我們不塑這樣野餐的第5段落內容blahblahblah', null, 'vavfafb'), 
 		('5', '夏天快過完了', 'SUP? SUP!第1段落內容blahblahblah', null, '147'),
 		('5', '雙人 SUP 與單人 SUP 差在哪？', 'SUP? SUP!第2段落內容blahblahblah', null, '147'),
-		('5', '沒玩過單人 SUP 可以玩雙人 SUP 嗎？', 'SUP? SUP!第3段落內容blahblahblah', null, '147')
+		('5', '沒玩過單人 SUP 可以玩雙人 SUP 嗎？', 'SUP? SUP!第3段落內容blahblahblah', null, '147'),
+		('5', null, null, null, null), 
+		('5', null, null, null, null),
+		('6', '牛肉咖哩', '第二組今天的午餐第1段落內容blahblahblah', null, 'gigigigiy'),
+		('6', '嫩雞咖哩', '第二組今天的午餐第2段落內容blahblahblah', null, 'gigigigiy'),
+		('6', '辣咖哩', '第二組今天的午餐第3段落內容blahblahblah', null, 'gigigigiy'),
+		('6', '蔬菜咖哩', '第二組今天的午餐第4段落內容blahblahblah', null, 'gigigigiy'),
+		('6', '滑蛋咖哩', '第二組今天的午餐第5段落內容blahblahblah', null, 'gigigigiy')

@@ -12,6 +12,7 @@
 .searchInput:hover {
     box-shadow: 1px 1px 10px 2px rgba(255, 255, 255, 0.2);
 }
+.searchInput select,
 .searchInput input {
     background-color: var(--lightBlue);
     border: none;
@@ -19,7 +20,8 @@
     color: var(--fontBlue);
 }
 #searchBtn,
-#clearBtn {
+#clearBtn,
+#uploadBtn {
     padding: 8px 20px;
     border: 1px solid rgba(255, 255, 255, 0);
     border-radius: 0px 20px 0px 20px;
@@ -28,7 +30,8 @@
     /* position: relative; */
 }
 #searchBtn:hover,
-#clearBtn:hover {
+#clearBtn:hover,
+#uploadBtn:hover {
     filter: drop-shadow(1px 1px 3px var(--darkBlue));
 }
 #searchBtn {
@@ -38,7 +41,9 @@
     background-color: var(--darkBlue);
     color: var(--white);
 }
-
+#uploadBtn {
+    background-color: var(--lightYellow);
+}
 /*  content section  */
 #contentSec {
     /* main.css檔案裡面 這裡有設定 position: relative; */
@@ -204,4 +209,11 @@ label ~ div {
     margin: 0 8px 30px;
     padding: 8px 20px;
     width: 120px;
+}
+/* ------------------------------------------------ */
+@media only screen and (min-width: 1300px) {
+    #uploadBtn {
+        position: absolute;
+        right: 10%;
+    }
 }

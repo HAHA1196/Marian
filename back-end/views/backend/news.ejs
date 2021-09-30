@@ -11,6 +11,7 @@
             href="/stylesheets/font-awesome-4.7.0/css/font-awesome.css"
         />
         <!-- ours -->
+        <link rel="icon" href="/img/大專LOGOtest.png" />
         <link rel="stylesheet" href="/stylesheets/main.css" />
         <link rel="stylesheet" href="/stylesheets/news.css" />
     </head>
@@ -38,6 +39,10 @@
                     <button type="reset" id="clearBtn">
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
                         清除輸入
+                    </button>
+                    <button type="button" id="uploadBtn">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        上傳新品
                     </button>
                 </form>
                 <div class="dividingLine"></div>
@@ -407,8 +412,10 @@
                                         </button>
                                     </form>
                                 </div>
-
-                                <% for(let i = 1; i <= 5; i++){ %>
+                                <% for (let m = 0; m < newsContent.length; m++)
+                                { %> <% if(news[k].newsId ==
+                                newsContent[m].newsId){ %> <% for(let i = 1; i
+                                <= 5; i++){ %>
                                 <!-- 段落<%= i %> -->
                                 <div class="tabContent">
                                     <form action="">
@@ -418,7 +425,7 @@
                                                 class="newsInput"
                                                 type="text"
                                                 placeholder="段落小標題"
-                                                value=""
+                                                value="<%= newsContent[m].newsSubtitle %>"
                                             /> </label
                                         ><br />
                                         <label class="decoLine"
@@ -456,7 +463,7 @@
                                         </button>
                                     </form>
                                 </div>
-                                <% } %>
+                                <% } %><% } %><% } %>
                                 <!-- 罐頭 -->
                                 <div class="tabContent">
                                     <form action="">
