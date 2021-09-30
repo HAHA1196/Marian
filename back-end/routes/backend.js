@@ -43,14 +43,6 @@ router.post('/productAdd', function(req, res, next) {
         }
     )
 
-    // console.log(sql);
-    // var qur = db.query('INSERT INTO account SET ?', sql, function(err, rows) {
-    //     if (err) {
-    //         console.log(err);
-    //     }
-    //     res.setHeader('Content-Type', 'application/json');
-    //     res.redirect('/');
-    // });
 
 });
 
