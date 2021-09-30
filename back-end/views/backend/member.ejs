@@ -10,6 +10,8 @@
             rel="stylesheet"
             href="/stylesheets/font-awesome-4.7.0/css/font-awesome.css"
         />
+        <!-- ours -->
+        <link rel="icon" href="/img/大專LOGOtest.png" />
         <link rel="stylesheet" href="/stylesheets/main.css" />
         <link rel="stylesheet" href="/stylesheets/member.css" />
     </head>
@@ -79,7 +81,7 @@
                             <%= member[i].customerName %>
                         </td>
                         <td onclick="toggleRow(this.parentNode)">
-                            <%= Number(member[i].customerGender)===1?
+                            <%= Number(member[i].customerGender)===0?
                             "女":"男";%>
                         </td>
                         <td onclick="toggleRow(this.parentNode)">

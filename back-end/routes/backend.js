@@ -3,6 +3,10 @@ const app = require("../app");
 var router = express.Router();
 var path = require("path");
 
+const myusername = 'user1'
+const mypassword = 'mypassword'
+var session;
+
 /* GET 測試用 page. */
 router.get("/", function (req, res, next) {
     res.render("backend/product.ejs", {});
@@ -111,6 +115,31 @@ router.post("/upload", function (req, res, next) {
         }
         return res.send({ status: "success", path: uploadPath });
     });
+});
+
+router.get('/login',(req,res) => {
+    session=req.session;
+    if(session.userid){
+        res.send("Welcome User <a href=\'/logout'>click to logout</a>");
+    }else
+    res.render('backend/login.ejs',{})
+});
+
+router.post('/user',(req,res) => {
+    if(req.body.username == myusername && req.body.password == mypassword){
+        session=req.session;
+        session.userid=req.body.username;
+        console.log(req.session)
+        res.send(`Hey there, welcome <a href=\'/logout'>click to logout</a>`);
+    }
+    else{
+        res.send('Invalid username or password');
+    }
+});
+
+router.get('/logout',(req,res) => {
+    req.session.destroy();
+    res.redirect('backend/login');
 });
 
 module.exports = router;
