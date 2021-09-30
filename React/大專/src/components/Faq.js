@@ -6,60 +6,57 @@ import '../css/font-awesome-4.7.0/css/font-awesome.css'
 import Faq1 from "../img/Faq圖片.png";
 
 class Faq extends React.Component {
-  iconRotate = () => {
-    document.getElementById('faqButton').addEventListener('click', function () {
-      var icon = this.querySelector('.iconRight i.fa-arrow-down');
-      icon.classList.toggle('rotate');
-  });
-  document.getElementById('faqButtonOne').addEventListener('click', function () {
-      var icon = this.querySelector('.iconRight i.fa-arrow-down');
-      icon.classList.toggle('rotate');
-  });
-  document.getElementById('faqButtonTwo').addEventListener('click', function () {
-      var icon = this.querySelector('.iconRight i.fa-arrow-down');
-      icon.classList.toggle('rotate');
-  });
-  document.getElementById('faqButtonThree').addEventListener('click', function () {
-      var icon = this.querySelector('.iconRight i.fa-arrow-down');
-      icon.classList.toggle('rotate');
-  });
-  document.getElementById('faqButtonFour').addEventListener('click', function () {
-      var icon = this.querySelector('.iconRight i.fa-arrow-down');
-      icon.classList.toggle('rotate');
-  });
-  document.getElementById('faqButtonFive').addEventListener('click', function () {
-      var icon = this.querySelector('.iconRight i.fa-arrow-down');
-      icon.classList.toggle('rotate');
-  });
-  document.getElementById('faqButtonSix').addEventListener('click', function () {
-      var icon = this.querySelector('.iconRight i.fa-arrow-down');
-      icon.classList.toggle('rotate');
-  });
-  }
-  componentDidMount(){
-    this. iconRotate();
-  }
-
-  //以下為原版
-  faqMove = () => {
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
+    
+    //以下為原版
+    iconRotate = () => {
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
         }
-      });
+    
+      document.getElementById('faqButton').addEventListener('click', function () {
+        var icon = this.querySelector('.iconRight i.fa-arrow-down');
+        icon.classList.toggle('rotate');
+    });
+    document.getElementById('faqButtonOne').addEventListener('click', function () {
+        var icon = this.querySelector('.iconRight i.fa-arrow-down');
+        icon.classList.toggle('rotate');
+    });
+    document.getElementById('faqButtonTwo').addEventListener('click', function () {
+        var icon = this.querySelector('.iconRight i.fa-arrow-down');
+        icon.classList.toggle('rotate');
+    });
+    document.getElementById('faqButtonThree').addEventListener('click', function () {
+        var icon = this.querySelector('.iconRight i.fa-arrow-down');
+        icon.classList.toggle('rotate');
+    });
+    document.getElementById('faqButtonFour').addEventListener('click', function () {
+        var icon = this.querySelector('.iconRight i.fa-arrow-down');
+        icon.classList.toggle('rotate');
+    });
+    document.getElementById('faqButtonFive').addEventListener('click', function () {
+        var icon = this.querySelector('.iconRight i.fa-arrow-down');
+        icon.classList.toggle('rotate');
+    });
+    document.getElementById('faqButtonSix').addEventListener('click', function () {
+        var icon = this.querySelector('.iconRight i.fa-arrow-down');
+        icon.classList.toggle('rotate');
+    });
     }
-  }
-  componentDidMount(){
-    this.faqMove();
-  }
+    componentDidMount(){
+      this. iconRotate();
+    }
+
 
   render() {
     return (

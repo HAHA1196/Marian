@@ -1,6 +1,7 @@
 import React from 'react'
 import Aos from 'aos'
 import Material from './Material'
+import Animation from './Animation'
 import "aos/dist/aos.css"
 import "../css/Home.css"
 // import "../js/home";
@@ -33,8 +34,6 @@ import p06 from '../img/p08.jpg'
 import sns01 from '../img/0003.jpg'
 import sns02 from '../img/0003.jpg'
 import sns03 from '../img/0003.jpg'
-import Fuck from './Fuck'
-
 
 
 
@@ -53,9 +52,10 @@ import Fuck from './Fuck'
 
 export default function Home() {
     return (
-        <React.Fragment>
+<React.Fragment>
+    <Animation />
     <article>
-       {/* <section id="welcomeI" >
+       <section id="welcome" >
                  <div id="welcomeInner">
                    <div class="welcomeContainer" >
                         <h2></h2>
@@ -73,26 +73,7 @@ export default function Home() {
                          </div>
                      </div>
                  </div>
-         </section> */}
-        <section id="cover" class="main">
-            <div class="main_img-container">
-                <div>
-                    <img class="main_img" src={slide01} alt=""/>
-                </div>
-                <div>
-                    <img class="main_img " src={slide02} alt=""/>
-                </div>
-                <div>
-                    <img class="main_img " src={slide03} alt=""/>
-                </div> 
-                <div>
-                    <img class="main_img "src={slide01}  alt=""/>
-                </div>
-                <div>
-                    <img class="main_img " src={slide02} alt=""/>
-                </div>  
-            </div>
-        </section>
+         </section>
          <section id="concept" data-aos="fade-up">
             <div id="conceptInner">
                  <div class="conceptTxt"> 
@@ -119,7 +100,7 @@ export default function Home() {
            </div>
             <div class="btnContainer"> 
                 <div class="btnMore btnCenter">
-                     <span>Read&nbsp;More</span>
+                     <span>Read&nbspMore</span>
                      <div  class="btn">
                          <Link to="/marian/product"></Link>
                      </div>
@@ -187,8 +168,7 @@ export default function Home() {
                     <span>NEWS</span>
                 </div>
             </div>
-            <Fuck/>
-            {/* <div class="swiper mySwiper">
+            <div class="swiper mySwiper">
                 <div class=" swiper-wrapper ">
                     <div class=" swiper-slide ">
                         <a class="nThumbnail" href="">
@@ -317,15 +297,15 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </div> */}
-            {/* <div class="btnContainer btnCenter">
+            </div>
+            {/* <div class="btnContainer btnCenter"> */}
                 <div class="btnMore">
                     <span>Read&nbsp;More</span>
                     <div  class="btn">
                         <Link to="/marian/product"></Link>
                     </div>
                 </div>
-            </div>  */}
+            {/* </div>  */}
         </section>
         <section id="product" >
             <div class="productInner">
@@ -387,7 +367,7 @@ export default function Home() {
                     </div>
                     <div class="item btnMore" >
                         <div class="btnMore">
-                            <span>Read&nbsp;More</span>
+                            <span>Read&nbspMore</span>
                             <div  class="btn">
                                 <a href="../html/project.html"></a>
                             </div>
@@ -437,7 +417,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div class="btnMore">
-                    <span>Read&nbsp;More</span>
+                    <span>Read&nbspMore</span>
                     <div  class="btn">
                         <a href="../html/project.html"></a>
                     </div>
