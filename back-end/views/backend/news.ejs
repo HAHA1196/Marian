@@ -110,36 +110,40 @@
                                         </button>
                                     </form>
                                 </div>
-                                <% for (let i = 1; i <= 5; i++) { %>
-                                <!-- 段落<%= i %> -->
-                                <div class="tabContent">
-                                    <form action="">
-                                        <label class="decoLine">第<%= i %>段&nbsp;｜
-                                            <input class="newsInput" type="text" placeholder="段落小標題" value="" />
-                                        </label>
-                                        <br />
-                                        <label class="decoLine">段落內文&nbsp;｜
-                                            <textarea name="" placeholder="拖曳右下角，以調整輸入匡"></textarea>
-                                        </label>
-                                        <br />
-                                        <label class="decoLine">照片說明&nbsp;｜
-                                            <input class="newsInput" type="text" />
-                                        </label>
-                                        <div>
-                                            <div>段落照片&nbsp;｜</div>
-                                            <div class="uploadImg">
-                                                <img src="../img/add.svg" alt="" />
-                                                <!-- 下面div到時候放圖片...可能改成img tag -->
-                                                <div></div>
+                                <% var x = 0; %>
+                                <% for (var i = 0; i < newsContent.length; i++) { %>
+                                    <% if (newsContent[i].newsId != news[k].newsId) {continue;} %>
+                                    <!-- <% if (x == 6) {break;} %> -->
+                                    <!-- 段落<%= i %> -->
+                                    <div class="tabContent">
+                                        <form action="">
+                                            <% x++ %>
+                                            <label class="decoLine">第<%= x %>段&nbsp;｜
+                                                <input class="newsInput" type="text" placeholder="段落小標題" value="<%= newsContent[i].newsSubtitle %>" />
+                                            </label>
+                                            <br />
+                                            <label class="decoLine">段落內文&nbsp;｜
+                                                <textarea name="" placeholder="拖曳右下角，以調整輸入匡"></textarea>
+                                            </label>
+                                            <br />
+                                            <label class="decoLine">照片說明&nbsp;｜
+                                                <input class="newsInput" type="text" />
+                                            </label>
+                                            <div>
+                                                <div>段落照片&nbsp;｜</div>
+                                                <div class="uploadImg">
+                                                    <img src="../img/add.svg" alt="" />
+                                                    <!-- 下面div到時候放圖片...可能改成img tag -->
+                                                    <div></div>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <button class="confirmBtn">
-                                            <i class="fa fa-check-circle-o" aria-hidden="true"></i>   
-                                            確認上傳
-                                        </button>
-                                    </form>
-                                </div>
+                                            <button class="confirmBtn">
+                                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>   
+                                                確認上傳
+                                            </button>
+                                        </form>
+                                    </div>
                                 <% } %>
                                 <!-- 罐頭 -->
                                 <div class="tabContent">
