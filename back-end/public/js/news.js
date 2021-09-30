@@ -1,6 +1,11 @@
 $(function () {
-    // function switchTab(evt, nextTab){
-    // }
+    // !!!!!讓JS可以使用EJS的變數!!!!!
+    var news = JSON.parse($("#news").text());
+    var newsContent = JSON.parse($("#newsContent").text());
+    console.log(news);
+    console.log(newsContent);
+
+    // switch tabs yoyo~~
     $(".tab>button").on({
         // 可惡hover效果失敗了嗚嗚嗚
         // mouseover: function (e) {
