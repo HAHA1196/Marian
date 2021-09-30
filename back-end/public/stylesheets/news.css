@@ -97,10 +97,8 @@ tr:not(:first-child):hover {
 /* --------------------手風琴展開---------------------- */
 .newsContainer {
     width: 100%;
-    height: calc(100% + 500px);
-    /* position: relative; */
-    /* background-color: rosybrown; */
-    /* border: 2px solid red; */
+    height: 100%;
+    padding-bottom: 20px;
 }
 .tab {
     /* background-color: tomato; */
@@ -175,7 +173,7 @@ textarea {
     border: 1px solid var(--lightYellow);
     color: var(--fontBlue);
     font-size: 16px;
-
+    padding: 0 20px;
     outline: none;
 }
 label ~ div {
@@ -191,13 +189,18 @@ label ~ div {
 }
 
 /* 上傳圖片的圓形加號 */
-.uploadImg img {
+.imgEditBtn {
     width: 60px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    cursor: pointer;
 }
+.imgEditBtn:hover {
+    filter: drop-shadow(3px 3px 2px var(--fontBlue));
+}
+
 .confirmBtn {
     position: absolute;
     bottom: 0;
