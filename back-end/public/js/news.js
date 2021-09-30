@@ -1,7 +1,6 @@
 $(function () {
     // function switchTab(evt, nextTab){
     // }
-
     $(".tab>button").on({
         // 可惡hover效果失敗了嗚嗚嗚
         // mouseover: function (e) {
