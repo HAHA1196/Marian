@@ -24,6 +24,36 @@ router.get("/product", function (req, res, next) {
     );
 });
 
+// 0930 修改
+router.post('/productAdd', function(req, res, next) {
+    req.mysql.query(
+        'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription) values (?, ?, ?, ?, ?, ?, ?)', 
+    [
+        req.body.productStyleNumber,
+        req.body.productName,
+        req.body.productClass,
+        req.body.productPrice,
+        req.body.productSize,
+        req.body.productInStock,
+        req.body.productDescription
+    ], 
+        function (err, result) {
+            res.send('inserted.');
+            // res.send('')
+        }
+    )
+
+    // console.log(sql);
+    // var qur = db.query('INSERT INTO account SET ?', sql, function(err, rows) {
+    //     if (err) {
+    //         console.log(err);
+    //     }
+    //     res.setHeader('Content-Type', 'application/json');
+    //     res.redirect('/');
+    // });
+
+});
+
 /* member page */
 // http://localhost:8000/backend/member
 router.get("/member", function (req, res, next) {

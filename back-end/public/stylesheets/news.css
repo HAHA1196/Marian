@@ -169,7 +169,7 @@ tr:not(:first-child):hover {
     margin-bottom: 20px;
 }
 textarea {
-    width: 70%;
+    width: 70%; 
     height: 200px;
     background-color: transparent;
     border: 1px solid var(--lightYellow);

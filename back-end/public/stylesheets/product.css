@@ -218,7 +218,7 @@ tr:not(:first-child):hover {
     width: 120px;
 }
 /* 確認上傳紐 */
-#createNewBtn {
+#newProductBtn {
     position: absolute;
     bottom: 0;
     right: 3%;
@@ -236,10 +236,22 @@ tr:not(:first-child):hover {
 .productPrice,
 .productSize,
 .productInStock, input {
-    background-color: var(--lightBlue);
-    border: none;
-    outline: none;
+    background-color: transparent;
+    border:none;
+    border-bottom: 2px solid var(--lightYellow);
     color: var(--fontBlue);
+    font-size: 16px;
+    outline: none;
+}
+.productDescription textarea{
+    width: 80%;
+    height: 200px;
+    background-color: transparent;
+    border: 2px solid var(--lightYellow);
+    color: var(--fontBlue);
+    font-size: 16px;
+    outline: none;
+    
 }
 /* ------------------------------------------------ */
 @media only screen and (min-width: 1300px) {
