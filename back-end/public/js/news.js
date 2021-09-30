@@ -2,9 +2,13 @@ $(function () {
     // !!!!!讓JS可以使用EJS的變數!!!!!
     var news = JSON.parse($("#news").text());
     var newsContent = JSON.parse($("#newsContent").text());
-    console.log(news);
-    console.log(newsContent);
-
+    // console.log(news);
+    // console.log(newsContent);
+    // <%= newsContent[m].newsSubtitle %>
+    // $("tr").on("click", function () {
+    //     console.log(this);
+    //     $(this).find(".newsInput:first")
+    // });
     // switch tabs yoyo~~
     $(".tab>button").on({
         // 可惡hover效果失敗了嗚嗚嗚

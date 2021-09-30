@@ -42,7 +42,7 @@
                     </button>
                     <button type="button" id="uploadBtn">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        上傳新品
+                        上傳文章
                     </button>
                 </form>
                 <div class="dividingLine"></div>
@@ -91,109 +91,72 @@
                                 <!-- 標題 -->
                                 <div class="tabContent">
                                     <form action="">
-                                        <label for="newsTitle" class="decoLine"
-                                            >文章標題&nbsp;｜
-                                            <input
-                                                class="newsInput"
-                                                type="text"
-                                                value="<%= news[k].newsTitle %>"
-                                            />
+                                        <label for="newsTitle" class="decoLine">文章標題&nbsp;｜
+                                            <input class="newsInput" type="text" value="<%= news[k].newsTitle %>" />
                                         </label>
                                         <div>
                                             <div>封面照片&nbsp;｜</div>
                                             <div class="uploadImg">
-                                                <img
-                                                    src="../img/add.svg"
-                                                    alt=""
-                                                />
+                                                <img src="../img/add.svg" alt="" />
                                                 <!-- 下面div到時候放圖片...可能改成img tag -->
                                                 <div></div>
                                             </div>
                                         </div>
 
                                         <button class="confirmBtn">
-                                            <i
-                                                class="fa fa-check-circle-o"
-                                                aria-hidden="true"
-                                            ></i>
+                                            <i class="fa fa-check-circle-o" aria-hidden="true" ></i>
                                             確認上傳
                                         </button>
                                     </form>
                                 </div>
-                                <% for (let i = 1; i <= 5; i++) { %>
-                                <!-- 段落<%= i %> -->
-                                <div class="tabContent">
-                                    <form action="">
-                                        <label class="decoLine"
-                                            >第<%= i %>段&nbsp;｜
-                                            <input
-                                                class="newsInput"
-                                                type="text"
-                                                placeholder="段落小標題"
-                                                value=""
-                                            /> </label
-                                        ><br />
-                                        <label class="decoLine"
-                                            >段落內文&nbsp;｜
-                                            <textarea
-                                                name=""
-                                                placeholder="拖曳右下角，以調整輸入匡"
-                                            ></textarea></label
-                                        ><br />
-                                        <label class="decoLine"
-                                            >照片說明&nbsp;｜
-                                            <input
-                                                class="newsInput"
-                                                type="text"
-                                            />
-                                        </label>
-                                        <div>
-                                            <div>段落照片&nbsp;｜</div>
-                                            <div class="uploadImg">
-                                                <img
-                                                    src="../img/add.svg"
-                                                    alt=""
-                                                />
-                                                <!-- 下面div到時候放圖片...可能改成img tag -->
-                                                <div></div>
-                                            </div>
-                                        </div>
 
-                                        <button class="confirmBtn">
-                                            <i
-                                                class="fa fa-check-circle-o"
-                                                aria-hidden="true"
-                                            ></i>
-                                            確認上傳
-                                        </button>
-                                    </form>
-                                </div>
+                                <% var x = 0; %>
+                                <% for (var i = 0; i < newsContent.length; i++) { %>
+                                    <% if (newsContent[i].newsId != news[k].newsId) {continue;} %>
+                                    <% x++ %>
+                                    <!-- 段落<%= x %> -->
+                                    <div class="tabContent">
+                                        <form action="">
+                                            <label class="decoLine">第<%= x %>段&nbsp;｜
+                                                <input class="newsInput" type="text" placeholder="段落小標題" value="<%= newsContent[i].newsSubtitle %>" />
+                                            </label>
+                                            <br />
+                                            <label class="decoLine">段落內文&nbsp;｜
+                                                <textarea name="" placeholder="拖曳右下角，以調整輸入匡" ></textarea>
+                                            </label>
+                                            <br />
+                                            <label class="decoLine">照片說明&nbsp;｜
+                                                <input class="newsInput" type="text" />
+                                            </label>
+                                            <div>
+                                                <div>段落照片&nbsp;｜</div>
+                                                <div class="uploadImg">
+                                                    <img src="../img/add.svg" alt="" />
+                                                    <!-- 下面div到時候放圖片...可能改成img tag -->
+                                                    <div></div>
+                                                </div>
+                                            </div>
+                                        
+                                            <button class="confirmBtn">
+                                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                                確認上傳
+                                            </button>
+                                        </form>
+                                    </div>
                                 <% } %>
                                 <!-- 罐頭 -->
                                 <div class="tabContent">
                                     <form action="">
                                         <div class="decoLine">
-                                            <b>
-                                                👈👈👈
-                                                點選左方頁籤，進行查看或編輯
-                                            </b>
+                                            <b>👈👈👈 點選左方頁籤，進行查看或編輯</b>
                                         </div>
-                                        <label for="newsTitle" class="decoLine"
-                                            >文章標題&nbsp;｜
-                                            <input
-                                                class="newsInput"
-                                                type="text"
-                                                placeholder="點選左方頁籤，進行查看或編輯"
-                                                value="<%= news[k].newsTitle %>"
-                                            />
+                                        <label for="newsTitle" class="decoLine">文章標題&nbsp;｜
+                                            <input class="newsInput" type="text" placeholder="點選左方頁籤，進行查看或編輯" value="<%= news[k].newsTitle %>" />
                                         </label>
                                         <div>
                                             <div>封面照片&nbsp;｜</div>
                                             <div class="uploadImg">
-                                                <img
-                                                    src="../img/add.svg"
-                                                    alt=""
-                                                />
+                                                <img src="../img/add.svg" alt="" />
                                                 <!-- 下面div到時候放圖片...可能改成img tag -->
                                                 <div></div>
                                             </div>
