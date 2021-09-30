@@ -39,7 +39,6 @@ router.post('/productAdd', function(req, res, next) {
     ], 
         function (err, result) {
             res.send('inserted.');
-            // res.send('')
         }
     )
 
