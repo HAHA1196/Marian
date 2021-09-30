@@ -122,7 +122,7 @@ router.post('/user',(req,res) => {
         session=req.session;
         session.userid=req.body.username;
         console.log(req.session)
-        res.send(`Hey there, welcome <a href=\'/logout'>click to logout</a>`);
+        res.send(`Hey there, welcome <a href=\'logout'>click to logout</a>`);
     }
     else{
         res.send('Invalid username or password');
@@ -131,7 +131,7 @@ router.post('/user',(req,res) => {
 
 router.get('/logout',(req,res) => {
     req.session.destroy();
-    res.redirect('backend/login');
+    res.redirect('login');
 });
 
 module.exports = router;

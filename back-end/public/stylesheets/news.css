@@ -148,7 +148,7 @@ tr:not(:first-child):hover {
     left: -2px;
     display: none;
 }
-.newsContainer > .tabContent:first-child {
+.newsContainer > .tabContent:last-child {
     display: block;
 }
 .newsInput {
