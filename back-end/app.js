@@ -6,6 +6,8 @@ var logger = require("morgan");
 var fileUpload = require("express-fileupload");
 var sessions = require('express-session');
 
+
+
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var backendRouter = require("./routes/backend");
@@ -33,6 +35,7 @@ app.use(sessions({
     cookie: { maxAge: oneDay },
     resave: false 
 }));
+
 
 app.use(function (req, res, next) {
     var mysql = require("mysql");

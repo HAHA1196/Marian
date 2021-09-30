@@ -49,6 +49,10 @@
             </div>
 
             <!-- content section -->
+            <span id="news" hidden> <%= JSON.stringify(news); %> </span>
+            <span id="newsContent" hidden>
+                <%= JSON.stringify(newsContent); %>
+            </span>
             <div id="contentSec">
                 <!-- 開始創作..... 記得調整top-->
                 <table id="contentData">
@@ -116,10 +120,7 @@
                                         </button>
                                     </form>
                                 </div>
-                                <% for (let m = 0; m < newsContent.length; m++)
-                                { %> <% if(news[k].newsId ==
-                                newsContent[m].newsId) { %> <% for (let i = 1; i
-                                <= 5; i++) { %>
+                                <% for (let i = 1; i <= 5; i++) { %>
                                 <!-- 段落<%= i %> -->
                                 <div class="tabContent">
                                     <form action="">
@@ -129,7 +130,7 @@
                                                 class="newsInput"
                                                 type="text"
                                                 placeholder="段落小標題"
-                                                value="<%= newsContent[i].newsSubtitle %>"
+                                                value=""
                                             /> </label
                                         ><br />
                                         <label class="decoLine"
@@ -167,7 +168,7 @@
                                         </button>
                                     </form>
                                 </div>
-                                <% } %><% } %><% } %>
+                                <% } %>
                                 <!-- 罐頭 -->
                                 <div class="tabContent">
                                     <form action="">
