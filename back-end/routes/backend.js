@@ -39,18 +39,9 @@ router.post('/productAdd', function(req, res, next) {
     ], 
         function (err, result) {
             res.send('inserted.');
-            // res.send('')
         }
     )
 
-    // console.log(sql);
-    // var qur = db.query('INSERT INTO account SET ?', sql, function(err, rows) {
-    //     if (err) {
-    //         console.log(err);
-    //     }
-    //     res.setHeader('Content-Type', 'application/json');
-    //     res.redirect('/');
-    // });
 
 });
 
@@ -130,7 +121,7 @@ router.post('/user',(req,res) => {
         session=req.session;
         session.userid=req.body.username;
         console.log(req.session)
-        res.send(`Hey there, welcome <a href=\'/logout'>click to logout</a>`);
+        res.send(`Hey there, welcome <a href=\'logout'>click to logout</a>`);
     }
     else{
         res.send('Invalid username or password');
@@ -139,7 +130,7 @@ router.post('/user',(req,res) => {
 
 router.get('/logout',(req,res) => {
     req.session.destroy();
-    res.redirect('backend/login');
+    res.redirect('login');
 });
 
 module.exports = router;

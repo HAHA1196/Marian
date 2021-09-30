@@ -84,63 +84,52 @@
             <!-- content section -->
             <div id="contentSec">
                 <!-- create new products -->
-                <form name="productForm" action="productAdd" method="post" >
-                        <div id="newProducts" hidden>
-                            <div class="info">
-                                <div class="infoImg">
-                                    <img src="" alt="">
-                                </div>
-                                <div class="infoTxt">
-                                    <ul>
-                                        <li class="productStyleNumber">
-                                            <span>產品型號 |</span>
-                                            <input type="text" name="productStyleNumber" value="Ruby123" >
-                                            
-                                        </li>
-                                        <li class="productName">
-                                            <span>產品名稱 |</span>
-                                            <br>
-                                            <input type="text" name="productName" value="路比牌的SUP">
-                                            
-                                        </li>
-                                        <li class="productClass">
-                                            <span>種類 |</span>
-                                            <input type="text" name="productClass" value="SUP">
-                                            
-                                        </li>
-                                        <li class="productPrice">
-                                            <span>價格 |</span>
-                                            <input type="text" name="productPrice" value="2000">
-                                                  
-                                        </li>
-                                        <li class="productSize">
-                                            <span>尺寸 |</span>
-                                            <input type="text" name="productSize" value="大">
-                                           
-                                        </li>
-                                        <li class="productInStock">
-                                            <span>進貨 |</span>
-                                            <input type="text" name="productInStock" value="10">
-                                                
-                                        </li>
-                                        <li class="productDescription">
-                                            <span>產品描述 |</span>
-                                            <br>
-                                            <textarea name="productDescription">我是SUP我是SUP我是SUP我是SUP我是SUP</textarea>
-                            
-                                        </li>
-                                    </ul>
-                                    <button id="newProductBtn" type="submit" >
-                                        <i
-                                            class="fa fa-check-circle-o"
-                                            aria-hidden="true"
-                                        ></i>
-                                        確認新增
-                                    </button>
-                                </div>
-                            </div>
+                <div id="newProducts" hidden>
+                    <div class="info">
+                        <div class="infoImg">
+                            <img src="" alt="" />
                         </div>
-                </form>      
+                        <div class="infoTxt">
+                            <ul>
+                                <li class="productStyleNumber">
+                                    <span>產品型號 |</span>
+                                    <input type="text" />
+                                </li>
+                                <li class="productName">
+                                    <span>產品名稱 |</span>
+                                    <input type="text" />
+                                </li>
+                                <li class="productClass">
+                                    <span>種類 |</span>
+                                    <input type="text" />
+                                </li>
+                                <li class="productPrice">
+                                    <span>價格 |</span>
+                                    <input type="text" />
+                                </li>
+                                <li class="productSize">
+                                    <span>尺寸 |</span>
+                                    <input type="text" />
+                                </li>
+                                <li class="productInStock">
+                                    <span>進貨 |</span>
+                                    <input type="text" />
+                                </li>
+                                <li class="productDescription">
+                                    <span>產品描述 |</span>
+                                    <input type="" />
+                                </li>
+                            </ul>
+                            <button id="createNewBtn">
+                                <i
+                                    class="fa fa-check-circle-o"
+                                    aria-hidden="true"
+                                ></i>
+                                確認新增
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <table id="contentData">
                     <tr>
                         <th>編輯</th>
@@ -466,7 +455,6 @@
                         </td>
                     </tr>
                     <% for (var i = 0; i < product.length; i++) { %>
-
                     <tr>
                         <td onClick="toggleRow(this.parentNode)">
                             <button class="editBtn">
@@ -546,36 +534,6 @@
                                 <div class="dividingLine"></div>
                             </td>
                         </tr>
-                        <tr>
-                            <td onClick="toggleRow(this.parentNode)">
-                                <button class="editBtn">
-                                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                                </button>
-                            </td>
-                            <td><%= product[i].productId %></td>
-                            <td><%= product[i].productImg %></td>
-                            <td><%= product[i].productClass %></td>
-                            <td><%= product[i].productStyleNumber %></td>
-                            <td><%= product[i].productName %></td>
-                            <td><%= product[i].productPrice %></td>
-                            <td><%= product[i].productSize %></td>
-                            <td><%= product[i].productInStock %></td>
-                            <td><%= product[i].productDescription %></td>
-                            <td class="showContent hideRow">
-                                <div class="dividingLine"></div>
-                                <div class="onOff">
-                                    <button>
-                                        <img src="/img/close2.svg" alt="" />
-                                    </button>
-                                    <button>
-                                        <img src="/img/zoom2.svg" alt="" />
-                                    </button>
-                                </div>
-                                <div class="info" >
-                                <div class="infoImg">
-                                </div>
-                            </td>
-                        </tr>           
                     <% } %>
                 </table>
             </div>
