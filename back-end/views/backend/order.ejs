@@ -1,113 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Marian後台</title>
+        <!-- fontawesome -->
+        <link
+            rel="stylesheet"
+            href="/stylesheets/font-awesome-4.7.0/css/font-awesome.css"
+        />
+        <!-- ours -->
+        <link rel="stylesheet" href="/stylesheets/main.css" />
+        <link rel="stylesheet" href="/stylesheets/order.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marian後台</title>
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="/stylesheets/font-awesome-4.7.0/css/font-awesome.css" />
-    <!-- ours -->
-    <link rel="stylesheet" href="/stylesheets/main.css" />
-    <link rel="stylesheet" href="/stylesheets/order.css" />
-</head>
+    <body>
+        <!-- ------------------------- left section ------------------------- -->
+        <div><%- include('./main.ejs'); %></div>
 
-<body>
-    <!-- ------------------------- left section ------------------------- -->
-    <div>
-        <%- include('./main.ejs'); %>
-    </div>
-
-    <!-- ------------------------- right section ------------------------- -->
-    <div id="container">
-        <!-- heading section -->
-        <div id="headingSec">
-            <div id="notification">
-                <%- include('./marquee.ejs'); %>
-            </div>
-            <!-- 組長這裏面的 input & button 給你寫
+        <!-- ------------------------- right section ------------------------- -->
+        <div id="container">
+            <!-- heading section -->
+            <div id="headingSec">
+                <div id="notification"><%- include('./marquee.ejs'); %></div>
+                <!-- 組長這裏面的 input & button 給你寫
                     開始創作..... -->
-            <form action="">
-                <div class="searchInput">
-                    <span>訂單編號&nbsp;|</span>
-                    <input id="orderId" type="text" />
-                </div>
-                <button id="searchBtn" type="button">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                    搜尋訂單
-                </button>
-                <button id="clearBtn" type="button">
-                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                    清除輸入
-                </button>
-            </form>
-            <div class="dividingLine"></div>
-        </div>
+                <form action="">
+                    <div class="searchInput">
+                        <span>訂單編號&nbsp;|</span>
+                        <input id="orderId" type="text" />
+                    </div>
+                    <button id="searchBtn" type="button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        搜尋訂單
+                    </button>
+                    <button id="clearBtn" type="button">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        清除輸入
+                    </button>
+                </form>
+                <div class="dividingLine"></div>
+            </div>
 
-        <!-- content section -->
-        <span id='orders' hidden>
-            <%= JSON.stringify(orders); %>
-        </span>
-        <span id='orderdetails' hidden>
-            <%= JSON.stringify(orderdetails); %>
-        </span>
-        <div id="contentSec">
-            <!-- 開始創作..... 記得調整top-->
-            <table id="contentData" >
-                <tr>
-                    <th>訂單編號</th>
-                    <th>下訂時間</th>
-                    <th>會員編號 - 姓名</th>
-                    <th>消費總額</th>
-                    <th>訂單明細</th>
-                </tr>
-                <% for (var i = 0; i < orders.length; i++) { %>
-                    <tr onClick="toggleRow(this)">
-                        <td><%= orders[i].orderId %></td>
-                        <td><%= orders[i].orderDate %></td>
-                        <td><%= orders[i].customer %></td>
-                        <td><%= orders[i].totalPrice %></td>
+            <!-- content section -->
+            <span id="orders" hidden> <%= JSON.stringify(orders); %> </span>
+            <span id="orderdetails" hidden>
+                <%= JSON.stringify(orderdetails); %>
+            </span>
+            <div id="contentSec">
+                <!-- 開始創作..... 記得調整top-->
+                <table id="contentData">
+                    <tr>
+                        <th>訂單編號</th>
+                        <th>下訂時間</th>
+                        <th>會員編號 - 姓名</th>
+                        <th>消費總額</th>
+                        <th>訂單明細</th>
+                    </tr>
+                    <% for (var i = 0; i < orders.length; i++) { %>
+                    <tr>
+                        <td onClick="toggleRow(this.parentNode)">
+                            <%= orders[i].orderId %>
+                        </td>
+                        <td onClick="toggleRow(this.parentNode)">
+                            <%= orders[i].orderDate %>
+                        </td>
+                        <td onClick="toggleRow(this.parentNode)">
+                            <%= orders[i].customer %>
+                        </td>
+                        <td onClick="toggleRow(this.parentNode)">
+                            <%= orders[i].totalPrice %>
+                        </td>
                         <td>
-                        <% for (var j = 0; j < orderdetails.length; j++) { %>
-                            <% if (orderdetails[j].orderId == orders[i].orderId) { %>
-                                <%= orderdetails[j].detail %>
-                            <% } %>
-                        <% } %>
+                            <% for (var j = 0; j < orderdetails.length; j++) {
+                            %> <% if (orderdetails[j].orderId ==
+                            orders[i].orderId) { %> <%= orderdetails[j].detail
+                            %> <% } %> <% } %>
                         </td>
                         <td class="showContent hideRow">
                             <div class="dividingLine"></div>
                             <div class="info infoTxt">
                                 <ul>
-                                    <li><span>訂單明細 | </span>
+                                    <li>
+                                        <span>訂單明細 | </span>
                                         <div>
-                                        <% for (var k = 0; k < orderdetails.length; k++) { %>
-                                            <% if (orderdetails[k].orderId == orders[i].orderId) { %>
-                                                <%= orderdetails[k].detail %>
-                                            <% } %>
-                                        <% } %>                    
+                                            <% for (var k = 0; k <
+                                            orderdetails.length; k++) { %> <% if
+                                            (orderdetails[k].orderId ==
+                                            orders[i].orderId) { %> <%=
+                                            orderdetails[k].detail %> <% } %> <%
+                                            } %>
                                         </div>
                                     </li>
-                                    <li><span>訂單編號 | </span><%= orders[i].orderId %></li>
-                                    <li><span>下訂日期 | </span><%= orders[i].orderDate %></li>
-                                    <li><span>會員編號 - 姓名 | </span><%= orders[i].customer %></li>
-                                    <li><span>消費總額 | </span><%= orders[i].totalPrice %></li>
+                                    <li>
+                                        <span>訂單編號 | </span><%=
+                                        orders[i].orderId %>
+                                    </li>
+                                    <li>
+                                        <span>下訂日期 | </span><%=
+                                        orders[i].orderDate %>
+                                    </li>
+                                    <li>
+                                        <span>會員編號 - 姓名 | </span><%=
+                                        orders[i].customer %>
+                                    </li>
+                                    <li>
+                                        <span>消費總額 | </span><%=
+                                        orders[i].totalPrice %>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="dividingLine"></div>
                         </td>
                     </tr>
-                <% } %>
-            </table>
-            <form method='POST' action='upload' enctype="multipart/form-data">
-                <input type='file' name='fileUploaded'>
-                <input type='submit'>
-            </form>
+                    <% } %>
+                </table>
+                <form
+                    method="POST"
+                    action="upload"
+                    enctype="multipart/form-data"
+                >
+                    <input type="file" name="fileUploaded" multiple />
+                    <input type="submit" />
+                </form>
+            </div>
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/order.js"></script>
+            <script src="/js/main.js"></script>
         </div>
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/order.js"></script>
-        <script src="/js/main.js"></script>
-    </div>
-</body>
-
+    </body>
 </html>
