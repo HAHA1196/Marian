@@ -4,7 +4,7 @@ $(function () {
     var newsContent = JSON.parse($("#newsContent").text());
 
     // switch tabs -------------------------------------------------------
-    $(".tab>button").on({
+    $(".tab>button, .tab>div").on({
         // 可惡hover效果失敗了嗚嗚嗚
         // mouseover: function (e) {
         //     $(this).css({
@@ -38,14 +38,15 @@ $(function () {
                 "background-color": "var(--darkBlue)",
                 color: "var(--white)",
             });
-        },
+        }
     });
 
 
     // new article -------------------------------------------------------
     $(function(){
         $("#uploadBtn").click(function(){
-            $("#newArticle").slideToggle();
+            $(".newArticle").slideToggle();
+            console.log(this);
         })
     });
 
