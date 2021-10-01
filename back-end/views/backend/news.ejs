@@ -113,11 +113,10 @@
                                 <% var x = 0; %>
                                 <% for (var i = 0; i < newsContent.length; i++) { %>
                                     <% if (newsContent[i].newsId != news[k].newsId) {continue;} %>
-                                    <!-- <% if (x == 6) {break;} %> -->
-                                    <!-- 段落<%= i %> -->
+                                    <% x++ %>
+                                    <!-- 段落<%= x %> -->
                                     <div class="tabContent">
                                         <form action="">
-                                            <% x++ %>
                                             <label class="decoLine">第<%= x %>段&nbsp;｜
                                                 <input class="newsInput" type="text" placeholder="段落小標題" value="<%= newsContent[i].newsSubtitle %>" />
                                             </label>

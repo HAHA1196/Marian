@@ -58,9 +58,9 @@ select {
     margin-bottom: 30px;
 }
 #sidebar li:last-child {
-    margin-top: 60%;
+    margin-top: 40%;
 }
-#sidebar button {
+#sidebar button, #sidebar a{
     width: 70%;
     background-color: var(--darkBlue);
     border: none;
@@ -69,6 +69,10 @@ select {
     font-size: 20px;
     padding: 15px 0;
     vertical-align: middle;
+    text-decoration: none;
+}
+#sidebar a {
+    padding: 55px;
 }
 #sidebar button:hover {
     color: var(--lightYellow);
