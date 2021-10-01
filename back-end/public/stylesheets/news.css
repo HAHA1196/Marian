@@ -49,6 +49,11 @@
     /* main.css檔案裡面 這裡有設定 position: relative; */
     top: 180px; /*組長 這邊要依據heading高度調整*/
 }
+.newArticle {
+    padding: 0 6%;
+    /* position: relative; */
+    /* border-bottom: 2px solid var(--white); */
+}
 
 td,
 th {
@@ -97,10 +102,8 @@ tr:not(:first-child):hover {
 /* --------------------手風琴展開---------------------- */
 .newsContainer {
     width: 100%;
-    height: calc(100% + 500px);
-    /* position: relative; */
-    /* background-color: rosybrown; */
-    /* border: 2px solid red; */
+    height: 100%;
+    padding-bottom: 20px;
 }
 .tab {
     /* background-color: tomato; */
@@ -108,7 +111,7 @@ tr:not(:first-child):hover {
     width: 90px;
 }
 /* ------------左側tabs------------ */
-.tab button {
+.tab button, .tab div {
     width: 100%;
     display: block;
     background-color: var(--darkBlue);
@@ -123,17 +126,20 @@ tr:not(:first-child):hover {
     text-align: center;
     transition: 0.3s;
 }
-.tab button:hover {
+.tab button:hover, .tab div:hover  {
     background-color: var(--white);
     color: var(--fontBlue);
 }
 
 /* Create an active/current "tab button" class */
-.tab button.active {
+.tab button.active, .tab div.active {
     background-color: var(--lightYellow);
     color: var(--fontBlue);
 }
-
+.tab div{
+    height: 42px;
+    padding: 0;
+}
 /* ------------右側content------------ */
 .tabContent {
     float: left;
@@ -148,7 +154,10 @@ tr:not(:first-child):hover {
     left: -2px;
     display: none;
 }
-.newsContainer > .tabContent:last-child {
+#contentData .tabContent:last-child {
+    display: block;
+}
+.newArticle .tabContent:nth-of-type(2) {
     display: block;
 }
 .newsInput {
@@ -175,7 +184,7 @@ textarea {
     border: 1px solid var(--lightYellow);
     color: var(--fontBlue);
     font-size: 16px;
-
+    padding: 0 20px;
     outline: none;
 }
 label ~ div {
@@ -191,13 +200,18 @@ label ~ div {
 }
 
 /* 上傳圖片的圓形加號 */
-.uploadImg img {
+.imgEditBtn {
     width: 60px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    cursor: pointer;
 }
+.imgEditBtn:hover {
+    filter: drop-shadow(3px 3px 2px var(--fontBlue));
+}
+
 .confirmBtn {
     position: absolute;
     bottom: 0;

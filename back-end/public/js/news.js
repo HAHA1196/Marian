@@ -2,11 +2,9 @@ $(function () {
     // !!!!!讓JS可以使用EJS的變數!!!!!
     var news = JSON.parse($("#news").text());
     var newsContent = JSON.parse($("#newsContent").text());
-    console.log(news);
-    console.log(newsContent);
 
-    // switch tabs yoyo~~
-    $(".tab>button").on({
+    // switch tabs -------------------------------------------------------
+    $(".tab>button, .tab>div").on({
         // 可惡hover效果失敗了嗚嗚嗚
         // mouseover: function (e) {
         //     $(this).css({
@@ -40,6 +38,16 @@ $(function () {
                 "background-color": "var(--darkBlue)",
                 color: "var(--white)",
             });
-        },
+        }
     });
+
+
+    // new article -------------------------------------------------------
+    $(function(){
+        $("#uploadBtn").click(function(){
+            $(".newArticle").slideToggle();
+            console.log(this);
+        })
+    });
+
 });
