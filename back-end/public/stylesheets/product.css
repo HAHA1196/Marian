@@ -154,7 +154,7 @@ tr:not(:first-child):hover {
     margin: auto 0;
     padding-right: 5%;
 }
-#imgEditBtn {
+.imgEditBtn {
     width: 30%;
     position: absolute;
     top: 25%;

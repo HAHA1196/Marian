@@ -88,8 +88,8 @@
                         <div id="newProducts" hidden>
                             <div class="info">
                                 <div class="infoImg">
-                                    <img src="" alt="">
-                                </div>
+                                    
+                                </div> 
                                 <div class="infoTxt">
                                     <ul>
                                         <li class="productStyleNumber">
@@ -130,6 +130,7 @@
                             
                                         </li>
                                     </ul>
+                                    <br>
                                     <button id="newProductBtn" type="submit" >
                                         <i
                                             class="fa fa-check-circle-o"
@@ -287,7 +288,7 @@
                             <div class="info">
                                 <div class="infoImg">
                                     <img
-                                        id="imgEditBtn"
+                                        class="imgEditBtn"
                                         src="/img/edit.svg"
                                         alt="按我修改圖片yo"
                                     />
@@ -392,7 +393,7 @@
                             <div class="info">
                                 <div class="infoImg">
                                     <img
-                                        id="imgEditBtn"
+                                        class="imgEditBtn"
                                         src="/img/edit.svg"
                                         alt="按我修改圖片yo"
                                     />
@@ -484,10 +485,18 @@
                         <td><%= product[i].productDescription %></td>
                         <td class="showContent hideRow">
                             <div class="dividingLine"></div>
+                            <div class="onOff">
+                                <button>
+                                    <img src="/img/close2.svg" alt="" />
+                                </button>
+                                <button>
+                                    <img src="/img/zoom2.svg" alt="" />
+                                </button>
+                            </div>
                             <div class="info">
-                                <!-- <div class="infoImg">
+                                <div class="infoImg">
                                         <img
-                                                id="imgEditBtn"
+                                                class="imgEditBtn"
                                                 src="/img/edit.svg"
                                                 alt="按我修改圖片yo"
                                         />
@@ -509,7 +518,7 @@
                                         <img src="../img/test2.jpeg" />
                                         <img src="../img/test.webp" />
                                         <img src="../img/test2.jpeg" />
-                                    </div>  -->
+                                    </div> 
                                 <div class="infoTxt">
                                     <ul>
                                         <li class="productStyleNumber">
@@ -546,36 +555,7 @@
                                 <div class="dividingLine"></div>
                             </td>
                         </tr>
-                        <tr>
-                            <td onClick="toggleRow(this.parentNode)">
-                                <button class="editBtn">
-                                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                                </button>
-                            </td>
-                            <td><%= product[i].productId %></td>
-                            <td><%= product[i].productImg %></td>
-                            <td><%= product[i].productClass %></td>
-                            <td><%= product[i].productStyleNumber %></td>
-                            <td><%= product[i].productName %></td>
-                            <td><%= product[i].productPrice %></td>
-                            <td><%= product[i].productSize %></td>
-                            <td><%= product[i].productInStock %></td>
-                            <td><%= product[i].productDescription %></td>
-                            <td class="showContent hideRow">
-                                <div class="dividingLine"></div>
-                                <div class="onOff">
-                                    <button>
-                                        <img src="/img/close2.svg" alt="" />
-                                    </button>
-                                    <button>
-                                        <img src="/img/zoom2.svg" alt="" />
-                                    </button>
-                                </div>
-                                <div class="info" >
-                                <div class="infoImg">
-                                </div>
-                            </td>
-                        </tr>           
+                           
                     <% } %>
                 </table>
             </div>
