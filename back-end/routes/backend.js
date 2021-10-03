@@ -105,6 +105,30 @@ router.get("/news", function (req, res, next) {
     }
 
 });
+// 新增news資料
+router.post("/news", function (req, res, next) {
+    // res.send([req.body.newsSubtitle]);
+    // res.redirect('news1');
+    req.mysql.query(
+        // "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, null); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) SELECT MAX(newsId)+1, ?, ?, null, ? FROM newsContent;",
+        "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, null); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
+        [
+            req.body.newsTitle,
+            [
+                [null, req.body.newsSubtitle1, req.body.newsArticle1, null, req.body.newsFigcaption1],
+                [null, req.body.newsSubtitle2, req.body.newsArticle2, null, req.body.newsFigcaption2],
+                [null, req.body.newsSubtitle3, req.body.newsArticle3, null, req.body.newsFigcaption3],
+                [null, req.body.newsSubtitle4, req.body.newsArticle4, null, req.body.newsFigcaption4],
+                [null, req.body.newsSubtitle5, req.body.newsArticle5, null, req.body.newsFigcaption5], 
+            ],
+        ],
+        function (err, result) {
+            res.send('yoyoyoyo123.');
+        }
+    );    
+});
+
+
 
 // upload file
 router.post("/upload", function (req, res, next) {
@@ -123,6 +147,7 @@ router.post("/upload", function (req, res, next) {
     });
 });
 
+// http://localhost:8000/backend/login
 router.get('/login', (req, res) => {
     // session = req.session;
     // if (session.userid) {
@@ -157,7 +182,7 @@ router.post('/auth', function (req, res) {
                 if (result.length > 0) {
                     req.session.loggedin = true;
                     req.session.username = username;
-                    res.redirect('order');
+                    res.redirect('news');
                 } else {
                     res.send('Incorrect Username or Password!')
                 }
