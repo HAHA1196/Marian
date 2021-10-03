@@ -21,7 +21,7 @@ router.get("/product", function (req, res, next) {
             }
         );    
     } else {
-    res.send('Please login to view this page!');
+        res.send('Please login to view this page!<br /><a href="login">login</a>');
     }
 
 });
@@ -61,7 +61,7 @@ router.get("/member", function (req, res, next) {
             }
         );    
     } else {
-    res.send('Please login to view this page!');
+        res.send('Please login to view this page!<br /><a href="login">login</a>');
     }
 
 });
@@ -81,9 +81,8 @@ router.get("/order", function (req, res, next) {
             }
         );    
     } else {
-		res.send('Please login to view this page!');
+        res.send('Please login to view this page!<br /><a href="login">login</a>');
 	}
-
 	// res.end();
 });
 
@@ -102,7 +101,7 @@ router.get("/news", function (req, res, next) {
             }
         );    
     } else {
-    res.send('Please login to view this page!');
+    res.send('Please login to view this page!<br /><a href="login">login</a>');
     }
 
 });

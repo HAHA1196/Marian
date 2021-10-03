@@ -24,8 +24,8 @@ $(function () {
             let index = Number(e.currentTarget.className.slice(3));
             // console.log(index);
             //先確認『第幾』按鈕被點到>>>把數字帶帶入『第幾』tabContent
-            $(`.tabContent:nth-child(${index + 1})`).css("display", "block");
-            $(`.tabContent:not(:nth-child(${index + 1}))`).css(
+            $(`.tabContent:nth-of-type(${index + 1})`).css("display", "block");
+            $(`.tabContent:not(:nth-of-type(${index + 1}))`).css(
                 "display",
                 "none"
             );
