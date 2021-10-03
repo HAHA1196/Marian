@@ -49,5 +49,26 @@ $(function () {
             console.log(this);
         })
     });
-
+     //  -------------------------------------------------------
+    // $("#submitAll").click(function(){
+    //     console.log("yoyoyo")
+    //     $.ajax({
+    //         url: 'http://localhost:8000/backend/news',
+    //         data : {
+    //             newsTitle: $('.newsTitle').val(),
+    //             newsSubtitle1: $(`.newsSubtitle1 `).val(),
+    //         },
+    //         type : "POST",
+    //         // success: function (data) {
+    //         //     console.log('Submission was successful.');
+    //         //     console.log(data);
+    //         // },
+    //         // error: function (data) {
+    //         //     console.log('An error occurred.');
+    //         //     console.log(data);
+    //         // },
+    //     });
+    //     return false;   //Code to disable the page refresh.
+    
+    // })      
 });
