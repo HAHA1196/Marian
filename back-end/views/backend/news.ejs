@@ -59,7 +59,7 @@
                 <div class="newArticle" hidden>
                     <div>
                        
-                        <form id="form" name="" action="" method="POST" >
+                        <form id="form" name="" action="" method="POST" enctype="multipart/form-data">
                             <div class="newsContainer">
                                 <!-- ------------------標籤們-------------------- -->
                                 <div class="tab">
@@ -80,6 +80,7 @@
                                         <div>封面照片&nbsp;｜</div>
                                         <div class="uploadImg">
                                             <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
+                                            <input type="file" name="uploadImg0" class="fileInput" multiple>
                                             <!-- 下面div到時候放圖片...可能改成img tag -->
                                             <div></div>
                                         </div>
@@ -109,6 +110,7 @@
                                         <div>段落照片&nbsp;｜</div>
                                         <div class="uploadImg">
                                             <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
+                                            <input type="file" name="uploadImg<%= i %>" class="fileInput">
                                             <!-- 下面div到時候放圖片...可能改成img tag -->
                                             <div></div>
                                         </div>

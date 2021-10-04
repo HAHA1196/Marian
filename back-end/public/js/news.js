@@ -46,10 +46,21 @@ $(function () {
     $(function(){
         $("#uploadBtn").click(function(){
             $(".newArticle").slideToggle();
-            console.log(this);
+            // console.log(this);
         })
     });
-     //  -------------------------------------------------------
+    // new image
+    $(".imgEditBtn").on("click", function(e){
+        $(this).siblings(".fileInput").click();
+        $(this).siblings(".fileInput").on("change", function(e){
+            console.log(this);
+            // console.log(e);
+            console.log(e.target.files[0].name);
+        });
+        
+    })
+
+    //  -------------------------------------------------------
     // $("#submitAll").click(function(){
     //     console.log("yoyoyo")
     //     $.ajax({
