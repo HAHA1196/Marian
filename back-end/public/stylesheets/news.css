@@ -198,10 +198,14 @@ label ~ div {
     height: 260px;
     margin: 0 100px;
 }
-
-/* .fileInput {
+.uploadImg img:last-child {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.fileInput {
     display: none;
-} */
+}
 /* 上傳圖片的圓形加號 */
 .imgEditBtn {
     width: 60px;

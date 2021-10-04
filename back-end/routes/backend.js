@@ -127,25 +127,40 @@ router.post("/news", function (req, res, next) {
     // const desktopDir = `${homedir}/Desktop`;
     // console.log(desktopDir);
     var file0 = req.files.uploadImg0;
-    // res.send(file.name);
-    var uploadPath = path.join(__dirname, "../public/img/test/" + file0.name);
+    var uploadPath = path.join(__dirname, "../public/img/newsImg/" + file0.name);
     file0.mv(uploadPath, (err) => {
-        res.redirect("news");
+        return;
     });
     var file1 = req.files.uploadImg1;
-    // res.send(file.name);
-    uploadPath = path.join(__dirname, "../public/img/test/" + file1.name);
+    uploadPath = path.join(__dirname, "../public/img/newsImg/" + file1.name);
     file1.mv(uploadPath, (err) => {
-        res.redirect("news");
+        return;
     });
     var file2 = req.files.uploadImg2;
-    // res.send(file.name);
-    uploadPath = path.join(__dirname, "../public/img/test/" + file2.name);
+    uploadPath = path.join(__dirname, "../public/img/newsImg/" + file2.name);
     file2.mv(uploadPath, (err) => {
-        res.redirect("news");
+        return;
     });
    
-
+    var file3 = req.files.uploadImg3;
+    uploadPath = path.join(__dirname, "../public/img/newsImg/" + file3.name);
+    file3.mv(uploadPath, (err) => {
+        return;
+    });
+   
+    var file4 = req.files.uploadImg2;
+    uploadPath = path.join(__dirname, "../public/img/newsImg/" + file4.name);
+    file4.mv(uploadPath, (err) => {
+        return;
+    });
+   
+    var file5 = req.files.uploadImg2;
+    uploadPath = path.join(__dirname, "../public/img/newsImg/" + file4.name);
+    file5.mv(uploadPath, (err) => {
+        return;
+    });
+   
+   
     req.mysql.query(
         // "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, null); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) SELECT MAX(newsId)+1, ?, ?, null, ? FROM newsContent;",
         "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, null); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
@@ -160,7 +175,8 @@ router.post("/news", function (req, res, next) {
             ],
         ],
         function (err, result) {
-            res.send('yoyoyoyo123.');
+            // res.send('yoyoyoyo123.');
+            res.redirect("news");
         }
     );    
 });

@@ -45,14 +45,14 @@ create table if not exists
     newsId int auto_increment primary key, 
     newsTitle varchar(50),  
     newsDate datetime, 
-    newsCoverImg longblob 
+    newsCoverImg varchar(255) 
 );
 create table if not exists
  newsContent (
     newsId int, 
     newsSubtitle varchar(50), 
     newsArticle text, 
-    newsImg longblob, 
+    newsImg varchar(255), 
     newsFigcaption text, 
     foreign key (newsId) references news(newsId)
 );
@@ -118,12 +118,12 @@ ALTER TABLE accounts MODIFY id int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 
 /*news 資料*/
 	INSERT INTO `news` (`newsTitle`, `newsDate`, `newsCoverImg`) VALUES 
-		('跟著Marian一起挑選衝浪配備', '2021-08-03 16:22:34', NULL), 
-		('讓衝浪板反璞歸真，選擇Marian木頭衝浪板吧', '2021-08-09 09:22:34', NULL), 
-		('想要拯救珊瑚？海洋友善防曬乳怎麼挑？', '2021-08-30 16:35:59', NULL), 
-		('我們不塑這樣野餐的', '2021-09-09 08:30:00', NULL), 
-		('SUP? SUP!', '2021-09-10 11:22:34', NULL),
-		('第二組今天的午餐', '2021-09-22 15:22:34', NULL);
+		('跟著Marian一起挑選衝浪配備', '2021-08-03 16:22:34', 'linus-nylund-SfdwxMA5VIM-unsplash.jpg'), 
+		('讓衝浪板反璞歸真，選擇Marian木頭衝浪板吧', '2021-08-09 09:22:34', 'nico-bhlr-QT-l619id6w-unsplash.jpg'), 
+		('想要拯救珊瑚？海洋友善防曬乳怎麼挑？', '2021-08-30 16:35:59', 'subtle-cinematics-VHt_sWcj70I-unsplash.jpg'), 
+		('我們不塑這樣野餐的', '2021-09-09 08:30:00', 'brian-yurasits-Dv3foafkgIs-unsplash.jpg'), 
+		('SUP? SUP!', '2021-09-10 11:22:34', 'holly-mandarich-CIMet4T90Ng-unsplash.jpg'),
+		('第二組今天的午餐', '2021-09-22 15:22:34', 'curry.jpeg');
 
 /*newsContent*/
 	INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES
