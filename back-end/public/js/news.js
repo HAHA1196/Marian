@@ -43,12 +43,11 @@ $(function () {
 
 
     // new article -------------------------------------------------------
-    $(function(){
-        $("#uploadBtn").click(function(){
-            $(".newArticle").slideToggle();
-            // console.log(this);
-        })
-    });
+    $("#uploadBtn").click(function(){
+        $(".newArticle").slideToggle();
+        // console.log(this);
+    })
+    
     // new image
     $(".imgEditBtn").on("click", function(e){
         $(this).siblings(".fileInput").click();
@@ -56,7 +55,7 @@ $(function () {
             console.log(this);
             // console.log(e);
             console.log(e.target.files[0].name);
-            
+
         });
         
     })
@@ -82,5 +81,11 @@ $(function () {
     //     });
     //     return false;   //Code to disable the page refresh.
     
-    // })      
+    // })
+
+    // console.log($("tr:last-child td:last-child .tabContent:nth-last-of-type(2) .imgEditBtn~img").prop("src"));
+    // console.log($("#contentData .tabContent").find(".imgEditBtn~img").prop("src"));
+    // if($("#contentData .tabContent").find(".imgEditBtn~img").prop("src") == "http://localhost:8000/img/newsImg/"){
+    //     $("#contentData .tabContent").find(".imgEditBtn~img").prop("src", "/img/罐頭.jpg");
+    // }
 });

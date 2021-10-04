@@ -110,56 +110,69 @@ router.get("/news", function (req, res, next) {
 router.post("/news", function (req, res, next) {
     if (!req.files) {
         return res.status(400).send("No files were uploaded12321.");
-    }
-
-    // --------------------------------
-    // // const desktopDir = `${homedir}/Desktop`;
-    // // console.log(desktopDir);
-    // for(var i = 0; i <= 5 ; i++){
-    //     var file = eval(`req.files.uploadImg${i}`);
-    //     // res.send(file.name);
-    //     var uploadPath = path.join(__dirname, "../public/img/test/" + file.name);
-    //     file.mv(uploadPath, (err) => {
-    //         res.redirect("news");
-    //     });
-    // }
-    // --------------------------------
+    } 
     // const desktopDir = `${homedir}/Desktop`;
     // console.log(desktopDir);
-    var file0 = req.files.uploadImg0;
-    var uploadPath = path.join(__dirname, "../public/img/newsImg/" + file0.name);
-    file0.mv(uploadPath, (err) => {
-        return;
-    });
-    var file1 = req.files.uploadImg1;
-    uploadPath = path.join(__dirname, "../public/img/newsImg/" + file1.name);
-    file1.mv(uploadPath, (err) => {
-        return;
-    });
-    var file2 = req.files.uploadImg2;
-    uploadPath = path.join(__dirname, "../public/img/newsImg/" + file2.name);
-    file2.mv(uploadPath, (err) => {
-        return;
-    });
-   
-    var file3 = req.files.uploadImg3;
-    uploadPath = path.join(__dirname, "../public/img/newsImg/" + file3.name);
-    file3.mv(uploadPath, (err) => {
-        return;
-    });
-   
-    var file4 = req.files.uploadImg2;
-    uploadPath = path.join(__dirname, "../public/img/newsImg/" + file4.name);
-    file4.mv(uploadPath, (err) => {
-        return;
-    });
-   
-    var file5 = req.files.uploadImg2;
-    uploadPath = path.join(__dirname, "../public/img/newsImg/" + file4.name);
-    file5.mv(uploadPath, (err) => {
-        return;
-    });
-   
+    if (req.files.uploadImg0){
+        var file0 = req.files.uploadImg0;
+        var uploadPath = path.join(__dirname, "../public/img/newsImg/" + file0.name);
+        file0.mv(uploadPath, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+    if (req.files.uploadImg1){
+        var file1 = req.files.uploadImg1;
+        uploadPath = path.join(__dirname, "../public/img/newsImg/" + file1.name);
+        file1.mv(uploadPath, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+    if (req.files.uploadImg2){
+        var file2 = req.files.uploadImg2;
+        uploadPath = path.join(__dirname, "../public/img/newsImg/" + file2.name);
+        file2.mv(uploadPath, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+    if (req.files.uploadImg3){
+        var file3 = req.files.uploadImg3;
+        uploadPath = path.join(__dirname, "../public/img/newsImg/" + file3.name);
+        file3.mv(uploadPath, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+
+    if (req.files.uploadImg4){
+        var file4 = req.files.uploadImg4;
+        uploadPath = path.join(__dirname, "../public/img/newsImg/" + file4.name);
+        file4.mv(uploadPath, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+    if (req.files.uploadImg5){
+        var file5 = req.files.uploadImg5;
+        uploadPath = path.join(__dirname, "../public/img/newsImg/" + file5.name);
+        file5.mv(uploadPath, (err) => {
+            return;
+        });
+    } else {
+        
+    }
    
     req.mysql.query(
         // "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, null); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) SELECT MAX(newsId)+1, ?, ?, null, ? FROM newsContent;",
