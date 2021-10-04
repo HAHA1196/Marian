@@ -63,7 +63,7 @@
                     </div>
                     <div class="searchInput">
                         <span>產品型號&nbsp;|</span>
-                        <input type="text" />
+                        <input id="searchProduct" type="text" />
                     </div>
                     <button type="submit" id="searchBtn">
                         <i class="fa fa-search" aria-hidden="true"></i>
@@ -157,7 +157,7 @@
                         <th>庫存</th>
                         <th>產品描述</th>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td onClick="toggleRow(this.parentNode)">
                             <button class="editBtn">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -467,12 +467,12 @@
                             </button>
                             <div class="dividingLine"></div>
                         </td>
-                    </tr>
+                    </tr> -->
                     <% for (var i = 0; i < product.length; i++) { %>
 
                     <tr>
                         <td onClick="toggleRow(this.parentNode)">
-                            <button class="editBtn">
+                            <button type="button" class="editBtn" onclick="edit('<%= product[i].productId %>')">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
                             </button>
                         </td>
@@ -497,7 +497,7 @@
                             </div>
                             <div class="info">
                                 <div class="infoImg">
-                                        <img
+                                        <!-- <img
                                                 class="imgEditBtn"
                                                 src="/img/edit.svg"
                                                 alt="按我修改圖片yo"
@@ -519,8 +519,8 @@
                                         <img src="../img/test.webp" />
                                         <img src="../img/test2.jpeg" />
                                         <img src="../img/test.webp" />
-                                        <img src="../img/test2.jpeg" />
-                                    </div> 
+                                        <img src="../img/test2.jpeg" /> -->
+                                </div> 
                                 <div class="infoTxt">
                                     <ul>
                                         <li class="productStyleNumber">
@@ -529,6 +529,7 @@
                                         </li>
                                         <li class="productName">
                                             <span>產品名稱 |</span>
+                                            <br>
                                             <%= product[i].productName %>
                                         </li>
                                         <li class="productClass">
@@ -553,11 +554,11 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <button class="confirmBtn"><i class="fa fa-check-circle-o" aria-hidden="true"></i>確認修改</button>
+                                
+                                <button class="confirmBtn"><i class="fa fa-check-circle-o" aria-hidden="true"></i>確認修改</button> 
                                 <div class="dividingLine"></div>
                             </td>
                         </tr>
-                           
                     <% } %>
                 </table>
             </div>
