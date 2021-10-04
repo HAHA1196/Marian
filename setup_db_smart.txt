@@ -127,10 +127,10 @@ ALTER TABLE accounts MODIFY id int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 
 /*newsContent*/
 	INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES
-		('1', '衝浪板Surfboard', '跟著Marian一起挑選衝浪配備第1段落內容blahblahblah', null, '123'), 
-		('1', '腳繩Leash', '跟著Marian一起挑選衝浪配備第2段落內容blahblahblah', null, '123'), 
-		('1', '舵Fin', '跟著Marian一起挑選衝浪配備第3段落內容blahblahblah', null, '123'), 
-		('1', '蠟Wax', '跟著Marian一起挑選衝浪配備第4段落內容blahblahblah', null, '123'), 
+		('1', '衝浪板Surfboard', '跟著Marian一起挑選衝浪配備第1段落內容blahblahblah', 'dendy-darma-satyazi-XFMjz4X3hGs-unsplash.jpg', '123'), 
+		('1', '腳繩Leash', '跟著Marian一起挑選衝浪配備第2段落內容blahblahblah', 'filipp-nekhaev-Ycnt8BKlMtY-unsplash (1).jpg', '123'), 
+		('1', '舵Fin', '跟著Marian一起挑選衝浪配備第3段落內容blahblahblah', 'michael-olsen-wJZ2Uyljhfo-unsplash.jpg', '123'), 
+		('1', '蠟Wax', '跟著Marian一起挑選衝浪配備第4段落內容blahblahblah', 'pexels-amanda-klamrowski-1409200.jpg', '123'), 
 		('1', null, null, null, null), 
 		('2', '曾經有人說過，木頭會呼吸。這正是我們挑選木頭來做為衝浪板材質的原因', '讓衝浪板反璞歸真，選擇Marian木頭衝浪板吧第1段落內容blahblahblah', null, '456'), 
 		('2', '少了那些太多餘浮誇的技巧，享受衝浪的感動', '讓衝浪板反璞歸真，選擇Marian木頭衝浪板吧第2段落內容blahblahblah', null, '456'), 
