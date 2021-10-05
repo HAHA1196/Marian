@@ -183,9 +183,11 @@ router.post("/news", function (req, res, next) {
    
     req.mysql.query(
         // "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, null); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) SELECT MAX(newsId)+1, ?, ?, null, ? FROM newsContent;",
-        "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, null); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
+        "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ?; INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
         [
             req.body.newsTitle,
+            "time",
+            myFiles[0],
             [
                 [null, req.body.newsSubtitle1, req.body.newsArticle1, myFiles[1], req.body.newsFigcaption1],
                 [null, req.body.newsSubtitle2, req.body.newsArticle2, myFiles[2], req.body.newsFigcaption2],
