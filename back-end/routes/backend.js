@@ -3,7 +3,8 @@ const app = require("../app");
 var router = express.Router();
 var path = require("path");
 const { resourceLimits } = require("worker_threads");
-// const homeDir = require('os').homedir();
+const os = require('os');
+const homedir = os.homedir();
 
 /* GET 測試用 page. */
 router.get("/", function (req, res, next) {
@@ -112,10 +113,13 @@ router.post("/news", function (req, res, next) {
     if (!req.files) {
         return res.status(400).send("No files were uploaded12321.");
     } 
-    // const desktopDir = `${homedir}/Desktop`;
-    // console.log(desktopDir);
+
+    const desktopDir = `${homedir}/Desktop`;
+    // res.send(desktopDir);
+
     if (req.files.uploadImg0){
         var file0 = req.files.uploadImg0;
+        // var uploadPath0 = path.join(`${desktopDir}/newsImg/` + file0.name);  //有成功在桌面建立資料夾 但...
         var uploadPath0 = path.join(__dirname, "../public/img/newsImg/" + file0.name);
         myFiles.push(uploadPath0.substring(uploadPath0.indexOf("newsImg/") + 8));
         file0.mv(uploadPath0, (err) => {
@@ -181,9 +185,10 @@ router.post("/news", function (req, res, next) {
     }
    
     req.mysql.query(
-        "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, null); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
+        "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, ?); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
         [
             req.body.newsTitle,
+            myFiles[0],
             [
                 [null, req.body.newsSubtitle1, req.body.newsArticle1, myFiles[1], req.body.newsFigcaption1],
                 [null, req.body.newsSubtitle2, req.body.newsArticle2, myFiles[2], req.body.newsFigcaption2],
