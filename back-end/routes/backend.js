@@ -28,7 +28,7 @@ router.get("/product", function (req, res, next) {
 });
 
 // 0930 修改
-router.post('/productAdd', function (req, res, next) {
+router.post('/product', function (req, res, next) {
     req.mysql.query(
         'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription) values (?, ?, ?, ?, ?, ?, ?)',
         [
@@ -41,7 +41,7 @@ router.post('/productAdd', function (req, res, next) {
             req.body.productDescription
         ],
         function (err, result) {
-            res.send('inserted.');
+            res.redirect('product');
         }
     )
 });
