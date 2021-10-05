@@ -53,6 +53,7 @@
             <span id="newsContent" hidden>
                 <%= JSON.stringify(newsContent); %>
             </span>
+            <% var path = "/img/newsImg/" %>
             <div id="contentSec">
                 <!-- 開始創作..... 記得調整top-->
                 <!-- write a new article -->
@@ -82,7 +83,7 @@
                                             <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
                                             <input type="file" name="uploadImg0" class="fileInput" multiple>
                                             <!-- 換圖片路徑 -->
-                                            <img src="/img/罐頭.jpg" alt="">
+                                            <img src="<%= path %>罐頭.jpg" alt="">
                                         </div>
                                     </div>
                                     <button type="submit" id="submitAll" class="confirmBtn">
@@ -91,6 +92,7 @@
                                     </button>
                                 
                                 </div>
+
                                 <% for (var i = 1; i <= 5; i++) { %>
                                 <!-- 段落<%= i %> -->
                                 <div class="tabContent">
@@ -112,7 +114,7 @@
                                             <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
                                             <input type="file" name="uploadImg<%= i %>" class="fileInput">
                                             <!-- 換圖片路徑 -->
-                                            <img src="/img/罐頭.jpg" alt="">
+                                            <img src="<%= path %>罐頭.jpg" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -166,7 +168,7 @@
                                             <div class="uploadImg">
                                                 <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
                                                 <!-- 換圖片路徑 -->
-                                                <img src="/img/newsImg/<%= news[k].newsCoverImg %>" alt="">
+                                                <img src="<%= path %><%= news[k].newsCoverImg %>" alt="">
                                             </div>
                                         </div>
 
@@ -202,7 +204,7 @@
                                                 <div class="uploadImg">
                                                     <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
                                                     <!-- 換圖片路徑 -->
-                                                    <img src="/img/newsImg/<%= newsContent[i].newsImg %>" alt="">
+                                                    <img src="<%= path %><%= newsContent[i].newsImg == null ? '罐頭.jpg' : newsContent[i].newsImg %>" alt="">
                                                 </div>
                                             </div>
                                             <button class="confirmBtn">
@@ -225,7 +227,7 @@
                                             <div>封面照片&nbsp;｜</div>
                                             <div class="uploadImg">
                                                 <!-- 換圖片路徑 -->
-                                                <img src="/img/newsImg/<%= news[k].newsCoverImg %>" alt="">
+                                                <img src="<%= path %><%= news[k].newsCoverImg %>" alt="">
                                             </div>
                                         </div>
                                     </form>

@@ -65,32 +65,4 @@ $(function () {
         
     })
 
-    //  -------------------------------------------------------
-    // $("#submitAll").click(function(){
-    //     console.log("yoyoyo")
-    //     $.ajax({
-    //         url: 'http://localhost:8000/backend/news',
-    //         data : {
-    //             newsTitle: $('.newsTitle').val(),
-    //             newsSubtitle1: $(`.newsSubtitle1 `).val(),
-    //         },
-    //         type : "POST",
-    //         // success: function (data) {
-    //         //     console.log('Submission was successful.');
-    //         //     console.log(data);
-    //         // },
-    //         // error: function (data) {
-    //         //     console.log('An error occurred.');
-    //         //     console.log(data);
-    //         // },
-    //     });
-    //     return false;   //Code to disable the page refresh.
-    
-    // })
-
-    // console.log($("tr:last-child td:last-child .tabContent:nth-last-of-type(2) .imgEditBtn~img").prop("src"));
-    // console.log($("#contentData .tabContent").find(".imgEditBtn~img").prop("src"));
-    // if($("#contentData .tabContent").find(".imgEditBtn~img").prop("src") == "http://localhost:8000/img/newsImg/"){
-    //     $("#contentData .tabContent").find(".imgEditBtn~img").prop("src", "/img/罐頭.jpg");
-    // }
 });
