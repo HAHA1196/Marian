@@ -2,7 +2,6 @@ $(function () {
     // !!!!!讓JS可以使用EJS的變數!!!!!
     var news = JSON.parse($("#news").text());
     var newsContent = JSON.parse($("#newsContent").text());
-
     // switch tabs -------------------------------------------------------
     $(".tab>button, .tab>div").on({
         // 可惡hover效果失敗了嗚嗚嗚
@@ -51,12 +50,18 @@ $(function () {
     // new image
     $(".imgEditBtn").on("click", function(e){
         $(this).siblings(".fileInput").click();
-        $(this).siblings(".fileInput").on("change", function(e){
-            console.log(this);
-            // console.log(e);
-            console.log(e.target.files[0].name);
-
-        });
+        // $(this).siblings(".fileInput").on("change", function(e){
+        //     console.log(this);
+        //     console.log(e);
+        //     console.log(e.target.files[0].name);
+        // });
+        $(this).siblings(".fileInput").on("change", function(evt){
+            console.log(this.files);
+            let [file] = this.files;
+            if(file) {
+                $(this).next("img").attr('src', URL.createObjectURL(evt.target.files[0]));
+            }
+        })
         
     })
 
