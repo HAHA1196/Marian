@@ -82,9 +82,10 @@
             </div>
 
             <!-- content section -->
+            <span id="product" hidden><%= JSON.stringify(product); %></span>
             <div id="contentSec">
                 <!-- create new products -->
-                <form name="productForm" action="productAdd" method="post" >
+                <form name="productForm" action="product" method="post" >
                         <div id="newProducts" hidden>
                             <div class="info">
                                 <div class="uploadImg">
@@ -469,10 +470,9 @@
                         </td>
                     </tr> -->
                     <% for (var i = 0; i < product.length; i++) { %>
-
                     <tr>
                         <td onClick="toggleRow(this.parentNode)">
-                            <button type="button" class="editBtn" onclick="edit('<%= product[i].productId %>')">
+                            <button type="button" class="editBtn">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
                             </button>
                         </td>
@@ -555,7 +555,7 @@
                                     </ul>
                                 </div>
                                 
-                                <button class="confirmBtn"><i class="fa fa-check-circle-o" aria-hidden="true"></i>確認修改</button> 
+                                <button class="confirmBtn" ><i class="fa fa-check-circle-o" aria-hidden="true"></i>確認修改</button> 
                                 <div class="dividingLine"></div>
                             </td>
                         </tr>
