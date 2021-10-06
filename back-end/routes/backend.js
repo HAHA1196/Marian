@@ -121,7 +121,7 @@ router.post("/news", function (req, res, next) {
         var file0 = req.files.uploadImg0;
         // var uploadPath0 = path.join(`${desktopDir}/newsImg/` + file0.name);  //有成功在桌面建立資料夾 但...
         var uploadPath0 = path.join(__dirname, "../public/img/newsImg/" + file0.name);
-        myFiles.push(uploadPath0.substring(uploadPath0.indexOf("newsImg/") + 8));
+        myFiles.push(uploadPath0.substring(uploadPath0.indexOf("newsImg") + 7));
         file0.mv(uploadPath0, (err) => {
             return;
         });
@@ -132,7 +132,7 @@ router.post("/news", function (req, res, next) {
     if (req.files.uploadImg1){
         var file1 = req.files.uploadImg1;
         var uploadPath1 = path.join(__dirname, "../public/img/newsImg/" + file1.name);
-        myFiles.push(uploadPath1.substring(uploadPath1.indexOf("newsImg/") + 8));
+        myFiles.push(uploadPath1.substring(uploadPath1.indexOf("newsImg") + 7));
         file1.mv(uploadPath1, (err) => {
             return;
         });
@@ -143,7 +143,7 @@ router.post("/news", function (req, res, next) {
     if (req.files.uploadImg2){
         var file2 = req.files.uploadImg2;
         var uploadPath2 = path.join(__dirname, "../public/img/newsImg/" + file2.name);
-        myFiles.push(uploadPath2.substring(uploadPath2.indexOf("newsImg/") + 8));
+        myFiles.push(uploadPath2.substring(uploadPath2.indexOf("newsImg") + 7));
         file2.mv(uploadPath2, (err) => {
             return;
         });
@@ -154,7 +154,7 @@ router.post("/news", function (req, res, next) {
     if (req.files.uploadImg3){
         var file3 = req.files.uploadImg3;
         var uploadPath3 = path.join(__dirname, "../public/img/newsImg/" + file3.name);
-        myFiles.push(uploadPath3.substring(uploadPath3.indexOf("newsImg/") + 8));
+        myFiles.push(uploadPath3.substring(uploadPath3.indexOf("newsImg") + 7));
         file3.mv(uploadPath3, (err) => {
             return;
         });
@@ -165,7 +165,7 @@ router.post("/news", function (req, res, next) {
     if (req.files.uploadImg4){
         var file4 = req.files.uploadImg4;
         var uploadPath4 = path.join(__dirname, "../public/img/newsImg/" + file4.name);
-        myFiles.push(uploadPath4.substring(uploadPath4.indexOf("newsImg/") + 8));
+        myFiles.push(uploadPath4.substring(uploadPath4.indexOf("newsImg") + 7));
         file4.mv(uploadPath4, (err) => {
             return;
         });
@@ -176,7 +176,7 @@ router.post("/news", function (req, res, next) {
     if (req.files.uploadImg5){
         var file5 = req.files.uploadImg5;
         var uploadPath5 = path.join(__dirname, "../public/img/newsImg/" + file5.name);
-        myFiles.push(uploadPath5.substring(uploadPath5.indexOf("newsImg/") + 8));
+        myFiles.push(uploadPath5.substring(uploadPath5.indexOf("newsImg") + 7));
         file5.mv(uploadPath5, (err) => {
             return;
         });
@@ -204,18 +204,18 @@ router.post("/news", function (req, res, next) {
     );    
 });
 // 修改news資料
-router.put("/news", function (req, res, next) {
+// router.put("/news", function (req, res, next) {
     
-    req.mysql.query(
-        "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, ?); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
-        [],
-        function (err, result) {
-            res.send('yo edit dis !');
-            // res.redirect("news");
-            //////////////////////1005///////////////////////////
-        }
-    );    
-});
+//     req.mysql.query(
+//         "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, ?); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
+//         [],
+//         function (err, result) {
+//             res.send('yo edit dis !');
+//             // res.redirect("news");
+//             //////////////////////1005///////////////////////////
+//         }
+//     );    
+// });
 
 
 // upload file
