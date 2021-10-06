@@ -36,9 +36,9 @@ $(function () {
         $("tr:not(:first-child").slideUp();
 
         switch (sortProduct) {
-            case "productStyleNumber":
+            case "sortProductSS":
                 for(var i = 0;product.length;i++){
-                    if(product[i].productStyleNumber.indexOf(`${searchProduct}`)>= 0){
+                    if(product[i].productStyleNumber.indexOf(`${}`)>= 0){
                         $(`tr:nth-child(${i+2})`).slideDown();
                     }
                 }
