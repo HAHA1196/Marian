@@ -90,26 +90,24 @@
                             <div class="info">
                                 <div class="uploadImg">
                                     <img class="upImgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
-                                    <!-- 下面div到時候放圖片...可能改成img tag -->
-                                    <div></div>
+                                    <!-- 換圖片路徑-->
                                 </div>
                                 <div class="infoTxt">
                                     <ul>
                                         <li class="productStyleNumber">
                                             <span>產品型號 |</span>
-                                            <input type="text" name="productStyleNumber" value="Ruby123" >
+                                            <input  type="text" name="productStyleNumber" value="Ruby123" >
                                             
                                         </li>
                                         <li class="productName">
                                             <span>產品名稱 |</span>
                                             <br>
-                                            <input type="text" name="productName" value="XX牌的SUP">
+                                            <input type="text" name="productName" value="XX牌的OOO">
                                             
                                         </li>
                                         <li >
                                                 <span>種類 |</span>
                                                 <br>
-                                                <!-- <input type="text" name="productClass" value="SUP"> -->
                                                     <select class="productClass" name="productClass">
                                                         <option  value="F">請選擇</option>
                                                         <option  value="SS">SS</option>
@@ -127,13 +125,13 @@
                                             <span>尺寸 |</span>
                                             <br>
                                             <!-- <input type="text" name="productSize" value="大"> -->
-                                            <select class="productSize">
+                                            <select class="productSize" name="productSize">
                                                 <option value="">請選擇</option>
-                                                <option value="SizeS">S</option>
-                                                <option value="SizeM">M</option>
-                                                <option value="SizeL">L</option>
-                                                <option value="SizeXL">XL</option>
-                                                <option value="SizeF">F</option>
+                                                <option value="S">S</option>
+                                                <option value="M">M</option>
+                                                <option value="L">L</option>
+                                                <option value="XL">XL</option>
+                                                <option value="F">F</option>
                                             </select>
                                         </li>
                                         <li class="productInStock">
@@ -226,7 +224,8 @@
                         </td>
                         <td>3245</td>
                         <td>
-                            <div class="productImg">
+                            <div class="productImg
+                            ">
                                 <img src="/img/test.webp" alt="test img" />
                             </div>
                         </td>
@@ -484,15 +483,16 @@
                             <div class="dividingLine"></div>
                         </td>
                     </tr> -->
-                    <% for (var i = 0; i < product.length; i++) { %>
-                    <tr>
+                    
+                    <% for (var i = 0; i < product.length; i++) { %>    
+                        <tr>
                         <td onClick="toggleRow(this.parentNode)">
                             <button type="button" class="editBtn">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
                             </button>
                         </td>
                         <td><%= product[i].productId %></td>
-                        <td><%= product[i].productImg %></td>
+                        <td><%= product[i].productImg1 %></td>
                         <td><%= product[i].productClass %></td>
                         <td><%= product[i].productStyleNumber %></td>
                         <td><%= product[i].productName %></td>
@@ -512,29 +512,6 @@
                             </div>
                             <div class="info">
                                 <div class="infoImg">
-                                        <!-- <img
-                                                class="imgEditBtn"
-                                                src="/img/edit.svg"
-                                                alt="按我修改圖片yo"
-                                        />
-                                        <div
-                                            class="fotorama"
-                                            data-nav="thumbs"
-                                            data-loop="true"
-                                            data-ratio="1/1"
-                                            data-maxwidth="100%"
-                                            data-thumbwidth="70"
-                                            data-thumbheight="70"
-                                            data-allowfullscreen="true"
-                                            data-fit="cover"
-                                            data-click="false"
-                                        >
-                                        <img src="../img/test.webp" />
-                                        <img src="../img/test2.jpeg" />
-                                        <img src="../img/test.webp" />
-                                        <img src="../img/test2.jpeg" />
-                                        <img src="../img/test.webp" />
-                                        <img src="../img/test2.jpeg" /> -->
                                 </div> 
                                 <div class="infoTxt">
                                     <ul>
