@@ -3,7 +3,8 @@ const app = require("../app");
 var router = express.Router();
 var path = require("path");
 const { resourceLimits } = require("worker_threads");
-const homeDir = require('os').homedir();
+const os = require('os');
+const homedir = os.homedir();
 
 /* GET 測試用 page. */
 router.get("/", function (req, res, next) {
@@ -28,7 +29,7 @@ router.get("/product", function (req, res, next) {
 });
 
 // 0930 修改
-router.post('/productAdd', function (req, res, next) {
+router.post('/product', function (req, res, next) {
     req.mysql.query(
         'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription) values (?, ?, ?, ?, ?, ?, ?)',
         [
@@ -41,7 +42,7 @@ router.post('/productAdd', function (req, res, next) {
             req.body.productDescription
         ],
         function (err, result) {
-            res.send('inserted.');
+            res.redirect('product');
         }
     )
 });
@@ -108,15 +109,20 @@ router.get("/news", function (req, res, next) {
 });
 // 新增news資料
 router.post("/news", function (req, res, next) {
+    const myFiles = []; 
     if (!req.files) {
         res.render('backend/oops.ejs', {p: "no files were uploaded!", href: "news", a: 'Please try again!'});
     } 
-    // const desktopDir = `${homedir}/Desktop`;
-    // console.log(desktopDir);
+
+    const desktopDir = `${homedir}/Desktop`;
+    // res.send(desktopDir);
+
     if (req.files.uploadImg0){
         var file0 = req.files.uploadImg0;
-        var uploadPath = path.join(__dirname, "../public/img/newsImg/" + file0.name);
-        file0.mv(uploadPath, (err) => {
+        // var uploadPath0 = path.join(`${desktopDir}/newsImg/` + file0.name);  //有成功在桌面建立資料夾 但...
+        var uploadPath0 = path.join(__dirname, "../public/img/newsImg/" + file0.name);
+        myFiles.push(uploadPath0.substring(uploadPath0.indexOf("newsImg/") + 8));
+        file0.mv(uploadPath0, (err) => {
             return;
         });
     } else {
@@ -125,8 +131,9 @@ router.post("/news", function (req, res, next) {
 
     if (req.files.uploadImg1){
         var file1 = req.files.uploadImg1;
-        uploadPath = path.join(__dirname, "../public/img/newsImg/" + file1.name);
-        file1.mv(uploadPath, (err) => {
+        var uploadPath1 = path.join(__dirname, "../public/img/newsImg/" + file1.name);
+        myFiles.push(uploadPath1.substring(uploadPath1.indexOf("newsImg/") + 8));
+        file1.mv(uploadPath1, (err) => {
             return;
         });
     } else {
@@ -135,8 +142,9 @@ router.post("/news", function (req, res, next) {
 
     if (req.files.uploadImg2){
         var file2 = req.files.uploadImg2;
-        uploadPath = path.join(__dirname, "../public/img/newsImg/" + file2.name);
-        file2.mv(uploadPath, (err) => {
+        var uploadPath2 = path.join(__dirname, "../public/img/newsImg/" + file2.name);
+        myFiles.push(uploadPath2.substring(uploadPath2.indexOf("newsImg/") + 8));
+        file2.mv(uploadPath2, (err) => {
             return;
         });
     } else {
@@ -145,19 +153,20 @@ router.post("/news", function (req, res, next) {
 
     if (req.files.uploadImg3){
         var file3 = req.files.uploadImg3;
-        uploadPath = path.join(__dirname, "../public/img/newsImg/" + file3.name);
-        file3.mv(uploadPath, (err) => {
+        var uploadPath3 = path.join(__dirname, "../public/img/newsImg/" + file3.name);
+        myFiles.push(uploadPath3.substring(uploadPath3.indexOf("newsImg/") + 8));
+        file3.mv(uploadPath3, (err) => {
             return;
         });
     } else {
         
     }
 
-
     if (req.files.uploadImg4){
         var file4 = req.files.uploadImg4;
-        uploadPath = path.join(__dirname, "../public/img/newsImg/" + file4.name);
-        file4.mv(uploadPath, (err) => {
+        var uploadPath4 = path.join(__dirname, "../public/img/newsImg/" + file4.name);
+        myFiles.push(uploadPath4.substring(uploadPath4.indexOf("newsImg/") + 8));
+        file4.mv(uploadPath4, (err) => {
             return;
         });
     } else {
@@ -166,8 +175,9 @@ router.post("/news", function (req, res, next) {
 
     if (req.files.uploadImg5){
         var file5 = req.files.uploadImg5;
-        uploadPath = path.join(__dirname, "../public/img/newsImg/" + file5.name);
-        file5.mv(uploadPath, (err) => {
+        var uploadPath5 = path.join(__dirname, "../public/img/newsImg/" + file5.name);
+        myFiles.push(uploadPath5.substring(uploadPath5.indexOf("newsImg/") + 8));
+        file5.mv(uploadPath5, (err) => {
             return;
         });
     } else {
@@ -175,16 +185,16 @@ router.post("/news", function (req, res, next) {
     }
    
     req.mysql.query(
-        // "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, null); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) SELECT MAX(newsId)+1, ?, ?, null, ? FROM newsContent;",
-        "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, null); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
+        "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, ?); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
         [
             req.body.newsTitle,
+            myFiles[0],
             [
-                [null, req.body.newsSubtitle1, req.body.newsArticle1, null, req.body.newsFigcaption1],
-                [null, req.body.newsSubtitle2, req.body.newsArticle2, null, req.body.newsFigcaption2],
-                [null, req.body.newsSubtitle3, req.body.newsArticle3, null, req.body.newsFigcaption3],
-                [null, req.body.newsSubtitle4, req.body.newsArticle4, null, req.body.newsFigcaption4],
-                [null, req.body.newsSubtitle5, req.body.newsArticle5, null, req.body.newsFigcaption5], 
+                [null, req.body.newsSubtitle1, req.body.newsArticle1, myFiles[1], req.body.newsFigcaption1],
+                [null, req.body.newsSubtitle2, req.body.newsArticle2, myFiles[2], req.body.newsFigcaption2],
+                [null, req.body.newsSubtitle3, req.body.newsArticle3, myFiles[3], req.body.newsFigcaption3],
+                [null, req.body.newsSubtitle4, req.body.newsArticle4, myFiles[4], req.body.newsFigcaption4],
+                [null, req.body.newsSubtitle5, req.body.newsArticle5, myFiles[5], req.body.newsFigcaption5]
             ],
         ],
         function (err, result) {
@@ -193,28 +203,19 @@ router.post("/news", function (req, res, next) {
         }
     );    
 });
-
-// // 新增news照片
-// router.post("/news", function (req, res, next) {
-//     if (!req.files) {
-//         return res.status(400).send("No files were uploaded.");
-//     }
-
+// 修改news資料
+router.put("/news", function (req, res, next) {
     
-//     // const desktopDir = `${homedir}/Desktop`;
-//     // console.log(desktopDir);
-
-//     const file = req.files.uploadImg0;
-//     res.send(file.name);
-//     var uploadPath = path.join(__dirname, "../public/img/test/" + file.name);
-
-//     file.mv(uploadPath, (err) => {
-//         if (err) {
-//             return res.status(500).send(err);
-//         }
-//         return res.send({ status: "success", path: uploadPath });
-//     });
-// });
+    req.mysql.query(
+        "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, ?); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
+        [],
+        function (err, result) {
+            res.send('yo edit dis !');
+            // res.redirect("news");
+            //////////////////////1005///////////////////////////
+        }
+    );    
+});
 
 
 // upload file

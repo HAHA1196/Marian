@@ -2,7 +2,6 @@ $(function () {
     // !!!!!讓JS可以使用EJS的變數!!!!!
     var news = JSON.parse($("#news").text());
     var newsContent = JSON.parse($("#newsContent").text());
-
     // switch tabs -------------------------------------------------------
     $(".tab>button, .tab>div").on({
         // 可惡hover效果失敗了嗚嗚嗚
@@ -51,41 +50,19 @@ $(function () {
     // new image
     $(".imgEditBtn").on("click", function(e){
         $(this).siblings(".fileInput").click();
-        $(this).siblings(".fileInput").on("change", function(e){
-            console.log(this);
-            // console.log(e);
-            console.log(e.target.files[0].name);
-
-        });
+        // $(this).siblings(".fileInput").on("change", function(e){
+        //     console.log(this);
+        //     console.log(e);
+        //     console.log(e.target.files[0].name);
+        // });
+        $(this).siblings(".fileInput").on("change", function(evt){
+            console.log(this.files);
+            let [file] = this.files;
+            if(file) {
+                $(this).next("img").attr('src', URL.createObjectURL(evt.target.files[0]));
+            }
+        })
         
     })
 
-    //  -------------------------------------------------------
-    // $("#submitAll").click(function(){
-    //     console.log("yoyoyo")
-    //     $.ajax({
-    //         url: 'http://localhost:8000/backend/news',
-    //         data : {
-    //             newsTitle: $('.newsTitle').val(),
-    //             newsSubtitle1: $(`.newsSubtitle1 `).val(),
-    //         },
-    //         type : "POST",
-    //         // success: function (data) {
-    //         //     console.log('Submission was successful.');
-    //         //     console.log(data);
-    //         // },
-    //         // error: function (data) {
-    //         //     console.log('An error occurred.');
-    //         //     console.log(data);
-    //         // },
-    //     });
-    //     return false;   //Code to disable the page refresh.
-    
-    // })
-
-    // console.log($("tr:last-child td:last-child .tabContent:nth-last-of-type(2) .imgEditBtn~img").prop("src"));
-    // console.log($("#contentData .tabContent").find(".imgEditBtn~img").prop("src"));
-    // if($("#contentData .tabContent").find(".imgEditBtn~img").prop("src") == "http://localhost:8000/img/newsImg/"){
-    //     $("#contentData .tabContent").find(".imgEditBtn~img").prop("src", "/img/罐頭.jpg");
-    // }
 });
