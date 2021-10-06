@@ -15,10 +15,6 @@ $('.editBtn').click(function () {
     
 });
 
-// 10.5 確認新增按鈕
-$('#newProductBtn').click(function(){
-    
-})
 
 // X － button
 $('.onOff button:last-child').click(function () {
