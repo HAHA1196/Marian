@@ -203,6 +203,19 @@ router.post("/news", function (req, res, next) {
         }
     );    
 });
+// 修改news資料
+router.put("/news", function (req, res, next) {
+    
+    req.mysql.query(
+        "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, ?); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
+        [],
+        function (err, result) {
+            res.send('yo edit dis !');
+            // res.redirect("news");
+            //////////////////////1005///////////////////////////
+        }
+    );    
+});
 
 
 // upload file

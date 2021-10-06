@@ -203,14 +203,15 @@
                                                 <div>段落照片&nbsp;｜</div>
                                                 <div class="uploadImg">
                                                     <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
+                                                    <input type="file" name="uploadImg<%= x %>" class="fileInput">
                                                     <!-- 換圖片路徑 -->
                                                     <img src="<%= path %><%= newsContent[i].newsImg == null ? '罐頭.jpg' : newsContent[i].newsImg %>" alt="">
                                                 </div>
                                             </div>
-                                            <button class="confirmBtn">
+                                            <!-- <button class="confirmBtn">
                                                 <i class="fa fa-check-circle-o" aria-hidden="true"></i>
                                                 確認上傳
-                                            </button>
+                                            </button> -->
                                         </form>
                                     </div>
                                 <% } %>
