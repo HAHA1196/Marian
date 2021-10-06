@@ -23,7 +23,7 @@ router.get("/product", function (req, res, next) {
             }
         );    
     } else {
-        res.send('Please login to view this page!<br /><a href="login">login</a>');
+        res.render('backend/oops.ejs', {p: "you're not loged in!", href: "login", a: 'Please login here!'});
     }
 
 });
@@ -63,7 +63,7 @@ router.get("/member", function (req, res, next) {
             }
         );    
     } else {
-        res.send('Please login to view this page!<br /><a href="login">login</a>');
+        res.render('backend/oops.ejs', {p: "you're not loged in!", href: "login", a: 'Please login here!'});
     }
 
 });
@@ -83,7 +83,7 @@ router.get("/order", function (req, res, next) {
             }
         );    
     } else {
-        res.send('Please login to view this page!<br /><a href="login">login</a>');
+        res.render('backend/oops.ejs', {p: "you're not loged in!", href: "login", a: 'Please login here!'});
 	}
 	// res.end();
 });
@@ -103,7 +103,7 @@ router.get("/news", function (req, res, next) {
             }
         );    
     } else {
-    res.send('Please login to view this page!<br /><a href="login">login</a>');
+    res.render('backend/oops.ejs', {p: "you're not loged in!", href: "login", a: 'Please login here!'});
     }
 
 });
@@ -111,7 +111,7 @@ router.get("/news", function (req, res, next) {
 router.post("/news", function (req, res, next) {
     const myFiles = []; 
     if (!req.files) {
-        return res.status(400).send("No files were uploaded12321.");
+        res.render('backend/oops.ejs', {p: "no files were uploaded!", href: "news", a: 'Please try again!'});
     } 
 
     const desktopDir = `${homedir}/Desktop`;
@@ -203,6 +203,19 @@ router.post("/news", function (req, res, next) {
         }
     );    
 });
+// 修改news資料
+router.put("/news", function (req, res, next) {
+    
+    req.mysql.query(
+        "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, ?); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
+        [],
+        function (err, result) {
+            res.send('yo edit dis !');
+            // res.redirect("news");
+            //////////////////////1005///////////////////////////
+        }
+    );    
+});
 
 
 // upload file
@@ -259,15 +272,12 @@ router.post('/auth', function (req, res) {
                     req.session.username = username;
                     res.redirect('news');
                 } else {
-                    res.send('Incorrect Username or Password!')
+                    res.render('backend/oops.ejs', {p: "you're entering wrong username or password!", href: "login", a: 'Please try again here!'});
                 }
                 res.end();
             }
         );
-    } else {
-        res.send('Please enter Username and Password!');
-        res.end();
-    }
+    } 
 });
 
 router.get('/logout', (req, res) => {
