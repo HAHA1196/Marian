@@ -22,7 +22,7 @@ router.get("/product", function (req, res, next) {
             }
         );    
     } else {
-        res.send('Please login to view this page!<br /><a href="login">login</a>');
+        res.render('backend/oops.ejs', {p: "you're not loged in!", href: "login", a: 'Please login here!'});
     }
 
 });
@@ -62,7 +62,7 @@ router.get("/member", function (req, res, next) {
             }
         );    
     } else {
-        res.send('Please login to view this page!<br /><a href="login">login</a>');
+        res.render('backend/oops.ejs', {p: "you're not loged in!", href: "login", a: 'Please login here!'});
     }
 
 });
@@ -82,7 +82,7 @@ router.get("/order", function (req, res, next) {
             }
         );    
     } else {
-        res.send('Please login to view this page!<br /><a href="login">login</a>');
+        res.render('backend/oops.ejs', {p: "you're not loged in!", href: "login", a: 'Please login here!'});
 	}
 	// res.end();
 });
@@ -102,14 +102,14 @@ router.get("/news", function (req, res, next) {
             }
         );    
     } else {
-    res.send('Please login to view this page!<br /><a href="login">login</a>');
+    res.render('backend/oops.ejs', {p: "you're not loged in!", href: "login", a: 'Please login here!'});
     }
 
 });
 // 新增news資料
 router.post("/news", function (req, res, next) {
     if (!req.files) {
-        return res.status(400).send("No files were uploaded12321.");
+        res.render('backend/oops.ejs', {p: "no files were uploaded!", href: "news", a: 'Please try again!'});
     } 
     // const desktopDir = `${homedir}/Desktop`;
     // console.log(desktopDir);
@@ -271,15 +271,12 @@ router.post('/auth', function (req, res) {
                     req.session.username = username;
                     res.redirect('news');
                 } else {
-                    res.send('Incorrect Username or Password!')
+                    res.render('backend/oops.ejs', {p: "you're entering wrong username or password!", href: "login", a: 'Please try again here!'});
                 }
                 res.end();
             }
         );
-    } else {
-        res.send('Please enter Username and Password!');
-        res.end();
-    }
+    } 
 });
 
 router.get('/logout', (req, res) => {
