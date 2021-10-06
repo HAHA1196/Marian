@@ -22,9 +22,6 @@ $('.onOff button:last-child').click(function () {
     $(this).parents('td').hide();
 }); 
 
-
-
-
 // 10.5 搜尋功能
 
 
