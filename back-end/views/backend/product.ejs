@@ -24,9 +24,9 @@
         <link rel="stylesheet" href="/stylesheets/product.css" />
     </head>
     <body>
+        <span id="product" hidden><%= JSON.stringify(product); %></span>
         <!-- ------------------------- left section ------------------------- -->
         <div><%- include('./main.ejs'); %></div>
-
         <!-- ------------------------- right section ------------------------- -->
         <div id="container">
             <!-- heading section -->
@@ -36,7 +36,7 @@
                     <div class="searchInput">
                         <span>分類&nbsp;|</span>
                         <select name="sortProduct" id="sortProduct">
-                            <option value="">請選擇</option>
+                            <option value="">以品名搜尋</option>
                             <optgroup label="種類">
                                 <option value="sortProductSS">SS</option>
                                 <option value="sortProductD">D</option>
@@ -62,10 +62,10 @@
                         <!--想客製化select display但願望還沒實現： https://www.w3schools.com/howto/howto_custom_select.asp -->
                     </div>
                     <div class="searchInput">
-                        <span>產品型號&nbsp;|</span>
+                        <span>產品名稱&nbsp;|</span>
                         <input id="searchProduct" type="text" />
                     </div>
-                    <button type="submit" id="searchBtn">
+                    <button type="button" id="searchBtn">
                         <i class="fa fa-search" aria-hidden="true"></i>
                         搜尋項目
                     </button>
@@ -82,7 +82,6 @@
             </div>
 
             <!-- content section -->
-            <span id="product" hidden><%= JSON.stringify(product); %></span>
             <div id="contentSec">
                 <!-- create new products -->
                 <form name="productForm" action="product" method="post" >
@@ -96,26 +95,23 @@
                                     <ul>
                                         <li class="productStyleNumber">
                                             <span>產品型號 |</span>
-                                            <input  type="text" name="productStyleNumber" value="Ruby123" >
-                                            
+                                            <input  type="text" name="productStyleNumber" value="Ruby123" >                                            
                                         </li>
                                         <li class="productName">
                                             <span>產品名稱 |</span>
                                             <br>
-                                            <input type="text" name="productName" value="XX牌的OOO">
-                                            
+                                            <input type="text" name="productName" value="XX牌的OOO">                                            
                                         </li>
                                         <li >
-                                                <span>種類 |</span>
-                                                <br>
-                                                    <select class="productClass" name="productClass">
-                                                        <option  value="F">請選擇</option>
-                                                        <option  value="SS">SS</option>
-                                                        <option  value="D">D</option>
-                                                        <option  value="ACC">ACC</option>
-                                                    </select>
-                                                </li>                                    
-                                        </li>
+                                            <span>種類 |</span>
+                                            <br>
+                                            <select class="productClass" name="productClass">
+                                                <option value="F">請選擇</option>
+                                                <option value="SS">SS</option>
+                                                <option value="D">D</option>
+                                                <option value="ACC">ACC</option>
+                                            </select>
+                                        </li>                                    
                                         <li class="productPrice">
                                             <span>價格 |</span>
                                             <input type="text" name="productPrice" value="2000">
