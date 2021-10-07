@@ -65,4 +65,37 @@ $(function () {
         
     })
 
+    $("#searchBtn").on("click", function () {
+        let sortNews = $("#sortNews").val();
+        let inputNews = $("#inputNews").val();
+        $('tr:not(:nth-child(1))').slideUp();
+        switch (sortNews) {
+            case "newsId":
+                for (var i = 0; i < news.length; i++) {
+                    if (inputNews == news[i].newsId) {
+                        // console.log($(`tr:nth-child(${i + 2})`).text());
+                        $(`tr:nth-child(${i + 2})`).slideDown();
+                    }
+                }        
+                break;
+    
+            case "newsTitle":
+                console.log('newsTitle');
+                for (var i = 0; i < news.length; i++) {
+                    if (news[i].newsTitle.indexOf(`${inputNews}`) >= 0) {
+                        $(`tr:nth-child(${i + 2})`).slideDown();
+                    }
+                }
+                break;
+    
+            default:
+                break;
+        }
+    });
+
+    $('#clearBtn').click(function () {
+        $('tr').slideDown();
+        $('#inputNews').val('');
+    })
+    
 });

@@ -17,6 +17,10 @@
     </head>
 
     <body>
+        <span id="news" hidden> <%= JSON.stringify(news); %> </span>
+        <span id="newsContent" hidden>
+            <%= JSON.stringify(newsContent); %>
+        </span>
         <!-- ------------------------- left section ------------------------- -->
         <div><%- include('./main.ejs'); %></div>
 
@@ -39,9 +43,9 @@
                     </div>
                     <div class="searchInput">
                         <span>文章搜尋&nbsp;|</span>
-                        <input type="text" />
+                        <input id="inputNews" type="text" />
                     </div>
-                    <button type="submit" id="searchBtn">
+                    <button type="button" id="searchBtn">
                         <i class="fa fa-search" aria-hidden="true"></i>
                         搜尋文章
                     </button>
@@ -58,10 +62,6 @@
             </div>
 
             <!-- content section -->
-            <span id="news" hidden> <%= JSON.stringify(news); %> </span>
-            <span id="newsContent" hidden>
-                <%= JSON.stringify(newsContent); %>
-            </span>
             <% var path = "/img/newsImg/" %>
             <div id="contentSec">
                 <!-- 開始創作..... 記得調整top-->
