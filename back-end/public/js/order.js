@@ -2,7 +2,7 @@ $(function () {
 
     // !!!!!讓JS可以使用EJS的變數!!!!!
     var orders = JSON.parse($('#orders').text());
-    // console.log(orders);
+    console.log(orders);
     // var orderdetails = JSON.parse($('#orderdetails').text());
     // // console.log(orderdetails);
 
