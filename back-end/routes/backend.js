@@ -30,28 +30,26 @@ router.get("/product", function (req, res, next) {
 
 // 新增product 資料 
 router.post('/product', function (req, res, next) {
-    const productFiles = [];
-    if(!req.file)
-    {
-        res.render('backend/oops.ejs',{p: "no files were uploaded!", href: "news", a: 'Please try again!'});
-    }
+    // const productFiles = [];
+    // if(!req.file)
+    // {
+    //     res.render('backend/oops.ejs',{p: "no files were uploaded!", href: "news", a: 'Please try again!'});
+    // }
 
-    const desktopimg = `${homedir}/Desktop`;
+    // const desktopimg = `${homedir}/Desktop`;
 
-    if(req.res.uploadImg0){
-        var pFile0 =req.files.uploadImg0;
-        var pUploadPath0 = path.join(__dirname,"../public/img/productsImg/")
-        productFiles.push(pUploadPath0,(err) =>{
-            return;
-        });
+    // if(req.res.uploadImg0){
+    //     var pFile0 =req.files.uploadImg0;
+    //     var pUploadPath0 = path.join(__dirname,"../public/img/productsImg/")
+    //     productFiles.push(pUploadPath0,(err) =>{
+    //         return;
+    //     });
     
-    }else{
-        console.log("NOOOOOOOO!!!!");
-    }
+    // }
 
 
     req.mysql.query(
-        'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription,productImg1,productImg2,productImg3,productImg4,productImg5) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription) values (?, ?, ?, ?, ?, ?, ?); UPDATE `products` t1 JOIN (SELECT FLOOR(SUM(productId) / COUNT(productName) * 10) AS a, productName FROM `products` GROUP BY productName) AS t2 USING (productName) SET t1.productStyleNumber = CONCAT(t1.productClass, "_", t2.a)',
         [
             req.body.productStyleNumber,
             req.body.productName,
@@ -230,18 +228,25 @@ router.post("/news", function (req, res, next) {
     );    
 });
 // 修改news資料
-// router.put("/news", function (req, res, next) {
-    
-//     req.mysql.query(
-//         "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, ?); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
-//         [],
-//         function (err, result) {
-//             res.send('yo edit dis !');
-//             // res.redirect("news");
-//             //////////////////////1005///////////////////////////
-//         }
-//     );    
-// });
+router.put("/news", function (req, res, next) {
+    req.mysql.query(
+        "INSERT INTO newsContent (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ('7', '牛肉咖哩', ?, ?, ?), ('7', '嫩雞咖哩', ?, ?, ?), ('7', '辣咖哩', ?, ?, ?), ('7', '蔬菜咖哩', ?, ?, ?), ('7', '滑蛋咖哩', ?, ?, ?) ON DUPLICATE KEY UPDATE newsArticle = VALUES(newsArticle), newsImg = VALUES(newsImg), newsImg = VALUES(newsImg)",
+        [
+            [
+                [req.body.newsArticle1, myFiles[1], req.body.newsFigcaption1],
+                [req.body.newsArticle2, myFiles[2], req.body.newsFigcaption2],
+                [req.body.newsArticle3, myFiles[3], req.body.newsFigcaption3],
+                [req.body.newsArticle4, myFiles[4], req.body.newsFigcaption4],
+                [req.body.newsArticle5, myFiles[5], req.body.newsFigcaption5]
+            ],
+        ],
+        function (err, result) {
+            res.send('yo edit dis !');
+            // res.redirect("news");
+            //////////////////////1005///////////////////////////
+        }
+    );    
+});
 
 
 // upload file

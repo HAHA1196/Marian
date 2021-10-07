@@ -7,10 +7,9 @@ $(function(){
 
     // 展開上傳新品欄位按鈕
 
-        $("#uploadBtn").click(function(){
-            $("#newProducts").slideToggle();
-        })
-
+    $("#uploadBtn").click(function(){
+        $("#newProducts").slideToggle();
+    })
 
     $('.editBtn').click(function () {
         $(this).parents('tr').children('.showContent').show();
@@ -19,18 +18,18 @@ $(function(){
 
 
     // 新增 product image
-    $(".imgEditBtn").on("click",function(e){
-        $(this).siblings(".fileInput").click();
+    // $(".imgEditBtn").on("click",function(e){
+    //     $(this).siblings(".fileInput").click();
 
-        $(this).siblings(".fileInput").on("change",function(evt){
-            console.log(this.files);
-            let [file] = this.files;
-            if(file){
-                $(this).next("img").attr('src',URL.createObjectURL(evt.target.files[0]));
-            }
-        })
+    //     $(this).siblings(".fileInput").on("change",function(evt){
+    //         console.log(this.files);
+    //         let [file] = this.files;
+    //         if(file){
+    //             $(this).next("img").attr('src',URL.createObjectURL(evt.target.files[0]));
+    //         }
+    //     })
 
-    })
+    // });
 
     // X － button
     $('.onOff button:last-child').click(function () {
