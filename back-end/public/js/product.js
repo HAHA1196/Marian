@@ -7,18 +7,16 @@ $(function(){
 
     // 展開上傳新品欄位按鈕
 
-        $("#uploadBtn").click(function(){
-            $("#newProducts").slideToggle();
-        })
-
+    $("#uploadBtn").click(function(){
+        $("#newProducts").slideToggle();
+    })
 
     $('.editBtn').click(function () {
         $(this).parents('tr').children('.showContent').show();
         
     });
 
-
-    // X － button
+    // － button
     $('.onOff button:last-child').click(function () {
         // console.log($(this).parent().parent());
         $(this).parents('td').hide();

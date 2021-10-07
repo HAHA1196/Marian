@@ -36,7 +36,7 @@ router.post('/product', function (req, res, next) {
         res.render('backend/oops.ejs',{p: "no files were uploaded!", href: "news", a: 'Please try again!'});
     }
     req.mysql.query(
-        'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription) values (?, ?, ?, ?, ?, ?, ?)',
+        'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription) values (?, ?, ?, ?, ?, ?, ?); UPDATE `products` t1 JOIN (SELECT FLOOR(SUM(productId) / COUNT(productName) * 10) AS a, productName FROM `products` GROUP BY productName) AS t2 USING (productName) SET t1.productStyleNumber = CONCAT(t1.productClass, "_", t2.a)',
         [
             req.body.productStyleNumber,
             req.body.productName,
