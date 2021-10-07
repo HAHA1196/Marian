@@ -204,18 +204,25 @@ router.post("/news", function (req, res, next) {
     );    
 });
 // 修改news資料
-// router.put("/news", function (req, res, next) {
-    
-//     req.mysql.query(
-//         "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, ?); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
-//         [],
-//         function (err, result) {
-//             res.send('yo edit dis !');
-//             // res.redirect("news");
-//             //////////////////////1005///////////////////////////
-//         }
-//     );    
-// });
+router.put("/news", function (req, res, next) {
+    req.mysql.query(
+        "INSERT INTO newsContent (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ('7', '牛肉咖哩', ?, ?, ?), ('7', '嫩雞咖哩', ?, ?, ?), ('7', '辣咖哩', ?, ?, ?), ('7', '蔬菜咖哩', ?, ?, ?), ('7', '滑蛋咖哩', ?, ?, ?) ON DUPLICATE KEY UPDATE newsArticle = VALUES(newsArticle), newsImg = VALUES(newsImg), newsImg = VALUES(newsImg)",
+        [
+            [
+                [req.body.newsArticle1, myFiles[1], req.body.newsFigcaption1],
+                [req.body.newsArticle2, myFiles[2], req.body.newsFigcaption2],
+                [req.body.newsArticle3, myFiles[3], req.body.newsFigcaption3],
+                [req.body.newsArticle4, myFiles[4], req.body.newsFigcaption4],
+                [req.body.newsArticle5, myFiles[5], req.body.newsFigcaption5]
+            ],
+        ],
+        function (err, result) {
+            res.send('yo edit dis !');
+            // res.redirect("news");
+            //////////////////////1005///////////////////////////
+        }
+    );    
+});
 
 
 // upload file
