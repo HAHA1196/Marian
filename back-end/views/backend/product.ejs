@@ -91,24 +91,15 @@
                                     <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
                                     <input type="file" name="uploadImg0" class="fileInput" multiple>
                                     <!-- 換圖片路徑-->
-                                    <img src="<%= path %>罐頭.jpg" alt="">
+                                    
                                 </div>
-                                <div class="infoTxt">
+                                <div class="addInfoTxt">
                                     <ul>
-                                        <li class="productStyleNumber">
-                                            <span>產品型號 |</span>
-                                            <input  type="text" name="productStyleNumber" value="" >                                            
-                                        </li>
                                         <li class="productName">
                                             <span>產品名稱 |</span>
-                                            <br>
-<<<<<<< HEAD
-                                            <input type="text" name="productName" value="">
-                                            
-=======
-                                            <input type="text" name="productName" value="XX牌的OOO">                                            
->>>>>>> 0e188ee027f9d89cf43dd2fcf505665fec82488c
+                                            <input type="text" name="productName" value="">   
                                         </li>
+                                        <br>
                                         <li >
                                             <span>種類 |</span>
                                             <br>
@@ -141,6 +132,7 @@
                                             <input type="text" name="productInStock" value="2">
                                                 
                                         </li>
+                                        <br>
                                         <li class="productDescription">
                                             <span>產品描述 |</span>
                                             <br>
@@ -505,11 +497,11 @@
                         <td class="showContent hideRow">
                             <div class="dividingLine"></div>
                             <div class="onOff">
+                                <!-- <button>
+                                    <img src="/img/close2.svg" alt="" />
+                                </button> -->
                                 <button>
                                     <img src="/img/close2.svg" alt="" />
-                                </button>
-                                <button>
-                                    <img src="/img/zoom2.svg" alt="" />
                                 </button>
                             </div>
                             <div class="info">
@@ -519,6 +511,7 @@
                                     <ul>
                                         <li class="productStyleNumber">
                                             <span>產品型號 |</span>
+                                            <br>
                                             <%= product[i].productStyleNumber %>
                                         </li>
                                         <li class="productName">
@@ -550,7 +543,7 @@
                                 </div>
                                 
                                 <button class="confirmBtn" ><i class="fa fa-check-circle-o" aria-hidden="true"></i>確認修改</button> 
-                                <div class="dividingLine"></div>
+                                
                             </td>
                         </tr>
                     <% } %>

@@ -137,7 +137,7 @@ tr:not(:first-child):hover {
 }
 .onOff img {
     /* pointer-events: none; */
-    background-color: red;
+    background-color: transparent;
 }
 .info {
     position: relative;
@@ -219,6 +219,34 @@ tr:not(:first-child):hover {
 .infoTxt .productInStock {
 } */
 .infoTxt .productDescription {
+    width: 80%;
+}
+/* 上傳新品欄位*/
+.addInfoTxt{
+    position: relative;
+    width: 70%;
+}
+.addInfoTxt ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.addInfoTxt li {
+    width: 30%;
+    list-style-type: none;
+    border:none;
+    /* border-left: 2px solid var(--lightYellow); */
+    /* border-bottom: 2px solid var(--lightYellow); */
+    /* border-radius: 0 0 0 15px; */
+    color: var(--fontBlue);
+    margin: 0 5% 30px 0;
+    padding: 0 10px 5px;
+}
+.addInfoTxt span {
+    color: var(--white);
+}
+
+.addInfoTxt .productDescription {
     width: 80%;
 }
 

@@ -35,8 +35,23 @@ router.post('/product', function (req, res, next) {
     {
         res.render('backend/oops.ejs',{p: "no files were uploaded!", href: "news", a: 'Please try again!'});
     }
+
+    const desktopimg = `${homedir}/Desktop`;
+
+    if(req.res.uploadImg0){
+        var pFile0 =req.files.uploadImg0;
+        var pUploadPath0 = path.join(__dirname,"../public/img/productsImg/")
+        productFiles.push(pUploadPath0,(err) =>{
+            return;
+        });
+    
+    }else{
+        console.log("NOOOOOOOO!!!!");
+    }
+
+
     req.mysql.query(
-        'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription) values (?, ?, ?, ?, ?, ?, ?)',
+        'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription,productImg1,productImg2,productImg3,productImg4,productImg5) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
         [
             req.body.productStyleNumber,
             req.body.productName,
@@ -44,7 +59,13 @@ router.post('/product', function (req, res, next) {
             req.body.productPrice,
             req.body.productSize,
             req.body.productInStock,
-            req.body.productDescription
+            req.body.productDescription,
+            req.res.productImg1,
+            req.res.productImg2,
+            req.res.productImg3,
+            req.res.productImg4,
+            req.res.productImg5,
+
         ],
         function (err, result) {
             res.redirect('product');
