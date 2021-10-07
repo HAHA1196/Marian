@@ -29,7 +29,16 @@
                     開始創作..... -->
                 <form action="">
                     <div class="searchInput">
-                        <span>文章編號&nbsp;|</span>
+                        <span>分類&nbsp;|</span>
+                        <select name="sortNews" id="sortNews">
+                            <option value="">請選擇</option>
+                            <option value="newsId">編號</option>
+                            <option value="newsTitle">標題</option>
+                        </select>
+                        <!--想客製化select display但願望還沒實現： https://www.w3schools.com/howto/howto_custom_select.asp -->
+                    </div>
+                    <div class="searchInput">
+                        <span>文章搜尋&nbsp;|</span>
                         <input type="text" />
                     </div>
                     <button type="submit" id="searchBtn">
@@ -157,6 +166,7 @@
                                     <button class="tab6">段落 5</button>
                                 </div>
                                 <!-- ------------------內容顯示-------------------- -->
+                                <% var x = 0; %>
                                 <!-- 標題 -->
                                 <div class="tabContent">
                                     <form action="">
@@ -167,6 +177,7 @@
                                             <div>封面照片&nbsp;｜</div>
                                             <div class="uploadImg">
                                                 <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
+                                                <input type="file" name="uploadImg<%= x %>" class="fileInput">
                                                 <!-- 換圖片路徑 -->
                                                 <img src="<%= path %><%= news[k].newsCoverImg %>" alt="">
                                             </div>
@@ -179,7 +190,6 @@
                                     </form>
                                 </div>
 
-                                <% var x = 0; %>
                                 <% for (var i = 0; i < newsContent.length; i++) { %>
                                     <% if (newsContent[i].newsId != news[k].newsId) {continue;} %>
                                     <% x++ %>
