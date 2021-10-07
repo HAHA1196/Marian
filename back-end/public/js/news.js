@@ -73,14 +73,12 @@ $(function () {
             case "newsId":
                 for (var i = 0; i < news.length; i++) {
                     if (inputNews == news[i].newsId) {
-                        // console.log($(`tr:nth-child(${i + 2})`).text());
                         $(`tr:nth-child(${i + 2})`).slideDown();
                     }
                 }        
                 break;
     
             case "newsTitle":
-                console.log('newsTitle');
                 for (var i = 0; i < news.length; i++) {
                     if (news[i].newsTitle.indexOf(`${inputNews}`) >= 0) {
                         $(`tr:nth-child(${i + 2})`).slideDown();

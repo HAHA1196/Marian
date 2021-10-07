@@ -154,17 +154,24 @@ tr:not(:first-child):hover {
     margin: auto 0;
     padding-right: 5%;
 }
-/*1001 上傳圖片  */
+/* 上傳圖片  */
 .uploadImg {
     position: relative;
     background-color:var(--darkBlue);
-    opacity: 0.45;
     width: 350px;
     height: 400px;
     margin: 0 100px;
 }
+.uploadImg img:last-child {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.fileInput {
+    display: none;
+}
 /* 上傳圖片的圓形加號 */
-.upImgEditBtn {
+.imgEditBtn {
     width: 60px;
     position: absolute;
     top: 50%;
@@ -172,18 +179,7 @@ tr:not(:first-child):hover {
     transform: translate(-50%, -50%);
     cursor: pointer;
 }
-.upImgEditBtn:hover {
-    filter: drop-shadow(3px 3px 2px var(--fontBlue));
-}
-.imgEditBtn {
-    width: 30%;
-    position: absolute;
-    top: 25%;
-    left: 26%;
-    cursor: pointer;
-    z-index: 1;
-}
-#imgEditBtn:hover {
+.imgEditBtn:hover {
     filter: drop-shadow(3px 3px 2px var(--fontBlue));
 }
 
