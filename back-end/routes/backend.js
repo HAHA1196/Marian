@@ -30,6 +30,11 @@ router.get("/product", function (req, res, next) {
 
 // 新增product 資料 
 router.post('/product', function (req, res, next) {
+    const productFiles = [];
+    if(!req.file)
+    {
+        res.render('backend/oops.ejs',{p: "no files were uploaded!", href: "news", a: 'Please try again!'});
+    }
     req.mysql.query(
         'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription) values (?, ?, ?, ?, ?, ?, ?)',
         [
