@@ -87,7 +87,7 @@
                 <form name="productForm" action="product" method="post" >
                         <div id="newProducts" hidden>
                             <div class="info">
-                                <form action="productsImg" method="post" enctype="multipart/form-data"></form>>
+                                <form action="productsImg" method="post" enctype="multipart/form-data">
                                     <div class="uploadImg">
                                         <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
                                         <input type="file" name="productsUploadImg" class="fileInput" multiple>
@@ -100,8 +100,7 @@
                                         <li class="productName">
                                             <span>產品名稱 |</span>
                                             <br>
-                                            <input type="text" name="productName" value="">
-                                            
+                                            <input type="text" name="productName" value="">   
                                         </li>
                                         <br>
                                         <li >
@@ -234,7 +233,7 @@
                                     </ul>
                                 </div>
                                 
-                                <button class="confirmBtn" ><i class="fa fa-check-circle-o" aria-hidden="true"></i>確認修改</button> 
+                                <button class="confirmBtn" id="productListChange" type="submit"><i class="fa fa-check-circle-o" aria-hidden="true"></i>確認修改</button> 
                                 
                             </td>
                         </tr>

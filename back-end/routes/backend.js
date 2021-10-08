@@ -5,6 +5,7 @@ var path = require("path");
 const { resourceLimits } = require("worker_threads");
 const os = require('os');
 const homedir = os.homedir();
+const multer = require('multer');
 
 /* GET 測試用 page. */
 router.get("/", function (req, res, next) {
@@ -33,7 +34,7 @@ router.post('/product', function (req, res, next) {
 
 
     req.mysql.query(
-        'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription) values (?, ?, ?, ?, ?, ?, ?); UPDATE `products` t1 JOIN (SELECT FLOOR(SUM(productId) / COUNT(productName) * 10) AS a, productName FROM `products` GROUP BY productName) AS t2 USING (productName) SET t1.productStyleNumber = CONCAT(t1.productClass, "_", t2.a)',
+        'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription,productImg1) values (?, ?, ?, ?, ?, ?, ?); UPDATE `products` t1 JOIN (SELECT FLOOR(SUM(productId) / COUNT(productName) * 10) AS a, productName FROM `products` GROUP BY productName) AS t2 USING (productName) SET t1.productStyleNumber = CONCAT(t1.productClass, "_", t2.a)',
         [
             req.body.productStyleNumber,
             req.body.productName,
@@ -42,11 +43,7 @@ router.post('/product', function (req, res, next) {
             req.body.productSize,
             req.body.productInStock,
             req.body.productDescription,
-            req.res.productImg1,
-            req.res.productImg2,
-            req.res.productImg3,
-            req.res.productImg4,
-            req.res.productImg5,
+            req.files.productsUploadImg
 
         ],
         function (err, result) {
