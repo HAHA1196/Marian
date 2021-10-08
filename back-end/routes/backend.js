@@ -229,6 +229,22 @@ router.put("/news", function (req, res, next) {
     );    
 });
 
+// upload file
+router.post("/upload", function (req, res, next) {
+    if (!req.files) {
+        return res.status(400).send("No files were uploaded.");
+    }
+
+    const file = req.files.fileUploaded;
+    var uploadPath = path.join(__dirname, "../public/img/upload/" + file.name);
+
+    file.mv(uploadPath, (err) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.send({ status: "success", path: uploadPath });
+    });
+});
 
 // productsImg file
 router.post("/productsImg", function (req, res, next) {
@@ -236,14 +252,14 @@ router.post("/productsImg", function (req, res, next) {
         return res.status(400).send("No files were uploaded.");
     }
 
-    const file = req.files.productsUploadImg;
-    var uploadPath = path.join(__dirname, "../public/img/productsImg/" + file.name);
+    const pfile = req.files.productsUploadImg;
+    var PuploadPath = path.join(__dirname, "../public/img/productsImg/" + pfile.name);
 
-    file.mv(uploadPath, (err) => {
+    file.mv(PuploadPath, (err) => {
         if (err) {
             return res.status(500).send(err);
         }
-        return res.send({ status: "success", path: uploadPath });
+        return res.send({ status: "success", path: PuploadPath });
     });
 });
 
