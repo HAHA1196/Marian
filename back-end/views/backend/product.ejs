@@ -87,11 +87,14 @@
                 <form name="productForm" action="product" method="post" >
                         <div id="newProducts" hidden>
                             <div class="info">
-                                <div class="uploadImg">
-                                    <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
-                                    <input type="file" name="uploadImg0" class="fileInput" multiple>
-                                    <!-- 換圖片路徑-->
-                                </div>
+                                <form action="productsImg" method="post" enctype="multipart/form-data"></form>>
+                                    <div class="uploadImg">
+                                        <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
+                                        <input type="file" name="productsUploadImg" class="fileInput" multiple>
+                                        <!-- 換圖片路徑-->
+                                    </div>
+                                </form>
+                                
                                 <div class="addInfoTxt">
                                     <ul>
                                         <li class="productName">

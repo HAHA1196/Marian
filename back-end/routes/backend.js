@@ -30,22 +30,6 @@ router.get("/product", function (req, res, next) {
 
 // 新增product 資料 
 router.post('/product', function (req, res, next) {
-    // const productFiles = [];
-    // if(!req.file)
-    // {
-    //     res.render('backend/oops.ejs',{p: "no files were uploaded!", href: "news", a: 'Please try again!'});
-    // }
-
-    // const desktopimg = `${homedir}/Desktop`;
-
-    // if(req.res.uploadImg0){
-    //     var pFile0 =req.files.uploadImg0;
-    //     var pUploadPath0 = path.join(__dirname,"../public/img/productsImg/")
-    //     productFiles.push(pUploadPath0,(err) =>{
-    //         return;
-    //     });
-    
-    // }
 
 
     req.mysql.query(
@@ -249,14 +233,14 @@ router.put("/news", function (req, res, next) {
 });
 
 
-// upload file
-router.post("/upload", function (req, res, next) {
+// productsImg file
+router.post("/productsImg", function (req, res, next) {
     if (!req.files) {
         return res.status(400).send("No files were uploaded.");
     }
 
-    const file = req.files.fileUploaded;
-    var uploadPath = path.join(__dirname, "../public/img/upload/" + file.name);
+    const file = req.files.productsUploadImg;
+    var uploadPath = path.join(__dirname, "../public/img/productsImg/" + file.name);
 
     file.mv(uploadPath, (err) => {
         if (err) {
@@ -265,6 +249,8 @@ router.post("/upload", function (req, res, next) {
         return res.send({ status: "success", path: uploadPath });
     });
 });
+
+// p
 
 // http://localhost:8000/backend/login
 router.get('/login', (req, res) => {
