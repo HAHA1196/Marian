@@ -344,7 +344,7 @@ router.post('/auth', function (req, res) {
                 if (result.length > 0) {
                     req.session.loggedin = true;
                     req.session.username = username;
-                    res.redirect('news');
+                    res.redirect('product');
                 } else {
                     res.render('backend/oops.ejs', {p: "you're entering wrong username or password!", href: "login", a: 'Please try again here!'});
                 }
