@@ -300,7 +300,7 @@ router.post("/news/edit/:newsId", function (req, res, next) {
             req.params.newsId, req.body.newsSubtitle5, req.body.newsArticle5, req.body.newsFigcaption5,
         ],
         function (err, result) {
-            res.send(JSON.stringify(result));
+            res.redirect("news");
         }
     );  
    
