@@ -33,7 +33,7 @@ router.post('/product', function (req, res, next) {
     const productFiles = []; 
 
     if(!req.files) {
-        res.render('backend/oops.ejs',{p: "no files were uploaded!", href: "news", a: 'Please try again!'});
+        res.render('backend/oops.ejs',{p: "no files were uploaded!", href: "product", a: 'Please try again!'});
     }
 
     if (req.files.productImg[0]){
