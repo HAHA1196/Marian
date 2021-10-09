@@ -31,10 +31,10 @@ router.get("/product", function (req, res, next) {
 // 新增product 資料 
 router.post('/product', function (req, res, next) {
     const productFiles = [];
-    if(!req.file)
-    {
-        res.render('backend/oops.ejs',{p: "no files were uploaded!", href: "news", a: 'Please try again!'});
-    }
+    // if(!req.file)
+    // {
+    //     res.render('backend/oops.ejs',{p: "no files were uploaded!", href: "news", a: 'Please try again!'});
+    // }
     req.mysql.query(
         'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription) values (?, ?, ?, ?, ?, ?, ?); UPDATE `products` t1 JOIN (SELECT FLOOR(SUM(productId) / COUNT(productName) * 10) AS a, productName FROM `products` GROUP BY productName) AS t2 USING (productName) SET t1.productStyleNumber = CONCAT(t1.productClass, "_", t2.a)',
         [
@@ -190,7 +190,9 @@ router.post("/news", function (req, res, next) {
     }
    
     req.mysql.query(
-        "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, ?); INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?; UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
+        "INSERT INTO news (newsTitle, newsDate, newsCoverImg) VALUES ( ?, CURRENT_TIMESTAMP, ?);"+
+        "INSERT INTO `newsContent` (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ?;"+
+        "UPDATE newsContent SET newsId = (SELECT MAX(newsId) FROM news) WHERE newsId IS null",
         [
             req.body.newsTitle,
             myFiles[0],
@@ -209,25 +211,23 @@ router.post("/news", function (req, res, next) {
     );    
 });
 // 修改news資料
-router.put("/news", function (req, res, next) {
-    req.mysql.query(
-        "INSERT INTO newsContent (`newsId`, `newsSubtitle`, `newsArticle`, `newsImg`, `newsFigcaption`) VALUES ('7', '牛肉咖哩', ?, ?, ?), ('7', '嫩雞咖哩', ?, ?, ?), ('7', '辣咖哩', ?, ?, ?), ('7', '蔬菜咖哩', ?, ?, ?), ('7', '滑蛋咖哩', ?, ?, ?) ON DUPLICATE KEY UPDATE newsArticle = VALUES(newsArticle), newsImg = VALUES(newsImg), newsImg = VALUES(newsImg)",
-        [
-            [
-                [req.body.newsArticle1, myFiles[1], req.body.newsFigcaption1],
-                [req.body.newsArticle2, myFiles[2], req.body.newsFigcaption2],
-                [req.body.newsArticle3, myFiles[3], req.body.newsFigcaption3],
-                [req.body.newsArticle4, myFiles[4], req.body.newsFigcaption4],
-                [req.body.newsArticle5, myFiles[5], req.body.newsFigcaption5]
-            ],
-        ],
-        function (err, result) {
-            res.send('yo edit dis !');
-            // res.redirect("news");
-            //////////////////////1005///////////////////////////
-        }
-    );    
-});
+// router.post("/news/edit/:newsId", function (req, res, next) {
+//     // res.send(req.params.newsId);
+
+//     req.mysql.query(
+//         "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 0,1) t2 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsImg = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t2.newsContentId;"+
+//         "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 1,1) t2 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsImg = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t2.newsContentId;"+
+//         "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 2,1) t2 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsImg = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t2.newsContentId;"+
+//         "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 3,1) t2 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsImg = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t2.newsContentId;"+
+//         "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 4,1) t2 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsImg = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t2.newsContentId;",
+//         [ 
+//         ],
+//         function (err, result) {
+//             res.send(JSON.stringify(result));
+//         }
+//     );  
+   
+// });
 
 
 // upload file
