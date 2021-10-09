@@ -284,23 +284,27 @@ router.post("/news", function (req, res, next) {
     );    
 });
 // 修改news資料
-// router.post("/news/edit/:newsId", function (req, res, next) {
-//     // res.send(req.params.newsId);
-
-//     req.mysql.query(
-//         "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 0,1) t2 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsImg = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t2.newsContentId;"+
-//         "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 1,1) t2 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsImg = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t2.newsContentId;"+
-//         "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 2,1) t2 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsImg = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t2.newsContentId;"+
-//         "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 3,1) t2 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsImg = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t2.newsContentId;"+
-//         "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 4,1) t2 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsImg = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t2.newsContentId;",
-//         [ 
-//         ],
-//         function (err, result) {
-//             res.send(JSON.stringify(result));
-//         }
-//     );  
+router.post("/news/edit/:newsId", function (req, res, next) {
+    // res.send([req.body.newsArticle1,req.body.newsArticle2,req.body.newsArticle3,req.body.newsArticle4,req.body.newsArticle5]);
+    req.mysql.query(
+        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 0,1) t2 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t2.newsContentId;"+
+        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 1,1) t3 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t3.newsContentId;"+
+        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 2,1) t4 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t4.newsContentId;"+
+        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 3,1) t5 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t5.newsContentId;"+
+        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 4,1) t6 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t6.newsContentId;",
+        [
+            req.params.newsId, req.body.newsSubtitle1, req.body.newsArticle1, req.body.newsFigcaption1,
+            req.params.newsId, req.body.newsSubtitle2, req.body.newsArticle2, req.body.newsFigcaption2,
+            req.params.newsId, req.body.newsSubtitle3, req.body.newsArticle3, req.body.newsFigcaption3,
+            req.params.newsId, req.body.newsSubtitle4, req.body.newsArticle4, req.body.newsFigcaption4,
+            req.params.newsId, req.body.newsSubtitle5, req.body.newsArticle5, req.body.newsFigcaption5,
+        ],
+        function (err, result) {
+            res.send(JSON.stringify(result));
+        }
+    );  
    
-// });
+});
 
 // upload file
 router.post("/upload", function (req, res, next) {
