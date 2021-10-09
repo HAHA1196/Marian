@@ -31,7 +31,7 @@ form input[type="submit"] {
 
 .login-form {
     width: 300px;
-    margin: 0 auto;
+    margin: 50px auto;
     font-family: Tahoma, Geneva, sans-serif;
 }
 .login-form h1 {

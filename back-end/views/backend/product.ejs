@@ -25,6 +25,7 @@
     </head>
     <body>
         <span id="product" hidden><%= JSON.stringify(product); %></span>
+        <% var path = "/img/productsImg/" %>
         <!-- ------------------------- left section ------------------------- -->
         <div><%- include('./main.ejs'); %></div>
         <!-- ------------------------- right section ------------------------- -->
@@ -80,85 +81,92 @@
                 </form>
                 <div class="dividingLine"></div>
             </div>
-
             <!-- content section -->
             <div id="contentSec">
                 <!-- create new products -->
-                <form name="productForm" action="product" method="post" >
-                        <div id="newProducts" hidden>
-                            <div class="info">
-                                <form action="productsImg" method="post" enctype="multipart/form-data">
-                                    <div class="uploadImg">
-                                        <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
-                                        <input type="file" name="productsUploadImg" class="fileInput" multiple>
-                                        <!-- 換圖片路徑-->
-                                    </div>
-                                </form>
-                                
-                                <div class="addInfoTxt">
-                                    <ul>
-                                        <li class="productName">
-                                            <span>產品名稱 |</span>
-                                            <br>
-                                            <input type="text" name="productName" value="">   
-                                        </li>
-                                        <br>
-                                        <li >
-                                            <span>種類 |</span>
-                                            <br>
-                                            <select class="productClass" name="productClass">
-                                                <option value="F">請選擇</option>
-                                                <option value="SS">SS</option>
-                                                <option value="D">D</option>
-                                                <option value="ACC">ACC</option>
-                                            </select>
-                                        </li>                                    
-                                        <li class="productPrice">
-                                            <span>價格 |</span>
-                                            <input type="text" name="productPrice" value="2000">
-                                                  
-                                        </li>
-                                        <li>
-                                            <span>尺寸 |</span>
-                                            <br>
-                                            <select class="productSize" name="productSize">
-                                                <option value="">請選擇</option>
-                                                <option value="S">S</option>
-                                                <option value="M">M</option>
-                                                <option value="L">L</option>
-                                                <option value="XL">XL</option>
-                                                <option value="F">F</option>
-                                            </select>
-                                        </li>
-                                        <li class="productInStock">
-                                            <span>進貨 |</span>
-                                            <input type="text" name="productInStock" value="2">
-                                                
-                                        </li>
-                                        <br>
-                                        <li class="productDescription">
-                                            <span>產品描述 |</span>
-                                            <br>
-                                            <textarea name="productDescription" >很多很多產品描述</textarea>
-                            
-                                        </li>
-                                    </ul>
-                                    <br>
-                                    <button id="newProductBtn" type="submit" >
-                                        <i
-                                            class="fa fa-check-circle-o"
-                                            aria-hidden="true"
-                                        ></i>
-                                        確認新增
-                                    </button>
+                <div id="newProducts">
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="info">
+                            <div class="uploadImg">
+                                <input type="file" name="productImg" class="fileInput" multiple>
+                                <img id="imgUploadBtn" class="imgEditBtn" src="/img/add.svg" alt="">
+                                <div
+                                    id="fotorama"
+                                    class="fotorama"
+                                    data-nav="thumbs"
+                                    data-loop="true"
+                                    data-ratio="1/1"
+                                    data-maxwidth="100%"
+                                    data-thumbwidth="70"
+                                    data-thumbheight="70"
+                                    data-allowfullscreen="true"
+                                    data-fit="cover"
+                                    data-click="false"
+                                    data-auto="false"
+                                >
+                                    <img src="<%= path %>罐頭.jpg" />
+                                    <img src="<%= path %>罐頭.jpg" />
+                                    <img src="<%= path %>罐頭.jpg" />
+                                    <img src="<%= path %>罐頭.jpg" />
+                                    <img src="<%= path %>罐頭.jpg" />
                                 </div>
+                            </div> 
+                            <div class="infoTxt">
+                                <ul>
+                                    <li class="productName">
+                                        <span>產品名稱 |</span>
+                                        <!-- <br> -->
+                                        <input type="text" name="productName" value="">
+                                    </li>
+                                    <li >
+                                        <span>種類 |</span>
+                                        <!-- <br> -->
+                                        <select class="productClass" name="productClass">
+                                            <option value="F">請選擇</option>
+                                            <option value="SS">SS</option>
+                                            <option value="D">D</option>
+                                            <option value="ACC">ACC</option>
+                                        </select>
+                                    </li>                                    
+                                    <li class="productPrice">
+                                        <span>價格 |</span>
+                                        <input type="text" name="productPrice" value="">           
+                                    </li>
+                                    <li>
+                                        <span>尺寸 |</span>
+                                        <!-- <br> -->
+                                        <select class="productSize" name="productSize">
+                                            <option value="">請選擇</option>
+                                            <option value="S">S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </li>
+                                    <li class="productInStock">
+                                        <span>進貨 |</span>
+                                        <input type="text" name="productInStock" value="">  
+                                    </li>
+                                    <li class="productDescription">
+                                        <span>產品描述 |</span>
+                                        <br>
+                                        <textarea name="productDescription" wrap="soft"></textarea>
+                                    </li>
+                                </ul>
+                                <br>
+                                <button id="newProductBtn" type="submit" >
+                                    <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                    確認新增
+                                </button>
                             </div>
                         </div>
-                </form>      
+                    </form>      
+                </div>
                 <table id="contentData">
                     <tr>
                         <th>編輯</th>
-                        <th>＃Id</th>
+                        <th>Id</th>
                         <th>產品照</th>
                         <th>種類</th>
                         <th>產品型號</th>
@@ -167,74 +175,97 @@
                         <th>尺寸</th>
                         <th>庫存</th>
                         <th>產品描述</th>
-                    </tr>
-                    </tr> 
+                    </tr>                    
                     <% for (var i = 0; i < product.length; i++) { %>    
                         <tr>
-                        <td onClick="toggleRow(this.parentNode)">
-                            <button type="button" class="editBtn">
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </button>
-                        </td>
-                        <td><%= product[i].productId %></td>
-                        <td><%= product[i].productImg1 %></td>
-                        <td><%= product[i].productClass %></td>
-                        <td><%= product[i].productStyleNumber %></td>
-                        <td><%= product[i].productName %></td>
-                        <td><%= product[i].productPrice %></td>
-                        <td><%= product[i].productSize %></td>
-                        <td><%= product[i].productInStock %></td>
-                        <td><%= product[i].productDescription %></td>
-                        <td class="showContent hideRow">
-                            <div class="dividingLine"></div>
-                            <div class="onOff">
-                                <!-- <button>
-                                    <img src="/img/close2.svg" alt="" />
-                                </button> -->
-                                <button>
-                                    <img src="/img/close2.svg" alt="" />
+                            <td onClick="toggleRow(this.parentNode)">
+                                <button type="button" class="editBtn">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </button>
-                            </div>
-                            <div class="info">
-                                <div class="infoImg">
-                                </div> 
-                                <div class="infoTxt">
-                                    <ul>
-                                        <li class="productStyleNumber">
-                                            <span>產品型號 |</span>
-                                            <br>
-                                            <%= product[i].productStyleNumber %>
-                                        </li>
-                                        <li class="productName">
-                                            <span>產品名稱 |</span>
-                                            <br>
-                                            <%= product[i].productName %>
-                                        </li>
-                                        <li class="productClass">
-                                            <span>種類 |</span>
-                                            <%= product[i].productClass %>
-                                        </li>
-                                        <li class="productPrice">
-                                            <span>價格 |</span>
-                                            <%= product[i].productPrice %>
-                                        </li>
-                                        <li class="productSize">
-                                            <span>尺寸 |</span>
-                                            <%= product[i].productSize %>
-                                        </li>
-                                        <li class="productInStock">
-                                            <span>進貨 |</span>
-                                            <%= product[i].productInStock %>
-                                        </li>
-                                        <li class="productDescription">
-                                            <span>產品描述 |</span>
-                                            <%= product[i].productDescription %>
-                                        </li>
-                                    </ul>
+                            </td>
+                            <td><%= product[i].productId %></td>
+                            <td>
+                                <div class="productImg">
+                                    <img src="<%= path %><%= product[i].productImg1 %>" alt="">
                                 </div>
-                                
-                                <button class="confirmBtn" id="productListChange" type="submit"><i class="fa fa-check-circle-o" aria-hidden="true"></i>確認修改</button> 
-                                
+                            </td>
+                            <td><%= product[i].productClass %></td>
+                            <td><%= product[i].productStyleNumber %></td>
+                            <td><%= product[i].productName %></td>
+                            <td><%= product[i].productPrice %></td>
+                            <td><%= product[i].productSize %></td>
+                            <td><%= product[i].productInStock %></td>
+                            <td><%= product[i].productDescription %></td>
+                            <td class="showContent hideRow">
+                                <div class="dividingLine"></div>
+                                <div class="onOff">
+                                    <button>
+                                        <img src="/img/close2.svg" alt="" />
+                                    </button>
+                                    <!-- <button>
+                                        <img src="/img/zoom2.svg" alt="" />
+                                    </button> -->
+                                </div>
+                                <form action="product/edit/<%= product[i].productId %>" method="POST" enctype="multipart/form-data">
+                                    <div class="info">
+                                        <div class="infoImg">
+                                            <img class="imgEditBtn" src="/img/edit.svg" alt="">
+                                            <div
+                                                class="fotorama"
+                                                data-nav="thumbs"
+                                                data-loop="true"
+                                                data-ratio="1/1"
+                                                data-maxwidth="100%"
+                                                data-thumbwidth="70"
+                                                data-thumbheight="70"
+                                                data-allowfullscreen="true"
+                                                data-fit="cover"
+                                                data-click="false"
+                                            >
+                                                <img src="<%= path %><%= product[i].productImg1 %>" />
+                                                <img src="<%= path %><%= product[i].productImg2 %>" />
+                                                <img src="<%= path %><%= product[i].productImg3 %>" />
+                                                <img src="<%= path %><%= product[i].productImg4 %>" />
+                                                <img src="<%= path %><%= product[i].productImg5 %>" />
+                                            </div>
+                                        </div> 
+                                        <div class="infoTxt">
+                                            <ul>
+                                                <li class="productStyleNumber">
+                                                    <span>產品型號 |</span>
+                                                    <%= product[i].productStyleNumber %>
+                                                </li>
+                                                <li class="productName">
+                                                    <span>產品名稱 |</span>
+                                                    <%= product[i].productName %>
+                                                </li>
+                                                <li class="productClass">
+                                                    <span>種類 |</span>
+                                                    <%= product[i].productClass %>
+                                                </li>
+                                                <li class="productPrice">
+                                                    <span>價格 |</span>
+                                                    <input type="text" name="productPrice" value="<%= product[i].productPrice %>" />                                           
+                                                </li>
+                                                <li class="productSize">
+                                                    <span>尺寸 |</span>
+                                                    <%= product[i].productSize %>
+                                                </li>
+                                                <li class="productInStock">
+                                                    <span>庫存：<%= product[i].productInStock %>&nbsp;&nbsp;進貨：</span>
+                                                    <input type="number" name="productInStock" value="" />
+                                                </li>
+                                                <li class="productDescription">
+                                                    <span>產品描述 |</span>
+                                                    <br />
+                                                    <textarea name="productDescription" wrap="soft"><%= product[i].productDescription %></textarea>
+                                                </li>
+                                            </ul>
+                                        </div>    
+                                        <button class="confirmBtn" type="submit"><i class="fa fa-check-circle-o" aria-hidden="true"></i>確認修改</button> 
+                                    </div>
+                                </form>
+                                <div class="dividingLine"></div>
                             </td>
                         </tr>
                     <% } %>
