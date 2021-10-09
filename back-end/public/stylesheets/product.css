@@ -1,5 +1,4 @@
 /* ------------------------- right section ------------------------- */
-
 /*  heading section  */
 .searchInput {
     display: inline;
@@ -12,8 +11,8 @@
 .searchInput:hover {
     box-shadow: 1px 1px 10px 2px rgba(255, 255, 255, 0.2);
 }
-.searchInput select,
-.searchInput input {
+select,
+input {
     background-color: var(--lightBlue);
     border: none;
     outline: none;
@@ -80,7 +79,7 @@ tr {
     border: none;
     border-radius: 0 30px 0 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr 2fr 2fr 4fr 1.5fr 1fr 1.5fr 5fr;
+    grid-template-columns: 0.8fr 0.5fr 1.5fr 1fr 1.5fr 3.5fr 1fr 0.8fr 0.8fr 6fr;
     justify-content: flex-start;
 }
 
@@ -135,10 +134,10 @@ tr:not(:first-child):hover {
     margin: 3% 0 0 10px;
     cursor: pointer; /*為什麼改不了手指！！！！！*/
 }
-.onOff img {
-    /* pointer-events: none; */
+/* .onOff img {
+    pointer-events: none;
     background-color: red;
-}
+} */
 .info {
     position: relative;
     width: 100%;
@@ -159,14 +158,14 @@ tr:not(:first-child):hover {
     position: relative;
     background-color:var(--darkBlue);
     width: 350px;
-    height: 400px;
+    height: 350px;
     margin: 0 100px;
 }
-.uploadImg img:last-child {
+/* .uploadImg img:last-child {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+} */
 .fileInput {
     display: none;
 }
@@ -176,55 +175,49 @@ tr:not(:first-child):hover {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-100%, -100%);
     cursor: pointer;
+    z-index: 2;
 }
 .imgEditBtn:hover {
     filter: drop-shadow(3px 3px 2px var(--fontBlue));
+}
+#imgUploadBtn {
+    transform: translate(-50%, -50%);
 }
 
 .infoTxt {
     position: relative;
     width: 70%;
 }
-.infoTxt ul {
+/* .infoTxt ul {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-}
+} */
 .infoTxt li {
-    width: 30%;
+    /* width: 30%; */
     list-style-type: none;
     border-left: 2px solid var(--lightYellow);
     border-bottom: 2px solid var(--lightYellow);
     border-radius: 0 0 0 15px;
-    color: var(--fontBlue);
+    /* color: var(--fontBlue); */
     margin: 0 5% 30px 0;
     padding: 0 10px 5px;
 }
+/* .infoTxt li:nth-child(2) {
+    float: right;
+    height: 274px;
+    overflow: auto;
+} */
+
 .infoTxt span {
     color: var(--white);
-}
-/* .infoTxt .productStyleNumber {
-} */
-.infoTxt .productName {
-    width: 60%;
-}
-/* .infoTxt .productClass {
-}
-.infoTxt .productPrice {
-}
-.infoTxt .productSize {
-}
-.infoTxt .productInStock {
-} */
-.infoTxt .productDescription {
-    width: 80%;
 }
 
 .confirmBtn {
     position: absolute;
-    bottom: 0;
+    bottom: -3%;
     right: 3%;
     border: 1px solid rgba(255, 255, 255, 0);
     border-radius: 0px 20px 0px 20px;
@@ -253,22 +246,22 @@ tr:not(:first-child):hover {
 .productPrice,
 .productSize,
 .productInStock, input {
-    background-color: transparent;
+    /* background-color: transparent; */
     border:none;
-    border-bottom: 2px solid var(--lightYellow);
-    color: var(--fontBlue);
+    /* border-bottom: 2px solid var(--lightYellow); */
+    /* color: var(--fontBlue); */
     font-size: 16px;
     outline: none;
 }
 .productDescription textarea{
     width: 80%;
     height: 200px;
+    margin: 5px;
     background-color: transparent;
-    border: 2px solid var(--lightYellow);
+    border: none;
     color: var(--fontBlue);
     font-size: 16px;
     outline: none;
-    
 }
 /* ------------------------------------------------ */
 @media only screen and (min-width: 1300px) {

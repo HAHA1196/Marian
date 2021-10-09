@@ -99,7 +99,7 @@ select {
     top: 0;
     background-color: var(--lightBlue);
     padding: 0 5%;
-    z-index: 2;
+    z-index: 5;
 }
 #notification {
     color: var(--white);

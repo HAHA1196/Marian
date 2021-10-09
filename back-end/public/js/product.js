@@ -1,25 +1,54 @@
 $(function(){
+      // 1. Initialize fotorama manually.
+      var $fotoramaDiv = $('#fotorama').fotorama();
+        
+      // 2. Get the API object.
+      var fotorama = $fotoramaDiv.data('fotorama');
+  
+      // 3. Inspect it in console.
+      console.log(fotorama);
+                       
     var product = JSON.parse($("#product").text());
-
-    $("#imgEditBtn").on("click", function () {
-        alert("edit this yo");
+    
+    var a = [];
+    $(".imgEditBtn").on("click", function () {
+        $(this).siblings(".fileInput").click();
+        $(this).siblings(".fileInput").on("change", function(evt){
+            if (this.files) {
+                for (var i = 0  ; i < this.files.length; i++) {
+                    a.push( URL.createObjectURL(evt.target.files[i]) );
+                }
+                fotorama.load([
+                    {img: `${a[0]}`}, 
+                    {img: `${a[1]}`}, 
+                    {img: `${a[2]}`}, 
+                    {img: `${a[3]}`}, 
+                    {img: `${a[4]}`}, 
+                ])
+            }
+        });
     });
 
-    // 展開上傳新品欄位按鈕
+    window.onload = function () {
+        document.getElementById('uploadBtn').click();
+    }
 
+    // 展開上傳新品欄位按鈕
     $("#uploadBtn").click(function(){
         $("#newProducts").slideToggle();
     })
 
+    // 鉛筆展開 tr
     $('.editBtn').click(function () {
         $(this).parents('tr').children('.showContent').show();
         
     });
 
-    // － button
-    $('.onOff button:last-child').click(function () {
+    // X button
+    $('.onOff').click(function () {
         // console.log($(this).parent().parent());
         $(this).parents('td').hide();
+        // location.reload();
     }); 
 
     $("#searchBtn").on("click", function () {
@@ -93,7 +122,7 @@ $(function(){
             
                     return 0;
                 })
-            
+
                 $('#contentData').append($tr);
                 $('tr:not(:nth-child(1))').slideDown();
                 break;
@@ -178,6 +207,5 @@ $(function(){
     
         $('#contentData').append($tr);
         $('tr:not(:nth-child(1))').slideDown();
-
     })
 });

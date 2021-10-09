@@ -16,7 +16,7 @@ router.get("/", function (req, res, next) {
 router.get("/product", function (req, res, next) {
     if (req.session.loggedin) {
         req.mysql.query(
-            "SELECT `productId`,`productImg1`,`productClass`, `productStyleNumber`,`productName`,`productPrice`,`productSize`,`productInStock`,`productDescription`FROM products",
+            "SELECT `productId`, `productImg1`, `productImg2`, `productImg3`, `productImg4`, `productImg5`, `productClass`, `productStyleNumber`, `productName`, `productPrice`, `productSize`, `productInStock`, `productDescription` FROM products",
             [],
             function (err, result) {
                 res.render("backend/product.ejs", { product: result });
@@ -30,27 +30,99 @@ router.get("/product", function (req, res, next) {
 
 // 新增product 資料 
 router.post('/product', function (req, res, next) {
-    const productFiles = [];
-    // if(!req.file)
-    // {
-    //     res.render('backend/oops.ejs',{p: "no files were uploaded!", href: "news", a: 'Please try again!'});
-    // }
+    const productFiles = []; 
+
+    if(!req.files) {
+        res.render('backend/oops.ejs',{p: "no files were uploaded!", href: "news", a: 'Please try again!'});
+    }
+
+    if (req.files.productImg[0]){
+        var file0 = req.files.productImg[0];
+        var uploadPath0 = path.join(__dirname, "../public/img/productsImg/" + file0.name);
+        productFiles.push(uploadPath0.substring(uploadPath0.indexOf("productsImg") + 11));
+        file0.mv(uploadPath0, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+    if (req.files.productImg[1]){
+        var file1 = req.files.productImg[1];
+        var uploadPath1 = path.join(__dirname, "../public/img/productsImg/" + file1.name);
+        productFiles.push(uploadPath1.substring(uploadPath1.indexOf("productsImg") + 11));
+        file1.mv(uploadPath1, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+    if (req.files.productImg[2]){
+        var file2 = req.files.productImg[2];
+        var uploadPath2 = path.join(__dirname, "../public/img/productsImg/" + file2.name);
+        productFiles.push(uploadPath2.substring(uploadPath2.indexOf("productsImg") + 11));
+        file2.mv(uploadPath2, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+    if (req.files.productImg[3]){
+        var file3 = req.files.productImg[3];
+        var uploadPath3 = path.join(__dirname, "../public/img/productsImg/" + file3.name);
+        productFiles.push(uploadPath3.substring(uploadPath3.indexOf("productsImg") + 11));
+        file3.mv(uploadPath3, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+    if (req.files.productImg[4]){
+        var file4 = req.files.productImg[4];
+        var uploadPath4 = path.join(__dirname, "../public/img/productsImg/" + file4.name);
+        productFiles.push(uploadPath4.substring(uploadPath4.indexOf("productsImg") + 11));
+        file4.mv(uploadPath4, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
     req.mysql.query(
-        'insert into products (productStyleNumber,productName,productClass,productPrice,productSize,productInStock, productDescription) values (?, ?, ?, ?, ?, ?, ?); UPDATE `products` t1 JOIN (SELECT FLOOR(SUM(productId) / COUNT(productName) * 10) AS a, productName FROM `products` GROUP BY productName) AS t2 USING (productName) SET t1.productStyleNumber = CONCAT(t1.productClass, "_", t2.a)',
+        'insert into products (productName,productClass,productPrice,productSize,productInStock, productDescription, productImg1, productImg2, productImg3, productImg4, productImg5) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); UPDATE `products` t1 JOIN (SELECT FLOOR(SUM(productId) / COUNT(productName) * 10) AS a, productName FROM `products` GROUP BY productName) AS t2 USING (productName) SET t1.productStyleNumber = CONCAT(t1.productClass, "_", t2.a)',
         [
-            req.body.productStyleNumber,
             req.body.productName,
             req.body.productClass,
             req.body.productPrice,
             req.body.productSize,
             req.body.productInStock,
-            req.body.productDescription
+            req.body.productDescription, 
+            productFiles[0], 
+            productFiles[1], 
+            productFiles[2], 
+            productFiles[3], 
+            productFiles[4]
         ],
         function (err, result) {
             res.redirect('product');
         }
     )
 });
+
+// 修改product 資料
+router.post('/product/edit/:productId', function (req, res, next) {
+    // res.send(req.params.productId);
+    req.mysql.query(
+        "UPDATE products t1 JOIN (SELECT productStyleNumber FROM products WHERE productId = ?) t2 USING (productStyleNumber) SET t1.productPrice = ?, t1.productDescription = ? WHERE t1.productStyleNumber = t2.productStyleNumber; UPDATE products SET productInStock = productInStock + ? WHERE productId = ?",
+        [req.params.productId, req.body.productPrice, req.body.productDescription, req.body.productInStock, req.params.productId],
+        function (err, result) {
+            res.redirect('/backend/product');
+        }
+    );    
+})
 
 /* member page */
 // http://localhost:8000/backend/member
@@ -72,6 +144,7 @@ router.get("/member", function (req, res, next) {
     }
 
 });
+
 /* order page */
 // http://localhost:8000/backend/order
 router.get("/order", function (req, res, next) {
@@ -229,7 +302,6 @@ router.post("/news", function (req, res, next) {
    
 // });
 
-
 // upload file
 router.post("/upload", function (req, res, next) {
     if (!req.files) {
@@ -255,22 +327,6 @@ router.get('/login', (req, res) => {
     // } else
         res.render('backend/login.ejs', {})
 });
-
-// router.post('/user', (req, res) => {
-//     const myusername = 'user1'
-//     const mypassword = 'mypassword'
-//     var session;
-
-//     if (req.body.username == myusername && req.body.password == mypassword) {
-//         session = req.session;
-//         session.userid = req.body.username;
-//         console.log(req.session)
-//         res.send(`Hey there, welcome <a href=\'logout'>click to logout</a>`);
-//     }
-//     else {
-//         res.send('Invalid username or password');
-//     }
-// });
 
 router.post('/auth', function (req, res) {
     var username = req.body.username;
