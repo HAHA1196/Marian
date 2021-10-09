@@ -146,11 +146,10 @@ tr:not(:first-child):hover {
     margin: 0 auto;
 }
 .infoImg {
-    width: 40%;
-    /* min-width: 200px; */
-    /* margin: auto 3% auto 0; */
     position: relative;
-    margin: auto 0;
+    width: 50%;
+    min-width: 350px;
+    margin: auto 3% auto 0; 
     padding-right: 5%;
 }
 /* 上傳圖片  */
@@ -188,7 +187,7 @@ tr:not(:first-child):hover {
 
 .infoTxt {
     position: relative;
-    width: 60%;
+    width: 50%;
 }
 /* .infoTxt ul {
     display: flex;
@@ -227,8 +226,20 @@ tr:not(:first-child):hover {
     padding: 8px 20px;
     width: 120px;
 }
+.deleteBtn{
+    position: absolute;
+    bottom: -3%;
+    right: 15%;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 0px 20px 0px 20px;
+    background-color: var(--darkBlue);
+    color: var(--white);
+    margin: 0 8px 30px;
+    padding: 8px 20px;
+    width: 120px;
+}
 /* 確認上傳紐 */
-#newProductBtn {
+.newProductBtn {
     position: absolute;
     bottom: 0;
     right: 3%;
