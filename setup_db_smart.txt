@@ -146,3 +146,6 @@ create table if not exists
 		('6', '辣咖哩', '第二組今天的午餐第3段落內容blahblahblah', null, 'gigigigiy'),
 		('6', '蔬菜咖哩', '第二組今天的午餐第4段落內容blahblahblah', null, 'gigigigiy'),
 		('6', '滑蛋咖哩', '第二組今天的午餐第5段落內容blahblahblah', null, 'gigigigiy')
+		
+
+19:45ruby 測試
