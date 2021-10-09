@@ -149,3 +149,4 @@ create table if not exists
 		
 
 19:45ruby 測試
+19:56 第二次測試
