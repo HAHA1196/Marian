@@ -155,7 +155,7 @@
                                     </li>
                                 </ul>
                                 <br>
-                                <button id="newProductBtn" type="submit" >
+                                <button class="newProductBtn" type="submit" >
                                     <i class="fa fa-check-circle-o" aria-hidden="true"></i>
                                     確認新增
                                 </button>
@@ -209,7 +209,6 @@
                                 <form action="product/edit/<%= product[i].productId %>" method="POST" enctype="multipart/form-data">
                                     <div class="info">
                                         <div class="infoImg">
-                                            <!-- <img class="imgEditBtn" src="/img/edit.svg" alt=""> -->
                                             <div
                                                 class="fotorama"
                                                 data-nav="thumbs"
@@ -262,6 +261,8 @@
                                                 </li>
                                             </ul>
                                         </div>    
+                                        <button class="deleteBtn" id="deleteProduct" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i>刪除產品</button> 
+                                        <br>
                                         <button class="confirmBtn" type="submit"><i class="fa fa-check-circle-o" aria-hidden="true"></i>確認修改</button> 
                                     </div>
                                 </form>

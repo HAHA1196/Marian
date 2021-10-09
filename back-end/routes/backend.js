@@ -124,6 +124,8 @@ router.post('/product/edit/:productId', function (req, res, next) {
     );    
 })
 
+// 刪除 product 
+router.post('') 
 /* member page */
 // http://localhost:8000/backend/member
 router.get("/member", function (req, res, next) {
