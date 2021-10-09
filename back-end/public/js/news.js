@@ -56,7 +56,7 @@ $(function () {
         //     console.log(e.target.files[0].name);
         // });
         $(this).siblings(".fileInput").on("change", function(evt){
-            console.log(this.files);
+            // console.log(this.files);
             let [file] = this.files;
             if(file) {
                 $(this).next("img").attr('src', URL.createObjectURL(evt.target.files[0]));
@@ -65,6 +65,20 @@ $(function () {
         
     })
 
+    // edit article-------------------------------------------------------
+    // $("table .confirmBtn").on("click", function(e){
+    //     e.preventDefault();
+    //     var getnewsId = Number($(this).parents("tr").find("td:first-child")[0].innerText);
+    //     console.log(getnewsId);
+    //     $.ajax({
+    //         url:"/news/edit/" + getnewsId,
+    //         type: "POST",
+
+
+    //     });
+    // });
+
+    // search input -------------------------------------------------------
     $("#searchBtn").on("click", function () {
         let sortNews = $("#sortNews").val();
         let inputNews = $("#inputNews").val();
@@ -91,9 +105,11 @@ $(function () {
         }
     });
 
+
+    // clear search input
     $('#clearBtn').click(function () {
         $('tr').slideDown();
         $('#inputNews').val('');
-    })
+    });
     
 });
