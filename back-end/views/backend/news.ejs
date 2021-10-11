@@ -203,6 +203,7 @@
                                                 <div>段落照片&nbsp;｜</div>
                                                 <div class="uploadImg">
                                                     <img class="imgEditBtn" src="../img/add.svg" alt="按我修改圖片yo" />
+                                                    <input type="text" name="storeImg<%= x %>" value="<%= newsContent[i].newsImg %>" hidden>
                                                     <input type="file" name="uploadImg<%= x %>" class="fileInput">
                                                     <!-- 換圖片路徑 -->
                                                     <img src="<%= path %><%= newsContent[i].newsImg == null ? '罐頭.jpg' : newsContent[i].newsImg %>" alt="">
