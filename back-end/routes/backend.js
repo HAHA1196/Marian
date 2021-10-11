@@ -285,24 +285,111 @@ router.post("/news", function (req, res, next) {
         }
     );    
 });
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
 // 修改news資料
 router.post("/news/edit/:newsId", function (req, res, next) {
-    // res.send([req.body.newsArticle1,req.body.newsArticle2,req.body.newsArticle3,req.body.newsArticle4,req.body.newsArticle5]);
+    res.send([req.body.uploadImg1,req.body.uploadImg2,req.body.uploadImg3,req.body.uploadImg4,req.body.uploadImg5]);
+    // const changeFiles = [req.body.uploadImg1,req.body.uploadImg2,req.body.uploadImg3,req.body.uploadImg4,req.body.uploadImg5]; 
+    // res.send(changeFiles);
+
+    if (!req.files) {
+        // res.render('backend/oops.ejs', {p: "no files were uploaded!", href: "news", a: 'Please try again!'});
+        res.send(changeFiles);
+        // return;
+    } 
+
+    // const desktopDir = `${homedir}/Desktop`;
+    // res.send(desktopDir);
+
+    // if (req.files.uploadImg0){
+    //     var file0 = req.files.uploadImg0;
+    //     // var uploadPath0 = path.join(`${desktopDir}/newsImg/` + file0.name);  //有成功在桌面建立資料夾 但...
+    //     var uploadPath0 = path.join(__dirname, "../public/img/newsImg/" + file0.name);
+    //     changeFiles[0] = uploadPath0.substring(uploadPath0.indexOf("newsImg") + 7);
+    //     file0.mv(uploadPath0, (err) => {
+    //         return;
+    //     });
+    // } else {
+        
+    // }
+
+    if (req.files.uploadImg1){
+        var file1 = req.files.uploadImg1;
+        var uploadPath1 = path.join(__dirname, "../public/img/newsImg/" + file1.name);
+        changeFiles[1] = uploadPath1.substring(uploadPath1.indexOf("newsImg") + 7);
+        file1.mv(uploadPath1, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+    if (req.files.uploadImg2){
+        var file2 = req.files.uploadImg2;
+        var uploadPath2 = path.join(__dirname, "../public/img/newsImg/" + file2.name);
+        changeFiles[2] = uploadPath2.substring(uploadPath2.indexOf("newsImg") + 7);
+        file2.mv(uploadPath2, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+    if (req.files.uploadImg3){
+        var file3 = req.files.uploadImg3;
+        var uploadPath3 = path.join(__dirname, "../public/img/newsImg/" + file3.name);
+        changeFiles[3] = uploadPath3.substring(uploadPath3.indexOf("newsImg") + 7);
+        file3.mv(uploadPath3, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+    if (req.files.uploadImg4){
+        var file4 = req.files.uploadImg4;
+        var uploadPath4 = path.join(__dirname, "../public/img/newsImg/" + file4.name);
+        changeFiles[4] = uploadPath4.substring(uploadPath4.indexOf("newsImg") + 7);
+        file4.mv(uploadPath4, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+    if (req.files.uploadImg5){
+        var file5 = req.files.uploadImg5;
+        var uploadPath5 = path.join(__dirname, "../public/img/newsImg/" + file5.name);
+        changeFiles[5] = uploadPath5.substring(uploadPath5.indexOf("newsImg") + 7);
+        file5.mv(uploadPath5, (err) => {
+            return;
+        });
+    } else {
+        
+    }
+
+    // res.send(changeFiles);
+
+
     req.mysql.query(
-        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 0,1) t2 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t2.newsContentId;"+
-        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 1,1) t3 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t3.newsContentId;"+
-        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 2,1) t4 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t4.newsContentId;"+
-        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 3,1) t5 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t5.newsContentId;"+
-        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 4,1) t6 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ? WHERE t1.newsContentId = t6.newsContentId;",
+        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 0,1) t2 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ?, t1.newsImg = ? WHERE t1.newsContentId = t2.newsContentId;"+
+        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 1,1) t3 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ?, t1.newsImg = ? WHERE t1.newsContentId = t3.newsContentId;"+
+        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 2,1) t4 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ?, t1.newsImg = ? WHERE t1.newsContentId = t4.newsContentId;"+
+        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 3,1) t5 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ?, t1.newsImg = ? WHERE t1.newsContentId = t5.newsContentId;"+
+        "UPDATE newsContent t1 JOIN (SELECT newsContentId FROM newsContent WHERE newsId = ? LIMIT 4,1) t6 USING(newsContentId) SET t1.newsSubtitle = ?, t1.newsArticle = ?, t1.newsFigcaption = ?, t1.newsImg = ? WHERE t1.newsContentId = t6.newsContentId;",
         [
-            req.params.newsId, req.body.newsSubtitle1, req.body.newsArticle1, req.body.newsFigcaption1,
-            req.params.newsId, req.body.newsSubtitle2, req.body.newsArticle2, req.body.newsFigcaption2,
-            req.params.newsId, req.body.newsSubtitle3, req.body.newsArticle3, req.body.newsFigcaption3,
-            req.params.newsId, req.body.newsSubtitle4, req.body.newsArticle4, req.body.newsFigcaption4,
-            req.params.newsId, req.body.newsSubtitle5, req.body.newsArticle5, req.body.newsFigcaption5,
+            req.params.newsId, req.body.newsSubtitle1, req.body.newsArticle1, req.body.newsFigcaption1, changeFiles[1],
+            req.params.newsId, req.body.newsSubtitle2, req.body.newsArticle2, req.body.newsFigcaption2, changeFiles[2],
+            req.params.newsId, req.body.newsSubtitle3, req.body.newsArticle3, req.body.newsFigcaption3, changeFiles[3],
+            req.params.newsId, req.body.newsSubtitle4, req.body.newsArticle4, req.body.newsFigcaption4, changeFiles[4],
+            req.params.newsId, req.body.newsSubtitle5, req.body.newsArticle5, req.body.newsFigcaption5, changeFiles[5],
         ],
         function (err, result) {
-            res.redirect("news");
+            // res.send(JSON.stringify(result));
+            // res.send(myFiles);
+            res.redirect("/backend/news");
         }
     );  
    
