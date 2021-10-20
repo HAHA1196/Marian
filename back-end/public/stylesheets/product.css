@@ -1,193 +1,193 @@
 /* ------------------------- right section ------------------------- */
 /*  heading section  */
 .searchInput {
-    display: inline;
-    border: 2px solid var(--white);
-    border-radius: 50px;
-    color: var(--white);
-    padding: 8px 20px;
-    margin: 0 8px;
+  display: inline;
+  border: 2px solid var(--white);
+  border-radius: 50px;
+  color: var(--white);
+  padding: 8px 20px;
+  margin: 0 8px;
 }
 .searchInput:hover {
-    box-shadow: 1px 1px 10px 2px rgba(255, 255, 255, 0.2);
+  box-shadow: 1px 1px 10px 2px rgba(255, 255, 255, 0.2);
 }
 select,
 input {
-    background-color: var(--lightBlue);
-    border: none;
-    outline: none;
-    color: var(--fontBlue);
+  background-color: var(--lightBlue);
+  border: none;
+  outline: none;
+  color: var(--fontBlue);
 }
 #searchBtn,
 #clearBtn,
 #uploadBtn {
-    padding: 8px 20px;
-    border: 1px solid rgba(255, 255, 255, 0);
-    border-radius: 0px 20px 0px 20px;
-    color: var(--fontBlue);
-    margin: 0 8px 20px;
-    /* position: relative; */
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 0px 20px 0px 20px;
+  color: var(--fontBlue);
+  margin: 0 8px 20px;
+  /* position: relative; */
 }
 #searchBtn:hover,
 #clearBtn:hover,
 #uploadBtn:hover {
-    filter: drop-shadow(1px 1px 3px var(--darkBlue));
+  filter: drop-shadow(1px 1px 3px var(--darkBlue));
 }
 #searchBtn {
-    background-color: var(--white);
+  background-color: var(--white);
 }
 #clearBtn {
-    background-color: var(--darkBlue);
-    color: var(--white);
+  background-color: var(--darkBlue);
+  color: var(--white);
 }
 #uploadBtn {
-    background-color: var(--lightYellow);
+  background-color: var(--lightYellow);
 }
 
 /*  content section  */
 #contentSec {
-    /* main.css檔案裡面 這裡有設定 position: relative; */
-    top: 200px; /*組長 這邊要依據heading高度調整*/
+  /* main.css檔案裡面 這裡有設定 position: relative; */
+  top: 200px; /*組長 這邊要依據heading高度調整*/
 }
 
 td,
 th {
-    min-height: 40px;
-    vertical-align: middle;
-    padding: 8px;
-    position: relative;
+  min-height: 40px;
+  vertical-align: middle;
+  padding: 8px;
+  position: relative;
 }
 th {
-    font-size: 14px;
-    line-height: 20px;
+  font-size: 14px;
+  line-height: 20px;
 }
 td:nth-last-child(2) {
-    text-align: left;
+  text-align: left;
 }
 td:last-child {
-    background-color: var(--lightBlue);
-    outline: 1px solid var(--lightBlue); /*蓋住背景右方的細線*/
+  background-color: var(--lightBlue);
+  outline: 1px solid var(--lightBlue); /*蓋住背景右方的細線*/
 }
 
 td:not(:last-child) {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 tr {
-    border: none;
-    border-radius: 0 30px 0 0;
-    display: grid;
-    grid-template-columns: 0.8fr 0.5fr 1.5fr 1fr 1.5fr 3.5fr 1fr 0.8fr 0.8fr 6fr;
-    justify-content: flex-start;
+  border: none;
+  border-radius: 0 30px 0 0;
+  display: grid;
+  grid-template-columns: 0.8fr 0.5fr 1.5fr 1fr 1.5fr 3.5fr 1fr 0.8fr 0.8fr 6fr;
+  justify-content: flex-start;
 }
 
 tr:nth-child(even) {
-    background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.4);
 }
 tr:not(:first-child):hover {
-    background-color: var(--lightYellow);
+  background-color: var(--lightYellow);
 }
 .lightYellowBgc {
-    /*使用js插入*/
-    background-color: var(--lightYellow);
+  /*使用js插入*/
+  background-color: var(--lightYellow);
 }
 
 .productImg {
-    width: 40px;
-    height: 40px;
-    margin: auto;
+  width: 40px;
+  height: 40px;
+  margin: auto;
 }
 .productImg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .editBtn {
-    width: 25px;
-    height: 25px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: var(--darkBlue);
-    font-size: 18px;
-    cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--darkBlue);
+  font-size: 18px;
+  cursor: pointer;
 }
 .editBtn:hover {
-    color: var(--fontBlue);
+  color: var(--fontBlue);
 }
 /* --------------------手風琴展開---------------------- */
 .onOff {
-    color: var(--lightYellow);
-    position: absolute;
-    top: 20px;
-    left: 30px;
-    z-index: 1;
+  color: var(--lightYellow);
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  z-index: 1;
 }
 .onOff button {
-    width: 30px;
-    background-color: transparent;
-    border: none;
-    overflow: hidden;
-    outline: none;
-    margin: 3% 0 0 10px;
-    cursor: pointer; /*為什麼改不了手指！！！！！*/
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+  outline: none;
+  margin: 3% 0 0 10px;
+  cursor: pointer; /*為什麼改不了手指！！！！！*/
 }
 /* .onOff img {
     pointer-events: none;
     background-color: red;
 } */
 .info {
-    position: relative;
-    width: 100%;
-    display: flex;
-    padding: 3%;
-    margin: 0 auto;
+  position: relative;
+  width: 100%;
+  display: flex;
+  padding: 3%;
+  margin: 0 auto;
 }
 .infoImg {
-    position: relative;
-    width: 50%;
-    min-width: 350px;
-    margin: auto 3% auto 0; 
-    padding-right: 5%;
+  position: relative;
+  width: 50%;
+  min-width: 350px;
+  margin: auto 3% auto 0;
+  padding-right: 5%;
 }
 /* 上傳圖片  */
 .uploadImg {
-    position: relative;
-    background-color:var(--darkBlue);
-    width: 350px;
-    height: 350px;
-    margin: 0 100px;
+  position: relative;
+  background-color: var(--darkBlue);
+  width: 350px;
+  height: 350px;
+  margin: 0 100px;
 }
 .uploadImg img:last-child {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .fileInput {
-    display: none;
+  display: none;
 }
 /* 上傳圖片的圓形加號 */
 .imgEditBtn {
-    width: 60px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-100%, -100%);
-    cursor: pointer;
-    z-index: 2;
+  width: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, -100%);
+  cursor: pointer;
+  z-index: 2;
 }
 .imgEditBtn:hover {
-    filter: drop-shadow(3px 3px 2px var(--fontBlue));
+  filter: drop-shadow(3px 3px 2px var(--fontBlue));
 }
 #imgUploadBtn {
-    transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .infoTxt {
-    position: relative;
-    width: 50%;
+  position: relative;
+  width: 50%;
 }
 /* .infoTxt ul {
     display: flex;
@@ -195,14 +195,14 @@ tr:not(:first-child):hover {
     width: 100%;
 } */
 .infoTxt li {
-    /* width: 30%; */
-    list-style-type: none;
-    border-left: 2px solid var(--lightYellow);
-    border-bottom: 2px solid var(--lightYellow);
-    border-radius: 0 0 0 15px;
-    /* color: var(--fontBlue); */
-    margin: 0 5% 30px 0;
-    padding: 0 10px 5px;
+  /* width: 30%; */
+  list-style-type: none;
+  border-left: 2px solid var(--lightYellow);
+  border-bottom: 2px solid var(--lightYellow);
+  border-radius: 0 0 0 15px;
+  /* color: var(--fontBlue); */
+  margin: 0 5% 30px 0;
+  padding: 0 10px 5px;
 }
 /* .infoTxt li:nth-child(2) {
     float: right;
@@ -211,73 +211,78 @@ tr:not(:first-child):hover {
 } */
 
 .infoTxt span {
-    color: var(--white);
+  color: var(--white);
 }
 
 .confirmBtn {
-    position: absolute;
-    bottom: -3%;
-    right: 3%;
-    border: 1px solid rgba(255, 255, 255, 0);
-    border-radius: 0px 20px 0px 20px;
-    background-color: var(--lightYellow);
-    color: var(--fontBlue);
-    margin: 0 8px 30px;
-    padding: 8px 20px;
-    width: 120px;
+  position: absolute;
+  bottom: -3%;
+  right: 3%;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 0px 20px 0px 20px;
+  background-color: var(--lightYellow);
+  color: var(--fontBlue);
+  margin: 0 8px 30px;
+  padding: 8px 20px;
+  width: 120px;
 }
-.deleteBtn{
-    position: absolute;
-    bottom: -3%;
-    right: 15%;
-    border: 1px solid rgba(255, 255, 255, 0);
-    border-radius: 0px 20px 0px 20px;
-    background-color: var(--darkBlue);
-    color: var(--white);
-    margin: 0 8px 30px;
-    padding: 8px 20px;
-    width: 120px;
+.deleteBtn {
+  position: absolute;
+  bottom: -3%;
+  right: 15%;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 0px 20px 0px 20px;
+  background-color: var(--darkBlue);
+  color: var(--white);
+  margin: 0 8px 30px;
+  padding: 8px 20px;
+  width: 120px;
 }
 /* 確認上傳紐 */
 .newProductBtn {
-    position: absolute;
-    bottom: 0;
-    right: 3%;
-    border: 1px solid rgba(255, 255, 255, 0);
-    border-radius: 0px 20px 0px 20px;
-    background-color: var(--lightYellow);
-    color: var(--fontBlue);
-    margin: 0 8px 30px;
-    padding: 8px 20px;
-    width: 120px;
+  position: absolute;
+  bottom: 0;
+  right: 3%;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 0px 20px 0px 20px;
+  background-color: var(--lightYellow);
+  color: var(--fontBlue);
+  margin: 0 8px 30px;
+  padding: 8px 20px;
+  width: 120px;
 }
 .productStyleNumber,
 .productName,
 .productClass,
 .productPrice,
 .productSize,
-.productInStock, input {
-    /* background-color: transparent; */
-    border:none;
-    /* border-bottom: 2px solid var(--lightYellow); */
-    /* color: var(--fontBlue); */
-    font-size: 16px;
-    outline: none;
+.productInStock,
+input {
+  /* background-color: transparent; */
+  border: none;
+  /* border-bottom: 2px solid var(--lightYellow); */
+  /* color: var(--fontBlue); */
+  font-size: 16px;
+  outline: none;
 }
-.productDescription textarea{
-    width: 80%;
-    height: 200px;
-    margin: 5px;
-    background-color: transparent;
-    border: none;
-    color: var(--fontBlue);
-    font-size: 16px;
-    outline: none;
+.productDescription textarea {
+  width: 80%;
+  height: 200px;
+  margin: 5px;
+  background-color: transparent;
+  border: none;
+  color: var(--fontBlue);
+  font-size: 16px;
+  outline: none;
+}
+
+#newProducts {
+  display: none;
 }
 /* ------------------------------------------------ */
 @media only screen and (min-width: 1300px) {
-    #uploadBtn {
-        position: absolute;
-        right: 10%;
-    }
+  #uploadBtn {
+    position: absolute;
+    right: 10%;
+  }
 }
